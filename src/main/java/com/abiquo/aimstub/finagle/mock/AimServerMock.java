@@ -19,132 +19,142 @@
  * Boston, MA 02111-1307, USA.
  */
 
-package com.abiquo.aimstub.mock;
+package com.abiquo.aimstub.finagle.mock;
 
-import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-import org.apache.thrift.TException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.abiquo.aimstub.Aim.Iface;
-import com.abiquo.aimstub.Datastore;
-import com.abiquo.aimstub.NetInterface;
-import com.abiquo.aimstub.RimpException;
-import com.abiquo.aimstub.VLanException;
+import com.abiquo.aimstub.finagle.Aim.ServiceIface;
+import com.abiquo.aimstub.finagle.Datastore;
+import com.abiquo.aimstub.finagle.NetInterface;
+import com.twitter.util.ExecutorServiceFuturePool;
+import com.twitter.util.Future;
 
 /**
  * This pretends to be a aim-server, but it is not, it is a mock.
  */
-public class AimServerMock implements Iface
+public class AimServerMock implements ServiceIface
 {
     private final static Logger LOG = LoggerFactory.getLogger(AimServerMock.class);
 
+    // In Scala, one can call directly to the FuturePool, but Java gets confused
+    // between the object and class, so it's best to instantiate an ExecutorServiceFuturePool
+    // directly
+
+    /* Number of threads to devote to blocking requests */
+    private ExecutorService es = Executors.newFixedThreadPool(4);
+
+    /* Pool to process blockng requests so server thread doesn't */
+    private ExecutorServiceFuturePool esfp = new ExecutorServiceFuturePool(es);
+
     @Override
-    public void checkRimpConfiguration() throws RimpException, TException
+    public Future<Void> checkRimpConfiguration()
     {
         // TODO Auto-generated method stub
         LOG.debug("checkRimpConfiguration");
+        return Future.value(null);
     }
 
     @Override
-    public long getDatastoreSize() throws RimpException, TException
+    public Future<Long> getDatastoreSize()
     {
         // TODO Auto-generated method stub
         LOG.debug("getDatastoreSize");
-
-        return 0;
+        return Future.value(0l);
     }
 
     @Override
-    public long getDiskFileSize(final String virtualImageDatastorePath) throws RimpException,
-        TException
+    public Future<Long> getDiskFileSize(final String virtualImageDatastorePath)
     {
         // TODO Auto-generated method stub
         LOG.debug("getDiskFileSize");
-
-        return 0;
+        return Future.value(0l);
     }
 
     @Override
-    public List<Datastore> getDatastores() throws RimpException, TException
+    public Future<List<Datastore>> getDatastores()
     {
         // TODO Auto-generated method stub
         LOG.debug("getDatastores");
-
-        return Collections.emptyList();
+        List<Datastore> datastores = new LinkedList<Datastore>();
+        return Future.value(datastores);
     }
 
     @Override
-    public List<NetInterface> getNetInterfaces() throws RimpException, TException
+    public Future<List<NetInterface>> getNetInterfaces()
     {
         // TODO Auto-generated method stub
         LOG.debug("getNetInterfaces");
-
-        return Collections.emptyList();
+        List<NetInterface> netIfaces = new LinkedList<NetInterface>();
+        return Future.value(netIfaces);
     }
 
     @Override
-    public void copyFromRepositoryToDatastore(final String virtualImageRepositoryPath,
-        final String datastorePath, final String virtualMachineUUID) throws RimpException,
-        TException
+    public Future<Void> copyFromRepositoryToDatastore(final String virtualImageRepositoryPath,
+        final String datastorePath, final String virtualMachineUUID)
     {
         // TODO Auto-generated method stub
         LOG.debug("copyFromRepositoryToDatastore");
-
+        return Future.value(null);
     }
 
     @Override
-    public void deleteVirtualImageFromDatastore(final String datastorePath,
-        final String virtualMachineUUID) throws RimpException, TException
+    public Future<Void> deleteVirtualImageFromDatastore(final String datastorePath,
+        final String virtualMachineUUID)
     {
         // TODO Auto-generated method stub
         LOG.debug("deleteVirtualImageFromDatastore");
+        return Future.value(null);
 
     }
 
     @Override
-    public void copyFromDatastoreToRepository(final String virtualMachineUUID,
+    public Future<Void> copyFromDatastoreToRepository(final String virtualMachineUUID,
         final String snapshot, final String destinationRepositoryPath,
-        final String sourceDatastorePath) throws RimpException, TException
+        final String sourceDatastorePath)
     {
         // TODO Auto-generated method stub
         LOG.debug("copyFromDatastoreToRepository");
-
+        return Future.value(null);
     }
 
     @Override
-    public void createVLAN(final int vlanTag, final String vlanInterface,
-        final String bridgeInterface) throws VLanException, TException
+    public Future<Void> createVLAN(final int vlanTag, final String vlanInterface,
+        final String bridgeInterface)
     {
         // TODO Auto-generated method stub
         LOG.debug("createVLAN");
-
+        return Future.value(null);
     }
 
     @Override
-    public void deleteVLAN(final int vlanTag, final String vlanInterface,
-        final String bridgeInterface) throws VLanException, TException
+    public Future<Void> deleteVLAN(final int vlanTag, final String vlanInterface,
+        final String bridgeInterface)
     {
         // TODO Auto-generated method stub
         LOG.debug("deleteVLAN");
-
+        return Future.value(null);
     }
 
     @Override
-    public void checkVLANConfiguration() throws VLanException, TException
+    public Future<Void> checkVLANConfiguration()
     {
         // TODO Auto-generated method stub
         LOG.debug("checkVLANConfiguration");
+        return Future.value(null);
 
     }
 
     @Override
-    public String getInitiatorIQN() throws TException
+    public Future<String> getInitiatorIQN()
     {
         // TODO Auto-generated method stub
         LOG.debug("getInitiatorIQN");
-        return "";
+        return Future.value("");
     }
 }

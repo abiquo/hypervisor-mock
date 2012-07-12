@@ -1,65 +1,90 @@
 <?xml version="1.0"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<parent>
-		<groupId>com.abiquo</groupId>
-		<artifactId>platform</artifactId>
-		<version>1.0-SNAPSHOT</version>
-	</parent>
-
-	<modelVersion>4.0.0</modelVersion>
-	<artifactId>hypervisor-mock</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
-	<name>Abiquo Compatible Hypervisor Mock</name>
-
-	<dependencies>
-		<!--Thrift generated classes from aim.thrift -->
-		<dependency>
-			<groupId>com.abiquo</groupId>
-			<artifactId>aimstub</artifactId>
-		</dependency>
-		<!-- Logging -->
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-core</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>ch.qos.logback</groupId>
-			<artifactId>logback-classic</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-api</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.apache</groupId>
-			<artifactId>thrift</artifactId>
-		</dependency>
-		<!-- Testing -->
-		<dependency>
-			<groupId>org.testng</groupId>
-			<artifactId>testng</artifactId>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>com.abiquo</groupId>
-			<artifactId>api-model</artifactId>
-			<classifier>tests</classifier>
-			<scope>test</scope>
-		</dependency>
-	</dependencies>
-
-	<build>
-		<finalName>hypervisor-mock</finalName>
-		<plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-failsafe-plugin</artifactId>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <groupId>com.abiquo</groupId>
+        <artifactId>platform</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>hypervisor-mock</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <name>Abiquo Compatible Hypervisor Mock</name>
+    <repositories>
+        <repository>
+            <id>scala-tools.org</id>
+            <name>Scala-tools Maven2 Repository</name>
+            <url>http://scala-tools.org/repo-releases</url>
+        </repository>
+        <repository>
+            <id>twitter</id>
+            <url>http://maven.twttr.com/</url>
+        </repository>
+        <repository>
+            <id>mvnrepository</id>
+            <url>http://mvnrepository.com/</url>
+        </repository>
+    </repositories>
+    <dependencies>
+        <!--Thrift finagle -->
+        <dependency>
+            <groupId>com.twitter</groupId>
+            <artifactId>finagle</artifactId>
+            <type>pom</type>
+            <version>1.9.0</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.scala-tools</groupId>
+                    <artifactId>vscaladoc</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.codahale</groupId>
+                    <artifactId>jerkson_2.8.1</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- Test -->
+        <dependency>
+            <groupId>com.abiquo</groupId>
+            <artifactId>aimstub</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!-- Logging -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+        </dependency>
+        <!-- Testing -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.abiquo</groupId>
+            <artifactId>api-model</artifactId>
+            <classifier>tests</classifier>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>hypervisor-mock</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-failsafe-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 </project>
