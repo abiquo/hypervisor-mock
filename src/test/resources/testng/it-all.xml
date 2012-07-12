@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Hypervisor Mock - all integration tests" verbose="1">
+    <test name="All integration tests" enabled="true">
+        <groups>
+            <run>
+                <include name="it-all" />
+                <include name="it-basic" />
+            </run>
+        </groups>
+        <packages>
+            <package name="com.abiquo.aimstub.mock" />
+        </packages>
+    </test>
+</suite>
