@@ -20,7 +20,7 @@ public class BootAimServerMock
     private final static Logger LOG = LoggerFactory.getLogger(BootAimServerMock.class);
 
     /** Server port. TODO configurable */
-    public final static Integer SERVER_PORT = 7911;
+    public final static Integer SERVER_PORT = 8889;
 
     /** Thrift server. */
     private TServer server;
@@ -54,7 +54,7 @@ public class BootAimServerMock
                 new TNonblockingServerSocket(SERVER_PORT);
             server = new TNonblockingServer(processor, serverTransport);
             server.serve();
-            
+
             LOG.info("Aim Server Mock started at {}", SERVER_PORT);
         }
         catch (TTransportException e)

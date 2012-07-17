@@ -21,12 +21,12 @@
 
 package com.abiquo.aimstub.mock;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.apache.thrift.TException;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import com.abiquo.aimstub.Aim.Iface;
 import com.abiquo.aimstub.Datastore;
@@ -39,20 +39,20 @@ import com.abiquo.aimstub.VLanException;
  */
 public class AimServerMock implements Iface
 {
-    private final static Logger LOG = LoggerFactory.getLogger(AimServerMock.class);
+    private final static Logger LOG = Logger.getLogger(AimServerMock.class.getName());
 
     @Override
     public void checkRimpConfiguration() throws RimpException, TException
     {
         // TODO Auto-generated method stub
-        LOG.debug("checkRimpConfiguration");
+        LOG.info("checkRimpConfiguration");
     }
 
     @Override
     public long getDatastoreSize() throws RimpException, TException
     {
         // TODO Auto-generated method stub
-        LOG.debug("getDatastoreSize");
+        LOG.info("getDatastoreSize");
 
         return 0;
     }
@@ -62,7 +62,7 @@ public class AimServerMock implements Iface
         TException
     {
         // TODO Auto-generated method stub
-        LOG.debug("getDiskFileSize");
+        LOG.info("getDiskFileSize");
 
         return 0;
     }
@@ -71,16 +71,24 @@ public class AimServerMock implements Iface
     public List<Datastore> getDatastores() throws RimpException, TException
     {
         // TODO Auto-generated method stub
-        LOG.debug("getDatastores");
+        LOG.info("getDatastores");
 
-        return Collections.emptyList();
+        List<Datastore> datastores = new ArrayList();
+        Datastore datastore =
+            new Datastore("aim",
+                "/",
+                "/dev/sd1",
+                Long.valueOf(Integer.MAX_VALUE),
+                Long.valueOf(Integer.MAX_VALUE));
+        datastores.add(datastore);
+        return datastores;
     }
 
     @Override
     public List<NetInterface> getNetInterfaces() throws RimpException, TException
     {
         // TODO Auto-generated method stub
-        LOG.debug("getNetInterfaces");
+        LOG.info("getNetInterfaces");
 
         return Collections.emptyList();
     }
@@ -91,7 +99,7 @@ public class AimServerMock implements Iface
         TException
     {
         // TODO Auto-generated method stub
-        LOG.debug("copyFromRepositoryToDatastore");
+        LOG.info("copyFromRepositoryToDatastore");
 
     }
 
@@ -100,7 +108,7 @@ public class AimServerMock implements Iface
         final String virtualMachineUUID) throws RimpException, TException
     {
         // TODO Auto-generated method stub
-        LOG.debug("deleteVirtualImageFromDatastore");
+        LOG.info("deleteVirtualImageFromDatastore");
 
     }
 
@@ -110,7 +118,7 @@ public class AimServerMock implements Iface
         final String sourceDatastorePath) throws RimpException, TException
     {
         // TODO Auto-generated method stub
-        LOG.debug("copyFromDatastoreToRepository");
+        LOG.info("copyFromDatastoreToRepository");
 
     }
 
@@ -119,7 +127,7 @@ public class AimServerMock implements Iface
         final String bridgeInterface) throws VLanException, TException
     {
         // TODO Auto-generated method stub
-        LOG.debug("createVLAN");
+        LOG.info("createVLAN");
 
     }
 
@@ -128,7 +136,7 @@ public class AimServerMock implements Iface
         final String bridgeInterface) throws VLanException, TException
     {
         // TODO Auto-generated method stub
-        LOG.debug("deleteVLAN");
+        LOG.info("deleteVLAN");
 
     }
 
@@ -136,7 +144,7 @@ public class AimServerMock implements Iface
     public void checkVLANConfiguration() throws VLanException, TException
     {
         // TODO Auto-generated method stub
-        LOG.debug("checkVLANConfiguration");
+        LOG.info("checkVLANConfiguration");
 
     }
 
@@ -144,7 +152,7 @@ public class AimServerMock implements Iface
     public String getInitiatorIQN() throws TException
     {
         // TODO Auto-generated method stub
-        LOG.debug("getInitiatorIQN");
+        LOG.info("getInitiatorIQN");
         return "";
     }
 }
