@@ -3,6 +3,9 @@ package com.abiquo.vbox;
 import javax.xml.ws.Endpoint;
 
 import com.abiquo.aimstub.mock.BootAimServerMock;
+import com.abiquo.mock.configuration.ConfigurationService;
+import com.abiquo.mock.domain.DomainService;
+import com.abiquo.mock.model.HostInfo;
 
 /**
  * @author <a href="mailto:serafin.sedano@abiquo.com">Serafin Sedano</a>
@@ -31,6 +34,8 @@ public class VboxPortType_VboxServicePort_Server
 
     public static void main(String args[]) throws java.lang.Exception
     {
+        ConfigurationService configurationService = ConfigurationService.getInstance();
+        HostInfo hostInfo = DomainService.getInstance();
         new VboxPortType_VboxServicePort_Server();
         System.out.println("Server ready...");
 

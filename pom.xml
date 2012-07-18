@@ -37,16 +37,23 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!-- Configuration -->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>1.10</version>
+        </dependency>
+        <!-- Thrift -->
+        <dependency>
+            <groupId>org.apache</groupId>
+            <artifactId>thrift</artifactId>
+            <version>0.2.0</version>
+        </dependency>
         <!-- Logging -->
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
             <version>1.0.6</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache</groupId>
-            <artifactId>thrift</artifactId>
-            <version>0.2.0</version>
         </dependency>
         <!-- Testing -->
         <dependency>
@@ -54,6 +61,12 @@
             <artifactId>testng</artifactId>
             <scope>test</scope>
             <version>6.5.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.yaml</groupId>
+                    <artifactId>snakeyaml</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
     <build>

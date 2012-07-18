@@ -21,8 +21,6 @@
 
 package com.abiquo.aimstub.mock;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -33,6 +31,7 @@ import com.abiquo.aimstub.Datastore;
 import com.abiquo.aimstub.NetInterface;
 import com.abiquo.aimstub.RimpException;
 import com.abiquo.aimstub.VLanException;
+import com.abiquo.mock.domain.DomainService;
 
 /**
  * This pretends to be a aim-server, but it is not, it is a mock.
@@ -70,27 +69,18 @@ public class AimServerMock implements Iface
     @Override
     public List<Datastore> getDatastores() throws RimpException, TException
     {
-        // TODO Auto-generated method stub
         LOG.info("getDatastores");
 
-        List<Datastore> datastores = new ArrayList();
-        Datastore datastore =
-            new Datastore("aim",
-                "/",
-                "/dev/sd1",
-                Long.valueOf(Integer.MAX_VALUE),
-                Long.valueOf(Integer.MAX_VALUE));
-        datastores.add(datastore);
-        return datastores;
+        return DomainService.getInstance().getDatastores();
     }
 
+    @Deprecated
     @Override
     public List<NetInterface> getNetInterfaces() throws RimpException, TException
     {
-        // TODO Auto-generated method stub
-        LOG.info("getNetInterfaces");
+        LOG.severe("getNetInterfaces shouldn't be called");
 
-        return Collections.emptyList();
+        return null;
     }
 
     @Override

@@ -1,0 +1,26 @@
+Host :
+  name : "mock" 
+  cores : 64
+  memory : 2097152
+  version : "0.1"
+  datastores:
+    datastore1:
+      device: "/dev/sd1"
+      path: "/"
+      type: "/dev/sd1"
+      size: 2147483647
+      available: 2147483647
+    datastore2:
+      device: "/dev/sd2"
+      path: "/opt"
+      type: "/dev/sd2"
+      size: 2147483647
+      available: 2147483647
+  networkinterfaces:
+    networkinterface1:
+      name: "eth0"
+      mac: 00:00:00:00:00:00
+    networkinterface2:
+      name: "eth1"
+      mac: 00:00:00:00:00:01
+
