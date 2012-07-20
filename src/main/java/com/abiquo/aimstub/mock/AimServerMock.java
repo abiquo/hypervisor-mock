@@ -44,7 +44,7 @@ public class AimServerMock implements Iface
     public void checkRimpConfiguration() throws RimpException, TException
     {
         // TODO Auto-generated method stub
-        LOG.info("checkRimpConfiguration");
+//        LOG.info("checkRimpConfiguration");
     }
 
     @Override
@@ -69,7 +69,7 @@ public class AimServerMock implements Iface
     @Override
     public List<Datastore> getDatastores() throws RimpException, TException
     {
-        LOG.info("getDatastores");
+//        LOG.info("getDatastores");
 
         return DomainService.getInstance().getDatastores();
     }

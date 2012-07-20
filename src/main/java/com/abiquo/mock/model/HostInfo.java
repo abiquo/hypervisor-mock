@@ -1,7 +1,10 @@
 package com.abiquo.mock.model;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import com.abiquo.aimstub.Datastore;
 
@@ -43,6 +46,14 @@ public class HostInfo
      * {networkinterfaces {networkinterface {name, mac}}}
      */
     private List<NetworkInterface> networkInterfaces;
+
+    private Map<String, VirtualMachineInfo> virtualMachines;
+
+    private Map<String, Session> session;
+
+    private Map<String, Medium> mediums;
+
+    private Map<String, Progress> tasks;
 
     public String getName()
     {
@@ -100,6 +111,47 @@ public class HostInfo
             networkInterfaces = new ArrayList<NetworkInterface>();
         }
         return networkInterfaces;
+    }
+
+    public Map<String, VirtualMachineInfo> getVirtualMachines()
+    {
+        if (virtualMachines == null)
+        {
+            virtualMachines = new HashMap<String, VirtualMachineInfo>();
+        }
+        return virtualMachines;
+    }
+
+    public Map<String, Session> getSession()
+    {
+        if (session == null)
+        {
+            session = new HashMap<String, Session>();
+        }
+        return session;
+    }
+
+    /**
+     * List of the mediums. To see where are they attached if so {@link Medium#getAttachedTo()}
+     * 
+     * @return mediums.
+     */
+    public Map<String, Medium> getMediums()
+    {
+        if (mediums == null)
+        {
+            mediums = new HashMap<String, Medium>();
+        }
+        return mediums;
+    }
+
+    public Map<String, Progress> getTasks()
+    {
+        if (tasks == null)
+        {
+            tasks = new HashMap<String, Progress>();
+        }
+        return tasks;
     }
 
 }

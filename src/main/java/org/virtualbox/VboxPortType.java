@@ -8301,4 +8301,14 @@ public interface VboxPortType {
         @WebParam(name = "teleporterEnabled", targetNamespace = "")
         boolean teleporterEnabled
     ) throws RuntimeFaultMsg, InvalidObjectFaultMsg;
+    
+    @RequestWrapper(localName = "INetworkAdapter_attachToBridgedInterface", targetNamespace = "http://www.virtualbox.org/", className = "org.virtualbox.INetworkAdapterGetLineSpeed")
+    @WebMethod(operationName = "INetworkAdapter_attachToBridgedInterface")
+    @ResponseWrapper(localName = "IMachine_setTeleporterEnabledResponse", targetNamespace = "http://www.virtualbox.org/", className = "org.virtualbox.INetworkAdapterGetLineSpeedResponse")
+    public void iNetworkAdapterAttachToBridgedInterface(
+        @WebParam(name = "_this", targetNamespace = "")
+        java.lang.String _this
+    ) throws RuntimeFaultMsg, InvalidObjectFaultMsg;
+
+
 }

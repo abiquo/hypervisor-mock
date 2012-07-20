@@ -9,7 +9,7 @@ import java.util.UUID;
  * @author <a href="mailto:enric.ruiz@abiquo.com">Enric Ruiz</a>
  * @version 1.0
  */
-public class NetworkInterface
+public class NetworkAdapter
 {
 
     private final String uuid;
@@ -19,12 +19,11 @@ public class NetworkInterface
      */
     private String name;
 
-    /**
-     * 
-     */
-    private String mac;
+    private NetworkInterface networkInterface;
 
-    public NetworkInterface()
+    private long slot;
+
+    public NetworkAdapter()
     {
         uuid = UUID.randomUUID().toString();
     }
@@ -39,18 +38,29 @@ public class NetworkInterface
         this.name = name;
     }
 
-    public String getMac()
-    {
-        return mac;
-    }
-
-    public void setMac(String mac)
-    {
-        this.mac = mac;
-    }
 
     public String getId()
     {
         return uuid;
+    }
+
+    public long getSlot()
+    {
+        return slot;
+    }
+
+    public void setSlot(long slot)
+    {
+        this.slot = slot;
+    }
+
+    public NetworkInterface getNetworkInterface()
+    {
+        return networkInterface;
+    }
+
+    public void setNetworkInterface(NetworkInterface networkInterface)
+    {
+        this.networkInterface = networkInterface;
     }
 }

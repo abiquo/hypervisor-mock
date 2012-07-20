@@ -14,9 +14,18 @@ public class DomainService
 
     private static DomainService domainService;
 
-    ConfigurationService configurationService;
+    private final ConfigurationService configurationService;
 
     private final HostInfo hostInfo;
+
+    public static HostInfo getInstance()
+    {
+        if (domainService == null)
+        {
+            domainService = new DomainService();
+        }
+        return domainService.hostInfo;
+    }
 
     private DomainService()
     {
@@ -91,12 +100,4 @@ public class DomainService
         return null;
     }
 
-    public static HostInfo getInstance()
-    {
-        if (domainService == null)
-        {
-            domainService = new DomainService();
-        }
-        return domainService.hostInfo;
-    }
 }

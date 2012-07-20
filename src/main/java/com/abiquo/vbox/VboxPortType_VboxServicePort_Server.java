@@ -6,6 +6,7 @@ import com.abiquo.aimstub.mock.BootAimServerMock;
 import com.abiquo.mock.configuration.ConfigurationService;
 import com.abiquo.mock.domain.DomainService;
 import com.abiquo.mock.model.HostInfo;
+import com.abiquo.vbox.mock.VboxPortTypeMock;
 
 /**
  * @author <a href="mailto:serafin.sedano@abiquo.com">Serafin Sedano</a>
@@ -19,7 +20,7 @@ public class VboxPortType_VboxServicePort_Server
     protected VboxPortType_VboxServicePort_Server() throws java.lang.Exception
     {
         System.out.println("Starting Server");
-        Object implementor = new VboxPortTypeImpl();
+        Object implementor = new VboxPortTypeMock();
         String address = "http://0.0.0.0" + ":" + port + "/";
         Endpoint.publish(address, implementor);
         startMock();
