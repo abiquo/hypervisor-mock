@@ -8302,13 +8302,21 @@ public interface VboxPortType {
         boolean teleporterEnabled
     ) throws RuntimeFaultMsg, InvalidObjectFaultMsg;
     
-    @RequestWrapper(localName = "INetworkAdapter_attachToBridgedInterface", targetNamespace = "http://www.virtualbox.org/", className = "org.virtualbox.INetworkAdapterGetLineSpeed")
+    @RequestWrapper(localName = "INetworkAdapter_attachToBridgedInterface", targetNamespace = "http://www.virtualbox.org/", className = "org.virtualbox.INetworkAdapterAttachToBridgedInterface")
     @WebMethod(operationName = "INetworkAdapter_attachToBridgedInterface")
-    @ResponseWrapper(localName = "IMachine_setTeleporterEnabledResponse", targetNamespace = "http://www.virtualbox.org/", className = "org.virtualbox.INetworkAdapterGetLineSpeedResponse")
+    @ResponseWrapper(localName = "INetworkAdapter_attachToBridgedInterfaceResponse", targetNamespace = "http://www.virtualbox.org/", className = "org.virtualbox.INetworkAdapterAttachToBridgedInterfaceResponse")
     public void iNetworkAdapterAttachToBridgedInterface(
         @WebParam(name = "_this", targetNamespace = "")
         java.lang.String _this
     ) throws RuntimeFaultMsg, InvalidObjectFaultMsg;
+
+    
+    @RequestWrapper(localName = "INetworkAdapter_setHostInterface", targetNamespace = "http://www.virtualbox.org/", className = "org.virtualbox.INetworkAdapterSetHostInterface")
+    @WebMethod(operationName = "INetworkAdapter_setHostInterface")
+    @ResponseWrapper(localName = "INetworkAdapter_setHostInterfaceResponse", targetNamespace = "http://www.virtualbox.org/", className = "org.virtualbox.INetworkAdapterSetHostInterfaceResponse")
+    void iNetworkAdapterSetHostInterface(@WebParam(name = "_this", targetNamespace = "")
+    java.lang.String _this, @WebParam(name = "hostInterface", targetNamespace = "")String hostInterface) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg;
 
 
 }

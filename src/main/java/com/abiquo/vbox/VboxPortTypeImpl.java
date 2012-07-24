@@ -20372,10 +20372,18 @@ public class VboxPortTypeImpl implements VboxPortType
         // throw new RuntimeFaultMsg("RuntimeFaultMsg...");
         // throw new InvalidObjectFaultMsg("InvalidObjectFaultMsg...");
     }@Override// Cannot find dispatch method for
+    
+    
     // {http://www.virtualbox.org/}INetworkAdapter_attachToBridgedInterface
     public void iNetworkAdapterAttachToBridgedInterface(java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
+    }
+
+    @Override
+    public void iNetworkAdapterSetHostInterface(String _this, String hostInterface)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {        
     };
 
 }

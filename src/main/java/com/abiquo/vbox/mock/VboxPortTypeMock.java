@@ -19,6 +19,8 @@ import org.virtualbox.AccessMode;
 import org.virtualbox.CPUPropertyType;
 import org.virtualbox.DeviceType;
 import org.virtualbox.InvalidObjectFaultMsg;
+import org.virtualbox.LockType;
+import org.virtualbox.MachineState;
 import org.virtualbox.MediumState;
 import org.virtualbox.NetworkAdapterType;
 import org.virtualbox.RuntimeFaultMsg;
@@ -110,9 +112,12 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         // System.out.println(password);
         try
         {
-            Session session = new Session();
+            Session session = new Session(username, password);
             java.lang.String _return = session.getId();
-            DomainService.getInstance().getSession().put(_return, session);
+            if (!DomainService.getInstance().getSession().containsKey(session.getId()))
+            {
+                DomainService.getInstance().getSession().put(_return, session);
+            }
             return _return;
         }
         catch (java.lang.Exception ex)
@@ -282,7 +287,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     {
         try
         {
-            DomainService.getInstance().getSession().remove(refIVirtualBox);
+            // DomainService.getInstance().getSession().remove(refIVirtualBox);
         }
         catch (java.lang.Exception ex)
         {
@@ -432,15 +437,11 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
             throw new InvalidObjectFaultMsg("iVirtualBoxCreateMachine: No session. InvalidObjectFaultMsg...");
         }
 
-        Set<Object> set = session.getData();
-        for (Object o : set)
+        if (session.getVirtualMachine() != null)
         {
-            if (o instanceof VirtualMachineInfo)
-            {
-                throw new InvalidObjectFaultMsg("iVirtualBoxCreateMachine: No more virtual machines allowed per session. InvalidObjectFaultMsg...");
-            }
+            throw new InvalidObjectFaultMsg("iVirtualBoxCreateMachine: No more virtual machines allowed per session. InvalidObjectFaultMsg...");
         }
-        set.add(vm);
+        session.setVirtualMachine(vm);
         DomainService.getInstance().getVirtualMachines().put(vm.getId(), vm);
         java.lang.String _return = id;
         return _return;
@@ -654,18 +655,15 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         medium.setDeviceType(DeviceType.HARD_DISK);
         medium.setClosed(Boolean.FALSE);
 
-        for (Object o : set)
+        if (session.getVirtualMachine() == null)
         {
-            if (o instanceof VirtualMachineInfo)
-            {
-                DomainService.getInstance().getMediums().put(medium.getId(), medium);
-                set.add(medium);
-                ((VirtualMachineInfo) o).setDiskSourceLocation(location);
-                return medium.getId();
 
-            }
+            throw new InvalidObjectFaultMsg("iVirtualBoxCreateHardDisk: No virtual machine session. InvalidObjectFaultMsg...");
         }
-        throw new InvalidObjectFaultMsg("iVirtualBoxCreateHardDisk: No virtual machine session. InvalidObjectFaultMsg...");
+        DomainService.getInstance().getMediums().put(medium.getId(), medium);
+        set.add(medium);
+        session.getVirtualMachine().setDiskSourceLocation(location);
+        return medium.getId();
     }
 
     @Override
@@ -798,17 +796,13 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         { // No session, log again
             throw new InvalidObjectFaultMsg("iSessionGetMachine: No session. InvalidObjectFaultMsg...");
         }
-        Set<Object> set = session.getData();
-        for (Object o : set)
+
+        if (session.getVirtualMachine() == null)
         {
-            if (o instanceof VirtualMachineInfo)
-            {
 
-                return ((VirtualMachineInfo) o).getId();
-            }
+            throw new InvalidObjectFaultMsg("iSessionGetMachine: No more virtual machines. InvalidObjectFaultMsg...");
         }
-
-        throw new InvalidObjectFaultMsg("iSessionGetMachine: No more virtual machines. InvalidObjectFaultMsg...");
+        return session.getVirtualMachine().getId();
     }
 
     @Override
@@ -824,10 +818,124 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         return medium.getState();
     }
 
-    @Override// Cannot find dispatch method for
+    @Override
+    // Cannot find dispatch method for
     // {http://www.virtualbox.org/}INetworkAdapter_attachToBridgedInterface
     public void iNetworkAdapterAttachToBridgedInterface(java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
     };
+
+    // Cannot find dispatch method for {http://www.virtualbox.org/}INetworkAdapter_setHostInterface
+
+    @Override
+    public void iNetworkAdapterSetHostInterface(java.lang.String _this,
+        java.lang.String hostInterface) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+    }
+
+    @Override
+    public void iMachineSaveSettings(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+        VirtualMachineInfo virtualMachine =
+            DomainService.getInstance().getVirtualMachines().get(_this);
+        if (virtualMachine == null)
+        {
+            throw new InvalidObjectFaultMsg("iMachineMemory no such machine id" + _this);
+        }
+        virtualMachine.setSaved(Boolean.TRUE);
+    }
+
+    @Override
+    public String iMachineLaunchVMProcess(String _this, String session, String type,
+        String environment) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+
+        VirtualMachineInfo virtualMachine =
+            DomainService.getInstance().getVirtualMachines().get(_this);
+        if (virtualMachine == null)
+        {
+            throw new InvalidObjectFaultMsg("iMachineLaunchVMProcess no such machine id" + _this);
+        }
+        virtualMachine.setMachineState(MachineState.RUNNING);
+        Progress progress = new Progress();
+        progress.setDescription(type + " " + environment);
+        DomainService.getInstance().getTasks().put(progress.getId(), progress);
+        return progress.getId();
+    }
+
+    @Override
+    public void iConsolePowerButton(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+        // TODO Auto-generated method stub
+        super.iConsolePowerButton(_this);
+    }
+
+    @Override
+    public String iConsolePowerDown(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+        VirtualMachineInfo virtualMachine =
+            DomainService.getInstance().getVirtualMachines().get(_this);
+        if (virtualMachine == null)
+        {
+            throw new InvalidObjectFaultMsg("iConsolePowerDown no such machine id" + _this);
+        }
+        virtualMachine.setMachineState(MachineState.POWERED_OFF);
+        Progress progress = new Progress();
+        progress.setDescription("PowerOff ");
+        DomainService.getInstance().getTasks().put(progress.getId(), progress);
+        return progress.getId();
+    }
+
+    @Override
+    public String iConsolePowerUp(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+        VirtualMachineInfo virtualMachine =
+            DomainService.getInstance().getVirtualMachines().get(_this);
+        if (virtualMachine == null)
+        {
+            throw new InvalidObjectFaultMsg("iConsolePowerUp no such machine id" + _this);
+        }
+        virtualMachine.setMachineState(MachineState.RUNNING);
+        Progress progress = new Progress();
+        progress.setDescription("Power");
+        DomainService.getInstance().getTasks().put(progress.getId(), progress);
+        return progress.getId();
+    }
+
+    @Override
+    public String iConsolePowerUpPaused(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+        // TODO Auto-generated method stub
+        return super.iConsolePowerUpPaused(_this);
+    }
+
+    @Override
+    public void iMachineLockMachine(String _this, String session, LockType lockType)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+        Session msession = DomainService.getInstance().getSession().get(session);
+        if (msession == null)
+        { // No session, log again
+            throw new InvalidObjectFaultMsg("iSessionGetMachine: No session. InvalidObjectFaultMsg...");
+        }
+        VirtualMachineInfo virtualMachine =
+            DomainService.getInstance().getVirtualMachines().get(_this);
+        if (virtualMachine == null)
+        {
+            throw new InvalidObjectFaultMsg("iMachineMemory no such machine id" + _this);
+        }
+        msession.getData().add(virtualMachine);
+    }
+
+    @Override
+    public String iSessionGetConsole(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+        Session session = DomainService.getInstance().getSession().get(_this);
+        if (session == null)
+        { // No session, log again
+            throw new InvalidObjectFaultMsg("iSessionGetMachine: No session. InvalidObjectFaultMsg...");
+        }
+        return session.getConsole();
+    }
 }

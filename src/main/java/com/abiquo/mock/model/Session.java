@@ -11,12 +11,18 @@ public class Session
 {
     private String id;
 
+    private SessionState state;
 
-    private SessionState state; private SessionType type;   private Set<Object> data;
+    private SessionType type;
 
-    public Session()
+    /** Console is the object trhough all vm operations are performed */
+    private VirtualMachineInfo virtualMachine;
+
+    private Set<Object> data;
+
+    public Session(String user, String password)
     {
-        id = UUID.randomUUID().toString();
+        id = user + password; // UUID.randomUUID().toString();
         state = SessionState.UNLOCKED;
         type = SessionType.NULL;
     }
@@ -58,6 +64,21 @@ public class Session
     public void setType(SessionType type)
     {
         this.type = type;
+    }
+
+    public String getConsole()
+    {
+        return virtualMachine != null ? virtualMachine.getId() : null;
+    }
+
+    public VirtualMachineInfo getVirtualMachine()
+    {
+        return virtualMachine;
+    }
+
+    public void setVirtualMachine(VirtualMachineInfo virtualMachine)
+    {
+        this.virtualMachine = virtualMachine;
     }
 
 }
