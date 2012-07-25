@@ -20,9 +20,9 @@ public class Session
 
     private Set<Object> data;
 
-    public Session(String user, String password)
+    public Session()
     {
-        id = user + password; // UUID.randomUUID().toString();
+        id = UUID.randomUUID().toString();
         state = SessionState.UNLOCKED;
         type = SessionType.NULL;
     }
@@ -32,7 +32,7 @@ public class Session
         return id;
     }
 
-    public void setId(String id)
+    public void setId(final String id)
     {
         this.id = id;
     }
@@ -51,7 +51,7 @@ public class Session
         return state;
     }
 
-    public void setState(SessionState state)
+    public void setState(final SessionState state)
     {
         this.state = state;
     }
@@ -61,7 +61,7 @@ public class Session
         return type;
     }
 
-    public void setType(SessionType type)
+    public void setType(final SessionType type)
     {
         this.type = type;
     }
@@ -76,7 +76,7 @@ public class Session
         return virtualMachine;
     }
 
-    public void setVirtualMachine(VirtualMachineInfo virtualMachine)
+    public void setVirtualMachine(final VirtualMachineInfo virtualMachine)
     {
         this.virtualMachine = virtualMachine;
     }

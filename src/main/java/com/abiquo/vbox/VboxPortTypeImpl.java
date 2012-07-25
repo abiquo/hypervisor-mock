@@ -11,6 +11,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Logger;
 
+import javax.jws.WebParam;
+
 import org.virtualbox.AdditionsFacilityStatus;
 import org.virtualbox.ExecuteProcessStatus;
 import org.virtualbox.InvalidObjectFaultMsg;
@@ -37,7 +39,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iEventGetSource(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iEventGetSource(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iEventGetSource(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventGetSource");
@@ -61,7 +63,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetVRAMSize(java.lang.String _this )*
      */
     @Override
-    public long iMachineGetVRAMSize(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMachineGetVRAMSize(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetVRAMSize");
@@ -87,8 +89,9 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<java.lang.String> iPerformanceCollectorEnableMetrics(
-        java.lang.String _this, java.util.List<java.lang.String> metricNames,
-        java.util.List<java.lang.String> objects) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this, final java.util.List<java.lang.String> metricNames,
+        final java.util.List<java.lang.String> objects) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iPerformanceCollectorEnableMetrics");
         System.out.println(_this);
@@ -114,8 +117,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public void iHostNetworkInterfaceDhcpRediscover(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iHostNetworkInterfaceDhcpRediscover(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceDhcpRediscover");
         System.out.println(_this);
@@ -138,7 +141,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public boolean iMouseCapabilityChangedEventGetSupportsRelative(java.lang.String _this)
+    public boolean iMouseCapabilityChangedEventGetSupportsRelative(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMouseCapabilityChangedEventGetSupportsRelative");
@@ -163,8 +166,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String macAddress )*
      */
     @Override
-    public void iNetworkAdapterSetMACAddress(java.lang.String _this, java.lang.String macAddress)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iNetworkAdapterSetMACAddress(final java.lang.String _this,
+        final java.lang.String macAddress) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetMACAddress");
         System.out.println(_this);
@@ -186,7 +189,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleGetMouse(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iConsoleGetMouse(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iConsoleGetMouse(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetMouse");
@@ -210,7 +213,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSerialPortGetHostMode(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.PortMode iSerialPortGetHostMode(java.lang.String _this)
+    public org.virtualbox.PortMode iSerialPortGetHostMode(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSerialPortGetHostMode");
@@ -234,7 +237,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetFirmwareType(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.FirmwareType iMachineGetFirmwareType(java.lang.String _this)
+    public org.virtualbox.FirmwareType iMachineGetFirmwareType(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetFirmwareType");
@@ -258,7 +261,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumResize(java.lang.String _this ,)long logicalSize )*
      */
     @Override
-    public java.lang.String iMediumResize(java.lang.String _this, long logicalSize)
+    public java.lang.String iMediumResize(final java.lang.String _this, final long logicalSize)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumResize");
@@ -284,7 +287,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * cpuExecutionCap )*
      */
     @Override
-    public void iMachineSetCPUExecutionCap(java.lang.String _this, long cpuExecutionCap)
+    public void iMachineSetCPUExecutionCap(final java.lang.String _this, final long cpuExecutionCap)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetCPUExecutionCap");
@@ -308,8 +311,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iGuestMonitorChangedEventGetOriginX(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iGuestMonitorChangedEventGetOriginX(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestMonitorChangedEventGetOriginX");
         System.out.println(_this);
@@ -333,8 +336,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.AuthType authType )*
      */
     @Override
-    public void ivrdeServerSetAuthType(java.lang.String _this, org.virtualbox.AuthType authType)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void ivrdeServerSetAuthType(final java.lang.String _this,
+        final org.virtualbox.AuthType authType) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerSetAuthType");
         System.out.println(_this);
@@ -356,7 +359,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetFormat(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumGetFormat(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iMediumGetFormat(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetFormat");
@@ -380,7 +383,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSessionUnlockMachine(java.lang.String _this )*
      */
     @Override
-    public void iSessionUnlockMachine(java.lang.String _this) throws RuntimeFaultMsg,
+    public void iSessionUnlockMachine(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSessionUnlockMachine");
@@ -402,7 +405,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumReset(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumReset(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iMediumReset(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumReset");
@@ -427,7 +430,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public void iHostNetworkInterfaceEnableDynamicIpConfig(java.lang.String _this)
+    public void iHostNetworkInterfaceEnableDynamicIpConfig(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceEnableDynamicIpConfig");
@@ -449,7 +452,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iBandwidthGroupGetType(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.BandwidthGroupType iBandwidthGroupGetType(java.lang.String _this)
+    public org.virtualbox.BandwidthGroupType iBandwidthGroupGetType(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iBandwidthGroupGetType");
@@ -473,8 +476,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetDescription(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumGetDescription(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMediumGetDescription(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetDescription");
         System.out.println(_this);
@@ -497,7 +500,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestMouseEventGetButtons(java.lang.String _this )*
      */
     @Override
-    public int iGuestMouseEventGetButtons(java.lang.String _this) throws RuntimeFaultMsg,
+    public int iGuestMouseEventGetButtons(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestMouseEventGetButtons");
@@ -522,8 +525,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name ,)int controllerPort ,)int device )*
      */
     @Override
-    public void iMachineDetachDevice(java.lang.String _this, java.lang.String name,
-        int controllerPort, int device) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineDetachDevice(final java.lang.String _this, final java.lang.String name,
+        final int controllerPort, final int device) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineDetachDevice");
         System.out.println(_this);
@@ -553,17 +556,18 @@ public class VboxPortTypeImpl implements VboxPortType
      * returnDataLengths ,)java.util.List<java.lang.Integer> returnval )*
      */
     @Override
-    public void iPerformanceCollectorQueryMetricsData(java.lang.String _this,
-        java.util.List<java.lang.String> metricNames, java.util.List<java.lang.String> objects,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> returnMetricNames,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> returnObjects,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> returnUnits,
-        javax.xml.ws.Holder<java.util.List<java.lang.Long>> returnScales,
-        javax.xml.ws.Holder<java.util.List<java.lang.Long>> returnSequenceNumbers,
-        javax.xml.ws.Holder<java.util.List<java.lang.Long>> returnDataIndices,
-        javax.xml.ws.Holder<java.util.List<java.lang.Long>> returnDataLengths,
-        javax.xml.ws.Holder<java.util.List<java.lang.Integer>> returnval) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iPerformanceCollectorQueryMetricsData(final java.lang.String _this,
+        final java.util.List<java.lang.String> metricNames,
+        final java.util.List<java.lang.String> objects,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> returnMetricNames,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> returnObjects,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> returnUnits,
+        final javax.xml.ws.Holder<java.util.List<java.lang.Long>> returnScales,
+        final javax.xml.ws.Holder<java.util.List<java.lang.Long>> returnSequenceNumbers,
+        final javax.xml.ws.Holder<java.util.List<java.lang.Long>> returnDataIndices,
+        final javax.xml.ws.Holder<java.util.List<java.lang.Long>> returnDataLengths,
+        final javax.xml.ws.Holder<java.util.List<java.lang.Integer>> returnval)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iPerformanceCollectorQueryMetricsData");
         System.out.println(_this);
@@ -603,7 +607,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * monitorCount )*
      */
     @Override
-    public void iMachineSetMonitorCount(java.lang.String _this, long monitorCount)
+    public void iMachineSetMonitorCount(final java.lang.String _this, final long monitorCount)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetMonitorCount");
@@ -626,7 +630,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetSystemProperties(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iVirtualBoxGetSystemProperties(java.lang.String _this)
+    public java.lang.String iVirtualBoxGetSystemProperties(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetSystemProperties");
@@ -650,7 +654,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetTimeRemaining(java.lang.String _this )*
      */
     @Override
-    public int iProgressGetTimeRemaining(java.lang.String _this) throws RuntimeFaultMsg,
+    public int iProgressGetTimeRemaining(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetTimeRemaining");
@@ -676,9 +680,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * returnval )*
      */
     @Override
-    public void iGuestGetProcessStatus(java.lang.String _this, long pid,
-        javax.xml.ws.Holder<java.lang.Long> exitcode, javax.xml.ws.Holder<java.lang.Long> flags,
-        javax.xml.ws.Holder<ExecuteProcessStatus> returnval) throws RuntimeFaultMsg,
+    public void iGuestGetProcessStatus(final java.lang.String _this, final long pid,
+        final javax.xml.ws.Holder<java.lang.Long> exitcode,
+        final javax.xml.ws.Holder<java.lang.Long> flags,
+        final javax.xml.ws.Holder<ExecuteProcessStatus> returnval) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestGetProcessStatus");
@@ -708,7 +713,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public long iSystemPropertiesGetFreeDiskSpaceWarning(java.lang.String _this)
+    public long iSystemPropertiesGetFreeDiskSpaceWarning(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetFreeDiskSpaceWarning");
@@ -733,8 +738,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iHostGetProcessorSpeed(java.lang.String _this, long cpuId) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iHostGetProcessorSpeed(final java.lang.String _this, final long cpuId)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetProcessorSpeed");
         System.out.println(_this);
@@ -758,8 +763,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSystemPropertiesGetMinGuestRAM(java.lang.String _this )*
      */
     @Override
-    public long iSystemPropertiesGetMinGuestRAM(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iSystemPropertiesGetMinGuestRAM(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMinGuestRAM");
         System.out.println(_this);
@@ -783,7 +788,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public java.lang.String iSystemPropertiesGetDefaultHardDiskFormat(java.lang.String _this)
+    public java.lang.String iSystemPropertiesGetDefaultHardDiskFormat(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetDefaultHardDiskFormat");
@@ -808,8 +813,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)org.virtualbox.ChipsetType chipset )*
      */
     @Override
-    public long iSystemPropertiesGetMaxNetworkAdapters(java.lang.String _this,
-        org.virtualbox.ChipsetType chipset) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public long iSystemPropertiesGetMaxNetworkAdapters(final java.lang.String _this,
+        final org.virtualbox.ChipsetType chipset) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMaxNetworkAdapters");
         System.out.println(_this);
@@ -834,8 +839,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String id )*
      */
     @Override
-    public java.lang.String iHostRemoveHostOnlyNetworkInterface(java.lang.String _this,
-        java.lang.String id) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iHostRemoveHostOnlyNetworkInterface(final java.lang.String _this,
+        final java.lang.String id) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostRemoveHostOnlyNetworkInterface");
         System.out.println(_this);
@@ -860,8 +865,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String listener ,)int timeout )*
      */
     @Override
-    public java.lang.String iEventSourceGetEvent(java.lang.String _this, java.lang.String listener,
-        int timeout) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iEventSourceGetEvent(final java.lang.String _this,
+        final java.lang.String listener, final int timeout) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventSourceGetEvent");
         System.out.println(_this);
@@ -887,7 +893,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iGuestMonitorChangedEventGetScreenId(java.lang.String _this)
+    public long iGuestMonitorChangedEventGetScreenId(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestMonitorChangedEventGetScreenId");
@@ -911,7 +917,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iParallelPortGetIOBase(java.lang.String _this )*
      */
     @Override
-    public long iParallelPortGetIOBase(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iParallelPortGetIOBase(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iParallelPortGetIOBase");
@@ -936,7 +942,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * bootPriority )*
      */
     @Override
-    public void iNetworkAdapterSetBootPriority(java.lang.String _this, long bootPriority)
+    public void iNetworkAdapterSetBootPriority(final java.lang.String _this, final long bootPriority)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetBootPriority");
@@ -960,8 +966,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)int devicePosition ,)int portNumber )*
      */
     @Override
-    public void iStorageControllerSetIDEEmulationPort(java.lang.String _this, int devicePosition,
-        int portNumber) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iStorageControllerSetIDEEmulationPort(final java.lang.String _this,
+        final int devicePosition, final int portNumber) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerSetIDEEmulationPort");
         System.out.println(_this);
@@ -984,8 +991,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetCPUStatus(java.lang.String _this ,)long cpu )*
      */
     @Override
-    public boolean iMachineGetCPUStatus(java.lang.String _this, long cpu) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iMachineGetCPUStatus(final java.lang.String _this, final long cpu)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetCPUStatus");
         System.out.println(_this);
@@ -1011,7 +1018,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public org.virtualbox.GuestMonitorChangedEventType iGuestMonitorChangedEventGetChangeType(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestMonitorChangedEventGetChangeType");
         System.out.println(_this);
@@ -1034,7 +1041,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGetUSBDeviceFilters(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iHostGetUSBDeviceFilters(java.lang.String _this)
+    public java.util.List<java.lang.String> iHostGetUSBDeviceFilters(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetUSBDeviceFilters");
@@ -1059,7 +1066,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ioCacheSize )*
      */
     @Override
-    public void iMachineSetIoCacheSize(java.lang.String _this, long ioCacheSize)
+    public void iMachineSetIoCacheSize(final java.lang.String _this, final long ioCacheSize)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetIoCacheSize");
@@ -1083,8 +1090,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.NetworkAttachmentType attachmentType )*
      */
     @Override
-    public void iNetworkAdapterSetAttachmentType(java.lang.String _this,
-        org.virtualbox.NetworkAttachmentType attachmentType) throws RuntimeFaultMsg,
+    public void iNetworkAdapterSetAttachmentType(final java.lang.String _this,
+        final org.virtualbox.NetworkAttachmentType attachmentType) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetAttachmentType");
@@ -1107,7 +1114,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetVariant(java.lang.String _this )*
      */
     @Override
-    public long iMediumGetVariant(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMediumGetVariant(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetVariant");
@@ -1131,7 +1138,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGetMemoryAvailable(java.lang.String _this )*
      */
     @Override
-    public long iHostGetMemoryAvailable(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iHostGetMemoryAvailable(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetMemoryAvailable");
@@ -1155,7 +1162,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetIoCacheEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean iMachineGetIoCacheEnabled(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iMachineGetIoCacheEnabled(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetIoCacheEnabled");
@@ -1180,8 +1187,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)java.lang.String webServiceAuthLibrary )*
      */
     @Override
-    public void iSystemPropertiesSetWebServiceAuthLibrary(java.lang.String _this,
-        java.lang.String webServiceAuthLibrary) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iSystemPropertiesSetWebServiceAuthLibrary(final java.lang.String _this,
+        final java.lang.String webServiceAuthLibrary) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesSetWebServiceAuthLibrary");
         System.out.println(_this);
@@ -1203,7 +1210,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iEventGetWaitable(java.lang.String _this )*
      */
     @Override
-    public boolean iEventGetWaitable(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iEventGetWaitable(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventGetWaitable");
@@ -1227,8 +1234,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceGetAddress(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iusbDeviceGetAddress(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iusbDeviceGetAddress(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceGetAddress");
         System.out.println(_this);
@@ -1253,9 +1260,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public void iMachineSetBandwidthGroupForDevice(java.lang.String _this, java.lang.String name,
-        int controllerPort, int device, java.lang.String bandwidthGroup) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMachineSetBandwidthGroupForDevice(final java.lang.String _this,
+        final java.lang.String name, final int controllerPort, final int device,
+        final java.lang.String bandwidthGroup) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetBandwidthGroupForDevice");
         System.out.println(_this);
@@ -1281,7 +1288,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * enabled )*
      */
     @Override
-    public void iNetworkAdapterSetEnabled(java.lang.String _this, boolean enabled)
+    public void iNetworkAdapterSetEnabled(final java.lang.String _this, final boolean enabled)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetEnabled");
@@ -1305,7 +1312,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String event )*
      */
     @Override
-    public void iEventListenerHandleEvent(java.lang.String _this, java.lang.String event)
+    public void iEventListenerHandleEvent(final java.lang.String _this, final java.lang.String event)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventListenerHandleEvent");
@@ -1328,11 +1335,11 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetState(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.MachineState iMachineGetState(java.lang.String _this)
+    public org.virtualbox.MachineState iMachineGetState(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iMachineGetState");
-         System.out.println(_this);
+        LOG.info("Executing operation iMachineGetState");
+        System.out.println(_this);
         org.virtualbox.MachineState _return = null;
         return _return;
     }
@@ -1343,7 +1350,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public boolean iMediumRegisteredEventGetRegistered(java.lang.String _this)
+    public boolean iMediumRegisteredEventGetRegistered(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumRegisteredEventGetRegistered");
@@ -1368,7 +1375,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public java.lang.String iSystemPropertiesGetVRDEAuthLibrary(java.lang.String _this)
+    public java.lang.String iSystemPropertiesGetVRDEAuthLibrary(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetVRDEAuthLibrary");
@@ -1394,9 +1401,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String medium )*
      */
     @Override
-    public void iMachineAttachDevice(java.lang.String _this, java.lang.String name,
-        int controllerPort, int device, org.virtualbox.DeviceType type, java.lang.String medium)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineAttachDevice(final java.lang.String _this, final java.lang.String name,
+        final int controllerPort, final int device, final org.virtualbox.DeviceType type,
+        final java.lang.String medium) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineAttachDevice");
         System.out.println(_this);
@@ -1423,7 +1430,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public boolean iHostNetworkInterfaceGetDhcpEnabled(java.lang.String _this)
+    public boolean iHostNetworkInterfaceGetDhcpEnabled(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceGetDhcpEnabled");
@@ -1449,10 +1456,11 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String file ,)java.lang.Boolean returnval )*
      */
     @Override
-    public void iVirtualBoxCheckFirmwarePresent(java.lang.String _this,
-        org.virtualbox.FirmwareType firmwareType, java.lang.String version,
-        javax.xml.ws.Holder<java.lang.String> url, javax.xml.ws.Holder<java.lang.String> file,
-        javax.xml.ws.Holder<java.lang.Boolean> returnval) throws RuntimeFaultMsg,
+    public void iVirtualBoxCheckFirmwarePresent(final java.lang.String _this,
+        final org.virtualbox.FirmwareType firmwareType, final java.lang.String version,
+        final javax.xml.ws.Holder<java.lang.String> url,
+        final javax.xml.ws.Holder<java.lang.String> file,
+        final javax.xml.ws.Holder<java.lang.Boolean> returnval) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxCheckFirmwarePresent");
@@ -1483,8 +1491,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String listener ,)java.lang.String event )*
      */
     @Override
-    public void iEventSourceEventProcessed(java.lang.String _this, java.lang.String listener,
-        java.lang.String event) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iEventSourceEventProcessed(final java.lang.String _this,
+        final java.lang.String listener, final java.lang.String event) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventSourceEventProcessed");
         System.out.println(_this);
@@ -1507,7 +1516,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iReusableEventGetGeneration(java.lang.String _this )*
      */
     @Override
-    public long iReusableEventGetGeneration(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iReusableEventGetGeneration(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iReusableEventGetGeneration");
@@ -1531,7 +1540,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatRedirectEventGetHostIp(java.lang.String _this )*
      */
     @Override
-    public java.lang.String inatRedirectEventGetHostIp(java.lang.String _this)
+    public java.lang.String inatRedirectEventGetHostIp(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatRedirectEventGetHostIp");
@@ -1555,7 +1564,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleSaveState(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iConsoleSaveState(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iConsoleSaveState(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleSaveState");
@@ -1579,8 +1588,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetCurrentStateModified(java.lang.String _this )*
      */
     @Override
-    public boolean iMachineGetCurrentStateModified(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iMachineGetCurrentStateModified(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetCurrentStateModified");
         System.out.println(_this);
@@ -1603,8 +1612,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetVRDEServer(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetVRDEServer(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMachineGetVRDEServer(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetVRDEServer");
         System.out.println(_this);
@@ -1627,7 +1636,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetReadOnly(java.lang.String _this )*
      */
     @Override
-    public boolean iMediumGetReadOnly(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iMediumGetReadOnly(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetReadOnly");
@@ -1651,8 +1660,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatEngineGetNetwork(java.lang.String _this )*
      */
     @Override
-    public java.lang.String inatEngineGetNetwork(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String inatEngineGetNetwork(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineGetNetwork");
         System.out.println(_this);
@@ -1676,8 +1685,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)java.lang.String defaultHardDiskFormat )*
      */
     @Override
-    public void iSystemPropertiesSetDefaultHardDiskFormat(java.lang.String _this,
-        java.lang.String defaultHardDiskFormat) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iSystemPropertiesSetDefaultHardDiskFormat(final java.lang.String _this,
+        final java.lang.String defaultHardDiskFormat) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesSetDefaultHardDiskFormat");
         System.out.println(_this);
@@ -1699,7 +1708,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetHomeFolder(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iVirtualBoxGetHomeFolder(java.lang.String _this)
+    public java.lang.String iVirtualBoxGetHomeFolder(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetHomeFolder");
@@ -1724,8 +1733,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String machineId )*
      */
     @Override
-    public java.util.List<java.lang.String> iMediumGetSnapshotIds(java.lang.String _this,
-        java.lang.String machineId) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.util.List<java.lang.String> iMediumGetSnapshotIds(final java.lang.String _this,
+        final java.lang.String machineId) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetSnapshotIds");
         System.out.println(_this);
@@ -1750,7 +1759,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public java.lang.String iHostNetworkInterfaceGetNetworkMask(java.lang.String _this)
+    public java.lang.String iHostNetworkInterfaceGetNetworkMask(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceGetNetworkMask");
@@ -1774,7 +1783,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetEventSource(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iVirtualBoxGetEventSource(java.lang.String _this)
+    public java.lang.String iVirtualBoxGetEventSource(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetEventSource");
@@ -1800,8 +1809,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * flags )*
      */
     @Override
-    public java.lang.String iGuestCopyToGuest(java.lang.String _this, java.lang.String source,
-        java.lang.String dest, java.lang.String userName, java.lang.String password, long flags)
+    public java.lang.String iGuestCopyToGuest(final java.lang.String _this,
+        final java.lang.String source, final java.lang.String dest,
+        final java.lang.String userName, final java.lang.String password, final long flags)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestCopyToGuest");
@@ -1831,9 +1841,11 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long screenId ,)java.lang.Long size ,)java.lang.Long width ,)java.lang.Long height )*
      */
     @Override
-    public void iMachineQuerySavedScreenshotPNGSize(java.lang.String _this, long screenId,
-        javax.xml.ws.Holder<java.lang.Long> size, javax.xml.ws.Holder<java.lang.Long> width,
-        javax.xml.ws.Holder<java.lang.Long> height) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineQuerySavedScreenshotPNGSize(final java.lang.String _this,
+        final long screenId, final javax.xml.ws.Holder<java.lang.Long> size,
+        final javax.xml.ws.Holder<java.lang.Long> width,
+        final javax.xml.ws.Holder<java.lang.Long> height) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineQuerySavedScreenshotPNGSize");
         System.out.println(_this);
@@ -1861,7 +1873,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsolePowerButton(java.lang.String _this )*
      */
     @Override
-    public void iConsolePowerButton(java.lang.String _this) throws RuntimeFaultMsg,
+    public void iConsolePowerButton(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsolePowerButton");
@@ -1883,7 +1895,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iExtraDataCanChangeEventGetKey(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iExtraDataCanChangeEventGetKey(java.lang.String _this)
+    public java.lang.String iExtraDataCanChangeEventGetKey(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iExtraDataCanChangeEventGetKey");
@@ -1909,8 +1921,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)long freeDiskSpacePercentWarning )*
      */
     @Override
-    public void iSystemPropertiesSetFreeDiskSpacePercentWarning(java.lang.String _this,
-        long freeDiskSpacePercentWarning) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iSystemPropertiesSetFreeDiskSpacePercentWarning(final java.lang.String _this,
+        final long freeDiskSpacePercentWarning) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesSetFreeDiskSpacePercentWarning");
         System.out.println(_this);
@@ -1932,7 +1944,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetMachineIds(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iMediumGetMachineIds(java.lang.String _this)
+    public java.util.List<java.lang.String> iMediumGetMachineIds(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetMachineIds");
@@ -1957,9 +1969,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name ,)java.lang.String hostPath ,)boolean writable ,)boolean automount )*
      */
     @Override
-    public void iMachineCreateSharedFolder(java.lang.String _this, java.lang.String name,
-        java.lang.String hostPath, boolean writable, boolean automount) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMachineCreateSharedFolder(final java.lang.String _this,
+        final java.lang.String name, final java.lang.String hostPath, final boolean writable,
+        final boolean automount) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineCreateSharedFolder");
         System.out.println(_this);
@@ -1984,10 +1996,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetMachines(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iVirtualBoxGetMachines(java.lang.String _this)
+    public java.util.List<java.lang.String> iVirtualBoxGetMachines(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iVirtualBoxGetMachines");
+        LOG.info("Executing operation iVirtualBoxGetMachines");
         // System.out.println(_this);
         try
         {
@@ -2011,9 +2023,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String aExtraConfigValue )*
      */
     @Override
-    public void iVirtualSystemDescriptionAddDescription(java.lang.String _this,
-        org.virtualbox.VirtualSystemDescriptionType aType, java.lang.String aVBoxValue,
-        java.lang.String aExtraConfigValue) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iVirtualSystemDescriptionAddDescription(final java.lang.String _this,
+        final org.virtualbox.VirtualSystemDescriptionType aType, final java.lang.String aVBoxValue,
+        final java.lang.String aExtraConfigValue) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualSystemDescriptionAddDescription");
         System.out.println(_this);
@@ -2037,7 +2049,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iStateChangedEventGetState(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.MachineState iStateChangedEventGetState(java.lang.String _this)
+    public org.virtualbox.MachineState iStateChangedEventGetState(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStateChangedEventGetState");
@@ -2061,7 +2073,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetDHCPServers(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iVirtualBoxGetDHCPServers(java.lang.String _this)
+    public java.util.List<java.lang.String> iVirtualBoxGetDHCPServers(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetDHCPServers");
@@ -2086,7 +2098,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ioCacheEnabled )*
      */
     @Override
-    public void iMachineSetIoCacheEnabled(java.lang.String _this, boolean ioCacheEnabled)
+    public void iMachineSetIoCacheEnabled(final java.lang.String _this, final boolean ioCacheEnabled)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetIoCacheEnabled");
@@ -2110,8 +2122,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public void iBandwidthControlDeleteBandwidthGroup(java.lang.String _this, java.lang.String name)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iBandwidthControlDeleteBandwidthGroup(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iBandwidthControlDeleteBandwidthGroup");
         System.out.println(_this);
@@ -2134,7 +2146,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * instance )*
      */
     @Override
-    public void iStorageControllerSetInstance(java.lang.String _this, long instance)
+    public void iStorageControllerSetInstance(final java.lang.String _this, final long instance)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerSetInstance");
@@ -2158,8 +2170,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean accelerate2DVideoEnabled )*
      */
     @Override
-    public void iMachineSetAccelerate2DVideoEnabled(java.lang.String _this,
-        boolean accelerate2DVideoEnabled) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetAccelerate2DVideoEnabled(final java.lang.String _this,
+        final boolean accelerate2DVideoEnabled) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetAccelerate2DVideoEnabled");
         System.out.println(_this);
@@ -2182,7 +2194,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * refIVirtualBox )*
      */
     @Override
-    public java.lang.String iWebsessionManagerGetSessionObject(java.lang.String refIVirtualBox)
+    public java.lang.String iWebsessionManagerGetSessionObject(final java.lang.String refIVirtualBox)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iWebsessionManagerGetSessionObject");
@@ -2207,8 +2219,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.AudioControllerType audioController )*
      */
     @Override
-    public void iAudioAdapterSetAudioController(java.lang.String _this,
-        org.virtualbox.AudioControllerType audioController) throws RuntimeFaultMsg,
+    public void iAudioAdapterSetAudioController(final java.lang.String _this,
+        final org.virtualbox.AudioControllerType audioController) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iAudioAdapterSetAudioController");
@@ -2232,7 +2244,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public boolean iMachineDataChangedEventGetTemporary(java.lang.String _this)
+    public boolean iMachineDataChangedEventGetTemporary(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineDataChangedEventGetTemporary");
@@ -2257,7 +2269,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public java.lang.String iusbDeviceStateChangedEventGetDevice(java.lang.String _this)
+    public java.lang.String iusbDeviceStateChangedEventGetDevice(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceStateChangedEventGetDevice");
@@ -2282,7 +2294,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public java.lang.String iEventSourceChangedEventGetListener(java.lang.String _this)
+    public java.lang.String iEventSourceChangedEventGetListener(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventSourceChangedEventGetListener");
@@ -2306,7 +2318,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetUSBController(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetUSBController(java.lang.String _this)
+    public java.lang.String iMachineGetUSBController(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetUSBController");
@@ -2330,8 +2342,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleGetEventSource(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iConsoleGetEventSource(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iConsoleGetEventSource(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetEventSource");
         System.out.println(_this);
@@ -2355,8 +2367,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)boolean emulatedUSBCardReaderEnabled )*
      */
     @Override
-    public void iMachineSetEmulatedUSBCardReaderEnabled(java.lang.String _this,
-        boolean emulatedUSBCardReaderEnabled) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetEmulatedUSBCardReaderEnabled(final java.lang.String _this,
+        final boolean emulatedUSBCardReaderEnabled) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetEmulatedUSBCardReaderEnabled");
         System.out.println(_this);
@@ -2379,7 +2391,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public boolean ivrdeServerGetReuseSingleConnection(java.lang.String _this)
+    public boolean ivrdeServerGetReuseSingleConnection(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerGetReuseSingleConnection");
@@ -2403,7 +2415,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iParallelPortGetSlot(java.lang.String _this )*
      */
     @Override
-    public long iParallelPortGetSlot(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iParallelPortGetSlot(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iParallelPortGetSlot");
@@ -2428,8 +2440,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean traceEnabled )*
      */
     @Override
-    public void iNetworkAdapterSetTraceEnabled(java.lang.String _this, boolean traceEnabled)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iNetworkAdapterSetTraceEnabled(final java.lang.String _this,
+        final boolean traceEnabled) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetTraceEnabled");
         System.out.println(_this);
@@ -2452,9 +2464,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * screenId ,)java.lang.Long width ,)java.lang.Long height ,)java.lang.Long bitsPerPixel )*
      */
     @Override
-    public void iDisplayGetScreenResolution(java.lang.String _this, long screenId,
-        javax.xml.ws.Holder<java.lang.Long> width, javax.xml.ws.Holder<java.lang.Long> height,
-        javax.xml.ws.Holder<java.lang.Long> bitsPerPixel) throws RuntimeFaultMsg,
+    public void iDisplayGetScreenResolution(final java.lang.String _this, final long screenId,
+        final javax.xml.ws.Holder<java.lang.Long> width,
+        final javax.xml.ws.Holder<java.lang.Long> height,
+        final javax.xml.ws.Holder<java.lang.Long> bitsPerPixel) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iDisplayGetScreenResolution");
@@ -2484,7 +2497,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public java.lang.String iHostNetworkInterfaceGetIPV6Address(java.lang.String _this)
+    public java.lang.String iHostNetworkInterfaceGetIPV6Address(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceGetIPV6Address");
@@ -2508,7 +2521,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumCompact(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumCompact(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iMediumCompact(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumCompact");
@@ -2532,8 +2545,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetHardwareUUID(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetHardwareUUID(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMachineGetHardwareUUID(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetHardwareUUID");
         System.out.println(_this);
@@ -2556,7 +2569,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iStorageControllerGetBus(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.StorageBus iStorageControllerGetBus(java.lang.String _this)
+    public org.virtualbox.StorageBus iStorageControllerGetBus(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerGetBus");
@@ -2580,7 +2593,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetExtraDataKeys(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iVirtualBoxGetExtraDataKeys(java.lang.String _this)
+    public java.util.List<java.lang.String> iVirtualBoxGetExtraDataKeys(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetExtraDataKeys");
@@ -2604,7 +2617,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumUnlockWrite(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.MediumState iMediumUnlockWrite(java.lang.String _this)
+    public org.virtualbox.MediumState iMediumUnlockWrite(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumUnlockWrite");
@@ -2628,8 +2641,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSerialPortSetIOBase(java.lang.String _this ,)long ioBase )*
      */
     @Override
-    public void iSerialPortSetIOBase(java.lang.String _this, long ioBase) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iSerialPortSetIOBase(final java.lang.String _this, final long ioBase)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSerialPortSetIOBase");
         System.out.println(_this);
@@ -2654,7 +2667,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public boolean iSystemPropertiesGetDefaultIoCacheSettingForStorageController(
-        java.lang.String _this, org.virtualbox.StorageControllerType controllerType)
+        final java.lang.String _this, final org.virtualbox.StorageControllerType controllerType)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetDefaultIoCacheSettingForStorageController");
@@ -2680,7 +2693,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * logoFadeIn )*
      */
     @Override
-    public void ibiosSettingsSetLogoFadeIn(java.lang.String _this, boolean logoFadeIn)
+    public void ibiosSettingsSetLogoFadeIn(final java.lang.String _this, final boolean logoFadeIn)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsSetLogoFadeIn");
@@ -2704,9 +2717,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name ,)int controllerPort ,)int device ,)boolean nonRotational )*
      */
     @Override
-    public void iMachineNonRotationalDevice(java.lang.String _this, java.lang.String name,
-        int controllerPort, int device, boolean nonRotational) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMachineNonRotationalDevice(final java.lang.String _this,
+        final java.lang.String name, final int controllerPort, final int device,
+        final boolean nonRotational) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineNonRotationalDevice");
         System.out.println(_this);
@@ -2732,9 +2745,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String hostInterface ,)java.lang.String returnval )*
      */
     @Override
-    public void iHostCreateHostOnlyNetworkInterface(java.lang.String _this,
-        javax.xml.ws.Holder<java.lang.String> hostInterface,
-        javax.xml.ws.Holder<java.lang.String> returnval) throws RuntimeFaultMsg,
+    public void iHostCreateHostOnlyNetworkInterface(final java.lang.String _this,
+        final javax.xml.ws.Holder<java.lang.String> hostInterface,
+        final javax.xml.ws.Holder<java.lang.String> returnval) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostCreateHostOnlyNetworkInterface");
@@ -2761,8 +2774,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String savedStateFile )*
      */
     @Override
-    public void iConsoleAdoptSavedState(java.lang.String _this, java.lang.String savedStateFile)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iConsoleAdoptSavedState(final java.lang.String _this,
+        final java.lang.String savedStateFile) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleAdoptSavedState");
         System.out.println(_this);
@@ -2785,8 +2798,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name ,)java.lang.String baseFolder )*
      */
     @Override
-    public java.lang.String iVirtualBoxComposeMachineFilename(java.lang.String _this,
-        java.lang.String name, java.lang.String baseFolder) throws RuntimeFaultMsg,
+    public java.lang.String iVirtualBoxComposeMachineFilename(final java.lang.String _this,
+        final java.lang.String name, final java.lang.String baseFolder) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxComposeMachineFilename");
@@ -2812,7 +2825,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ivrdeServerGetEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean ivrdeServerGetEnabled(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean ivrdeServerGetEnabled(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerGetEnabled");
@@ -2838,7 +2851,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public org.virtualbox.IPciDeviceAttachment iHostPciDevicePlugEventGetAttachment(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostPciDevicePlugEventGetAttachment");
         System.out.println(_this);
@@ -2862,10 +2875,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String password )*
      */
     @Override
-    public java.lang.String iWebsessionManagerLogon(java.lang.String username,
-        java.lang.String password) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iWebsessionManagerLogon(final java.lang.String username,
+        final java.lang.String password) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iWebsessionManagerLogon");
+        LOG.info("Executing operation iWebsessionManagerLogon");
         // System.out.println(username);
         // System.out.println(password);
         try
@@ -2887,8 +2900,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ibiosSettingsGetLogoFadeOut(java.lang.String _this )*
      */
     @Override
-    public boolean ibiosSettingsGetLogoFadeOut(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean ibiosSettingsGetLogoFadeOut(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsGetLogoFadeOut");
         System.out.println(_this);
@@ -2911,7 +2924,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetOperation(java.lang.String _this )*
      */
     @Override
-    public long iProgressGetOperation(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iProgressGetOperation(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetOperation");
@@ -2936,8 +2949,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String logoImagePath )*
      */
     @Override
-    public void ibiosSettingsSetLogoImagePath(java.lang.String _this, java.lang.String logoImagePath)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void ibiosSettingsSetLogoImagePath(final java.lang.String _this,
+        final java.lang.String logoImagePath) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsSetLogoImagePath");
         System.out.println(_this);
@@ -2960,8 +2973,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long maskedInterfaces )*
      */
     @Override
-    public void iusbDeviceFilterSetMaskedInterfaces(java.lang.String _this, long maskedInterfaces)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iusbDeviceFilterSetMaskedInterfaces(final java.lang.String _this,
+        final long maskedInterfaces) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterSetMaskedInterfaces");
         System.out.println(_this);
@@ -2984,8 +2997,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String startId ,)java.lang.String endId )*
      */
     @Override
-    public java.lang.String iConsoleDeleteSnapshotRange(java.lang.String _this,
-        java.lang.String startId, java.lang.String endId) throws RuntimeFaultMsg,
+    public java.lang.String iConsoleDeleteSnapshotRange(final java.lang.String _this,
+        final java.lang.String startId, final java.lang.String endId) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleDeleteSnapshotRange");
@@ -3011,7 +3024,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetRTCUseUTC(java.lang.String _this )*
      */
     @Override
-    public boolean iMachineGetRTCUseUTC(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iMachineGetRTCUseUTC(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetRTCUseUTC");
@@ -3036,8 +3049,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.AudioDriverType audioDriver )*
      */
     @Override
-    public void iAudioAdapterSetAudioDriver(java.lang.String _this,
-        org.virtualbox.AudioDriverType audioDriver) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iAudioAdapterSetAudioDriver(final java.lang.String _this,
+        final org.virtualbox.AudioDriverType audioDriver) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iAudioAdapterSetAudioDriver");
         System.out.println(_this);
@@ -3060,8 +3074,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String id )*
      */
     @Override
-    public java.lang.String iConsoleDeleteSnapshot(java.lang.String _this, java.lang.String id)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iConsoleDeleteSnapshot(final java.lang.String _this,
+        final java.lang.String id) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleDeleteSnapshot");
         System.out.println(_this);
@@ -3086,8 +3100,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * valEax ,)long valEbx ,)long valEcx ,)long valEdx )*
      */
     @Override
-    public void iMachineSetCPUIDLeaf(java.lang.String _this, long id, long valEax, long valEbx,
-        long valEcx, long valEdx) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetCPUIDLeaf(final java.lang.String _this, final long id,
+        final long valEax, final long valEbx, final long valEcx, final long valEdx)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetCPUIDLeaf");
         System.out.println(_this);
@@ -3114,10 +3129,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String nameOrId )*
      */
     @Override
-    public java.lang.String iVirtualBoxFindMachine(java.lang.String _this, java.lang.String nameOrId)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iVirtualBoxFindMachine(final java.lang.String _this,
+        final java.lang.String nameOrId) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iVirtualBoxFindMachine");
+        LOG.info("Executing operation iVirtualBoxFindMachine");
         // System.out.println("This: " + _this);
         // System.out.println("Name: " + nameOrId);
         try
@@ -3148,8 +3163,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String description )*
      */
     @Override
-    public void iMachineSetDescription(java.lang.String _this, java.lang.String description)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetDescription(final java.lang.String _this,
+        final java.lang.String description) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetDescription");
         System.out.println(_this);
@@ -3172,7 +3187,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public void inatEngineRemoveRedirect(java.lang.String _this, java.lang.String name)
+    public void inatEngineRemoveRedirect(final java.lang.String _this, final java.lang.String name)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineRemoveRedirect");
@@ -3197,7 +3212,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public org.virtualbox.StorageControllerType iStorageControllerGetControllerType(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerGetControllerType");
         System.out.println(_this);
@@ -3220,7 +3235,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetOperationPercent(java.lang.String _this )*
      */
     @Override
-    public long iProgressGetOperationPercent(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iProgressGetOperationPercent(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetOperationPercent");
@@ -3245,8 +3260,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * target ,)long variant ,)java.lang.String parent )*
      */
     @Override
-    public java.lang.String iMediumCloneTo(java.lang.String _this, java.lang.String target,
-        long variant, java.lang.String parent) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMediumCloneTo(final java.lang.String _this,
+        final java.lang.String target, final long variant, final java.lang.String parent)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumCloneTo");
         System.out.println(_this);
@@ -3272,7 +3288,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleGetVRDEServerInfo(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.IVRDEServerInfo iConsoleGetVRDEServerInfo(java.lang.String _this)
+    public org.virtualbox.IVRDEServerInfo iConsoleGetVRDEServerInfo(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetVRDEServerInfo");
@@ -3296,7 +3312,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGetUTCTime(java.lang.String _this )*
      */
     @Override
-    public long iHostGetUTCTime(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iHostGetUTCTime(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetUTCTime");
@@ -3321,8 +3337,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean accelerate3DEnabled )*
      */
     @Override
-    public void iMachineSetAccelerate3DEnabled(java.lang.String _this, boolean accelerate3DEnabled)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetAccelerate3DEnabled(final java.lang.String _this,
+        final boolean accelerate3DEnabled) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetAccelerate3DEnabled");
         System.out.println(_this);
@@ -3344,7 +3360,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetOperationWeight(java.lang.String _this )*
      */
     @Override
-    public long iProgressGetOperationWeight(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iProgressGetOperationWeight(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetOperationWeight");
@@ -3369,9 +3385,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String location ,)org.virtualbox.DeviceType type )*
      */
     @Override
-    public java.lang.String iVirtualBoxFindMedium(java.lang.String _this,
-        java.lang.String location, org.virtualbox.DeviceType type) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iVirtualBoxFindMedium(final java.lang.String _this,
+        final java.lang.String location, final org.virtualbox.DeviceType type)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxFindMedium");
         System.out.println(_this);
@@ -3396,7 +3412,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iApplianceInterpret(java.lang.String _this )*
      */
     @Override
-    public void iApplianceInterpret(java.lang.String _this) throws RuntimeFaultMsg,
+    public void iApplianceInterpret(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iApplianceInterpret");
@@ -3419,8 +3435,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public java.lang.String iHostFindHostDVDDrive(java.lang.String _this, java.lang.String name)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iHostFindHostDVDDrive(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostFindHostDVDDrive");
         System.out.println(_this);
@@ -3446,7 +3462,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public org.virtualbox.AudioDriverType iSystemPropertiesGetDefaultAudioDriver(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetDefaultAudioDriver");
         System.out.println(_this);
@@ -3469,7 +3485,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostNetworkInterfaceGetId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iHostNetworkInterfaceGetId(java.lang.String _this)
+    public java.lang.String iHostNetworkInterfaceGetId(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceGetId");
@@ -3493,7 +3509,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetSnapshotFolder(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetSnapshotFolder(java.lang.String _this)
+    public java.lang.String iMachineGetSnapshotFolder(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetSnapshotFolder");
@@ -3517,8 +3533,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestMonitorChangedEventGetHeight(java.lang.String _this )*
      */
     @Override
-    public long iGuestMonitorChangedEventGetHeight(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iGuestMonitorChangedEventGetHeight(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestMonitorChangedEventGetHeight");
         System.out.println(_this);
@@ -3542,8 +3558,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String property )*
      */
     @Override
-    public long iMachineGetGuestPropertyTimestamp(java.lang.String _this, java.lang.String property)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public long iMachineGetGuestPropertyTimestamp(final java.lang.String _this,
+        final java.lang.String property) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetGuestPropertyTimestamp");
         System.out.println(_this);
@@ -3568,8 +3584,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean cableConnected )*
      */
     @Override
-    public void iNetworkAdapterSetCableConnected(java.lang.String _this, boolean cableConnected)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iNetworkAdapterSetCableConnected(final java.lang.String _this,
+        final boolean cableConnected) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetCableConnected");
         System.out.println(_this);
@@ -3591,7 +3607,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceFilterGetProduct(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iusbDeviceFilterGetProduct(java.lang.String _this)
+    public java.lang.String iusbDeviceFilterGetProduct(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterGetProduct");
@@ -3616,10 +3632,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String machine )*
      */
     @Override
-    public void iVirtualBoxRegisterMachine(java.lang.String _this, java.lang.String machine)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iVirtualBoxRegisterMachine(final java.lang.String _this,
+        final java.lang.String machine) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iVirtualBoxRegisterMachine");
+        LOG.info("Executing operation iVirtualBoxRegisterMachine");
         // System.out.println(_this);
         // System.out.println(machine);
         VirtualMachineInfo virtualMachine =
@@ -3637,7 +3653,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceGetManufacturer(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iusbDeviceGetManufacturer(java.lang.String _this)
+    public java.lang.String iusbDeviceGetManufacturer(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceGetManufacturer");
@@ -3661,7 +3677,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceGetId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iusbDeviceGetId(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iusbDeviceGetId(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceGetId");
@@ -3686,7 +3702,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * aDir )*
      */
     @Override
-    public java.lang.String ivfsExplorerCd(java.lang.String _this, java.lang.String aDir)
+    public java.lang.String ivfsExplorerCd(final java.lang.String _this, final java.lang.String aDir)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivfsExplorerCd");
@@ -3711,7 +3727,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatRedirectEventGetProto(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.NATProtocol inatRedirectEventGetProto(java.lang.String _this)
+    public org.virtualbox.NATProtocol inatRedirectEventGetProto(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatRedirectEventGetProto");
@@ -3736,8 +3752,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String tftpNextServer )*
      */
     @Override
-    public void inatEngineSetTftpNextServer(java.lang.String _this, java.lang.String tftpNextServer)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void inatEngineSetTftpNextServer(final java.lang.String _this,
+        final java.lang.String tftpNextServer) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineSetTftpNextServer");
         System.out.println(_this);
@@ -3761,7 +3777,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public boolean iMouseCapabilityChangedEventGetSupportsAbsolute(java.lang.String _this)
+    public boolean iMouseCapabilityChangedEventGetSupportsAbsolute(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMouseCapabilityChangedEventGetSupportsAbsolute");
@@ -3786,8 +3802,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.AdditionsRunLevelType level )*
      */
     @Override
-    public boolean iGuestGetAdditionsStatus(java.lang.String _this,
-        org.virtualbox.AdditionsRunLevelType level) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public boolean iGuestGetAdditionsStatus(final java.lang.String _this,
+        final org.virtualbox.AdditionsRunLevelType level) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestGetAdditionsStatus");
         System.out.println(_this);
@@ -3811,7 +3828,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iBandwidthControlGetNumGroups(java.lang.String _this )*
      */
     @Override
-    public long iBandwidthControlGetNumGroups(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iBandwidthControlGetNumGroups(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iBandwidthControlGetNumGroups");
@@ -3835,8 +3852,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineStateChangedEventGetState(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.MachineState iMachineStateChangedEventGetState(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public org.virtualbox.MachineState iMachineStateChangedEventGetState(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineStateChangedEventGetState");
         System.out.println(_this);
@@ -3859,8 +3876,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceGetProduct(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iusbDeviceGetProduct(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iusbDeviceGetProduct(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceGetProduct");
         System.out.println(_this);
@@ -3884,7 +3901,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * enabled )*
      */
     @Override
-    public void ivrdeServerSetEnabled(java.lang.String _this, boolean enabled)
+    public void ivrdeServerSetEnabled(final java.lang.String _this, final boolean enabled)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerSetEnabled");
@@ -3907,7 +3924,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleGetGuest(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iConsoleGetGuest(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iConsoleGetGuest(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetGuest");
@@ -3932,8 +3949,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public void iMachineRemoveStorageController(java.lang.String _this, java.lang.String name)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineRemoveStorageController(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineRemoveStorageController");
         System.out.println(_this);
@@ -3956,7 +3973,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * enabled )*
      */
     @Override
-    public void idhcpServerSetEnabled(java.lang.String _this, boolean enabled)
+    public void idhcpServerSetEnabled(final java.lang.String _this, final boolean enabled)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation idhcpServerSetEnabled");
@@ -3979,7 +3996,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iShowWindowEventGetWinId(java.lang.String _this )*
      */
     @Override
-    public long iShowWindowEventGetWinId(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iShowWindowEventGetWinId(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iShowWindowEventGetWinId");
@@ -4003,7 +4020,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSnapshotGetChildren(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iSnapshotGetChildren(java.lang.String _this)
+    public java.util.List<java.lang.String> iSnapshotGetChildren(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSnapshotGetChildren");
@@ -4028,9 +4045,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)java.lang.String ipv6Address ,)long ipv6NetworkMaskPrefixLength )*
      */
     @Override
-    public void iHostNetworkInterfaceEnableStaticIpConfigV6(java.lang.String _this,
-        java.lang.String ipv6Address, long ipv6NetworkMaskPrefixLength) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iHostNetworkInterfaceEnableStaticIpConfigV6(final java.lang.String _this,
+        final java.lang.String ipv6Address, final long ipv6NetworkMaskPrefixLength)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceEnableStaticIpConfigV6");
         System.out.println(_this);
@@ -4053,7 +4070,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iPerformanceMetricGetMetricName(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iPerformanceMetricGetMetricName(java.lang.String _this)
+    public java.lang.String iPerformanceMetricGetMetricName(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iPerformanceMetricGetMetricName");
@@ -4078,8 +4095,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.KeyboardHidType keyboardHidType )*
      */
     @Override
-    public void iMachineSetKeyboardHidType(java.lang.String _this,
-        org.virtualbox.KeyboardHidType keyboardHidType) throws RuntimeFaultMsg,
+    public void iMachineSetKeyboardHidType(final java.lang.String _this,
+        final org.virtualbox.KeyboardHidType keyboardHidType) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetKeyboardHidType");
@@ -4103,8 +4120,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean useHostIOCache )*
      */
     @Override
-    public void iStorageControllerSetUseHostIOCache(java.lang.String _this, boolean useHostIOCache)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iStorageControllerSetUseHostIOCache(final java.lang.String _this,
+        final boolean useHostIOCache) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerSetUseHostIOCache");
         System.out.println(_this);
@@ -4126,7 +4143,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetHardwareVersion(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetHardwareVersion(java.lang.String _this)
+    public java.lang.String iMachineGetHardwareVersion(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetHardwareVersion");
@@ -4150,8 +4167,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetSettingsModified(java.lang.String _this )*
      */
     @Override
-    public boolean iMachineGetSettingsModified(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iMachineGetSettingsModified(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetSettingsModified");
         System.out.println(_this);
@@ -4174,8 +4191,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ibiosSettingsGetPXEDebugEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean ibiosSettingsGetPXEDebugEnabled(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean ibiosSettingsGetPXEDebugEnabled(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsGetPXEDebugEnabled");
         System.out.println(_this);
@@ -4198,7 +4215,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVetoEventIsVetoed(java.lang.String _this )*
      */
     @Override
-    public boolean iVetoEventIsVetoed(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iVetoEventIsVetoed(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVetoEventIsVetoed");
@@ -4223,8 +4240,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * screenId ,)long width ,)long height )*
      */
     @Override
-    public java.lang.String iDisplayTakeScreenShotToArray(java.lang.String _this, long screenId,
-        long width, long height) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iDisplayTakeScreenShotToArray(final java.lang.String _this,
+        final long screenId, final long width, final long height) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iDisplayTakeScreenShotToArray");
         System.out.println(_this);
@@ -4251,8 +4269,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iGuestMonitorChangedEventGetOriginY(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iGuestMonitorChangedEventGetOriginY(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestMonitorChangedEventGetOriginY");
         System.out.println(_this);
@@ -4275,7 +4293,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iExtraDataCanChangeEventGetValue(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iExtraDataCanChangeEventGetValue(java.lang.String _this)
+    public java.lang.String iExtraDataCanChangeEventGetValue(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iExtraDataCanChangeEventGetValue");
@@ -4299,8 +4317,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iStorageControllerGetMaxPortCount(java.lang.String _this )*
      */
     @Override
-    public long iStorageControllerGetMaxPortCount(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iStorageControllerGetMaxPortCount(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerGetMaxPortCount");
         System.out.println(_this);
@@ -4323,7 +4341,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMouseGetAbsoluteSupported(java.lang.String _this )*
      */
     @Override
-    public boolean iMouseGetAbsoluteSupported(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iMouseGetAbsoluteSupported(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMouseGetAbsoluteSupported");
@@ -4348,7 +4366,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public java.lang.String iSerialPortChangedEventGetSerialPort(java.lang.String _this)
+    public java.lang.String iSerialPortChangedEventGetSerialPort(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSerialPortChangedEventGetSerialPort");
@@ -4373,8 +4391,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String description )*
      */
     @Override
-    public void iMediumSetDescription(java.lang.String _this, java.lang.String description)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMediumSetDescription(final java.lang.String _this,
+        final java.lang.String description) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumSetDescription");
         System.out.println(_this);
@@ -4397,9 +4415,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name ,)int controllerPort ,)int device )*
      */
     @Override
-    public org.virtualbox.IMediumAttachment iMachineGetMediumAttachment(java.lang.String _this,
-        java.lang.String name, int controllerPort, int device) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public org.virtualbox.IMediumAttachment iMachineGetMediumAttachment(
+        final java.lang.String _this, final java.lang.String name, final int controllerPort,
+        final int device) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetMediumAttachment");
         System.out.println(_this);
@@ -4425,7 +4443,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetTimeout(java.lang.String _this )*
      */
     @Override
-    public long iProgressGetTimeout(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iProgressGetTimeout(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetTimeout");
@@ -4450,10 +4468,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public java.lang.String iHostNetworkInterfaceGetHardwareAddress(java.lang.String _this)
+    public java.lang.String iHostNetworkInterfaceGetHardwareAddress(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iHostNetworkInterfaceGetHardwareAddress");
+        LOG.info("Executing operation iHostNetworkInterfaceGetHardwareAddress");
         // System.out.println(_this);
         try
         {
@@ -4484,8 +4502,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String hardwareVersion )*
      */
     @Override
-    public void iMachineSetHardwareVersion(java.lang.String _this, java.lang.String hardwareVersion)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetHardwareVersion(final java.lang.String _this,
+        final java.lang.String hardwareVersion) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetHardwareVersion");
         System.out.println(_this);
@@ -4507,8 +4525,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iParallelPortSetIRQ(java.lang.String _this ,)long irq )*
      */
     @Override
-    public void iParallelPortSetIRQ(java.lang.String _this, long irq) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iParallelPortSetIRQ(final java.lang.String _this, final long irq)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iParallelPortSetIRQ");
         System.out.println(_this);
@@ -4531,8 +4549,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String nameOrId )*
      */
     @Override
-    public java.lang.String iMachineFindSnapshot(java.lang.String _this, java.lang.String nameOrId)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMachineFindSnapshot(final java.lang.String _this,
+        final java.lang.String nameOrId) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineFindSnapshot");
         System.out.println(_this);
@@ -4557,7 +4575,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * lineSpeed )*
      */
     @Override
-    public void iNetworkAdapterSetLineSpeed(java.lang.String _this, long lineSpeed)
+    public void iNetworkAdapterSetLineSpeed(final java.lang.String _this, final long lineSpeed)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetLineSpeed");
@@ -4581,7 +4599,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public org.virtualbox.NetworkAttachmentType iNetworkAdapterGetAttachmentType(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetAttachmentType");
         System.out.println(_this);
@@ -4604,7 +4622,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#idhcpServerStop(java.lang.String _this )*
      */
     @Override
-    public void idhcpServerStop(java.lang.String _this) throws RuntimeFaultMsg,
+    public void idhcpServerStop(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation idhcpServerStop");
@@ -4627,7 +4645,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public java.lang.String iSystemPropertiesGetDefaultVRDEExtPack(java.lang.String _this)
+    public java.lang.String iSystemPropertiesGetDefaultVRDEExtPack(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetDefaultVRDEExtPack");
@@ -4652,8 +4670,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * target )*
      */
     @Override
-    public java.lang.String iMediumMergeTo(java.lang.String _this, java.lang.String target)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMediumMergeTo(final java.lang.String _this,
+        final java.lang.String target) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumMergeTo");
         System.out.println(_this);
@@ -4677,7 +4695,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsolePowerUp(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iConsolePowerUp(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iConsolePowerUp(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsolePowerUp");
@@ -4701,7 +4719,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGetUSBDevices(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iHostGetUSBDevices(java.lang.String _this)
+    public java.util.List<java.lang.String> iHostGetUSBDevices(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetUSBDevices");
@@ -4725,8 +4743,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetAudioAdapter(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetAudioAdapter(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMachineGetAudioAdapter(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetAudioAdapter");
         System.out.println(_this);
@@ -4749,7 +4767,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbControllerGetEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean iusbControllerGetEnabled(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iusbControllerGetEnabled(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbControllerGetEnabled");
@@ -4774,7 +4792,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * path )*
      */
     @Override
-    public void iSerialPortSetPath(java.lang.String _this, java.lang.String path)
+    public void iSerialPortSetPath(final java.lang.String _this, final java.lang.String path)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSerialPortSetPath");
@@ -4799,7 +4817,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public long iSystemPropertiesGetFreeDiskSpacePercentWarning(java.lang.String _this)
+    public long iSystemPropertiesGetFreeDiskSpacePercentWarning(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetFreeDiskSpacePercentWarning");
@@ -4823,7 +4841,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGetDVDDrives(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iHostGetDVDDrives(java.lang.String _this)
+    public java.util.List<java.lang.String> iHostGetDVDDrives(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetDVDDrives");
@@ -4847,8 +4865,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSessionGetMachine(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iSessionGetMachine(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iSessionGetMachine(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSessionGetMachine");
         System.out.println(_this);
@@ -4872,8 +4890,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)long instance )*
      */
     @Override
-    public java.lang.String iMachineGetStorageControllerByInstance(java.lang.String _this,
-        long instance) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMachineGetStorageControllerByInstance(final java.lang.String _this,
+        final long instance) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetStorageControllerByInstance");
         System.out.println(_this);
@@ -4897,7 +4915,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetGenericDriver(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iNetworkAdapterGetGenericDriver(java.lang.String _this)
+    public java.lang.String iNetworkAdapterGetGenericDriver(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetGenericDriver");
@@ -4921,7 +4939,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iAudioAdapterGetEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean iAudioAdapterGetEnabled(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iAudioAdapterGetEnabled(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iAudioAdapterGetEnabled");
@@ -4945,7 +4963,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetState(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.MediumState iMediumGetState(java.lang.String _this)
+    public org.virtualbox.MediumState iMediumGetState(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetState");
@@ -4970,7 +4988,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public boolean iusbDeviceStateChangedEventGetAttached(java.lang.String _this)
+    public boolean iusbDeviceStateChangedEventGetAttached(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceStateChangedEventGetAttached");
@@ -4994,7 +5012,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSnapshotGetName(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iSnapshotGetName(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iSnapshotGetName(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSnapshotGetName");
@@ -5019,7 +5037,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public long iSystemPropertiesGetFreeDiskSpaceError(java.lang.String _this)
+    public long iSystemPropertiesGetFreeDiskSpaceError(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetFreeDiskSpaceError");
@@ -5043,7 +5061,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ibiosSettingsGetLogoImagePath(java.lang.String _this )*
      */
     @Override
-    public java.lang.String ibiosSettingsGetLogoImagePath(java.lang.String _this)
+    public java.lang.String ibiosSettingsGetLogoImagePath(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsGetLogoImagePath");
@@ -5068,8 +5086,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean reuseSingleConnection )*
      */
     @Override
-    public void ivrdeServerSetReuseSingleConnection(java.lang.String _this,
-        boolean reuseSingleConnection) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void ivrdeServerSetReuseSingleConnection(final java.lang.String _this,
+        final boolean reuseSingleConnection) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerSetReuseSingleConnection");
         System.out.println(_this);
@@ -5091,7 +5109,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatEngineGetTftpBootFile(java.lang.String _this )*
      */
     @Override
-    public java.lang.String inatEngineGetTftpBootFile(java.lang.String _this)
+    public java.lang.String inatEngineGetTftpBootFile(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineGetTftpBootFile");
@@ -5115,8 +5133,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ivfsExplorerGetPath(java.lang.String _this )*
      */
     @Override
-    public java.lang.String ivfsExplorerGetPath(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String ivfsExplorerGetPath(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivfsExplorerGetPath");
         System.out.println(_this);
@@ -5139,7 +5157,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumFormatGetCapabilities(java.lang.String _this )*
      */
     @Override
-    public long iMediumFormatGetCapabilities(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMediumFormatGetCapabilities(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumFormatGetCapabilities");
@@ -5163,7 +5181,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetCancelable(java.lang.String _this )*
      */
     @Override
-    public boolean iProgressGetCancelable(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iProgressGetCancelable(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetCancelable");
@@ -5187,7 +5205,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGetProcessorCoreCount(java.lang.String _this )*
      */
     @Override
-    public long iHostGetProcessorCoreCount(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iHostGetProcessorCoreCount(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetProcessorCoreCount");
@@ -5211,7 +5229,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsolePause(java.lang.String _this )*
      */
     @Override
-    public void iConsolePause(java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iConsolePause(final java.lang.String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsolePause");
         System.out.println(_this);
@@ -5233,7 +5252,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public boolean iMachineRegisteredEventGetRegistered(java.lang.String _this)
+    public boolean iMachineRegisteredEventGetRegistered(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineRegisteredEventGetRegistered");
@@ -5257,7 +5276,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestMouseEventGetY(java.lang.String _this )*
      */
     @Override
-    public int iGuestMouseEventGetY(java.lang.String _this) throws RuntimeFaultMsg,
+    public int iGuestMouseEventGetY(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestMouseEventGetY");
@@ -5281,7 +5300,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetChipsetType(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.ChipsetType iMachineGetChipsetType(java.lang.String _this)
+    public org.virtualbox.ChipsetType iMachineGetChipsetType(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetChipsetType");
@@ -5305,7 +5324,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostUSBDeviceGetState(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.USBDeviceState iHostUSBDeviceGetState(java.lang.String _this)
+    public org.virtualbox.USBDeviceState iHostUSBDeviceGetState(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostUSBDeviceGetState");
@@ -5330,8 +5349,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String server )*
      */
     @Override
-    public void iVirtualBoxRemoveDHCPServer(java.lang.String _this, java.lang.String server)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iVirtualBoxRemoveDHCPServer(final java.lang.String _this,
+        final java.lang.String server) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxRemoveDHCPServer");
         System.out.println(_this);
@@ -5354,8 +5373,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String key )*
      */
     @Override
-    public java.lang.String iNetworkAdapterGetProperty(java.lang.String _this, java.lang.String key)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iNetworkAdapterGetProperty(final java.lang.String _this,
+        final java.lang.String key) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetProperty");
         System.out.println(_this);
@@ -5379,7 +5398,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestPropertyChangedEventGetFlags(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iGuestPropertyChangedEventGetFlags(java.lang.String _this)
+    public java.lang.String iGuestPropertyChangedEventGetFlags(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestPropertyChangedEventGetFlags");
@@ -5403,10 +5422,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGetProcessorOnlineCount(java.lang.String _this )*
      */
     @Override
-    public long iHostGetProcessorOnlineCount(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iHostGetProcessorOnlineCount(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iHostGetProcessorOnlineCount");
+        LOG.info("Executing operation iHostGetProcessorOnlineCount");
         // System.out.println(_this);
         try
         {
@@ -5429,7 +5448,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<org.virtualbox.IGuestOSType> iVirtualBoxGetGuestOSTypes(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetGuestOSTypes");
         System.out.println(_this);
@@ -5452,8 +5471,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestGetAdditionsRunLevel(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.AdditionsRunLevelType iGuestGetAdditionsRunLevel(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public org.virtualbox.AdditionsRunLevelType iGuestGetAdditionsRunLevel(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestGetAdditionsRunLevel");
         System.out.println(_this);
@@ -5476,7 +5495,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceGetRemote(java.lang.String _this )*
      */
     @Override
-    public boolean iusbDeviceGetRemote(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iusbDeviceGetRemote(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceGetRemote");
@@ -5501,7 +5520,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iSystemPropertiesGetMinGuestCPUCount(java.lang.String _this)
+    public long iSystemPropertiesGetMinGuestCPUCount(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMinGuestCPUCount");
@@ -5526,7 +5545,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * dnsPassDomain )*
      */
     @Override
-    public void inatEngineSetDnsPassDomain(java.lang.String _this, boolean dnsPassDomain)
+    public void inatEngineSetDnsPassDomain(final java.lang.String _this, final boolean dnsPassDomain)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineSetDnsPassDomain");
@@ -5550,9 +5569,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name ,)org.virtualbox.BandwidthGroupType type ,)long maxMbPerSec )*
      */
     @Override
-    public void iBandwidthControlCreateBandwidthGroup(java.lang.String _this,
-        java.lang.String name, org.virtualbox.BandwidthGroupType type, long maxMbPerSec)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iBandwidthControlCreateBandwidthGroup(final java.lang.String _this,
+        final java.lang.String name, final org.virtualbox.BandwidthGroupType type,
+        final long maxMbPerSec) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iBandwidthControlCreateBandwidthGroup");
         System.out.println(_this);
@@ -5577,8 +5596,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String key ,)java.lang.String value )*
      */
     @Override
-    public void iVirtualBoxSetExtraData(java.lang.String _this, java.lang.String key,
-        java.lang.String value) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iVirtualBoxSetExtraData(final java.lang.String _this, final java.lang.String key,
+        final java.lang.String value) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxSetExtraData");
         System.out.println(_this);
@@ -5602,8 +5621,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * name ,)java.lang.String value )*
      */
     @Override
-    public void iMediumSetProperty(java.lang.String _this, java.lang.String name,
-        java.lang.String value) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMediumSetProperty(final java.lang.String _this, final java.lang.String name,
+        final java.lang.String value) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumSetProperty");
         System.out.println(_this);
@@ -5626,8 +5645,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressSetTimeout(java.lang.String _this ,)long timeout )*
      */
     @Override
-    public void iProgressSetTimeout(java.lang.String _this, long timeout) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iProgressSetTimeout(final java.lang.String _this, final long timeout)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressSetTimeout");
         System.out.println(_this);
@@ -5650,9 +5669,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name ,)org.virtualbox.StorageBus connectionType )*
      */
     @Override
-    public java.lang.String iMachineAddStorageController(java.lang.String _this,
-        java.lang.String name, org.virtualbox.StorageBus connectionType) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMachineAddStorageController(final java.lang.String _this,
+        final java.lang.String name, final org.virtualbox.StorageBus connectionType)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineAddStorageController");
         System.out.println(_this);
@@ -5677,7 +5696,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestMouseEventGetW(java.lang.String _this )*
      */
     @Override
-    public int iGuestMouseEventGetW(java.lang.String _this) throws RuntimeFaultMsg,
+    public int iGuestMouseEventGetW(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestMouseEventGetW");
@@ -5701,10 +5720,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetHost(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iVirtualBoxGetHost(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iVirtualBoxGetHost(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iVirtualBoxGetHost");
+        LOG.info("Executing operation iVirtualBoxGetHost");
         // System.out.println(_this);
         try
         {
@@ -5726,8 +5745,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.util.List<java.lang.String> names ,)java.util.List<java.lang.String> values )*
      */
     @Override
-    public void iMediumSetProperties(java.lang.String _this,
-        java.util.List<java.lang.String> names, java.util.List<java.lang.String> values)
+    public void iMediumSetProperties(final java.lang.String _this,
+        final java.util.List<java.lang.String> names, final java.util.List<java.lang.String> values)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumSetProperties");
@@ -5751,8 +5770,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsolePowerUpPaused(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iConsolePowerUpPaused(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iConsolePowerUpPaused(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsolePowerUpPaused");
         System.out.println(_this);
@@ -5775,8 +5794,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSnapshotGetDescription(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iSnapshotGetDescription(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iSnapshotGetDescription(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSnapshotGetDescription");
         System.out.println(_this);
@@ -5799,8 +5818,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetSessionType(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetSessionType(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMachineGetSessionType(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetSessionType");
         System.out.println(_this);
@@ -5824,7 +5843,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * position )*
      */
     @Override
-    public void iHostRemoveUSBDeviceFilter(java.lang.String _this, long position)
+    public void iHostRemoveUSBDeviceFilter(final java.lang.String _this, final long position)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostRemoveUSBDeviceFilter");
@@ -5848,7 +5867,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * teleporterPort )*
      */
     @Override
-    public void iMachineSetTeleporterPort(java.lang.String _this, long teleporterPort)
+    public void iMachineSetTeleporterPort(final java.lang.String _this, final long teleporterPort)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetTeleporterPort");
@@ -5872,7 +5891,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * timeout )*
      */
     @Override
-    public void iProgressWaitForCompletion(java.lang.String _this, int timeout)
+    public void iProgressWaitForCompletion(final java.lang.String _this, final int timeout)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressWaitForCompletion");
@@ -5895,7 +5914,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineShowConsoleWindow(java.lang.String _this )*
      */
     @Override
-    public long iMachineShowConsoleWindow(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMachineShowConsoleWindow(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineShowConsoleWindow");
@@ -5919,7 +5938,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetClipboardMode(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.ClipboardMode iMachineGetClipboardMode(java.lang.String _this)
+    public org.virtualbox.ClipboardMode iMachineGetClipboardMode(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetClipboardMode");
@@ -5943,8 +5962,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleGetGuestEnteredACPIMode(java.lang.String _this )*
      */
     @Override
-    public boolean iConsoleGetGuestEnteredACPIMode(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iConsoleGetGuestEnteredACPIMode(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetGuestEnteredACPIMode");
         System.out.println(_this);
@@ -5967,7 +5986,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ibiosSettingsGetLogoFadeIn(java.lang.String _this )*
      */
     @Override
-    public boolean ibiosSettingsGetLogoFadeIn(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean ibiosSettingsGetLogoFadeIn(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsGetLogoFadeIn");
@@ -5991,7 +6010,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iExtraDataChangedEventGetMachineId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iExtraDataChangedEventGetMachineId(java.lang.String _this)
+    public java.lang.String iExtraDataChangedEventGetMachineId(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iExtraDataChangedEventGetMachineId");
@@ -6016,7 +6035,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * enabled )*
      */
     @Override
-    public void iAudioAdapterSetEnabled(java.lang.String _this, boolean enabled)
+    public void iAudioAdapterSetEnabled(final java.lang.String _this, final boolean enabled)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iAudioAdapterSetEnabled");
@@ -6040,8 +6059,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.util.List<java.lang.String> aNames )*
      */
     @Override
-    public java.lang.String ivfsExplorerRemove(java.lang.String _this,
-        java.util.List<java.lang.String> aNames) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String ivfsExplorerRemove(final java.lang.String _this,
+        final java.util.List<java.lang.String> aNames) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivfsExplorerRemove");
         System.out.println(_this);
@@ -6065,8 +6085,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetLocation(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumGetLocation(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMediumGetLocation(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetLocation");
         System.out.println(_this);
@@ -6089,7 +6109,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#idhcpServerGetNetworkName(java.lang.String _this )*
      */
     @Override
-    public java.lang.String idhcpServerGetNetworkName(java.lang.String _this)
+    public java.lang.String idhcpServerGetNetworkName(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation idhcpServerGetNetworkName");
@@ -6113,8 +6133,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestDirectoryClose(java.lang.String _this ,)long handle )*
      */
     @Override
-    public void iGuestDirectoryClose(java.lang.String _this, long handle) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iGuestDirectoryClose(final java.lang.String _this, final long handle)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestDirectoryClose");
         System.out.println(_this);
@@ -6136,8 +6156,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSessionStateChangedEventGetState(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.SessionState iSessionStateChangedEventGetState(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public org.virtualbox.SessionState iSessionStateChangedEventGetState(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSessionStateChangedEventGetState");
         System.out.println(_this);
@@ -6160,7 +6180,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetName(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumGetName(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iMediumGetName(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetName");
@@ -6185,7 +6205,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public long iStorageControllerGetMaxDevicesPerPortCount(java.lang.String _this)
+    public long iStorageControllerGetMaxDevicesPerPortCount(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerGetMaxDevicesPerPortCount");
@@ -6211,7 +6231,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<java.lang.String> iHostFindHostNetworkInterfacesOfType(
-        java.lang.String _this, org.virtualbox.HostNetworkInterfaceType type)
+        final java.lang.String _this, final org.virtualbox.HostNetworkInterfaceType type)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostFindHostNetworkInterfacesOfType");
@@ -6236,8 +6256,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetOSTypeId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetOSTypeId(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMachineGetOSTypeId(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetOSTypeId");
         System.out.println(_this);
@@ -6260,7 +6280,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatRedirectEventGetHostPort(java.lang.String _this )*
      */
     @Override
-    public int inatRedirectEventGetHostPort(java.lang.String _this) throws RuntimeFaultMsg,
+    public int inatRedirectEventGetHostPort(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatRedirectEventGetHostPort");
@@ -6285,8 +6305,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long position )*
      */
     @Override
-    public java.lang.String iusbControllerRemoveDeviceFilter(java.lang.String _this, long position)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iusbControllerRemoveDeviceFilter(final java.lang.String _this,
+        final long position) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbControllerRemoveDeviceFilter");
         System.out.println(_this);
@@ -6312,10 +6332,12 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.Long valEcx ,)java.lang.Long valEdx )*
      */
     @Override
-    public void iHostGetProcessorCPUIDLeaf(java.lang.String _this, long cpuId, long leaf,
-        long subLeaf, javax.xml.ws.Holder<java.lang.Long> valEax,
-        javax.xml.ws.Holder<java.lang.Long> valEbx, javax.xml.ws.Holder<java.lang.Long> valEcx,
-        javax.xml.ws.Holder<java.lang.Long> valEdx) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iHostGetProcessorCPUIDLeaf(final java.lang.String _this, final long cpuId,
+        final long leaf, final long subLeaf, final javax.xml.ws.Holder<java.lang.Long> valEax,
+        final javax.xml.ws.Holder<java.lang.Long> valEbx,
+        final javax.xml.ws.Holder<java.lang.Long> valEcx,
+        final javax.xml.ws.Holder<java.lang.Long> valEdx) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetProcessorCPUIDLeaf");
         System.out.println(_this);
@@ -6348,7 +6370,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public org.virtualbox.HostNetworkInterfaceMediumType iHostNetworkInterfaceGetMediumType(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceGetMediumType");
         System.out.println(_this);
@@ -6372,8 +6394,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long logHistoryCount )*
      */
     @Override
-    public void iSystemPropertiesSetLogHistoryCount(java.lang.String _this, long logHistoryCount)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iSystemPropertiesSetLogHistoryCount(final java.lang.String _this,
+        final long logHistoryCount) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesSetLogHistoryCount");
         System.out.println(_this);
@@ -6396,8 +6418,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean dnsUseHostResolver )*
      */
     @Override
-    public void inatEngineSetDnsUseHostResolver(java.lang.String _this, boolean dnsUseHostResolver)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void inatEngineSetDnsUseHostResolver(final java.lang.String _this,
+        final boolean dnsUseHostResolver) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineSetDnsUseHostResolver");
         System.out.println(_this);
@@ -6419,7 +6441,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetFaultToleranceAddress(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetFaultToleranceAddress(java.lang.String _this)
+    public java.lang.String iMachineGetFaultToleranceAddress(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetFaultToleranceAddress");
@@ -6444,8 +6466,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String key )*
      */
     @Override
-    public java.lang.String iMachineGetExtraData(java.lang.String _this, java.lang.String key)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMachineGetExtraData(final java.lang.String _this,
+        final java.lang.String key) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetExtraData");
         System.out.println(_this);
@@ -6470,7 +6492,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iSystemPropertiesGetParallelPortCount(java.lang.String _this)
+    public long iSystemPropertiesGetParallelPortCount(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetParallelPortCount");
@@ -6496,7 +6518,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<java.lang.String> iPerformanceCollectorGetMetricNames(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iPerformanceCollectorGetMetricNames");
         System.out.println(_this);
@@ -6520,8 +6542,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String settingsFile )*
      */
     @Override
-    public java.lang.String iVirtualBoxOpenMachine(java.lang.String _this,
-        java.lang.String settingsFile) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iVirtualBoxOpenMachine(final java.lang.String _this,
+        final java.lang.String settingsFile) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxOpenMachine");
         System.out.println(_this);
@@ -6546,8 +6568,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.USBDeviceFilterAction action )*
      */
     @Override
-    public void iHostUSBDeviceFilterSetAction(java.lang.String _this,
-        org.virtualbox.USBDeviceFilterAction action) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iHostUSBDeviceFilterSetAction(final java.lang.String _this,
+        final org.virtualbox.USBDeviceFilterAction action) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostUSBDeviceFilterSetAction");
         System.out.println(_this);
@@ -6570,8 +6593,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.ProcessorFeature feature )*
      */
     @Override
-    public boolean iHostGetProcessorFeature(java.lang.String _this,
-        org.virtualbox.ProcessorFeature feature) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public boolean iHostGetProcessorFeature(final java.lang.String _this,
+        final org.virtualbox.ProcessorFeature feature) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetProcessorFeature");
         System.out.println(_this);
@@ -6596,8 +6620,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String serialNumber )*
      */
     @Override
-    public void iusbDeviceFilterSetSerialNumber(java.lang.String _this,
-        java.lang.String serialNumber) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iusbDeviceFilterSetSerialNumber(final java.lang.String _this,
+        final java.lang.String serialNumber) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterSetSerialNumber");
         System.out.println(_this);
@@ -6619,7 +6643,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetLogicalSize(java.lang.String _this )*
      */
     @Override
-    public long iMediumGetLogicalSize(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMediumGetLogicalSize(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetLogicalSize");
@@ -6643,8 +6667,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#idhcpServerGetUpperIP(java.lang.String _this )*
      */
     @Override
-    public java.lang.String idhcpServerGetUpperIP(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String idhcpServerGetUpperIP(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation idhcpServerGetUpperIP");
         System.out.println(_this);
@@ -6667,7 +6691,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetMemorySize(java.lang.String _this )*
      */
     @Override
-    public long iMachineGetMemorySize(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMachineGetMemorySize(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetMemorySize");
@@ -6691,7 +6715,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatEngineGetAliasMode(java.lang.String _this )*
      */
     @Override
-    public long inatEngineGetAliasMode(java.lang.String _this) throws RuntimeFaultMsg,
+    public long inatEngineGetAliasMode(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineGetAliasMode");
@@ -6716,8 +6740,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean ioapicEnabled )*
      */
     @Override
-    public void ibiosSettingsSetIOAPICEnabled(java.lang.String _this, boolean ioapicEnabled)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void ibiosSettingsSetIOAPICEnabled(final java.lang.String _this,
+        final boolean ioapicEnabled) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsSetIOAPICEnabled");
         System.out.println(_this);
@@ -6739,7 +6763,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iPerformanceMetricGetPeriod(java.lang.String _this )*
      */
     @Override
-    public long iPerformanceMetricGetPeriod(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iPerformanceMetricGetPeriod(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iPerformanceMetricGetPeriod");
@@ -6763,7 +6787,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetAccessible(java.lang.String _this )*
      */
     @Override
-    public boolean iMachineGetAccessible(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iMachineGetAccessible(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetAccessible");
@@ -6788,7 +6812,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * location )*
      */
     @Override
-    public void iMediumSetLocation(java.lang.String _this, java.lang.String location)
+    public void iMediumSetLocation(final java.lang.String _this, final java.lang.String location)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumSetLocation");
@@ -6811,8 +6835,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetBootPriority(java.lang.String _this )*
      */
     @Override
-    public long iNetworkAdapterGetBootPriority(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iNetworkAdapterGetBootPriority(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetBootPriority");
         System.out.println(_this);
@@ -6835,8 +6859,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iEventSourceChangedEventGetAdd(java.lang.String _this )*
      */
     @Override
-    public boolean iEventSourceChangedEventGetAdd(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iEventSourceChangedEventGetAdd(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventSourceChangedEventGetAdd");
         System.out.println(_this);
@@ -6859,10 +6883,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iWebsessionManagerLogoff(java.lang.String refIVirtualBox )*
      */
     @Override
-    public void iWebsessionManagerLogoff(java.lang.String refIVirtualBox) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iWebsessionManagerLogoff(final java.lang.String refIVirtualBox)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iWebsessionManagerLogoff");
+        LOG.info("Executing operation iWebsessionManagerLogoff");
         // System.out.println(refIVirtualBox);
         try
         {
@@ -6882,8 +6906,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)long freeDiskSpaceWarning )*
      */
     @Override
-    public void iSystemPropertiesSetFreeDiskSpaceWarning(java.lang.String _this,
-        long freeDiskSpaceWarning) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iSystemPropertiesSetFreeDiskSpaceWarning(final java.lang.String _this,
+        final long freeDiskSpaceWarning) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesSetFreeDiskSpaceWarning");
         System.out.println(_this);
@@ -6906,9 +6930,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)java.lang.String ipAddress ,)java.lang.String networkMask )*
      */
     @Override
-    public void iHostNetworkInterfaceEnableStaticIpConfig(java.lang.String _this,
-        java.lang.String ipAddress, java.lang.String networkMask) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iHostNetworkInterfaceEnableStaticIpConfig(final java.lang.String _this,
+        final java.lang.String ipAddress, final java.lang.String networkMask)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceEnableStaticIpConfig");
         System.out.println(_this);
@@ -6931,7 +6955,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetParent(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetParent(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iMachineGetParent(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetParent");
@@ -6958,8 +6982,8 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<java.lang.String> iVirtualSystemDescriptionGetValuesByType(
-        java.lang.String _this, org.virtualbox.VirtualSystemDescriptionType aType,
-        org.virtualbox.VirtualSystemDescriptionValueType aWhich) throws RuntimeFaultMsg,
+        final java.lang.String _this, final org.virtualbox.VirtualSystemDescriptionType aType,
+        final org.virtualbox.VirtualSystemDescriptionValueType aWhich) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualSystemDescriptionGetValuesByType");
@@ -6985,7 +7009,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatRedirectEventGetRemove(java.lang.String _this )*
      */
     @Override
-    public boolean inatRedirectEventGetRemove(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean inatRedirectEventGetRemove(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatRedirectEventGetRemove");
@@ -7011,9 +7035,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)org.virtualbox.ChipsetType chipset ,)org.virtualbox.StorageBus bus )*
      */
     @Override
-    public long iSystemPropertiesGetMaxInstancesOfStorageBus(java.lang.String _this,
-        org.virtualbox.ChipsetType chipset, org.virtualbox.StorageBus bus) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iSystemPropertiesGetMaxInstancesOfStorageBus(final java.lang.String _this,
+        final org.virtualbox.ChipsetType chipset, final org.virtualbox.StorageBus bus)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMaxInstancesOfStorageBus");
         System.out.println(_this);
@@ -7039,7 +7063,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public long iMousePointerShapeChangedEventGetWidth(java.lang.String _this)
+    public long iMousePointerShapeChangedEventGetWidth(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMousePointerShapeChangedEventGetWidth");
@@ -7064,8 +7088,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)int dz ,)int dw ,)int buttonState )*
      */
     @Override
-    public void iMousePutMouseEvent(java.lang.String _this, int dx, int dy, int dz, int dw,
-        int buttonState) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMousePutMouseEvent(final java.lang.String _this, final int dx, final int dy,
+        final int dz, final int dw, final int buttonState) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMousePutMouseEvent");
         System.out.println(_this);
@@ -7092,8 +7117,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.CPUPropertyType property ,)boolean value )*
      */
     @Override
-    public void iMachineSetCPUProperty(java.lang.String _this,
-        org.virtualbox.CPUPropertyType property, boolean value) throws RuntimeFaultMsg,
+    public void iMachineSetCPUProperty(final java.lang.String _this,
+        final org.virtualbox.CPUPropertyType property, final boolean value) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetCPUProperty");
@@ -7118,7 +7143,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * file )*
      */
     @Override
-    public java.lang.String iApplianceRead(java.lang.String _this, java.lang.String file)
+    public java.lang.String iApplianceRead(final java.lang.String _this, final java.lang.String file)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iApplianceRead");
@@ -7143,7 +7168,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetStateFilePath(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetStateFilePath(java.lang.String _this)
+    public java.lang.String iMachineGetStateFilePath(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetStateFilePath");
@@ -7168,8 +7193,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String event ,)int timeout )*
      */
     @Override
-    public boolean iEventSourceFireEvent(java.lang.String _this, java.lang.String event, int timeout)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public boolean iEventSourceFireEvent(final java.lang.String _this,
+        final java.lang.String event, final int timeout) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventSourceFireEvent");
         System.out.println(_this);
@@ -7195,8 +7221,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String listener )*
      */
     @Override
-    public void iEventSourceUnregisterListener(java.lang.String _this, java.lang.String listener)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iEventSourceUnregisterListener(final java.lang.String _this,
+        final java.lang.String listener) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventSourceUnregisterListener");
         System.out.println(_this);
@@ -7219,8 +7245,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.DeviceType device )*
      */
     @Override
-    public void iMachineSetBootOrder(java.lang.String _this, long position,
-        org.virtualbox.DeviceType device) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetBootOrder(final java.lang.String _this, final long position,
+        final org.virtualbox.DeviceType device) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetBootOrder");
         System.out.println(_this);
@@ -7243,7 +7269,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iManagedObjectRefRelease(java.lang.String _this )*
      */
     @Override
-    public void iManagedObjectRefRelease(java.lang.String _this) throws RuntimeFaultMsg,
+    public void iManagedObjectRefRelease(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iManagedObjectRefRelease");
@@ -7267,8 +7293,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String password ,)long flags )*
      */
     @Override
-    public java.lang.String iGuestCopyFromGuest(java.lang.String _this, java.lang.String source,
-        java.lang.String dest, java.lang.String userName, java.lang.String password, long flags)
+    public java.lang.String iGuestCopyFromGuest(final java.lang.String _this,
+        final java.lang.String source, final java.lang.String dest,
+        final java.lang.String userName, final java.lang.String password, final long flags)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestCopyFromGuest");
@@ -7298,9 +7325,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String session ,)java.lang.String type ,)java.lang.String environment )*
      */
     @Override
-    public java.lang.String iMachineLaunchVMProcess(java.lang.String _this,
-        java.lang.String session, java.lang.String type, java.lang.String environment)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMachineLaunchVMProcess(final java.lang.String _this,
+        final java.lang.String session, final java.lang.String type,
+        final java.lang.String environment) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineLaunchVMProcess");
         System.out.println(_this);
@@ -7327,8 +7354,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.StorageControllerType controllerType )*
      */
     @Override
-    public void iStorageControllerSetControllerType(java.lang.String _this,
-        org.virtualbox.StorageControllerType controllerType) throws RuntimeFaultMsg,
+    public void iStorageControllerSetControllerType(final java.lang.String _this,
+        final org.virtualbox.StorageControllerType controllerType) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerSetControllerType");
@@ -7352,8 +7379,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean cpuHotPlugEnabled )*
      */
     @Override
-    public void iMachineSetCPUHotPlugEnabled(java.lang.String _this, boolean cpuHotPlugEnabled)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetCPUHotPlugEnabled(final java.lang.String _this,
+        final boolean cpuHotPlugEnabled) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetCPUHotPlugEnabled");
         System.out.println(_this);
@@ -7375,7 +7402,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iAudioAdapterGetAudioDriver(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.AudioDriverType iAudioAdapterGetAudioDriver(java.lang.String _this)
+    public org.virtualbox.AudioDriverType iAudioAdapterGetAudioDriver(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iAudioAdapterGetAudioDriver");
@@ -7399,7 +7426,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSerialPortGetSlot(java.lang.String _this )*
      */
     @Override
-    public long iSerialPortGetSlot(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iSerialPortGetSlot(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSerialPortGetSlot");
@@ -7423,7 +7450,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceGetPort(java.lang.String _this )*
      */
     @Override
-    public int iusbDeviceGetPort(java.lang.String _this) throws RuntimeFaultMsg,
+    public int iusbDeviceGetPort(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceGetPort");
@@ -7447,7 +7474,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostPciDevicePlugEventGetSuccess(java.lang.String _this )*
      */
     @Override
-    public boolean iHostPciDevicePlugEventGetSuccess(java.lang.String _this)
+    public boolean iHostPciDevicePlugEventGetSuccess(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostPciDevicePlugEventGetSuccess");
@@ -7471,7 +7498,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetTeleporterPort(java.lang.String _this )*
      */
     @Override
-    public long iMachineGetTeleporterPort(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMachineGetTeleporterPort(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetTeleporterPort");
@@ -7495,7 +7522,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetLastAccessError(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumGetLastAccessError(java.lang.String _this)
+    public java.lang.String iMediumGetLastAccessError(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetLastAccessError");
@@ -7520,8 +7547,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)int y ,)int dz ,)int dw ,)int buttonState )*
      */
     @Override
-    public void iMousePutMouseEventAbsolute(java.lang.String _this, int x, int y, int dz, int dw,
-        int buttonState) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMousePutMouseEventAbsolute(final java.lang.String _this, final int x, final int y,
+        final int dz, final int dw, final int buttonState) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMousePutMouseEventAbsolute");
         System.out.println(_this);
@@ -7548,7 +7576,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<org.virtualbox.ISharedFolder> iVirtualBoxGetSharedFolders(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetSharedFolders");
         System.out.println(_this);
@@ -7572,8 +7600,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.DeviceType type )*
      */
     @Override
-    public org.virtualbox.DeviceActivity iConsoleGetDeviceActivity(java.lang.String _this,
-        org.virtualbox.DeviceType type) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public org.virtualbox.DeviceActivity iConsoleGetDeviceActivity(final java.lang.String _this,
+        final org.virtualbox.DeviceType type) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetDeviceActivity");
         System.out.println(_this);
@@ -7598,8 +7626,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String property ,)java.lang.String value )*
      */
     @Override
-    public void iMachineSetGuestPropertyValue(java.lang.String _this, java.lang.String property,
-        java.lang.String value) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetGuestPropertyValue(final java.lang.String _this,
+        final java.lang.String property, final java.lang.String value) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetGuestPropertyValue");
         System.out.println(_this);
@@ -7624,9 +7653,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public java.lang.String iMachineCloneTo(java.lang.String _this, java.lang.String target,
-        org.virtualbox.CloneMode mode, java.util.List<org.virtualbox.CloneOptions> options)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMachineCloneTo(final java.lang.String _this,
+        final java.lang.String target, final org.virtualbox.CloneMode mode,
+        final java.util.List<org.virtualbox.CloneOptions> options) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineCloneTo");
         System.out.println(_this);
@@ -7652,10 +7682,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGetMemorySize(java.lang.String _this )*
      */
     @Override
-    public long iHostGetMemorySize(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iHostGetMemorySize(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iHostGetMemorySize");
+        LOG.info("Executing operation iHostGetMemorySize");
         // System.out.println(_this);
         try
         {
@@ -7680,7 +7710,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<org.virtualbox.DeviceType> iSystemPropertiesGetDeviceTypesForStorageBus(
-        java.lang.String _this, org.virtualbox.StorageBus bus) throws RuntimeFaultMsg,
+        final java.lang.String _this, final org.virtualbox.StorageBus bus) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetDeviceTypesForStorageBus");
@@ -7706,7 +7736,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String hostIP )*
      */
     @Override
-    public void inatEngineSetHostIP(java.lang.String _this, java.lang.String hostIP)
+    public void inatEngineSetHostIP(final java.lang.String _this, final java.lang.String hostIP)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineSetHostIP");
@@ -7730,8 +7760,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long percent )*
      */
     @Override
-    public void iProgressSetCurrentOperationProgress(java.lang.String _this, long percent)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iProgressSetCurrentOperationProgress(final java.lang.String _this,
+        final long percent) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressSetCurrentOperationProgress");
         System.out.println(_this);
@@ -7754,8 +7784,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public void iMachineSetVRAMSize(java.lang.String _this, long vramSize) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMachineSetVRAMSize(final java.lang.String _this, final long vramSize)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetVRAMSize");
         System.out.println(_this);
@@ -7778,8 +7808,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String bridgedInterface )*
      */
     @Override
-    public void iNetworkAdapterSetBridgedInterface(java.lang.String _this,
-        java.lang.String bridgedInterface) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iNetworkAdapterSetBridgedInterface(final java.lang.String _this,
+        final java.lang.String bridgedInterface) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetBridgedInterface");
         System.out.println(_this);
@@ -7801,7 +7831,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxErrorInfoGetInterfaceID(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iVirtualBoxErrorInfoGetInterfaceID(java.lang.String _this)
+    public java.lang.String iVirtualBoxErrorInfoGetInterfaceID(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxErrorInfoGetInterfaceID");
@@ -7825,10 +7855,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetName(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetName(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iMachineGetName(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iMachineGetName");
+        LOG.info("Executing operation iMachineGetName");
         // System.out.println(_this);
         VirtualMachineInfo vm = DomainService.getInstance().getVirtualMachines().get(_this);
         if (vm == null)
@@ -7844,7 +7874,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbControllerGetUSBStandard(java.lang.String _this )*
      */
     @Override
-    public int iusbControllerGetUSBStandard(java.lang.String _this) throws RuntimeFaultMsg,
+    public int iusbControllerGetUSBStandard(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbControllerGetUSBStandard");
@@ -7868,7 +7898,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetDeviceType(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.DeviceType iMediumGetDeviceType(java.lang.String _this)
+    public org.virtualbox.DeviceType iMediumGetDeviceType(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetDeviceType");
@@ -7893,7 +7923,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public java.lang.String iHostNetworkInterfaceGetNetworkName(java.lang.String _this)
+    public java.lang.String iHostNetworkInterfaceGetNetworkName(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceGetNetworkName");
@@ -7919,9 +7949,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * aVBoxValues ,)java.util.List<java.lang.String> aExtraConfigValues )*
      */
     @Override
-    public void iVirtualSystemDescriptionSetFinalValues(java.lang.String _this,
-        java.util.List<java.lang.Boolean> aEnabled, java.util.List<java.lang.String> aVBoxValues,
-        java.util.List<java.lang.String> aExtraConfigValues) throws RuntimeFaultMsg,
+    public void iVirtualSystemDescriptionSetFinalValues(final java.lang.String _this,
+        final java.util.List<java.lang.Boolean> aEnabled,
+        final java.util.List<java.lang.String> aVBoxValues,
+        final java.util.List<java.lang.String> aExtraConfigValues) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualSystemDescriptionSetFinalValues");
@@ -7946,7 +7977,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetAutoReset(java.lang.String _this )*
      */
     @Override
-    public boolean iMediumGetAutoReset(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iMediumGetAutoReset(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetAutoReset");
@@ -7971,8 +8002,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String nextOperationDescription ,)long nextOperationsWeight )*
      */
     @Override
-    public void iProgressSetNextOperation(java.lang.String _this,
-        java.lang.String nextOperationDescription, long nextOperationsWeight)
+    public void iProgressSetNextOperation(final java.lang.String _this,
+        final java.lang.String nextOperationDescription, final long nextOperationsWeight)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressSetNextOperation");
@@ -7997,8 +8028,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public java.lang.String iHostCreateUSBDeviceFilter(java.lang.String _this, java.lang.String name)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iHostCreateUSBDeviceFilter(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostCreateUSBDeviceFilter");
         System.out.println(_this);
@@ -8023,8 +8054,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public void iVirtualBoxRemoveSharedFolder(java.lang.String _this, java.lang.String name)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iVirtualBoxRemoveSharedFolder(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxRemoveSharedFolder");
         System.out.println(_this);
@@ -8046,7 +8077,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetInternalNetwork(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iNetworkAdapterGetInternalNetwork(java.lang.String _this)
+    public java.lang.String iNetworkAdapterGetInternalNetwork(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetInternalNetwork");
@@ -8071,8 +8102,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.HWVirtExPropertyType property )*
      */
     @Override
-    public boolean iMachineGetHWVirtExProperty(java.lang.String _this,
-        org.virtualbox.HWVirtExPropertyType property) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public boolean iMachineGetHWVirtExProperty(final java.lang.String _this,
+        final org.virtualbox.HWVirtExPropertyType property) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetHWVirtExProperty");
         System.out.println(_this);
@@ -8097,8 +8129,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)boolean emulatedUSBWebcameraEnabled )*
      */
     @Override
-    public void iMachineSetEmulatedUSBWebcameraEnabled(java.lang.String _this,
-        boolean emulatedUSBWebcameraEnabled) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetEmulatedUSBWebcameraEnabled(final java.lang.String _this,
+        final boolean emulatedUSBWebcameraEnabled) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetEmulatedUSBWebcameraEnabled");
         System.out.println(_this);
@@ -8123,13 +8155,13 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.util.List<java.lang.String> defaults )*
      */
     @Override
-    public void iMediumFormatDescribeProperties(java.lang.String _this,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> names,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> description,
-        javax.xml.ws.Holder<java.util.List<org.virtualbox.DataType>> types,
-        javax.xml.ws.Holder<java.util.List<java.lang.Long>> flags,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> defaults) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMediumFormatDescribeProperties(final java.lang.String _this,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> names,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> description,
+        final javax.xml.ws.Holder<java.util.List<org.virtualbox.DataType>> types,
+        final javax.xml.ws.Holder<java.util.List<java.lang.Long>> flags,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> defaults)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumFormatDescribeProperties");
         System.out.println(_this);
@@ -8161,7 +8193,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * enabled )*
      */
     @Override
-    public void iSerialPortSetEnabled(java.lang.String _this, boolean enabled)
+    public void iSerialPortSetEnabled(final java.lang.String _this, final boolean enabled)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSerialPortSetEnabled");
@@ -8184,7 +8216,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetKeyboardHidType(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.KeyboardHidType iMachineGetKeyboardHidType(java.lang.String _this)
+    public org.virtualbox.KeyboardHidType iMachineGetKeyboardHidType(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetKeyboardHidType");
@@ -8209,7 +8241,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public boolean iStorageControllerGetUseHostIOCache(java.lang.String _this)
+    public boolean iStorageControllerGetUseHostIOCache(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerGetUseHostIOCache");
@@ -8235,9 +8267,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * force )*
      */
     @Override
-    public void iMachineMountMedium(java.lang.String _this, java.lang.String name,
-        int controllerPort, int device, java.lang.String medium, boolean force)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineMountMedium(final java.lang.String _this, final java.lang.String name,
+        final int controllerPort, final int device, final java.lang.String medium,
+        final boolean force) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineMountMedium");
         System.out.println(_this);
@@ -8264,8 +8296,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String hardwareUUID )*
      */
     @Override
-    public void iMachineSetHardwareUUID(java.lang.String _this, java.lang.String hardwareUUID)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetHardwareUUID(final java.lang.String _this,
+        final java.lang.String hardwareUUID) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetHardwareUUID");
         System.out.println(_this);
@@ -8287,7 +8319,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetMemoryBalloonSize(java.lang.String _this )*
      */
     @Override
-    public long iMachineGetMemoryBalloonSize(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMachineGetMemoryBalloonSize(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetMemoryBalloonSize");
@@ -8312,8 +8344,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.PointingHidType pointingHidType )*
      */
     @Override
-    public void iMachineSetPointingHidType(java.lang.String _this,
-        org.virtualbox.PointingHidType pointingHidType) throws RuntimeFaultMsg,
+    public void iMachineSetPointingHidType(final java.lang.String _this,
+        final org.virtualbox.PointingHidType pointingHidType) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetPointingHidType");
@@ -8337,7 +8369,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public java.lang.String iMachineGetParallelPort(java.lang.String _this, long slot)
+    public java.lang.String iMachineGetParallelPort(final java.lang.String _this, final long slot)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetParallelPort");
@@ -8362,7 +8394,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxErrorInfoGetText(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iVirtualBoxErrorInfoGetText(java.lang.String _this)
+    public java.lang.String iVirtualBoxErrorInfoGetText(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxErrorInfoGetText");
@@ -8387,7 +8419,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * reason )*
      */
     @Override
-    public void iVetoEventAddVeto(java.lang.String _this, java.lang.String reason)
+    public void iVetoEventAddVeto(final java.lang.String _this, final java.lang.String reason)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVetoEventAddVeto");
@@ -8411,9 +8443,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.util.List<java.lang.String> metricNames ,)java.util.List<java.lang.String> objects )*
      */
     @Override
-    public java.util.List<java.lang.String> iPerformanceCollectorGetMetrics(java.lang.String _this,
-        java.util.List<java.lang.String> metricNames, java.util.List<java.lang.String> objects)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.util.List<java.lang.String> iPerformanceCollectorGetMetrics(
+        final java.lang.String _this, final java.util.List<java.lang.String> metricNames,
+        final java.util.List<java.lang.String> objects) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iPerformanceCollectorGetMetrics");
         System.out.println(_this);
@@ -8438,7 +8471,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ivfsExplorerCdUp(java.lang.String _this )*
      */
     @Override
-    public java.lang.String ivfsExplorerCdUp(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String ivfsExplorerCdUp(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivfsExplorerCdUp");
@@ -8463,8 +8496,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public org.virtualbox.DeviceType iMediumRegisteredEventGetMediumType(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public org.virtualbox.DeviceType iMediumRegisteredEventGetMediumType(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumRegisteredEventGetMediumType");
         System.out.println(_this);
@@ -8487,7 +8520,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceFilterGetRemote(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iusbDeviceFilterGetRemote(java.lang.String _this)
+    public java.lang.String iusbDeviceFilterGetRemote(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterGetRemote");
@@ -8512,7 +8545,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.MediumType type )*
      */
     @Override
-    public void iMediumSetType(java.lang.String _this, org.virtualbox.MediumType type)
+    public void iMediumSetType(final java.lang.String _this, final org.virtualbox.MediumType type)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumSetType");
@@ -8535,7 +8568,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetCurrentSnapshot(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetCurrentSnapshot(java.lang.String _this)
+    public java.lang.String iMachineGetCurrentSnapshot(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetCurrentSnapshot");
@@ -8559,7 +8592,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleResume(java.lang.String _this )*
      */
     @Override
-    public void iConsoleResume(java.lang.String _this) throws RuntimeFaultMsg,
+    public void iConsoleResume(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleResume");
@@ -8582,7 +8615,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public java.lang.String iParallelPortChangedEventGetParallelPort(java.lang.String _this)
+    public java.lang.String iParallelPortChangedEventGetParallelPort(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iParallelPortChangedEventGetParallelPort");
@@ -8608,8 +8641,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)java.lang.String guestPropertyNotificationPatterns )*
      */
     @Override
-    public void iMachineSetGuestPropertyNotificationPatterns(java.lang.String _this,
-        java.lang.String guestPropertyNotificationPatterns) throws RuntimeFaultMsg,
+    public void iMachineSetGuestPropertyNotificationPatterns(final java.lang.String _this,
+        final java.lang.String guestPropertyNotificationPatterns) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetGuestPropertyNotificationPatterns");
@@ -8632,7 +8665,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetCPUExecutionCap(java.lang.String _this )*
      */
     @Override
-    public long iMachineGetCPUExecutionCap(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMachineGetCPUExecutionCap(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetCPUExecutionCap");
@@ -8657,8 +8690,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)java.lang.String defaultMachineFolder )*
      */
     @Override
-    public void iSystemPropertiesSetDefaultMachineFolder(java.lang.String _this,
-        java.lang.String defaultMachineFolder) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iSystemPropertiesSetDefaultMachineFolder(final java.lang.String _this,
+        final java.lang.String defaultMachineFolder) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesSetDefaultMachineFolder");
         System.out.println(_this);
@@ -8681,7 +8714,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public void iShowWindowEventSetWinId(java.lang.String _this, long winId)
+    public void iShowWindowEventSetWinId(final java.lang.String _this, final long winId)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iShowWindowEventSetWinId");
@@ -8705,7 +8738,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public void iMachineRemoveSharedFolder(java.lang.String _this, java.lang.String name)
+    public void iMachineRemoveSharedFolder(final java.lang.String _this, final java.lang.String name)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineRemoveSharedFolder");
@@ -8728,7 +8761,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetHpetEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean iMachineGetHpetEnabled(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iMachineGetHpetEnabled(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetHpetEnabled");
@@ -8754,8 +8787,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public java.lang.String iNetworkAdapterChangedEventGetNetworkAdapter(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iNetworkAdapterChangedEventGetNetworkAdapter(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterChangedEventGetNetworkAdapter");
         System.out.println(_this);
@@ -8779,8 +8812,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * position ,)java.lang.String filter )*
      */
     @Override
-    public void iHostInsertUSBDeviceFilter(java.lang.String _this, long position,
-        java.lang.String filter) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iHostInsertUSBDeviceFilter(final java.lang.String _this, final long position,
+        final java.lang.String filter) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostInsertUSBDeviceFilter");
         System.out.println(_this);
@@ -8803,7 +8836,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumGetId(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iMediumGetId(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetId");
@@ -8827,7 +8860,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceGetSerialNumber(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iusbDeviceGetSerialNumber(java.lang.String _this)
+    public java.lang.String iusbDeviceGetSerialNumber(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceGetSerialNumber");
@@ -8851,7 +8884,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetSettingsFilePath(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetSettingsFilePath(java.lang.String _this)
+    public java.lang.String iMachineGetSettingsFilePath(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetSettingsFilePath");
@@ -8877,9 +8910,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * userName ,)java.lang.String password )*
      */
     @Override
-    public long iGuestDirectoryOpen(java.lang.String _this, java.lang.String directory,
-        java.lang.String filter, long flags, java.lang.String userName, java.lang.String password)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public long iGuestDirectoryOpen(final java.lang.String _this, final java.lang.String directory,
+        final java.lang.String filter, final long flags, final java.lang.String userName,
+        final java.lang.String password) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestDirectoryOpen");
         System.out.println(_this);
@@ -8907,7 +8940,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetPercent(java.lang.String _this )*
      */
     @Override
-    public long iProgressGetPercent(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iProgressGetPercent(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetPercent");
@@ -8931,7 +8964,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetCPUCount(java.lang.String _this )*
      */
     @Override
-    public long iMachineGetCPUCount(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMachineGetCPUCount(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetCPUCount");
@@ -8955,8 +8988,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSnapshotGetParent(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iSnapshotGetParent(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iSnapshotGetParent(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSnapshotGetParent");
         System.out.println(_this);
@@ -8979,8 +9012,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetTeleporterEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean iMachineGetTeleporterEnabled(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iMachineGetTeleporterEnabled(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetTeleporterEnabled");
         System.out.println(_this);
@@ -9003,7 +9036,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMouseGetRelativeSupported(java.lang.String _this )*
      */
     @Override
-    public boolean iMouseGetRelativeSupported(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iMouseGetRelativeSupported(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMouseGetRelativeSupported");
@@ -9027,7 +9060,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetFloppyImages(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iVirtualBoxGetFloppyImages(java.lang.String _this)
+    public java.util.List<java.lang.String> iVirtualBoxGetFloppyImages(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetFloppyImages");
@@ -9051,7 +9084,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetTeleporterAddress(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetTeleporterAddress(java.lang.String _this)
+    public java.lang.String iMachineGetTeleporterAddress(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetTeleporterAddress");
@@ -9075,8 +9108,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxErrorInfoGetResultCode(java.lang.String _this )*
      */
     @Override
-    public int iVirtualBoxErrorInfoGetResultCode(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public int iVirtualBoxErrorInfoGetResultCode(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxErrorInfoGetResultCode");
         System.out.println(_this);
@@ -9099,7 +9132,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSnapshotGetTimeStamp(java.lang.String _this )*
      */
     @Override
-    public long iSnapshotGetTimeStamp(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iSnapshotGetTimeStamp(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSnapshotGetTimeStamp");
@@ -9123,7 +9156,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetBandwidthGroup(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iNetworkAdapterGetBandwidthGroup(java.lang.String _this)
+    public java.lang.String iNetworkAdapterGetBandwidthGroup(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetBandwidthGroup");
@@ -9147,8 +9180,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetDescription(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iProgressGetDescription(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iProgressGetDescription(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetDescription");
         System.out.println(_this);
@@ -9171,7 +9204,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetAPIVersion(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iVirtualBoxGetAPIVersion(java.lang.String _this)
+    public java.lang.String iVirtualBoxGetAPIVersion(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetAPIVersion");
@@ -9195,7 +9228,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineRemoveAllCPUIDLeaves(java.lang.String _this )*
      */
     @Override
-    public void iMachineRemoveAllCPUIDLeaves(java.lang.String _this) throws RuntimeFaultMsg,
+    public void iMachineRemoveAllCPUIDLeaves(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineRemoveAllCPUIDLeaves");
@@ -9218,9 +9251,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String property ,)java.lang.String value ,)java.lang.String flags )*
      */
     @Override
-    public void iMachineSetGuestProperty(java.lang.String _this, java.lang.String property,
-        java.lang.String value, java.lang.String flags) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMachineSetGuestProperty(final java.lang.String _this,
+        final java.lang.String property, final java.lang.String value, final java.lang.String flags)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetGuestProperty");
         System.out.println(_this);
@@ -9244,7 +9277,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#icpuChangedEventGetAdd(java.lang.String _this )*
      */
     @Override
-    public boolean icpuChangedEventGetAdd(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean icpuChangedEventGetAdd(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation icpuChangedEventGetAdd");
@@ -9268,10 +9301,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGetNetworkInterfaces(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iHostGetNetworkInterfaces(java.lang.String _this)
+    public java.util.List<java.lang.String> iHostGetNetworkInterfaces(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iHostGetNetworkInterfaces");
+        LOG.info("Executing operation iHostGetNetworkInterfaces");
         // System.out.println(_this);
         try
         {
@@ -9297,7 +9330,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iPerformanceMetricGetCount(java.lang.String _this )*
      */
     @Override
-    public long iPerformanceMetricGetCount(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iPerformanceMetricGetCount(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iPerformanceMetricGetCount");
@@ -9322,7 +9355,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iMousePointerShapeChangedEventGetYhot(java.lang.String _this)
+    public long iMousePointerShapeChangedEventGetYhot(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMousePointerShapeChangedEventGetYhot");
@@ -9347,8 +9380,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.ChipsetType chipsetType )*
      */
     @Override
-    public void iMachineSetChipsetType(java.lang.String _this,
-        org.virtualbox.ChipsetType chipsetType) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetChipsetType(final java.lang.String _this,
+        final org.virtualbox.ChipsetType chipsetType) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetChipsetType");
         System.out.println(_this);
@@ -9372,10 +9405,12 @@ public class VboxPortTypeImpl implements VboxPortType
      * tcpWndSnd ,)java.lang.Long tcpWndRcv )*
      */
     @Override
-    public void inatEngineGetNetworkSettings(java.lang.String _this,
-        javax.xml.ws.Holder<java.lang.Long> mtu, javax.xml.ws.Holder<java.lang.Long> sockSnd,
-        javax.xml.ws.Holder<java.lang.Long> sockRcv, javax.xml.ws.Holder<java.lang.Long> tcpWndSnd,
-        javax.xml.ws.Holder<java.lang.Long> tcpWndRcv) throws RuntimeFaultMsg,
+    public void inatEngineGetNetworkSettings(final java.lang.String _this,
+        final javax.xml.ws.Holder<java.lang.Long> mtu,
+        final javax.xml.ws.Holder<java.lang.Long> sockSnd,
+        final javax.xml.ws.Holder<java.lang.Long> sockRcv,
+        final javax.xml.ws.Holder<java.lang.Long> tcpWndSnd,
+        final javax.xml.ws.Holder<java.lang.Long> tcpWndRcv) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineGetNetworkSettings");
@@ -9409,7 +9444,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public org.virtualbox.HostNetworkInterfaceType iHostNetworkInterfaceGetInterfaceType(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceGetInterfaceType");
         System.out.println(_this);
@@ -9434,8 +9469,9 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<java.lang.String> iPerformanceCollectorDisableMetrics(
-        java.lang.String _this, java.util.List<java.lang.String> metricNames,
-        java.util.List<java.lang.String> objects) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this, final java.util.List<java.lang.String> metricNames,
+        final java.util.List<java.lang.String> objects) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iPerformanceCollectorDisableMetrics");
         System.out.println(_this);
@@ -9460,8 +9496,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineHotPlugCPU(java.lang.String _this ,)long cpu )*
      */
     @Override
-    public void iMachineHotPlugCPU(java.lang.String _this, long cpu) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMachineHotPlugCPU(final java.lang.String _this, final long cpu)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineHotPlugCPU");
         System.out.println(_this);
@@ -9484,8 +9520,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * faultTolerancePort )*
      */
     @Override
-    public void iMachineSetFaultTolerancePort(java.lang.String _this, long faultTolerancePort)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetFaultTolerancePort(final java.lang.String _this,
+        final long faultTolerancePort) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetFaultTolerancePort");
         System.out.println(_this);
@@ -9507,8 +9543,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestGetStatisticsUpdateInterval(java.lang.String _this )*
      */
     @Override
-    public long iGuestGetStatisticsUpdateInterval(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iGuestGetStatisticsUpdateInterval(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestGetStatisticsUpdateInterval");
         System.out.println(_this);
@@ -9531,8 +9567,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetInitiator(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iProgressGetInitiator(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iProgressGetInitiator(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetInitiator");
         System.out.println(_this);
@@ -9555,8 +9591,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetAdapterType(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.NetworkAdapterType iNetworkAdapterGetAdapterType(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public org.virtualbox.NetworkAdapterType iNetworkAdapterGetAdapterType(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetAdapterType");
         System.out.println(_this);
@@ -9579,7 +9615,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetTraceFile(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iNetworkAdapterGetTraceFile(java.lang.String _this)
+    public java.lang.String iNetworkAdapterGetTraceFile(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetTraceFile");
@@ -9604,8 +9640,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String hostOnlyInterface )*
      */
     @Override
-    public void iNetworkAdapterSetHostOnlyInterface(java.lang.String _this,
-        java.lang.String hostOnlyInterface) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iNetworkAdapterSetHostOnlyInterface(final java.lang.String _this,
+        final java.lang.String hostOnlyInterface) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetHostOnlyInterface");
         System.out.println(_this);
@@ -9627,8 +9663,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iKeyboardGetEventSource(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iKeyboardGetEventSource(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iKeyboardGetEventSource(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iKeyboardGetEventSource");
         System.out.println(_this);
@@ -9651,7 +9687,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetTeleporterPassword(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetTeleporterPassword(java.lang.String _this)
+    public java.lang.String iMachineGetTeleporterPassword(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetTeleporterPassword");
@@ -9677,8 +9713,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public java.lang.String iBandwidthGroupChangedEventGetBandwidthGroup(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iBandwidthGroupChangedEventGetBandwidthGroup(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iBandwidthGroupChangedEventGetBandwidthGroup");
         System.out.println(_this);
@@ -9701,7 +9737,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iStorageControllerGetInstance(java.lang.String _this )*
      */
     @Override
-    public long iStorageControllerGetInstance(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iStorageControllerGetInstance(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerGetInstance");
@@ -9725,8 +9761,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineRemoveCPUIDLeaf(java.lang.String _this ,)long id )*
      */
     @Override
-    public void iMachineRemoveCPUIDLeaf(java.lang.String _this, long id) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMachineRemoveCPUIDLeaf(final java.lang.String _this, final long id)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineRemoveCPUIDLeaf");
         System.out.println(_this);
@@ -9748,8 +9784,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumFormatGetId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumFormatGetId(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMediumFormatGetId(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumFormatGetId");
         System.out.println(_this);
@@ -9773,7 +9809,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public void iConsoleRemoveSharedFolder(java.lang.String _this, java.lang.String name)
+    public void iConsoleRemoveSharedFolder(final java.lang.String _this, final java.lang.String name)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleRemoveSharedFolder");
@@ -9797,8 +9833,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String faultToleranceAddress )*
      */
     @Override
-    public void iMachineSetFaultToleranceAddress(java.lang.String _this,
-        java.lang.String faultToleranceAddress) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetFaultToleranceAddress(final java.lang.String _this,
+        final java.lang.String faultToleranceAddress) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetFaultToleranceAddress");
         System.out.println(_this);
@@ -9821,8 +9857,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String genericDriver )*
      */
     @Override
-    public void iNetworkAdapterSetGenericDriver(java.lang.String _this,
-        java.lang.String genericDriver) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iNetworkAdapterSetGenericDriver(final java.lang.String _this,
+        final java.lang.String genericDriver) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetGenericDriver");
         System.out.println(_this);
@@ -9846,10 +9882,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.util.List<java.lang.String> returnval )*
      */
     @Override
-    public void iMediumGetProperties(java.lang.String _this, java.lang.String names,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> returnNames,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> returnval) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMediumGetProperties(final java.lang.String _this, final java.lang.String names,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> returnNames,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> returnval)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetProperties");
         System.out.println(_this);
@@ -9875,7 +9911,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ivrdeServerGetAuthType(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.AuthType ivrdeServerGetAuthType(java.lang.String _this)
+    public org.virtualbox.AuthType ivrdeServerGetAuthType(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerGetAuthType");
@@ -9901,7 +9937,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public boolean iMouseCapabilityChangedEventGetNeedsHostCursor(java.lang.String _this)
+    public boolean iMouseCapabilityChangedEventGetNeedsHostCursor(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMouseCapabilityChangedEventGetNeedsHostCursor");
@@ -9926,7 +9962,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iMachineGetFaultToleranceSyncInterval(java.lang.String _this)
+    public long iMachineGetFaultToleranceSyncInterval(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetFaultToleranceSyncInterval");
@@ -9950,8 +9986,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleGetUseHostClipboard(java.lang.String _this )*
      */
     @Override
-    public boolean iConsoleGetUseHostClipboard(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iConsoleGetUseHostClipboard(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetUseHostClipboard");
         System.out.println(_this);
@@ -9975,8 +10011,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String manufacturer )*
      */
     @Override
-    public void iusbDeviceFilterSetManufacturer(java.lang.String _this,
-        java.lang.String manufacturer) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iusbDeviceFilterSetManufacturer(final java.lang.String _this,
+        final java.lang.String manufacturer) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterSetManufacturer");
         System.out.println(_this);
@@ -9998,7 +10034,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostNetworkInterfaceGetIPAddress(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iHostNetworkInterfaceGetIPAddress(java.lang.String _this)
+    public java.lang.String iHostNetworkInterfaceGetIPAddress(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceGetIPAddress");
@@ -10023,8 +10059,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String bandwidthGroup )*
      */
     @Override
-    public void iNetworkAdapterSetBandwidthGroup(java.lang.String _this,
-        java.lang.String bandwidthGroup) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iNetworkAdapterSetBandwidthGroup(final java.lang.String _this,
+        final java.lang.String bandwidthGroup) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetBandwidthGroup");
         System.out.println(_this);
@@ -10047,8 +10083,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * aAppliance ,)java.lang.String location )*
      */
     @Override
-    public java.lang.String iMachineExport(java.lang.String _this, java.lang.String aAppliance,
-        java.lang.String location) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMachineExport(final java.lang.String _this,
+        final java.lang.String aAppliance, final java.lang.String location) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineExport");
         System.out.println(_this);
@@ -10073,7 +10110,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceGetVendorId(java.lang.String _this )*
      */
     @Override
-    public int iusbDeviceGetVendorId(java.lang.String _this) throws RuntimeFaultMsg,
+    public int iusbDeviceGetVendorId(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceGetVendorId");
@@ -10099,10 +10136,12 @@ public class VboxPortTypeImpl implements VboxPortType
      * valEdx )*
      */
     @Override
-    public void iMachineGetCPUIDLeaf(java.lang.String _this, long id,
-        javax.xml.ws.Holder<java.lang.Long> valEax, javax.xml.ws.Holder<java.lang.Long> valEbx,
-        javax.xml.ws.Holder<java.lang.Long> valEcx, javax.xml.ws.Holder<java.lang.Long> valEdx)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineGetCPUIDLeaf(final java.lang.String _this, final long id,
+        final javax.xml.ws.Holder<java.lang.Long> valEax,
+        final javax.xml.ws.Holder<java.lang.Long> valEbx,
+        final javax.xml.ws.Holder<java.lang.Long> valEcx,
+        final javax.xml.ws.Holder<java.lang.Long> valEdx) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetCPUIDLeaf");
         System.out.println(_this);
@@ -10132,7 +10171,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSnapshotEventGetSnapshotId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iSnapshotEventGetSnapshotId(java.lang.String _this)
+    public java.lang.String iSnapshotEventGetSnapshotId(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSnapshotEventGetSnapshotId");
@@ -10156,8 +10195,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSerialPortGetPath(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iSerialPortGetPath(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iSerialPortGetPath(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSerialPortGetPath");
         System.out.println(_this);
@@ -10180,8 +10219,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatEngineGetHostIP(java.lang.String _this )*
      */
     @Override
-    public java.lang.String inatEngineGetHostIP(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String inatEngineGetHostIP(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineGetHostIP");
         System.out.println(_this);
@@ -10205,7 +10244,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public java.lang.String iNetworkAdapterGetHostOnlyInterface(java.lang.String _this)
+    public java.lang.String iNetworkAdapterGetHostOnlyInterface(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetHostOnlyInterface");
@@ -10229,7 +10268,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressCancel(java.lang.String _this )*
      */
     @Override
-    public void iProgressCancel(java.lang.String _this) throws RuntimeFaultMsg,
+    public void iProgressCancel(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressCancel");
@@ -10251,8 +10290,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iAudioAdapterGetAudioController(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.AudioControllerType iAudioAdapterGetAudioController(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public org.virtualbox.AudioControllerType iAudioAdapterGetAudioController(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iAudioAdapterGetAudioController");
         System.out.println(_this);
@@ -10277,9 +10316,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public void iMachineReadSavedThumbnailPNGToArray(java.lang.String _this, long screenId,
-        javax.xml.ws.Holder<java.lang.Long> width, javax.xml.ws.Holder<java.lang.Long> height,
-        javax.xml.ws.Holder<java.lang.String> returnval) throws RuntimeFaultMsg,
+    public void iMachineReadSavedThumbnailPNGToArray(final java.lang.String _this,
+        final long screenId, final javax.xml.ws.Holder<java.lang.Long> width,
+        final javax.xml.ws.Holder<java.lang.Long> height,
+        final javax.xml.ws.Holder<java.lang.String> returnval) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineReadSavedThumbnailPNGToArray");
@@ -10308,7 +10348,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumLockWrite(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.MediumState iMediumLockWrite(java.lang.String _this)
+    public org.virtualbox.MediumState iMediumLockWrite(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumLockWrite");
@@ -10332,7 +10372,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceGetRevision(java.lang.String _this )*
      */
     @Override
-    public int iusbDeviceGetRevision(java.lang.String _this) throws RuntimeFaultMsg,
+    public int iusbDeviceGetRevision(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceGetRevision");
@@ -10356,7 +10396,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetHardDisks(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iVirtualBoxGetHardDisks(java.lang.String _this)
+    public java.util.List<java.lang.String> iVirtualBoxGetHardDisks(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetHardDisks");
@@ -10382,8 +10422,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean active )*
      */
     @Override
-    public void iEventSourceRegisterListener(java.lang.String _this, java.lang.String listener,
-        java.util.List<org.virtualbox.VBoxEventType> interesting, boolean active)
+    public void iEventSourceRegisterListener(final java.lang.String _this,
+        final java.lang.String listener,
+        final java.util.List<org.virtualbox.VBoxEventType> interesting, final boolean active)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventSourceRegisterListener");
@@ -10408,8 +10449,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestMonitorChangedEventGetWidth(java.lang.String _this )*
      */
     @Override
-    public long iGuestMonitorChangedEventGetWidth(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iGuestMonitorChangedEventGetWidth(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestMonitorChangedEventGetWidth");
         System.out.println(_this);
@@ -10432,7 +10473,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineEventGetMachineId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineEventGetMachineId(java.lang.String _this)
+    public java.lang.String iMachineEventGetMachineId(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineEventGetMachineId");
@@ -10456,8 +10497,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ibiosSettingsGetLogoDisplayTime(java.lang.String _this )*
      */
     @Override
-    public long ibiosSettingsGetLogoDisplayTime(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long ibiosSettingsGetLogoDisplayTime(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsGetLogoDisplayTime");
         System.out.println(_this);
@@ -10481,8 +10522,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * mtu ,)long sockSnd ,)long sockRcv ,)long tcpWndSnd ,)long tcpWndRcv )*
      */
     @Override
-    public void inatEngineSetNetworkSettings(java.lang.String _this, long mtu, long sockSnd,
-        long sockRcv, long tcpWndSnd, long tcpWndRcv) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void inatEngineSetNetworkSettings(final java.lang.String _this, final long mtu,
+        final long sockSnd, final long sockRcv, final long tcpWndSnd, final long tcpWndRcv)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineSetNetworkSettings");
         System.out.println(_this);
@@ -10508,7 +10550,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatRedirectEventGetName(java.lang.String _this )*
      */
     @Override
-    public java.lang.String inatRedirectEventGetName(java.lang.String _this)
+    public java.lang.String inatRedirectEventGetName(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatRedirectEventGetName");
@@ -10534,8 +10576,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)long freeDiskSpacePercentError )*
      */
     @Override
-    public void iSystemPropertiesSetFreeDiskSpacePercentError(java.lang.String _this,
-        long freeDiskSpacePercentError) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iSystemPropertiesSetFreeDiskSpacePercentError(final java.lang.String _this,
+        final long freeDiskSpacePercentError) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesSetFreeDiskSpacePercentError");
         System.out.println(_this);
@@ -10558,8 +10600,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String key )*
      */
     @Override
-    public java.lang.String iVirtualBoxGetExtraData(java.lang.String _this, java.lang.String key)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iVirtualBoxGetExtraData(final java.lang.String _this,
+        final java.lang.String key) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetExtraData");
         System.out.println(_this);
@@ -10583,8 +10625,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGetAcceleration3DAvailable(java.lang.String _this )*
      */
     @Override
-    public boolean iHostGetAcceleration3DAvailable(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iHostGetAcceleration3DAvailable(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetAcceleration3DAvailable");
         System.out.println(_this);
@@ -10608,8 +10650,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.CPUPropertyType property )*
      */
     @Override
-    public boolean iMachineGetCPUProperty(java.lang.String _this,
-        org.virtualbox.CPUPropertyType property) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public boolean iMachineGetCPUProperty(final java.lang.String _this,
+        final org.virtualbox.CPUPropertyType property) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetCPUProperty");
         System.out.println(_this);
@@ -10633,7 +10676,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetNatDriver(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iNetworkAdapterGetNatDriver(java.lang.String _this)
+    public java.lang.String iNetworkAdapterGetNatDriver(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetNatDriver");
@@ -10657,7 +10700,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSnapshotGetOnline(java.lang.String _this )*
      */
     @Override
-    public boolean iSnapshotGetOnline(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iSnapshotGetOnline(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSnapshotGetOnline");
@@ -10683,7 +10726,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public boolean ivBoxSVCAvailabilityChangedEventGetAvailable(java.lang.String _this)
+    public boolean ivBoxSVCAvailabilityChangedEventGetAvailable(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivBoxSVCAvailabilityChangedEventGetAvailable");
@@ -10709,9 +10752,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * hostPort ,)java.lang.String guestIp ,)int guestPort )*
      */
     @Override
-    public void inatEngineAddRedirect(java.lang.String _this, java.lang.String name,
-        org.virtualbox.NATProtocol proto, java.lang.String hostIp, int hostPort,
-        java.lang.String guestIp, int guestPort) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void inatEngineAddRedirect(final java.lang.String _this, final java.lang.String name,
+        final org.virtualbox.NATProtocol proto, final java.lang.String hostIp, final int hostPort,
+        final java.lang.String guestIp, final int guestPort) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineAddRedirect");
         System.out.println(_this);
@@ -10740,8 +10784,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String toIPAddress )*
      */
     @Override
-    public void idhcpServerSetConfiguration(java.lang.String _this, java.lang.String ipAddress,
-        java.lang.String networkMask, java.lang.String fromIPAddress, java.lang.String toIPAddress)
+    public void idhcpServerSetConfiguration(final java.lang.String _this,
+        final java.lang.String ipAddress, final java.lang.String networkMask,
+        final java.lang.String fromIPAddress, final java.lang.String toIPAddress)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation idhcpServerSetConfiguration");
@@ -10768,7 +10813,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String id )*
      */
     @Override
-    public void iConsoleAttachUSBDevice(java.lang.String _this, java.lang.String id)
+    public void iConsoleAttachUSBDevice(final java.lang.String _this, final java.lang.String id)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleAttachUSBDevice");
@@ -10792,8 +10837,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String description )*
      */
     @Override
-    public void iSnapshotSetDescription(java.lang.String _this, java.lang.String description)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iSnapshotSetDescription(final java.lang.String _this,
+        final java.lang.String description) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSnapshotSetDescription");
         System.out.println(_this);
@@ -10816,8 +10861,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String authLibrary )*
      */
     @Override
-    public void ivrdeServerSetAuthLibrary(java.lang.String _this, java.lang.String authLibrary)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void ivrdeServerSetAuthLibrary(final java.lang.String _this,
+        final java.lang.String authLibrary) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerSetAuthLibrary");
         System.out.println(_this);
@@ -10839,7 +10884,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMouseGetNeedsHostCursor(java.lang.String _this )*
      */
     @Override
-    public boolean iMouseGetNeedsHostCursor(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iMouseGetNeedsHostCursor(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMouseGetNeedsHostCursor");
@@ -10864,8 +10909,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String id )*
      */
     @Override
-    public java.lang.String iHostFindUSBDeviceById(java.lang.String _this, java.lang.String id)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iHostFindUSBDeviceById(final java.lang.String _this,
+        final java.lang.String id) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostFindUSBDeviceById");
         System.out.println(_this);
@@ -10889,7 +10934,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetNATNetwork(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iNetworkAdapterGetNATNetwork(java.lang.String _this)
+    public java.lang.String iNetworkAdapterGetNATNetwork(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetNATNetwork");
@@ -10913,7 +10958,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestPropertyChangedEventGetName(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iGuestPropertyChangedEventGetName(java.lang.String _this)
+    public java.lang.String iGuestPropertyChangedEventGetName(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestPropertyChangedEventGetName");
@@ -10937,7 +10982,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetIoCacheSize(java.lang.String _this )*
      */
     @Override
-    public long iMachineGetIoCacheSize(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMachineGetIoCacheSize(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetIoCacheSize");
@@ -10962,8 +11007,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)int devicePosition )*
      */
     @Override
-    public int iStorageControllerGetIDEEmulationPort(java.lang.String _this, int devicePosition)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public int iStorageControllerGetIDEEmulationPort(final java.lang.String _this,
+        final int devicePosition) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerGetIDEEmulationPort");
         System.out.println(_this);
@@ -10989,8 +11034,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public java.lang.String iMachineGetGuestPropertyNotificationPatterns(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMachineGetGuestPropertyNotificationPatterns(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetGuestPropertyNotificationPatterns");
         System.out.println(_this);
@@ -11014,8 +11059,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long position ,)java.lang.String filter )*
      */
     @Override
-    public void iusbControllerInsertDeviceFilter(java.lang.String _this, long position,
-        java.lang.String filter) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iusbControllerInsertDeviceFilter(final java.lang.String _this, final long position,
+        final java.lang.String filter) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbControllerInsertDeviceFilter");
         System.out.println(_this);
@@ -11038,8 +11083,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleGetMachine(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iConsoleGetMachine(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iConsoleGetMachine(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetMachine");
         System.out.println(_this);
@@ -11062,8 +11107,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iStorageControllerGetMinPortCount(java.lang.String _this )*
      */
     @Override
-    public long iStorageControllerGetMinPortCount(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iStorageControllerGetMinPortCount(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerGetMinPortCount");
         System.out.println(_this);
@@ -11086,10 +11131,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostNetworkInterfaceGetName(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iHostNetworkInterfaceGetName(java.lang.String _this)
+    public java.lang.String iHostNetworkInterfaceGetName(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iHostNetworkInterfaceGetName");
+        LOG.info("Executing operation iHostNetworkInterfaceGetName");
         // System.out.println(_this);
         try
         {
@@ -11119,7 +11164,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceGetProductId(java.lang.String _this )*
      */
     @Override
-    public int iusbDeviceGetProductId(java.lang.String _this) throws RuntimeFaultMsg,
+    public int iusbDeviceGetProductId(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceGetProductId");
@@ -11144,8 +11189,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String key ,)java.lang.String value )*
      */
     @Override
-    public void ivrdeServerSetVRDEProperty(java.lang.String _this, java.lang.String key,
-        java.lang.String value) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void ivrdeServerSetVRDEProperty(final java.lang.String _this,
+        final java.lang.String key, final java.lang.String value) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerSetVRDEProperty");
         System.out.println(_this);
@@ -11168,7 +11214,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestMouseEventGetX(java.lang.String _this )*
      */
     @Override
-    public int iGuestMouseEventGetX(java.lang.String _this) throws RuntimeFaultMsg,
+    public int iGuestMouseEventGetX(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestMouseEventGetX");
@@ -11192,7 +11238,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetSnapshotCount(java.lang.String _this )*
      */
     @Override
-    public long iMachineGetSnapshotCount(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMachineGetSnapshotCount(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetSnapshotCount");
@@ -11216,8 +11262,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iPerformanceMetricGetMinimumValue(java.lang.String _this )*
      */
     @Override
-    public int iPerformanceMetricGetMinimumValue(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public int iPerformanceMetricGetMinimumValue(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iPerformanceMetricGetMinimumValue");
         System.out.println(_this);
@@ -11240,8 +11286,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSnapshotGetMachine(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iSnapshotGetMachine(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iSnapshotGetMachine(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSnapshotGetMachine");
         System.out.println(_this);
@@ -11266,7 +11312,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<java.lang.String> iApplianceGetVirtualSystemDescriptions(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iApplianceGetVirtualSystemDescriptions");
         System.out.println(_this);
@@ -11289,7 +11335,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGetOSVersion(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iHostGetOSVersion(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iHostGetOSVersion(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetOSVersion");
@@ -11313,7 +11359,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatEngineGetTftpNextServer(java.lang.String _this )*
      */
     @Override
-    public java.lang.String inatEngineGetTftpNextServer(java.lang.String _this)
+    public java.lang.String inatEngineGetTftpNextServer(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineGetTftpNextServer");
@@ -11337,7 +11383,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetCompleted(java.lang.String _this )*
      */
     @Override
-    public boolean iProgressGetCompleted(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iProgressGetCompleted(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetCompleted");
@@ -11362,7 +11408,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iSystemPropertiesGetMaxGuestCPUCount(java.lang.String _this)
+    public long iSystemPropertiesGetMaxGuestCPUCount(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMaxGuestCPUCount");
@@ -11386,7 +11432,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetOperationDescription(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iProgressGetOperationDescription(java.lang.String _this)
+    public java.lang.String iProgressGetOperationDescription(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetOperationDescription");
@@ -11410,7 +11456,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostPciDevicePlugEventGetPlugged(java.lang.String _this )*
      */
     @Override
-    public boolean iHostPciDevicePlugEventGetPlugged(java.lang.String _this)
+    public boolean iHostPciDevicePlugEventGetPlugged(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostPciDevicePlugEventGetPlugged");
@@ -11435,8 +11481,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)long freeDiskSpaceError )*
      */
     @Override
-    public void iSystemPropertiesSetFreeDiskSpaceError(java.lang.String _this,
-        long freeDiskSpaceError) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iSystemPropertiesSetFreeDiskSpaceError(final java.lang.String _this,
+        final long freeDiskSpaceError) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesSetFreeDiskSpaceError");
         System.out.println(_this);
@@ -11459,7 +11505,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public java.lang.String iMousePointerShapeChangedEventGetShape(java.lang.String _this)
+    public java.lang.String iMousePointerShapeChangedEventGetShape(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMousePointerShapeChangedEventGetShape");
@@ -11483,7 +11529,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSerialPortGetIOBase(java.lang.String _this )*
      */
     @Override
-    public long iSerialPortGetIOBase(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iSerialPortGetIOBase(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSerialPortGetIOBase");
@@ -11507,8 +11553,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetCPUHotPlugEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean iMachineGetCPUHotPlugEnabled(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iMachineGetCPUHotPlugEnabled(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetCPUHotPlugEnabled");
         System.out.println(_this);
@@ -11531,8 +11577,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumFormatGetName(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumFormatGetName(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMediumFormatGetName(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumFormatGetName");
         System.out.println(_this);
@@ -11555,8 +11601,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSystemPropertiesGetInfoVDSize(java.lang.String _this )*
      */
     @Override
-    public long iSystemPropertiesGetInfoVDSize(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iSystemPropertiesGetInfoVDSize(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetInfoVDSize");
         System.out.println(_this);
@@ -11580,8 +11626,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iSystemPropertiesGetLogHistoryCount(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iSystemPropertiesGetLogHistoryCount(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetLogHistoryCount");
         System.out.println(_this);
@@ -11605,8 +11651,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String snapshot )*
      */
     @Override
-    public java.lang.String iConsoleRestoreSnapshot(java.lang.String _this,
-        java.lang.String snapshot) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iConsoleRestoreSnapshot(final java.lang.String _this,
+        final java.lang.String snapshot) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleRestoreSnapshot");
         System.out.println(_this);
@@ -11632,8 +11678,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)org.virtualbox.StorageBus bus )*
      */
     @Override
-    public long iSystemPropertiesGetMaxPortCountForStorageBus(java.lang.String _this,
-        org.virtualbox.StorageBus bus) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public long iSystemPropertiesGetMaxPortCountForStorageBus(final java.lang.String _this,
+        final org.virtualbox.StorageBus bus) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMaxPortCountForStorageBus");
         System.out.println(_this);
@@ -11657,8 +11703,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleGetKeyboard(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iConsoleGetKeyboard(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iConsoleGetKeyboard(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetKeyboard");
         System.out.println(_this);
@@ -11681,8 +11727,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbControllerGetDeviceFilters(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iusbControllerGetDeviceFilters(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.util.List<java.lang.String> iusbControllerGetDeviceFilters(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbControllerGetDeviceFilters");
         System.out.println(_this);
@@ -11705,8 +11751,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatEngineGetTftpPrefix(java.lang.String _this )*
      */
     @Override
-    public java.lang.String inatEngineGetTftpPrefix(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String inatEngineGetTftpPrefix(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineGetTftpPrefix");
         System.out.println(_this);
@@ -11730,8 +11776,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String source ,)long flags )*
      */
     @Override
-    public java.lang.String iGuestUpdateGuestAdditions(java.lang.String _this,
-        java.lang.String source, long flags) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iGuestUpdateGuestAdditions(final java.lang.String _this,
+        final java.lang.String source, final long flags) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestUpdateGuestAdditions");
         System.out.println(_this);
@@ -11757,7 +11804,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public boolean iStorageDeviceChangedEventGetRemoved(java.lang.String _this)
+    public boolean iStorageDeviceChangedEventGetRemoved(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageDeviceChangedEventGetRemoved");
@@ -11782,7 +11829,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String osTypeId )*
      */
     @Override
-    public void iMachineSetOSTypeId(java.lang.String _this, java.lang.String osTypeId)
+    public void iMachineSetOSTypeId(final java.lang.String _this, final java.lang.String osTypeId)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetOSTypeId");
@@ -11806,8 +11853,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String aUri )*
      */
     @Override
-    public java.lang.String iApplianceCreateVFSExplorer(java.lang.String _this,
-        java.lang.String aUri) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iApplianceCreateVFSExplorer(final java.lang.String _this,
+        final java.lang.String aUri) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iApplianceCreateVFSExplorer");
         System.out.println(_this);
@@ -11832,8 +11879,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public void iMachineSetCPUCount(java.lang.String _this, long cpuCount) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMachineSetCPUCount(final java.lang.String _this, final long cpuCount)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetCPUCount");
         System.out.println(_this);
@@ -11855,7 +11902,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetSettingsFilePath(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iVirtualBoxGetSettingsFilePath(java.lang.String _this)
+    public java.lang.String iVirtualBoxGetSettingsFilePath(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetSettingsFilePath");
@@ -11880,7 +11927,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public org.virtualbox.HostNetworkInterfaceStatus iHostNetworkInterfaceGetStatus(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceGetStatus");
         System.out.println(_this);
@@ -11904,8 +11951,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean pageFusionEnabled )*
      */
     @Override
-    public void iMachineSetPageFusionEnabled(java.lang.String _this, boolean pageFusionEnabled)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetPageFusionEnabled(final java.lang.String _this,
+        final boolean pageFusionEnabled) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetPageFusionEnabled");
         System.out.println(_this);
@@ -11927,7 +11974,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsolePowerDown(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iConsolePowerDown(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iConsolePowerDown(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsolePowerDown");
@@ -11952,7 +11999,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * portCount )*
      */
     @Override
-    public void iStorageControllerSetPortCount(java.lang.String _this, long portCount)
+    public void iStorageControllerSetPortCount(final java.lang.String _this, final long portCount)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerSetPortCount");
@@ -11975,7 +12022,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iParallelPortGetEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean iParallelPortGetEnabled(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iParallelPortGetEnabled(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iParallelPortGetEnabled");
@@ -11999,7 +12046,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceFilterGetProductId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iusbDeviceFilterGetProductId(java.lang.String _this)
+    public java.lang.String iusbDeviceFilterGetProductId(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterGetProductId");
@@ -12024,8 +12071,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.NetworkAdapterType adapterType )*
      */
     @Override
-    public void iNetworkAdapterSetAdapterType(java.lang.String _this,
-        org.virtualbox.NetworkAdapterType adapterType) throws RuntimeFaultMsg,
+    public void iNetworkAdapterSetAdapterType(final java.lang.String _this,
+        final org.virtualbox.NetworkAdapterType adapterType) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetAdapterType");
@@ -12048,7 +12095,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumRefreshState(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.MediumState iMediumRefreshState(java.lang.String _this)
+    public org.virtualbox.MediumState iMediumRefreshState(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumRefreshState");
@@ -12073,7 +12120,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * timeOffset )*
      */
     @Override
-    public void ibiosSettingsSetTimeOffset(java.lang.String _this, long timeOffset)
+    public void ibiosSettingsSetTimeOffset(final java.lang.String _this, final long timeOffset)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsSetTimeOffset");
@@ -12097,8 +12144,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.util.List<java.lang.String> subordinates )*
      */
     @Override
-    public java.lang.String iEventSourceCreateAggregator(java.lang.String _this,
-        java.util.List<java.lang.String> subordinates) throws RuntimeFaultMsg,
+    public java.lang.String iEventSourceCreateAggregator(final java.lang.String _this,
+        final java.util.List<java.lang.String> subordinates) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventSourceCreateAggregator");
@@ -12124,8 +12171,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String remote )*
      */
     @Override
-    public void iusbDeviceFilterSetRemote(java.lang.String _this, java.lang.String remote)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iusbDeviceFilterSetRemote(final java.lang.String _this,
+        final java.lang.String remote) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterSetRemote");
         System.out.println(_this);
@@ -12149,9 +12196,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public void iMachineReadSavedScreenshotPNGToArray(java.lang.String _this, long screenId,
-        javax.xml.ws.Holder<java.lang.Long> width, javax.xml.ws.Holder<java.lang.Long> height,
-        javax.xml.ws.Holder<java.lang.String> returnval) throws RuntimeFaultMsg,
+    public void iMachineReadSavedScreenshotPNGToArray(final java.lang.String _this,
+        final long screenId, final javax.xml.ws.Holder<java.lang.Long> width,
+        final javax.xml.ws.Holder<java.lang.Long> height,
+        final javax.xml.ws.Holder<java.lang.String> returnval) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineReadSavedScreenshotPNGToArray");
@@ -12181,8 +12229,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String file ,)java.lang.String userName ,)java.lang.String password )*
      */
     @Override
-    public long iGuestFileQuerySize(java.lang.String _this, java.lang.String file,
-        java.lang.String userName, java.lang.String password) throws RuntimeFaultMsg,
+    public long iGuestFileQuerySize(final java.lang.String _this, final java.lang.String file,
+        final java.lang.String userName, final java.lang.String password) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestFileQuerySize");
@@ -12209,7 +12257,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetBridgedInterface(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iNetworkAdapterGetBridgedInterface(java.lang.String _this)
+    public java.lang.String iNetworkAdapterGetBridgedInterface(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetBridgedInterface");
@@ -12233,8 +12281,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetLogFolder(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetLogFolder(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMachineGetLogFolder(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetLogFolder");
         System.out.println(_this);
@@ -12258,7 +12306,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * autoReset )*
      */
     @Override
-    public void iMediumSetAutoReset(java.lang.String _this, boolean autoReset)
+    public void iMediumSetAutoReset(final java.lang.String _this, final boolean autoReset)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumSetAutoReset");
@@ -12281,7 +12329,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceFilterGetRevision(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iusbDeviceFilterGetRevision(java.lang.String _this)
+    public java.lang.String iusbDeviceFilterGetRevision(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterGetRevision");
@@ -12306,7 +12354,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * name )*
      */
     @Override
-    public void iSnapshotSetName(java.lang.String _this, java.lang.String name)
+    public void iSnapshotSetName(final java.lang.String _this, final java.lang.String name)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSnapshotSetName");
@@ -12329,8 +12377,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetAccelerate3DEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean iMachineGetAccelerate3DEnabled(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iMachineGetAccelerate3DEnabled(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetAccelerate3DEnabled");
         System.out.println(_this);
@@ -12354,7 +12402,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<org.virtualbox.ISharedFolder> iConsoleGetSharedFolders(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetSharedFolders");
         System.out.println(_this);
@@ -12377,8 +12425,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceFilterGetPort(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iusbDeviceFilterGetPort(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iusbDeviceFilterGetPort(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterGetPort");
         System.out.println(_this);
@@ -12401,7 +12449,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGetFloppyDrives(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iHostGetFloppyDrives(java.lang.String _this)
+    public java.util.List<java.lang.String> iHostGetFloppyDrives(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetFloppyDrives");
@@ -12425,7 +12473,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetPointingHidType(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.PointingHidType iMachineGetPointingHidType(java.lang.String _this)
+    public org.virtualbox.PointingHidType iMachineGetPointingHidType(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetPointingHidType");
@@ -12449,7 +12497,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetExtraDataKeys(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iMachineGetExtraDataKeys(java.lang.String _this)
+    public java.util.List<java.lang.String> iMachineGetExtraDataKeys(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetExtraDataKeys");
@@ -12474,8 +12522,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String key ,)java.lang.String value )*
      */
     @Override
-    public void iNetworkAdapterSetProperty(java.lang.String _this, java.lang.String key,
-        java.lang.String value) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iNetworkAdapterSetProperty(final java.lang.String _this,
+        final java.lang.String key, final java.lang.String value) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetProperty");
         System.out.println(_this);
@@ -12499,7 +12548,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public long icpuExecutionCapChangedEventGetExecutionCap(java.lang.String _this)
+    public long icpuExecutionCapChangedEventGetExecutionCap(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation icpuExecutionCapChangedEventGetExecutionCap");
@@ -12525,11 +12574,11 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.util.List<java.lang.Long> aSizes ,)java.util.List<java.lang.Long> aModes )*
      */
     @Override
-    public void ivfsExplorerEntryList(java.lang.String _this,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> aNames,
-        javax.xml.ws.Holder<java.util.List<java.lang.Long>> aTypes,
-        javax.xml.ws.Holder<java.util.List<java.lang.Long>> aSizes,
-        javax.xml.ws.Holder<java.util.List<java.lang.Long>> aModes) throws RuntimeFaultMsg,
+    public void ivfsExplorerEntryList(final java.lang.String _this,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> aNames,
+        final javax.xml.ws.Holder<java.util.List<java.lang.Long>> aTypes,
+        final javax.xml.ws.Holder<java.util.List<java.lang.Long>> aSizes,
+        final javax.xml.ws.Holder<java.util.List<java.lang.Long>> aModes) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivfsExplorerEntryList");
@@ -12559,7 +12608,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatRedirectEventGetGuestPort(java.lang.String _this )*
      */
     @Override
-    public int inatRedirectEventGetGuestPort(java.lang.String _this) throws RuntimeFaultMsg,
+    public int inatRedirectEventGetGuestPort(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatRedirectEventGetGuestPort");
@@ -12584,7 +12633,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public boolean iKeyboardLedsChangedEventGetCapsLock(java.lang.String _this)
+    public boolean iKeyboardLedsChangedEventGetCapsLock(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iKeyboardLedsChangedEventGetCapsLock");
@@ -12608,7 +12657,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iApplianceGetDisks(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iApplianceGetDisks(java.lang.String _this)
+    public java.util.List<java.lang.String> iApplianceGetDisks(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iApplianceGetDisks");
@@ -12634,8 +12683,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * String _this ,)org.virtualbox.StorageBus bus )*
      */
     @Override
-    public long iSystemPropertiesGetMaxDevicesPerPortForStorageBus(java.lang.String _this,
-        org.virtualbox.StorageBus bus) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public long iSystemPropertiesGetMaxDevicesPerPortForStorageBus(final java.lang.String _this,
+        final org.virtualbox.StorageBus bus) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMaxDevicesPerPortForStorageBus");
         System.out.println(_this);
@@ -12660,7 +12709,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * acpiEnabled )*
      */
     @Override
-    public void ibiosSettingsSetACPIEnabled(java.lang.String _this, boolean acpiEnabled)
+    public void ibiosSettingsSetACPIEnabled(final java.lang.String _this, final boolean acpiEnabled)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsSetACPIEnabled");
@@ -12683,7 +12732,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetRevision(java.lang.String _this )*
      */
     @Override
-    public long iVirtualBoxGetRevision(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iVirtualBoxGetRevision(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetRevision");
@@ -12707,8 +12756,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumDeleteStorage(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumDeleteStorage(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMediumDeleteStorage(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumDeleteStorage");
         System.out.println(_this);
@@ -12732,8 +12781,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.FaultToleranceState faultToleranceState )*
      */
     @Override
-    public void iMachineSetFaultToleranceState(java.lang.String _this,
-        org.virtualbox.FaultToleranceState faultToleranceState) throws RuntimeFaultMsg,
+    public void iMachineSetFaultToleranceState(final java.lang.String _this,
+        final org.virtualbox.FaultToleranceState faultToleranceState) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetFaultToleranceState");
@@ -12756,7 +12805,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSerialPortGetIRQ(java.lang.String _this )*
      */
     @Override
-    public long iSerialPortGetIRQ(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iSerialPortGetIRQ(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSerialPortGetIRQ");
@@ -12780,7 +12829,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatRedirectEventGetSlot(java.lang.String _this )*
      */
     @Override
-    public long inatRedirectEventGetSlot(java.lang.String _this) throws RuntimeFaultMsg,
+    public long inatRedirectEventGetSlot(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatRedirectEventGetSlot");
@@ -12804,8 +12853,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetBIOSSettings(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetBIOSSettings(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMachineGetBIOSSettings(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetBIOSSettings");
         System.out.println(_this);
@@ -12829,8 +12878,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iusbDeviceFilterGetMaskedInterfaces(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iusbDeviceFilterGetMaskedInterfaces(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterGetMaskedInterfaces");
         System.out.println(_this);
@@ -12854,7 +12903,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public java.lang.String iSystemPropertiesGetWebServiceAuthLibrary(java.lang.String _this)
+    public java.lang.String iSystemPropertiesGetWebServiceAuthLibrary(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetWebServiceAuthLibrary");
@@ -12878,7 +12927,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatEngineGetDnsPassDomain(java.lang.String _this )*
      */
     @Override
-    public boolean inatEngineGetDnsPassDomain(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean inatEngineGetDnsPassDomain(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineGetDnsPassDomain");
@@ -12904,8 +12953,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)org.virtualbox.StorageBus bus )*
      */
     @Override
-    public long iSystemPropertiesGetMinPortCountForStorageBus(java.lang.String _this,
-        org.virtualbox.StorageBus bus) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public long iSystemPropertiesGetMinPortCountForStorageBus(final java.lang.String _this,
+        final org.virtualbox.StorageBus bus) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMinPortCountForStorageBus");
         System.out.println(_this);
@@ -12930,8 +12979,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String tftpPrefix )*
      */
     @Override
-    public void inatEngineSetTftpPrefix(java.lang.String _this, java.lang.String tftpPrefix)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void inatEngineSetTftpPrefix(final java.lang.String _this,
+        final java.lang.String tftpPrefix) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineSetTftpPrefix");
         System.out.println(_this);
@@ -12954,8 +13003,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String traceFile )*
      */
     @Override
-    public void iNetworkAdapterSetTraceFile(java.lang.String _this, java.lang.String traceFile)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iNetworkAdapterSetTraceFile(final java.lang.String _this,
+        final java.lang.String traceFile) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetTraceFile");
         System.out.println(_this);
@@ -12978,7 +13027,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public java.lang.String iExtraDataCanChangeEventGetMachineId(java.lang.String _this)
+    public java.lang.String iExtraDataCanChangeEventGetMachineId(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iExtraDataCanChangeEventGetMachineId");
@@ -13002,7 +13051,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iStorageControllerGetName(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iStorageControllerGetName(java.lang.String _this)
+    public java.lang.String iStorageControllerGetName(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerGetName");
@@ -13027,8 +13076,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public java.lang.String iHostFindUSBDeviceByAddress(java.lang.String _this,
-        java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iHostFindUSBDeviceByAddress(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostFindUSBDeviceByAddress");
         System.out.println(_this);
@@ -13052,7 +13101,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumUnlockRead(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.MediumState iMediumUnlockRead(java.lang.String _this)
+    public org.virtualbox.MediumState iMediumUnlockRead(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumUnlockRead");
@@ -13077,8 +13126,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String id )*
      */
     @Override
-    public java.lang.String iConsoleDetachUSBDevice(java.lang.String _this, java.lang.String id)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iConsoleDetachUSBDevice(final java.lang.String _this,
+        final java.lang.String id) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleDetachUSBDevice");
         System.out.println(_this);
@@ -13103,7 +13152,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public boolean iKeyboardLedsChangedEventGetNumLock(java.lang.String _this)
+    public boolean iKeyboardLedsChangedEventGetNumLock(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iKeyboardLedsChangedEventGetNumLock");
@@ -13128,8 +13177,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.util.List<org.virtualbox.ImportOptions> options )*
      */
     @Override
-    public java.lang.String iApplianceImportMachines(java.lang.String _this,
-        java.util.List<org.virtualbox.ImportOptions> options) throws RuntimeFaultMsg,
+    public java.lang.String iApplianceImportMachines(final java.lang.String _this,
+        final java.util.List<org.virtualbox.ImportOptions> options) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iApplianceImportMachines");
@@ -13155,7 +13204,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public boolean iKeyboardLedsChangedEventGetScrollLock(java.lang.String _this)
+    public boolean iKeyboardLedsChangedEventGetScrollLock(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iKeyboardLedsChangedEventGetScrollLock");
@@ -13180,8 +13229,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long logoDisplayTime )*
      */
     @Override
-    public void ibiosSettingsSetLogoDisplayTime(java.lang.String _this, long logoDisplayTime)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void ibiosSettingsSetLogoDisplayTime(final java.lang.String _this,
+        final long logoDisplayTime) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsSetLogoDisplayTime");
         System.out.println(_this);
@@ -13203,7 +13252,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatEngineGetDnsProxy(java.lang.String _this )*
      */
     @Override
-    public boolean inatEngineGetDnsProxy(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean inatEngineGetDnsProxy(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineGetDnsProxy");
@@ -13229,10 +13278,11 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.util.List<java.lang.String> returnval )*
      */
     @Override
-    public void iNetworkAdapterGetProperties(java.lang.String _this, java.lang.String names,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> returnNames,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> returnval) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iNetworkAdapterGetProperties(final java.lang.String _this,
+        final java.lang.String names,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> returnNames,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> returnval)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetProperties");
         System.out.println(_this);
@@ -13258,7 +13308,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iProgressGetId(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iProgressGetId(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetId");
@@ -13282,7 +13332,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetPackageType(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iVirtualBoxGetPackageType(java.lang.String _this)
+    public java.lang.String iVirtualBoxGetPackageType(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetPackageType");
@@ -13306,7 +13356,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineSaveSettings(java.lang.String _this )*
      */
     @Override
-    public void iMachineSaveSettings(java.lang.String _this) throws RuntimeFaultMsg,
+    public void iMachineSaveSettings(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSaveSettings");
@@ -13329,7 +13379,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * maxMbPerSec )*
      */
     @Override
-    public void iBandwidthGroupSetMaxMbPerSec(java.lang.String _this, long maxMbPerSec)
+    public void iBandwidthGroupSetMaxMbPerSec(final java.lang.String _this, final long maxMbPerSec)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iBandwidthGroupSetMaxMbPerSec");
@@ -13353,8 +13403,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public void iParallelPortSetIOBase(java.lang.String _this, long ioBase) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iParallelPortSetIOBase(final java.lang.String _this, final long ioBase)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iParallelPortSetIOBase");
         System.out.println(_this);
@@ -13377,7 +13427,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * enabled )*
      */
     @Override
-    public void iParallelPortSetEnabled(java.lang.String _this, boolean enabled)
+    public void iParallelPortSetEnabled(final java.lang.String _this, final boolean enabled)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iParallelPortSetEnabled");
@@ -13401,8 +13451,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name ,)boolean bootable )*
      */
     @Override
-    public void iMachineSetStorageControllerBootable(java.lang.String _this, java.lang.String name,
-        boolean bootable) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetStorageControllerBootable(final java.lang.String _this,
+        final java.lang.String name, final boolean bootable) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetStorageControllerBootable");
         System.out.println(_this);
@@ -13425,7 +13476,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleGetUSBDevices(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iConsoleGetUSBDevices(java.lang.String _this)
+    public java.util.List<java.lang.String> iConsoleGetUSBDevices(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetUSBDevices");
@@ -13450,8 +13501,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * logicalSize ,)long variant )*
      */
     @Override
-    public java.lang.String iMediumCreateBaseStorage(java.lang.String _this, long logicalSize,
-        long variant) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMediumCreateBaseStorage(final java.lang.String _this,
+        final long logicalSize, final long variant) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumCreateBaseStorage");
         System.out.println(_this);
@@ -13477,8 +13528,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long height ,)long bitsPerPixel ,)long display )*
      */
     @Override
-    public void iDisplaySetVideoModeHint(java.lang.String _this, long width, long height,
-        long bitsPerPixel, long display) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iDisplaySetVideoModeHint(final java.lang.String _this, final long width,
+        final long height, final long bitsPerPixel, final long display) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iDisplaySetVideoModeHint");
         System.out.println(_this);
@@ -13504,8 +13556,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.util.List<java.lang.Integer> scancodes )*
      */
     @Override
-    public long iKeyboardPutScancodes(java.lang.String _this,
-        java.util.List<java.lang.Integer> scancodes) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public long iKeyboardPutScancodes(final java.lang.String _this,
+        final java.util.List<java.lang.Integer> scancodes) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iKeyboardPutScancodes");
         System.out.println(_this);
@@ -13529,8 +13582,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iStorageControllerGetPortCount(java.lang.String _this )*
      */
     @Override
-    public long iStorageControllerGetPortCount(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iStorageControllerGetPortCount(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerGetPortCount");
         System.out.println(_this);
@@ -13553,7 +13606,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetMonitorCount(java.lang.String _this )*
      */
     @Override
-    public long iMachineGetMonitorCount(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMachineGetMonitorCount(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetMonitorCount");
@@ -13578,8 +13631,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public java.lang.String iHostFindHostFloppyDrive(java.lang.String _this, java.lang.String name)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iHostFindHostFloppyDrive(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostFindHostFloppyDrive");
         System.out.println(_this);
@@ -13604,8 +13657,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.ClipboardMode clipboardMode )*
      */
     @Override
-    public void iMachineSetClipboardMode(java.lang.String _this,
-        org.virtualbox.ClipboardMode clipboardMode) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetClipboardMode(final java.lang.String _this,
+        final org.virtualbox.ClipboardMode clipboardMode) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetClipboardMode");
         System.out.println(_this);
@@ -13628,8 +13682,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String format ,)java.lang.String location )*
      */
     @Override
-    public java.lang.String iVirtualBoxCreateHardDisk(java.lang.String _this,
-        java.lang.String format, java.lang.String location) throws RuntimeFaultMsg,
+    public java.lang.String iVirtualBoxCreateHardDisk(final java.lang.String _this,
+        final java.lang.String format, final java.lang.String location) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxCreateHardDisk");
@@ -13655,7 +13709,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVetoEventGetVetos(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iVetoEventGetVetos(java.lang.String _this)
+    public java.util.List<java.lang.String> iVetoEventGetVetos(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVetoEventGetVetos");
@@ -13679,7 +13733,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iEventSetProcessed(java.lang.String _this )*
      */
     @Override
-    public void iEventSetProcessed(java.lang.String _this) throws RuntimeFaultMsg,
+    public void iEventSetProcessed(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventSetProcessed");
@@ -13701,8 +13755,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSystemPropertiesGetMinGuestVRAM(java.lang.String _this )*
      */
     @Override
-    public long iSystemPropertiesGetMinGuestVRAM(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iSystemPropertiesGetMinGuestVRAM(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMinGuestVRAM");
         System.out.println(_this);
@@ -13725,8 +13779,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetAccessError(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetAccessError(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMachineGetAccessError(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetAccessError");
         System.out.println(_this);
@@ -13750,7 +13804,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * fRemoveFile )*
      */
     @Override
-    public void iConsoleDiscardSavedState(java.lang.String _this, boolean fRemoveFile)
+    public void iConsoleDiscardSavedState(final java.lang.String _this, final boolean fRemoveFile)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleDiscardSavedState");
@@ -13774,8 +13828,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * useHostClipboard )*
      */
     @Override
-    public void iConsoleSetUseHostClipboard(java.lang.String _this, boolean useHostClipboard)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iConsoleSetUseHostClipboard(final java.lang.String _this,
+        final boolean useHostClipboard) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleSetUseHostClipboard");
         System.out.println(_this);
@@ -13797,8 +13851,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleGetDisplay(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iConsoleGetDisplay(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iConsoleGetDisplay(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetDisplay");
         System.out.println(_this);
@@ -13822,9 +13876,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.HWVirtExPropertyType property ,)boolean value )*
      */
     @Override
-    public void iMachineSetHWVirtExProperty(java.lang.String _this,
-        org.virtualbox.HWVirtExPropertyType property, boolean value) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMachineSetHWVirtExProperty(final java.lang.String _this,
+        final org.virtualbox.HWVirtExPropertyType property, final boolean value)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetHWVirtExProperty");
         System.out.println(_this);
@@ -13848,9 +13902,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name ,)java.lang.String hostPath ,)boolean writable ,)boolean automount )*
      */
     @Override
-    public void iConsoleCreateSharedFolder(java.lang.String _this, java.lang.String name,
-        java.lang.String hostPath, boolean writable, boolean automount) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iConsoleCreateSharedFolder(final java.lang.String _this,
+        final java.lang.String name, final java.lang.String hostPath, final boolean writable,
+        final boolean automount) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleCreateSharedFolder");
         System.out.println(_this);
@@ -13875,7 +13929,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetDVDImages(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iVirtualBoxGetDVDImages(java.lang.String _this)
+    public java.util.List<java.lang.String> iVirtualBoxGetDVDImages(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetDVDImages");
@@ -13899,7 +13953,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iKeyboardPutCAD(java.lang.String _this )*
      */
     @Override
-    public void iKeyboardPutCAD(java.lang.String _this) throws RuntimeFaultMsg,
+    public void iKeyboardPutCAD(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iKeyboardPutCAD");
@@ -13921,8 +13975,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetAllowedTypes(java.lang.String _this )*
      */
     @Override
-    public java.util.List<org.virtualbox.MediumType> iMediumGetAllowedTypes(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.util.List<org.virtualbox.MediumType> iMediumGetAllowedTypes(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetAllowedTypes");
         System.out.println(_this);
@@ -13945,7 +13999,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iApplianceGetMachines(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iApplianceGetMachines(java.lang.String _this)
+    public java.util.List<java.lang.String> iApplianceGetMachines(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iApplianceGetMachines");
@@ -13969,7 +14023,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iApplianceGetPath(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iApplianceGetPath(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iApplianceGetPath(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iApplianceGetPath");
@@ -13993,8 +14047,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestDirectoryRead(java.lang.String _this ,)long handle )*
      */
     @Override
-    public org.virtualbox.IGuestDirEntry iGuestDirectoryRead(java.lang.String _this, long handle)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public org.virtualbox.IGuestDirEntry iGuestDirectoryRead(final java.lang.String _this,
+        final long handle) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestDirectoryRead");
         System.out.println(_this);
@@ -14019,8 +14073,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String property )*
      */
     @Override
-    public java.lang.String iMachineGetGuestPropertyValue(java.lang.String _this,
-        java.lang.String property) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMachineGetGuestPropertyValue(final java.lang.String _this,
+        final java.lang.String property) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetGuestPropertyValue");
         System.out.println(_this);
@@ -14045,8 +14099,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public java.lang.String iMachineGetStorageControllerByName(java.lang.String _this,
-        java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMachineGetStorageControllerByName(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetStorageControllerByName");
         System.out.println(_this);
@@ -14071,7 +14125,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public void iSerialPortSetServer(java.lang.String _this, boolean server)
+    public void iSerialPortSetServer(final java.lang.String _this, final boolean server)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSerialPortSetServer");
@@ -14095,8 +14149,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.util.List<java.lang.String> aMedia )*
      */
     @Override
-    public java.lang.String iMachineDelete(java.lang.String _this,
-        java.util.List<java.lang.String> aMedia) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMachineDelete(final java.lang.String _this,
+        final java.util.List<java.lang.String> aMedia) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineDelete");
         System.out.println(_this);
@@ -14120,7 +14175,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetFaultTolerancePassword(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetFaultTolerancePassword(java.lang.String _this)
+    public java.lang.String iMachineGetFaultTolerancePassword(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetFaultTolerancePassword");
@@ -14145,7 +14200,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public boolean iMousePointerShapeChangedEventGetAlpha(java.lang.String _this)
+    public boolean iMousePointerShapeChangedEventGetAlpha(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMousePointerShapeChangedEventGetAlpha");
@@ -14169,7 +14224,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetSize(java.lang.String _this )*
      */
     @Override
-    public long iMediumGetSize(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMediumGetSize(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetSize");
@@ -14194,8 +14249,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String teleporterAddress )*
      */
     @Override
-    public void iMachineSetTeleporterAddress(java.lang.String _this,
-        java.lang.String teleporterAddress) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetTeleporterAddress(final java.lang.String _this,
+        final java.lang.String teleporterAddress) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetTeleporterAddress");
         System.out.println(_this);
@@ -14217,8 +14272,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatEngineGetDnsUseHostResolver(java.lang.String _this )*
      */
     @Override
-    public boolean inatEngineGetDnsUseHostResolver(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean inatEngineGetDnsUseHostResolver(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineGetDnsUseHostResolver");
         System.out.println(_this);
@@ -14241,7 +14296,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetLastStateChange(java.lang.String _this )*
      */
     @Override
-    public long iMachineGetLastStateChange(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMachineGetLastStateChange(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetLastStateChange");
@@ -14265,8 +14320,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestMouseEventGetAbsolute(java.lang.String _this )*
      */
     @Override
-    public boolean iGuestMouseEventGetAbsolute(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iGuestMouseEventGetAbsolute(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestMouseEventGetAbsolute");
         System.out.println(_this);
@@ -14290,8 +14345,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * memoryBalloonSize )*
      */
     @Override
-    public void iMachineSetMemoryBalloonSize(java.lang.String _this, long memoryBalloonSize)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetMemoryBalloonSize(final java.lang.String _this,
+        final long memoryBalloonSize) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetMemoryBalloonSize");
         System.out.println(_this);
@@ -14313,8 +14368,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetCableConnected(java.lang.String _this )*
      */
     @Override
-    public boolean iNetworkAdapterGetCableConnected(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iNetworkAdapterGetCableConnected(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetCableConnected");
         System.out.println(_this);
@@ -14337,7 +14392,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iEventGetType(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.VBoxEventType iEventGetType(java.lang.String _this)
+    public org.virtualbox.VBoxEventType iEventGetType(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventGetType");
@@ -14365,12 +14420,13 @@ public class VboxPortTypeImpl implements VboxPortType
      * aExtraConfigValues )*
      */
     @Override
-    public void iVirtualSystemDescriptionGetDescription(java.lang.String _this,
-        javax.xml.ws.Holder<java.util.List<org.virtualbox.VirtualSystemDescriptionType>> aTypes,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> aRefs,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> aOvfValues,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> aVBoxValues,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> aExtraConfigValues)
+    public void iVirtualSystemDescriptionGetDescription(
+        final java.lang.String _this,
+        final javax.xml.ws.Holder<java.util.List<org.virtualbox.VirtualSystemDescriptionType>> aTypes,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> aRefs,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> aOvfValues,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> aVBoxValues,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> aExtraConfigValues)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualSystemDescriptionGetDescription");
@@ -14402,7 +14458,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestGetOSTypeId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iGuestGetOSTypeId(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iGuestGetOSTypeId(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestGetOSTypeId");
@@ -14426,8 +14482,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ivrdeServerGetVRDEProperties(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> ivrdeServerGetVRDEProperties(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.util.List<java.lang.String> ivrdeServerGetVRDEProperties(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerGetVRDEProperties");
         System.out.println(_this);
@@ -14450,7 +14506,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iManagedObjectRefGetInterfaceName(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iManagedObjectRefGetInterfaceName(java.lang.String _this)
+    public java.lang.String iManagedObjectRefGetInterfaceName(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iManagedObjectRefGetInterfaceName");
@@ -14475,8 +14531,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.FirmwareType firmwareType )*
      */
     @Override
-    public void iMachineSetFirmwareType(java.lang.String _this,
-        org.virtualbox.FirmwareType firmwareType) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetFirmwareType(final java.lang.String _this,
+        final org.virtualbox.FirmwareType firmwareType) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetFirmwareType");
         System.out.println(_this);
@@ -14499,8 +14556,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long faultToleranceSyncInterval )*
      */
     @Override
-    public void iMachineSetFaultToleranceSyncInterval(java.lang.String _this,
-        long faultToleranceSyncInterval) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetFaultToleranceSyncInterval(final java.lang.String _this,
+        final long faultToleranceSyncInterval) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetFaultToleranceSyncInterval");
         System.out.println(_this);
@@ -14523,8 +14580,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String revision )*
      */
     @Override
-    public void iusbDeviceFilterSetRevision(java.lang.String _this, java.lang.String revision)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iusbDeviceFilterSetRevision(final java.lang.String _this,
+        final java.lang.String revision) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterSetRevision");
         System.out.println(_this);
@@ -14546,7 +14603,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetSlot(java.lang.String _this )*
      */
     @Override
-    public long iNetworkAdapterGetSlot(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iNetworkAdapterGetSlot(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetSlot");
@@ -14570,7 +14627,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSerialPortGetServer(java.lang.String _this )*
      */
     @Override
-    public boolean iSerialPortGetServer(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iSerialPortGetServer(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSerialPortGetServer");
@@ -14595,8 +14652,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String vrdeExtPack )*
      */
     @Override
-    public void ivrdeServerSetVRDEExtPack(java.lang.String _this, java.lang.String vrdeExtPack)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void ivrdeServerSetVRDEExtPack(final java.lang.String _this,
+        final java.lang.String vrdeExtPack) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerSetVRDEExtPack");
         System.out.println(_this);
@@ -14618,7 +14675,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iBandwidthGroupGetReference(java.lang.String _this )*
      */
     @Override
-    public long iBandwidthGroupGetReference(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iBandwidthGroupGetReference(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iBandwidthGroupGetReference");
@@ -14642,7 +14699,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetChildren(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iMediumGetChildren(java.lang.String _this)
+    public java.util.List<java.lang.String> iMediumGetChildren(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetChildren");
@@ -14666,7 +14723,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ibiosSettingsGetBootMenuMode(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.BIOSBootMenuMode ibiosSettingsGetBootMenuMode(java.lang.String _this)
+    public org.virtualbox.BIOSBootMenuMode ibiosSettingsGetBootMenuMode(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsGetBootMenuMode");
@@ -14690,7 +14747,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ivfsExplorerGetType(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.VFSType ivfsExplorerGetType(java.lang.String _this)
+    public org.virtualbox.VFSType ivfsExplorerGetType(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivfsExplorerGetType");
@@ -14714,8 +14771,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#idhcpServerGetLowerIP(java.lang.String _this )*
      */
     @Override
-    public java.lang.String idhcpServerGetLowerIP(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String idhcpServerGetLowerIP(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation idhcpServerGetLowerIP");
         System.out.println(_this);
@@ -14738,7 +14795,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ivrdeServerGetAuthLibrary(java.lang.String _this )*
      */
     @Override
-    public java.lang.String ivrdeServerGetAuthLibrary(java.lang.String _this)
+    public java.lang.String ivrdeServerGetAuthLibrary(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerGetAuthLibrary");
@@ -14763,7 +14820,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean enabledEhci )*
      */
     @Override
-    public void iusbControllerSetEnabledEhci(java.lang.String _this, boolean enabledEhci)
+    public void iusbControllerSetEnabledEhci(final java.lang.String _this, final boolean enabledEhci)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbControllerSetEnabledEhci");
@@ -14786,7 +14843,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatEngineGetRedirects(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> inatEngineGetRedirects(java.lang.String _this)
+    public java.util.List<java.lang.String> inatEngineGetRedirects(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineGetRedirects");
@@ -14812,7 +14869,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public org.virtualbox.NetworkAdapterPromiscModePolicy iNetworkAdapterGetPromiscModePolicy(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetPromiscModePolicy");
         System.out.println(_this);
@@ -14836,7 +14893,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<org.virtualbox.ISharedFolder> iMachineGetSharedFolders(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetSharedFolders");
         System.out.println(_this);
@@ -14859,7 +14916,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iExtraDataChangedEventGetValue(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iExtraDataChangedEventGetValue(java.lang.String _this)
+    public java.lang.String iExtraDataChangedEventGetValue(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iExtraDataChangedEventGetValue");
@@ -14884,8 +14941,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name ,)java.lang.String description )*
      */
     @Override
-    public java.lang.String iConsoleTakeSnapshot(java.lang.String _this, java.lang.String name,
-        java.lang.String description) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iConsoleTakeSnapshot(final java.lang.String _this,
+        final java.lang.String name, final java.lang.String description) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleTakeSnapshot");
         System.out.println(_this);
@@ -14910,8 +14968,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iBandwidthGroupGetName(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iBandwidthGroupGetName(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iBandwidthGroupGetName(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iBandwidthGroupGetName");
         System.out.println(_this);
@@ -14934,8 +14992,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSessionGetConsole(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iSessionGetConsole(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iSessionGetConsole(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSessionGetConsole");
         System.out.println(_this);
@@ -14960,7 +15018,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public org.virtualbox.IMediumAttachment iStorageDeviceChangedEventGetStorageDevice(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageDeviceChangedEventGetStorageDevice");
         System.out.println(_this);
@@ -14984,7 +15042,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public boolean iMachineGetAccelerate2DVideoEnabled(java.lang.String _this)
+    public boolean iMachineGetAccelerate2DVideoEnabled(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetAccelerate2DVideoEnabled");
@@ -15009,9 +15067,11 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long screenId ,)java.lang.Long size ,)java.lang.Long width ,)java.lang.Long height )*
      */
     @Override
-    public void iMachineQuerySavedThumbnailSize(java.lang.String _this, long screenId,
-        javax.xml.ws.Holder<java.lang.Long> size, javax.xml.ws.Holder<java.lang.Long> width,
-        javax.xml.ws.Holder<java.lang.Long> height) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineQuerySavedThumbnailSize(final java.lang.String _this, final long screenId,
+        final javax.xml.ws.Holder<java.lang.Long> size,
+        final javax.xml.ws.Holder<java.lang.Long> width,
+        final javax.xml.ws.Holder<java.lang.Long> height) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineQuerySavedThumbnailSize");
         System.out.println(_this);
@@ -15040,7 +15100,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * memorySize )*
      */
     @Override
-    public void iMachineSetMemorySize(java.lang.String _this, long memorySize)
+    public void iMachineSetMemorySize(final java.lang.String _this, final long memorySize)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetMemorySize");
@@ -15063,7 +15123,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleReset(java.lang.String _this )*
      */
     @Override
-    public void iConsoleReset(java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iConsoleReset(final java.lang.String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleReset");
         System.out.println(_this);
@@ -15087,9 +15148,9 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<java.lang.String> iPerformanceCollectorSetupMetrics(
-        java.lang.String _this, java.util.List<java.lang.String> metricNames,
-        java.util.List<java.lang.String> objects, long period, long count) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+        final java.lang.String _this, final java.util.List<java.lang.String> metricNames,
+        final java.util.List<java.lang.String> objects, final long period, final long count)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iPerformanceCollectorSetupMetrics");
         System.out.println(_this);
@@ -15116,8 +15177,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbControllerGetProxyAvailable(java.lang.String _this )*
      */
     @Override
-    public boolean iusbControllerGetProxyAvailable(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iusbControllerGetProxyAvailable(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbControllerGetProxyAvailable");
         System.out.println(_this);
@@ -15140,8 +15201,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#idhcpServerGetIPAddress(java.lang.String _this )*
      */
     @Override
-    public java.lang.String idhcpServerGetIPAddress(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String idhcpServerGetIPAddress(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation idhcpServerGetIPAddress");
         System.out.println(_this);
@@ -15165,7 +15226,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iMousePointerShapeChangedEventGetXhot(java.lang.String _this)
+    public long iMousePointerShapeChangedEventGetXhot(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMousePointerShapeChangedEventGetXhot");
@@ -15190,7 +15251,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public boolean iMousePointerShapeChangedEventGetVisible(java.lang.String _this)
+    public boolean iMousePointerShapeChangedEventGetVisible(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMousePointerShapeChangedEventGetVisible");
@@ -15215,7 +15276,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<org.virtualbox.IPciDeviceAttachment> iMachineGetPciDeviceAssignments(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetPciDeviceAssignments");
         System.out.println(_this);
@@ -15238,7 +15299,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iPerformanceMetricGetUnit(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iPerformanceMetricGetUnit(java.lang.String _this)
+    public java.lang.String iPerformanceMetricGetUnit(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iPerformanceMetricGetUnit");
@@ -15263,8 +15324,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String id )*
      */
     @Override
-    public org.virtualbox.IGuestOSType iVirtualBoxGetGuestOSType(java.lang.String _this,
-        java.lang.String id) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public org.virtualbox.IGuestOSType iVirtualBoxGetGuestOSType(final java.lang.String _this,
+        final java.lang.String id) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetGuestOSType");
         System.out.println(_this);
@@ -15288,8 +15349,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostUSBDeviceFilterGetAction(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.USBDeviceFilterAction iHostUSBDeviceFilterGetAction(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public org.virtualbox.USBDeviceFilterAction iHostUSBDeviceFilterGetAction(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostUSBDeviceFilterGetAction");
         System.out.println(_this);
@@ -15313,7 +15374,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public boolean iMachineGetEmulatedUSBWebcameraEnabled(java.lang.String _this)
+    public boolean iMachineGetEmulatedUSBWebcameraEnabled(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetEmulatedUSBWebcameraEnabled");
@@ -15338,7 +15399,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * name )*
      */
     @Override
-    public void iMachineSetName(java.lang.String _this, java.lang.String name)
+    public void iMachineSetName(final java.lang.String _this, final java.lang.String name)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetName");
@@ -15361,7 +15422,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumRegisteredEventGetMediumId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumRegisteredEventGetMediumId(java.lang.String _this)
+    public java.lang.String iMediumRegisteredEventGetMediumId(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumRegisteredEventGetMediumId");
@@ -15386,8 +15447,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iSystemPropertiesGetSerialPortCount(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iSystemPropertiesGetSerialPortCount(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetSerialPortCount");
         System.out.println(_this);
@@ -15412,10 +15473,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.AccessMode accessMode ,)boolean forceNewUuid )*
      */
     @Override
-    public java.lang.String iVirtualBoxOpenMedium(java.lang.String _this,
-        java.lang.String location, org.virtualbox.DeviceType deviceType,
-        org.virtualbox.AccessMode accessMode, boolean forceNewUuid) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iVirtualBoxOpenMedium(final java.lang.String _this,
+        final java.lang.String location, final org.virtualbox.DeviceType deviceType,
+        final org.virtualbox.AccessMode accessMode, final boolean forceNewUuid)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxOpenMedium");
         System.out.println(_this);
@@ -15442,7 +15503,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestPropertyChangedEventGetValue(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iGuestPropertyChangedEventGetValue(java.lang.String _this)
+    public java.lang.String iGuestPropertyChangedEventGetValue(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestPropertyChangedEventGetValue");
@@ -15468,10 +15529,11 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String returnval )*
      */
     @Override
-    public void iMachineReadSavedThumbnailToArray(java.lang.String _this, long screenId,
-        boolean bgr, javax.xml.ws.Holder<java.lang.Long> width,
-        javax.xml.ws.Holder<java.lang.Long> height, javax.xml.ws.Holder<java.lang.String> returnval)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineReadSavedThumbnailToArray(final java.lang.String _this,
+        final long screenId, final boolean bgr, final javax.xml.ws.Holder<java.lang.Long> width,
+        final javax.xml.ws.Holder<java.lang.Long> height,
+        final javax.xml.ws.Holder<java.lang.String> returnval) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineReadSavedThumbnailToArray");
         System.out.println(_this);
@@ -15500,8 +15562,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSystemPropertiesGetMediumFormats(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iSystemPropertiesGetMediumFormats(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.util.List<java.lang.String> iSystemPropertiesGetMediumFormats(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMediumFormats");
         System.out.println(_this);
@@ -15525,8 +15587,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public java.lang.String iusbControllerCreateDeviceFilter(java.lang.String _this,
-        java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iusbControllerCreateDeviceFilter(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbControllerCreateDeviceFilter");
         System.out.println(_this);
@@ -15550,8 +15612,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGetOperatingSystem(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iHostGetOperatingSystem(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iHostGetOperatingSystem(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetOperatingSystem");
         System.out.println(_this);
@@ -15575,7 +15637,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public java.lang.String iMachineGetNetworkAdapter(java.lang.String _this, long slot)
+    public java.lang.String iMachineGetNetworkAdapter(final java.lang.String _this, final long slot)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetNetworkAdapter");
@@ -15601,7 +15663,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public void iusbDeviceFilterSetName(java.lang.String _this, java.lang.String name)
+    public void iusbDeviceFilterSetName(final java.lang.String _this, final java.lang.String name)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterSetName");
@@ -15624,7 +15686,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetOperationCount(java.lang.String _this )*
      */
     @Override
-    public long iProgressGetOperationCount(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iProgressGetOperationCount(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetOperationCount");
@@ -15649,8 +15711,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long statisticsUpdateInterval )*
      */
     @Override
-    public void iGuestSetStatisticsUpdateInterval(java.lang.String _this,
-        long statisticsUpdateInterval) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iGuestSetStatisticsUpdateInterval(final java.lang.String _this,
+        final long statisticsUpdateInterval) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestSetStatisticsUpdateInterval");
         System.out.println(_this);
@@ -15672,7 +15734,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetPerformanceCollector(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iVirtualBoxGetPerformanceCollector(java.lang.String _this)
+    public java.lang.String iVirtualBoxGetPerformanceCollector(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetPerformanceCollector");
@@ -15697,7 +15759,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * aliasMode )*
      */
     @Override
-    public void inatEngineSetAliasMode(java.lang.String _this, long aliasMode)
+    public void inatEngineSetAliasMode(final java.lang.String _this, final long aliasMode)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineSetAliasMode");
@@ -15721,8 +15783,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String snapshotFolder )*
      */
     @Override
-    public void iMachineSetSnapshotFolder(java.lang.String _this, java.lang.String snapshotFolder)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetSnapshotFolder(final java.lang.String _this,
+        final java.lang.String snapshotFolder) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetSnapshotFolder");
         System.out.println(_this);
@@ -15745,8 +15807,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)java.lang.String name )*
      */
     @Override
-    public java.lang.String iVirtualBoxFindDHCPServerByNetworkName(java.lang.String _this,
-        java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iVirtualBoxFindDHCPServerByNetworkName(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxFindDHCPServerByNetworkName");
         System.out.println(_this);
@@ -15770,7 +15832,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetId(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iMachineGetId(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetId");
@@ -15796,7 +15858,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<java.lang.String> iBandwidthControlGetAllBandwidthGroups(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iBandwidthControlGetAllBandwidthGroups");
         System.out.println(_this);
@@ -15820,8 +15882,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long flags ,)long timeoutMS ,)java.lang.String data )*
      */
     @Override
-    public long iGuestSetProcessInput(java.lang.String _this, long pid, long flags, long timeoutMS,
-        java.lang.String data) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public long iGuestSetProcessInput(final java.lang.String _this, final long pid,
+        final long flags, final long timeoutMS, final java.lang.String data)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestSetProcessInput");
         System.out.println(_this);
@@ -15849,7 +15912,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * enabled )*
      */
     @Override
-    public void iusbControllerSetEnabled(java.lang.String _this, boolean enabled)
+    public void iusbControllerSetEnabled(final java.lang.String _this, final boolean enabled)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbControllerSetEnabled");
@@ -15874,9 +15937,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * allowInteractiveLogon )*
      */
     @Override
-    public void iGuestSetCredentials(java.lang.String _this, java.lang.String userName,
-        java.lang.String password, java.lang.String domain, boolean allowInteractiveLogon)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iGuestSetCredentials(final java.lang.String _this, final java.lang.String userName,
+        final java.lang.String password, final java.lang.String domain,
+        final boolean allowInteractiveLogon) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestSetCredentials");
         System.out.println(_this);
@@ -15902,8 +15965,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public org.virtualbox.DeviceType iMachineGetBootOrder(java.lang.String _this, long position)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public org.virtualbox.DeviceType iMachineGetBootOrder(final java.lang.String _this,
+        final long position) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetBootOrder");
         System.out.println(_this);
@@ -15927,7 +15990,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxErrorInfoGetComponent(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iVirtualBoxErrorInfoGetComponent(java.lang.String _this)
+    public java.lang.String iVirtualBoxErrorInfoGetComponent(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxErrorInfoGetComponent");
@@ -15953,8 +16016,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)org.virtualbox.ChipsetType chipset ,)org.virtualbox.NetworkAttachmentType type )*
      */
     @Override
-    public long iSystemPropertiesGetMaxNetworkAdaptersOfType(java.lang.String _this,
-        org.virtualbox.ChipsetType chipset, org.virtualbox.NetworkAttachmentType type)
+    public long iSystemPropertiesGetMaxNetworkAdaptersOfType(final java.lang.String _this,
+        final org.virtualbox.ChipsetType chipset, final org.virtualbox.NetworkAttachmentType type)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMaxNetworkAdaptersOfType");
@@ -15981,9 +16044,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String imageId ,)boolean setParentId ,)java.lang.String parentId )*
      */
     @Override
-    public void iMediumSetIDs(java.lang.String _this, boolean setImageId, java.lang.String imageId,
-        boolean setParentId, java.lang.String parentId) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMediumSetIDs(final java.lang.String _this, final boolean setImageId,
+        final java.lang.String imageId, final boolean setParentId, final java.lang.String parentId)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumSetIDs");
         System.out.println(_this);
@@ -16008,7 +16071,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestGetMemoryBalloonSize(java.lang.String _this )*
      */
     @Override
-    public long iGuestGetMemoryBalloonSize(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iGuestGetMemoryBalloonSize(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestGetMemoryBalloonSize");
@@ -16032,8 +16095,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGenerateMACAddress(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iHostGenerateMACAddress(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iHostGenerateMACAddress(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGenerateMACAddress");
         System.out.println(_this);
@@ -16056,7 +16119,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#idhcpServerGetNetworkMask(java.lang.String _this )*
      */
     @Override
-    public java.lang.String idhcpServerGetNetworkMask(java.lang.String _this)
+    public java.lang.String idhcpServerGetNetworkMask(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation idhcpServerGetNetworkMask");
@@ -16081,9 +16144,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.NetworkAdapterPromiscModePolicy promiscModePolicy )*
      */
     @Override
-    public void iNetworkAdapterSetPromiscModePolicy(java.lang.String _this,
-        org.virtualbox.NetworkAdapterPromiscModePolicy promiscModePolicy) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iNetworkAdapterSetPromiscModePolicy(final java.lang.String _this,
+        final org.virtualbox.NetworkAdapterPromiscModePolicy promiscModePolicy)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetPromiscModePolicy");
         System.out.println(_this);
@@ -16105,8 +16168,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSystemPropertiesGetMaxGuestRAM(java.lang.String _this )*
      */
     @Override
-    public long iSystemPropertiesGetMaxGuestRAM(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iSystemPropertiesGetMaxGuestRAM(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMaxGuestRAM");
         System.out.println(_this);
@@ -16129,8 +16192,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetStorageControllers(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iMachineGetStorageControllers(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.util.List<java.lang.String> iMachineGetStorageControllers(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetStorageControllers");
         System.out.println(_this);
@@ -16154,8 +16217,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long screenId ,)long width ,)long height )*
      */
     @Override
-    public java.lang.String iDisplayTakeScreenShotPNGToArray(java.lang.String _this, long screenId,
-        long width, long height) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iDisplayTakeScreenShotPNGToArray(final java.lang.String _this,
+        final long screenId, final long width, final long height) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iDisplayTakeScreenShotPNGToArray");
         System.out.println(_this);
@@ -16182,8 +16246,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long operation ,)int timeout )*
      */
     @Override
-    public void iProgressWaitForOperationCompletion(java.lang.String _this, long operation,
-        int timeout) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iProgressWaitForOperationCompletion(final java.lang.String _this,
+        final long operation, final int timeout) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressWaitForOperationCompletion");
         System.out.println(_this);
@@ -16207,9 +16271,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name ,)java.lang.String hostPath ,)boolean writable ,)boolean automount )*
      */
     @Override
-    public void iVirtualBoxCreateSharedFolder(java.lang.String _this, java.lang.String name,
-        java.lang.String hostPath, boolean writable, boolean automount) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iVirtualBoxCreateSharedFolder(final java.lang.String _this,
+        final java.lang.String name, final java.lang.String hostPath, final boolean writable,
+        final boolean automount) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxCreateSharedFolder");
         System.out.println(_this);
@@ -16235,8 +16299,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * format ,)boolean manifest ,)java.lang.String path )*
      */
     @Override
-    public java.lang.String iApplianceWrite(java.lang.String _this, java.lang.String format,
-        boolean manifest, java.lang.String path) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iApplianceWrite(final java.lang.String _this,
+        final java.lang.String format, final boolean manifest, final java.lang.String path)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iApplianceWrite");
         System.out.println(_this);
@@ -16262,8 +16327,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSerialPortSetIRQ(java.lang.String _this ,)long irq )*
      */
     @Override
-    public void iSerialPortSetIRQ(java.lang.String _this, long irq) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iSerialPortSetIRQ(final java.lang.String _this, final long irq)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSerialPortSetIRQ");
         System.out.println(_this);
@@ -16286,8 +16351,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)java.lang.String pProgressAsync )*
      */
     @Override
-    public void iProgressWaitForAsyncProgressCompletion(java.lang.String _this,
-        java.lang.String pProgressAsync) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iProgressWaitForAsyncProgressCompletion(final java.lang.String _this,
+        final java.lang.String pProgressAsync) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressWaitForAsyncProgressCompletion");
         System.out.println(_this);
@@ -16310,8 +16375,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public java.lang.String iBandwidthControlGetBandwidthGroup(java.lang.String _this,
-        java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iBandwidthControlGetBandwidthGroup(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iBandwidthControlGetBandwidthGroup");
         System.out.println(_this);
@@ -16337,7 +16402,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public long iSystemPropertiesGetFreeDiskSpacePercentError(java.lang.String _this)
+    public long iSystemPropertiesGetFreeDiskSpacePercentError(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetFreeDiskSpacePercentError");
@@ -16361,7 +16426,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iRuntimeErrorEventGetFatal(java.lang.String _this )*
      */
     @Override
-    public boolean iRuntimeErrorEventGetFatal(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iRuntimeErrorEventGetFatal(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iRuntimeErrorEventGetFatal");
@@ -16385,7 +16450,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iApplianceGetWarnings(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iApplianceGetWarnings(java.lang.String _this)
+    public java.util.List<java.lang.String> iApplianceGetWarnings(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iApplianceGetWarnings");
@@ -16409,7 +16474,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceFilterGetSerialNumber(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iusbDeviceFilterGetSerialNumber(java.lang.String _this)
+    public java.lang.String iusbDeviceFilterGetSerialNumber(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterGetSerialNumber");
@@ -16434,8 +16499,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String target ,)long variant )*
      */
     @Override
-    public java.lang.String iMediumCreateDiffStorage(java.lang.String _this,
-        java.lang.String target, long variant) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMediumCreateDiffStorage(final java.lang.String _this,
+        final java.lang.String target, final long variant) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumCreateDiffStorage");
         System.out.println(_this);
@@ -16460,7 +16526,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetSessionPid(java.lang.String _this )*
      */
     @Override
-    public long iMachineGetSessionPid(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMachineGetSessionPid(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetSessionPid");
@@ -16485,7 +16551,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * screenId )*
      */
     @Override
-    public void iDisplayResizeCompleted(java.lang.String _this, long screenId)
+    public void iDisplayResizeCompleted(final java.lang.String _this, final long screenId)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iDisplayResizeCompleted");
@@ -16508,8 +16574,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ibiosSettingsGetACPIEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean ibiosSettingsGetACPIEnabled(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean ibiosSettingsGetACPIEnabled(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsGetACPIEnabled");
         System.out.println(_this);
@@ -16533,7 +16599,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String network )*
      */
     @Override
-    public void inatEngineSetNetwork(java.lang.String _this, java.lang.String network)
+    public void inatEngineSetNetwork(final java.lang.String _this, final java.lang.String network)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineSetNetwork");
@@ -16556,7 +16622,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestMouseEventGetZ(java.lang.String _this )*
      */
     @Override
-    public int iGuestMouseEventGetZ(java.lang.String _this) throws RuntimeFaultMsg,
+    public int iGuestMouseEventGetZ(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestMouseEventGetZ");
@@ -16580,7 +16646,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetHostDrive(java.lang.String _this )*
      */
     @Override
-    public boolean iMediumGetHostDrive(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iMediumGetHostDrive(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetHostDrive");
@@ -16604,8 +16670,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetInternalNetworks(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iVirtualBoxGetInternalNetworks(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.util.List<java.lang.String> iVirtualBoxGetInternalNetworks(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetInternalNetworks");
         System.out.println(_this);
@@ -16628,7 +16694,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iPerformanceMetricGetDescription(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iPerformanceMetricGetDescription(java.lang.String _this)
+    public java.lang.String iPerformanceMetricGetDescription(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iPerformanceMetricGetDescription");
@@ -16653,7 +16719,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String path )*
      */
     @Override
-    public void iParallelPortSetPath(java.lang.String _this, java.lang.String path)
+    public void iParallelPortSetPath(final java.lang.String _this, final java.lang.String path)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iParallelPortSetPath");
@@ -16676,7 +16742,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceFilterGetVendorId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iusbDeviceFilterGetVendorId(java.lang.String _this)
+    public java.lang.String iusbDeviceFilterGetVendorId(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterGetVendorId");
@@ -16701,7 +16767,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * enabled )*
      */
     @Override
-    public void iDisplaySetSeamlessMode(java.lang.String _this, boolean enabled)
+    public void iDisplaySetSeamlessMode(final java.lang.String _this, final boolean enabled)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iDisplaySetSeamlessMode");
@@ -16725,8 +16791,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String id )*
      */
     @Override
-    public java.lang.String iConsoleDeleteSnapshotAndAllChildren(java.lang.String _this,
-        java.lang.String id) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iConsoleDeleteSnapshotAndAllChildren(final java.lang.String _this,
+        final java.lang.String id) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleDeleteSnapshotAndAllChildren");
         System.out.println(_this);
@@ -16755,18 +16821,20 @@ public class VboxPortTypeImpl implements VboxPortType
      * memSharedTotal )*
      */
     @Override
-    public void iGuestInternalGetStatistics(java.lang.String _this,
-        javax.xml.ws.Holder<java.lang.Long> cpuUser, javax.xml.ws.Holder<java.lang.Long> cpuKernel,
-        javax.xml.ws.Holder<java.lang.Long> cpuIdle, javax.xml.ws.Holder<java.lang.Long> memTotal,
-        javax.xml.ws.Holder<java.lang.Long> memFree,
-        javax.xml.ws.Holder<java.lang.Long> memBalloon,
-        javax.xml.ws.Holder<java.lang.Long> memShared,
-        javax.xml.ws.Holder<java.lang.Long> memCache,
-        javax.xml.ws.Holder<java.lang.Long> pagedTotal,
-        javax.xml.ws.Holder<java.lang.Long> memAllocTotal,
-        javax.xml.ws.Holder<java.lang.Long> memFreeTotal,
-        javax.xml.ws.Holder<java.lang.Long> memBalloonTotal,
-        javax.xml.ws.Holder<java.lang.Long> memSharedTotal) throws RuntimeFaultMsg,
+    public void iGuestInternalGetStatistics(final java.lang.String _this,
+        final javax.xml.ws.Holder<java.lang.Long> cpuUser,
+        final javax.xml.ws.Holder<java.lang.Long> cpuKernel,
+        final javax.xml.ws.Holder<java.lang.Long> cpuIdle,
+        final javax.xml.ws.Holder<java.lang.Long> memTotal,
+        final javax.xml.ws.Holder<java.lang.Long> memFree,
+        final javax.xml.ws.Holder<java.lang.Long> memBalloon,
+        final javax.xml.ws.Holder<java.lang.Long> memShared,
+        final javax.xml.ws.Holder<java.lang.Long> memCache,
+        final javax.xml.ws.Holder<java.lang.Long> pagedTotal,
+        final javax.xml.ws.Holder<java.lang.Long> memAllocTotal,
+        final javax.xml.ws.Holder<java.lang.Long> memFreeTotal,
+        final javax.xml.ws.Holder<java.lang.Long> memBalloonTotal,
+        final javax.xml.ws.Holder<java.lang.Long> memSharedTotal) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestInternalGetStatistics");
@@ -16815,8 +16883,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String vendorId )*
      */
     @Override
-    public void iusbDeviceFilterSetVendorId(java.lang.String _this, java.lang.String vendorId)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iusbDeviceFilterSetVendorId(final java.lang.String _this,
+        final java.lang.String vendorId) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterSetVendorId");
         System.out.println(_this);
@@ -16838,8 +16906,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ibiosSettingsGetIOAPICEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean ibiosSettingsGetIOAPICEnabled(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean ibiosSettingsGetIOAPICEnabled(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsGetIOAPICEnabled");
         System.out.println(_this);
@@ -16863,7 +16931,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * rtcUseUTC )*
      */
     @Override
-    public void iMachineSetRTCUseUTC(java.lang.String _this, boolean rtcUseUTC)
+    public void iMachineSetRTCUseUTC(final java.lang.String _this, final boolean rtcUseUTC)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetRTCUseUTC");
@@ -16887,7 +16955,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * authTimeout )*
      */
     @Override
-    public void ivrdeServerSetAuthTimeout(java.lang.String _this, long authTimeout)
+    public void ivrdeServerSetAuthTimeout(final java.lang.String _this, final long authTimeout)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerSetAuthTimeout");
@@ -16911,8 +16979,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * offset ,)long size )*
      */
     @Override
-    public java.lang.String iMachineReadLog(java.lang.String _this, long idx, long offset, long size)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMachineReadLog(final java.lang.String _this, final long idx,
+        final long offset, final long size) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineReadLog");
         System.out.println(_this);
@@ -16939,7 +17007,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public boolean iHostNetworkInterfaceGetIPV6Supported(java.lang.String _this)
+    public boolean iHostNetworkInterfaceGetIPV6Supported(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceGetIPV6Supported");
@@ -16964,8 +17032,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this ,)java.lang.String defaultVRDEExtPack )*
      */
     @Override
-    public void iSystemPropertiesSetDefaultVRDEExtPack(java.lang.String _this,
-        java.lang.String defaultVRDEExtPack) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iSystemPropertiesSetDefaultVRDEExtPack(final java.lang.String _this,
+        final java.lang.String defaultVRDEExtPack) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesSetDefaultVRDEExtPack");
         System.out.println(_this);
@@ -16987,7 +17055,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iReusableEventReuse(java.lang.String _this )*
      */
     @Override
-    public void iReusableEventReuse(java.lang.String _this) throws RuntimeFaultMsg,
+    public void iReusableEventReuse(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iReusableEventReuse");
@@ -17009,7 +17077,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#idhcpServerGetEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean idhcpServerGetEnabled(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean idhcpServerGetEnabled(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation idhcpServerGetEnabled");
@@ -17033,10 +17101,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetVersion(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iVirtualBoxGetVersion(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iVirtualBoxGetVersion(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iVirtualBoxGetVersion");
+        LOG.info("Executing operation iVirtualBoxGetVersion");
         // System.out.println(_this);
         java.lang.String _return = DomainService.getInstance().getVersion();
         return _return;
@@ -17050,7 +17118,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iSystemPropertiesGetMaxGuestMonitors(java.lang.String _this)
+    public long iSystemPropertiesGetMaxGuestMonitors(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMaxGuestMonitors");
@@ -17074,7 +17142,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSnapshotGetChildrenCount(java.lang.String _this )*
      */
     @Override
-    public long iSnapshotGetChildrenCount(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iSnapshotGetChildrenCount(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSnapshotGetChildrenCount");
@@ -17100,9 +17168,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * mode ,)long flags )*
      */
     @Override
-    public void iGuestDirectoryCreate(java.lang.String _this, java.lang.String directory,
-        java.lang.String userName, java.lang.String password, long mode, long flags)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iGuestDirectoryCreate(final java.lang.String _this,
+        final java.lang.String directory, final java.lang.String userName,
+        final java.lang.String password, final long mode, final long flags) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestDirectoryCreate");
         System.out.println(_this);
@@ -17128,7 +17197,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetBase(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumGetBase(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iMediumGetBase(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetBase");
@@ -17152,8 +17221,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iParallelPortGetPath(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iParallelPortGetPath(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iParallelPortGetPath(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iParallelPortGetPath");
         System.out.println(_this);
@@ -17176,8 +17245,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineCanShowConsoleWindow(java.lang.String _this )*
      */
     @Override
-    public boolean iMachineCanShowConsoleWindow(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iMachineCanShowConsoleWindow(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineCanShowConsoleWindow");
         System.out.println(_this);
@@ -17202,7 +17271,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<java.lang.String> iVirtualBoxGetGenericNetworkDrivers(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetGenericNetworkDrivers");
         System.out.println(_this);
@@ -17225,8 +17294,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMouseGetEventSource(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMouseGetEventSource(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMouseGetEventSource(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMouseGetEventSource");
         System.out.println(_this);
@@ -17250,8 +17319,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * cpuId )*
      */
     @Override
-    public java.lang.String iHostGetProcessorDescription(java.lang.String _this, long cpuId)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iHostGetProcessorDescription(final java.lang.String _this,
+        final long cpuId) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetProcessorDescription");
         System.out.println(_this);
@@ -17275,8 +17344,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceFilterGetName(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iusbDeviceFilterGetName(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iusbDeviceFilterGetName(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterGetName");
         System.out.println(_this);
@@ -17300,8 +17369,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * hostAddress ,)int desiredGuestAddress ,)boolean tryToUnbind )*
      */
     @Override
-    public void iMachineAttachHostPciDevice(java.lang.String _this, int hostAddress,
-        int desiredGuestAddress, boolean tryToUnbind) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineAttachHostPciDevice(final java.lang.String _this, final int hostAddress,
+        final int desiredGuestAddress, final boolean tryToUnbind) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineAttachHostPciDevice");
         System.out.println(_this);
@@ -17326,8 +17396,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public java.lang.String iVirtualBoxCreateDHCPServer(java.lang.String _this,
-        java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iVirtualBoxCreateDHCPServer(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxCreateDHCPServer");
         System.out.println(_this);
@@ -17352,8 +17422,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean allowMultiConnection )*
      */
     @Override
-    public void ivrdeServerSetAllowMultiConnection(java.lang.String _this,
-        boolean allowMultiConnection) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void ivrdeServerSetAllowMultiConnection(final java.lang.String _this,
+        final boolean allowMultiConnection) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerSetAllowMultiConnection");
         System.out.println(_this);
@@ -17375,8 +17445,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetTraceEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean iNetworkAdapterGetTraceEnabled(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iNetworkAdapterGetTraceEnabled(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetTraceEnabled");
         System.out.println(_this);
@@ -17399,7 +17469,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSnapshotGetId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iSnapshotGetId(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iSnapshotGetId(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSnapshotGetId");
@@ -17423,7 +17493,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#inatRedirectEventGetGuestIp(java.lang.String _this )*
      */
     @Override
-    public java.lang.String inatRedirectEventGetGuestIp(java.lang.String _this)
+    public java.lang.String inatRedirectEventGetGuestIp(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatRedirectEventGetGuestIp");
@@ -17447,8 +17517,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetDescription(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetDescription(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMachineGetDescription(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetDescription");
         System.out.println(_this);
@@ -17472,8 +17542,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean pxeDebugEnabled )*
      */
     @Override
-    public void ibiosSettingsSetPXEDebugEnabled(java.lang.String _this, boolean pxeDebugEnabled)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void ibiosSettingsSetPXEDebugEnabled(final java.lang.String _this,
+        final boolean pxeDebugEnabled) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsSetPXEDebugEnabled");
         System.out.println(_this);
@@ -17496,8 +17566,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String id )*
      */
     @Override
-    public java.lang.String iConsoleFindUSBDeviceById(java.lang.String _this, java.lang.String id)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iConsoleFindUSBDeviceById(final java.lang.String _this,
+        final java.lang.String id) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleFindUSBDeviceById");
         System.out.println(_this);
@@ -17521,7 +17591,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetFaultTolerancePort(java.lang.String _this )*
      */
     @Override
-    public long iMachineGetFaultTolerancePort(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iMachineGetFaultTolerancePort(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetFaultTolerancePort");
@@ -17545,8 +17615,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbControllerGetEnabledEhci(java.lang.String _this )*
      */
     @Override
-    public boolean iusbControllerGetEnabledEhci(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iusbControllerGetEnabledEhci(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbControllerGetEnabledEhci");
         System.out.println(_this);
@@ -17570,8 +17640,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.PortMode hostMode )*
      */
     @Override
-    public void iSerialPortSetHostMode(java.lang.String _this, org.virtualbox.PortMode hostMode)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iSerialPortSetHostMode(final java.lang.String _this,
+        final org.virtualbox.PortMode hostMode) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSerialPortSetHostMode");
         System.out.println(_this);
@@ -17595,11 +17665,12 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String id ,)boolean forceOverwrite )*
      */
     @Override
-    public java.lang.String iVirtualBoxCreateMachine(java.lang.String _this,
-        java.lang.String settingsFile, java.lang.String name, java.lang.String osTypeId,
-        java.lang.String id, boolean forceOverwrite) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iVirtualBoxCreateMachine(final java.lang.String _this,
+        final java.lang.String settingsFile, final java.lang.String name,
+        final java.lang.String osTypeId, final java.lang.String id, final boolean forceOverwrite)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
-         LOG.info("Executing operation iVirtualBoxCreateMachine");
+        LOG.info("Executing operation iVirtualBoxCreateMachine");
         // System.out.println(_this);
         // System.out.println(settingsFile);
         // System.out.println(name);
@@ -17633,7 +17704,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ivrdeServerGetAuthTimeout(java.lang.String _this )*
      */
     @Override
-    public long ivrdeServerGetAuthTimeout(java.lang.String _this) throws RuntimeFaultMsg,
+    public long ivrdeServerGetAuthTimeout(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerGetAuthTimeout");
@@ -17657,7 +17728,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iDisplayInvalidateAndUpdate(java.lang.String _this )*
      */
     @Override
-    public void iDisplayInvalidateAndUpdate(java.lang.String _this) throws RuntimeFaultMsg,
+    public void iDisplayInvalidateAndUpdate(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iDisplayInvalidateAndUpdate");
@@ -17680,7 +17751,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public boolean iMachineGetEmulatedUSBCardReaderEnabled(java.lang.String _this)
+    public boolean iMachineGetEmulatedUSBCardReaderEnabled(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetEmulatedUSBCardReaderEnabled");
@@ -17704,8 +17775,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineHotUnplugCPU(java.lang.String _this ,)long cpu )*
      */
     @Override
-    public void iMachineHotUnplugCPU(java.lang.String _this, long cpu) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMachineHotUnplugCPU(final java.lang.String _this, final long cpu)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineHotUnplugCPU");
         System.out.println(_this);
@@ -17728,8 +17799,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public java.lang.String iConsoleFindUSBDeviceByAddress(java.lang.String _this,
-        java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iConsoleFindUSBDeviceByAddress(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleFindUSBDeviceByAddress");
         System.out.println(_this);
@@ -17753,7 +17824,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostGetProcessorCount(java.lang.String _this )*
      */
     @Override
-    public long iHostGetProcessorCount(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iHostGetProcessorCount(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostGetProcessorCount");
@@ -17779,9 +17850,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * type )*
      */
     @Override
-    public void iMediumFormatDescribeFileExtensions(java.lang.String _this,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> extensions,
-        javax.xml.ws.Holder<java.util.List<org.virtualbox.DeviceType>> type)
+    public void iMediumFormatDescribeFileExtensions(final java.lang.String _this,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> extensions,
+        final javax.xml.ws.Holder<java.util.List<org.virtualbox.DeviceType>> type)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumFormatDescribeFileExtensions");
@@ -17810,11 +17881,13 @@ public class VboxPortTypeImpl implements VboxPortType
      * password ,)long timeoutMS ,)java.lang.Long pid ,)java.lang.String returnval )*
      */
     @Override
-    public void iGuestExecuteProcess(java.lang.String _this, java.lang.String execName, long flags,
-        java.util.List<java.lang.String> arguments, java.util.List<java.lang.String> environment,
-        java.lang.String userName, java.lang.String password, long timeoutMS,
-        javax.xml.ws.Holder<java.lang.Long> pid, javax.xml.ws.Holder<java.lang.String> returnval)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iGuestExecuteProcess(final java.lang.String _this, final java.lang.String execName,
+        final long flags, final java.util.List<java.lang.String> arguments,
+        final java.util.List<java.lang.String> environment, final java.lang.String userName,
+        final java.lang.String password, final long timeoutMS,
+        final javax.xml.ws.Holder<java.lang.Long> pid,
+        final javax.xml.ws.Holder<java.lang.String> returnval) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestExecuteProcess");
         System.out.println(_this);
@@ -17847,8 +17920,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String session ,)org.virtualbox.LockType lockType )*
      */
     @Override
-    public void iMachineLockMachine(java.lang.String _this, java.lang.String session,
-        org.virtualbox.LockType lockType) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineLockMachine(final java.lang.String _this, final java.lang.String session,
+        final org.virtualbox.LockType lockType) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineLockMachine");
         System.out.println(_this);
@@ -17871,7 +17944,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSerialPortGetEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean iSerialPortGetEnabled(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iSerialPortGetEnabled(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSerialPortGetEnabled");
@@ -17896,7 +17969,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public java.lang.String iusbDeviceStateChangedEventGetError(java.lang.String _this)
+    public java.lang.String iusbDeviceStateChangedEventGetError(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceStateChangedEventGetError");
@@ -17921,8 +17994,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String productId )*
      */
     @Override
-    public void iusbDeviceFilterSetProductId(java.lang.String _this, java.lang.String productId)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iusbDeviceFilterSetProductId(final java.lang.String _this,
+        final java.lang.String productId) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterSetProductId");
         System.out.println(_this);
@@ -17945,8 +18018,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * name )*
      */
     @Override
-    public java.lang.String iMediumGetProperty(java.lang.String _this, java.lang.String name)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMediumGetProperty(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetProperty");
         System.out.println(_this);
@@ -17970,7 +18043,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleGetRemoteUSBDevices(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iConsoleGetRemoteUSBDevices(java.lang.String _this)
+    public java.util.List<java.lang.String> iConsoleGetRemoteUSBDevices(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetRemoteUSBDevices");
@@ -17994,7 +18067,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iExtraDataChangedEventGetKey(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iExtraDataChangedEventGetKey(java.lang.String _this)
+    public java.lang.String iExtraDataChangedEventGetKey(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iExtraDataChangedEventGetKey");
@@ -18018,7 +18091,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleSleepButton(java.lang.String _this )*
      */
     @Override
-    public void iConsoleSleepButton(java.lang.String _this) throws RuntimeFaultMsg,
+    public void iConsoleSleepButton(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleSleepButton");
@@ -18041,7 +18114,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public long iMousePointerShapeChangedEventGetHeight(java.lang.String _this)
+    public long iMousePointerShapeChangedEventGetHeight(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMousePointerShapeChangedEventGetHeight");
@@ -18065,7 +18138,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iParallelPortGetIRQ(java.lang.String _this )*
      */
     @Override
-    public long iParallelPortGetIRQ(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iParallelPortGetIRQ(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iParallelPortGetIRQ");
@@ -18090,7 +18163,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * active )*
      */
     @Override
-    public void iusbDeviceFilterSetActive(java.lang.String _this, boolean active)
+    public void iusbDeviceFilterSetActive(final java.lang.String _this, final boolean active)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterSetActive");
@@ -18113,8 +18186,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetPageFusionEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean iMachineGetPageFusionEnabled(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iMachineGetPageFusionEnabled(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetPageFusionEnabled");
         System.out.println(_this);
@@ -18138,8 +18211,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)long flags ,)long timeoutMS ,)long size )*
      */
     @Override
-    public java.lang.String iGuestGetProcessOutput(java.lang.String _this, long pid, long flags,
-        long timeoutMS, long size) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iGuestGetProcessOutput(final java.lang.String _this, final long pid,
+        final long flags, final long timeoutMS, final long size) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestGetProcessOutput");
         System.out.println(_this);
@@ -18167,8 +18241,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public long iSystemPropertiesGetMaxBootPosition(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iSystemPropertiesGetMaxBootPosition(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMaxBootPosition");
         System.out.println(_this);
@@ -18191,7 +18265,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetCanceled(java.lang.String _this )*
      */
     @Override
-    public boolean iProgressGetCanceled(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iProgressGetCanceled(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetCanceled");
@@ -18215,8 +18289,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetProgressOperations(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iVirtualBoxGetProgressOperations(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.util.List<java.lang.String> iVirtualBoxGetProgressOperations(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxGetProgressOperations");
         System.out.println(_this);
@@ -18241,7 +18315,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * .String _this )*
      */
     @Override
-    public long iHostNetworkInterfaceGetIPV6NetworkMaskPrefixLength(java.lang.String _this)
+    public long iHostNetworkInterfaceGetIPV6NetworkMaskPrefixLength(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostNetworkInterfaceGetIPV6NetworkMaskPrefixLength");
@@ -18265,7 +18339,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSharedFolderChangedEventGetScope(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.Scope iSharedFolderChangedEventGetScope(java.lang.String _this)
+    public org.virtualbox.Scope iSharedFolderChangedEventGetScope(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSharedFolderChangedEventGetScope");
@@ -18290,8 +18364,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String internalNetwork )*
      */
     @Override
-    public void iNetworkAdapterSetInternalNetwork(java.lang.String _this,
-        java.lang.String internalNetwork) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iNetworkAdapterSetInternalNetwork(final java.lang.String _this,
+        final java.lang.String internalNetwork) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetInternalNetwork");
         System.out.println(_this);
@@ -18313,7 +18387,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumClose(java.lang.String _this )*
      */
     @Override
-    public void iMediumClose(java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMediumClose(final java.lang.String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumClose");
         System.out.println(_this);
@@ -18335,8 +18410,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String faultTolerancePassword )*
      */
     @Override
-    public void iMachineSetFaultTolerancePassword(java.lang.String _this,
-        java.lang.String faultTolerancePassword) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetFaultTolerancePassword(final java.lang.String _this,
+        final java.lang.String faultTolerancePassword) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetFaultTolerancePassword");
         System.out.println(_this);
@@ -18359,8 +18435,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name )*
      */
     @Override
-    public java.lang.String iHostFindHostNetworkInterfaceByName(java.lang.String _this,
-        java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iHostFindHostNetworkInterfaceByName(final java.lang.String _this,
+        final java.lang.String name) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostFindHostNetworkInterfaceByName");
         System.out.println(_this);
@@ -18385,9 +18461,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name ,)int controllerPort ,)int device ,)boolean passthrough )*
      */
     @Override
-    public void iMachinePassthroughDevice(java.lang.String _this, java.lang.String name,
-        int controllerPort, int device, boolean passthrough) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMachinePassthroughDevice(final java.lang.String _this,
+        final java.lang.String name, final int controllerPort, final int device,
+        final boolean passthrough) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachinePassthroughDevice");
         System.out.println(_this);
@@ -18412,7 +18488,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSessionGetState(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.SessionState iSessionGetState(java.lang.String _this)
+    public org.virtualbox.SessionState iSessionGetState(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSessionGetState");
@@ -18438,7 +18514,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public org.virtualbox.IMediumAttachment iMediumChangedEventGetMediumAttachment(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumChangedEventGetMediumAttachment");
         System.out.println(_this);
@@ -18461,7 +18537,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetEnabled(java.lang.String _this )*
      */
     @Override
-    public boolean iNetworkAdapterGetEnabled(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iNetworkAdapterGetEnabled(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetEnabled");
@@ -18485,7 +18561,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetSerialPort(java.lang.String _this ,)long slot )*
      */
     @Override
-    public java.lang.String iMachineGetSerialPort(java.lang.String _this, long slot)
+    public java.lang.String iMachineGetSerialPort(final java.lang.String _this, final long slot)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetSerialPort");
@@ -18511,8 +18587,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String key )*
      */
     @Override
-    public java.lang.String ivrdeServerGetVRDEProperty(java.lang.String _this, java.lang.String key)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String ivrdeServerGetVRDEProperty(final java.lang.String _this,
+        final java.lang.String key) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerGetVRDEProperty");
         System.out.println(_this);
@@ -18536,8 +18612,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetFaultToleranceState(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.FaultToleranceState iMachineGetFaultToleranceState(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public org.virtualbox.FaultToleranceState iMachineGetFaultToleranceState(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetFaultToleranceState");
         System.out.println(_this);
@@ -18563,11 +18639,12 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.util.List<java.lang.String> flags )*
      */
     @Override
-    public void iMachineEnumerateGuestProperties(java.lang.String _this, java.lang.String patterns,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> name,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> value,
-        javax.xml.ws.Holder<java.util.List<java.lang.Long>> timestamp,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> flags) throws RuntimeFaultMsg,
+    public void iMachineEnumerateGuestProperties(final java.lang.String _this,
+        final java.lang.String patterns,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> name,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> value,
+        final javax.xml.ws.Holder<java.util.List<java.lang.Long>> timestamp,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> flags) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineEnumerateGuestProperties");
@@ -18598,7 +18675,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iRuntimeErrorEventGetMessage(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iRuntimeErrorEventGetMessage(java.lang.String _this)
+    public java.lang.String iRuntimeErrorEventGetMessage(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iRuntimeErrorEventGetMessage");
@@ -18624,9 +18701,11 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String flags )*
      */
     @Override
-    public void iMachineGetGuestProperty(java.lang.String _this, java.lang.String name,
-        javax.xml.ws.Holder<java.lang.String> value, javax.xml.ws.Holder<java.lang.Long> timestamp,
-        javax.xml.ws.Holder<java.lang.String> flags) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineGetGuestProperty(final java.lang.String _this, final java.lang.String name,
+        final javax.xml.ws.Holder<java.lang.String> value,
+        final javax.xml.ws.Holder<java.lang.Long> timestamp,
+        final javax.xml.ws.Holder<java.lang.String> flags) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetGuestProperty");
         System.out.println(_this);
@@ -18655,8 +18734,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String vrdeAuthLibrary )*
      */
     @Override
-    public void iSystemPropertiesSetVRDEAuthLibrary(java.lang.String _this,
-        java.lang.String vrdeAuthLibrary) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iSystemPropertiesSetVRDEAuthLibrary(final java.lang.String _this,
+        final java.lang.String vrdeAuthLibrary) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesSetVRDEAuthLibrary");
         System.out.println(_this);
@@ -18678,7 +18757,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceFilterGetManufacturer(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iusbDeviceFilterGetManufacturer(java.lang.String _this)
+    public java.lang.String iusbDeviceFilterGetManufacturer(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterGetManufacturer");
@@ -18702,7 +18781,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetMACAddress(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iNetworkAdapterGetMACAddress(java.lang.String _this)
+    public java.lang.String iNetworkAdapterGetMACAddress(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetMACAddress");
@@ -18726,7 +18805,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineDiscardSettings(java.lang.String _this )*
      */
     @Override
-    public void iMachineDiscardSettings(java.lang.String _this) throws RuntimeFaultMsg,
+    public void iMachineDiscardSettings(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineDiscardSettings");
@@ -18749,9 +18828,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * screenId ,)java.lang.Long width ,)java.lang.Long height )*
      */
     @Override
-    public void iMachineQuerySavedGuestSize(java.lang.String _this, long screenId,
-        javax.xml.ws.Holder<java.lang.Long> width, javax.xml.ws.Holder<java.lang.Long> height)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineQuerySavedGuestSize(final java.lang.String _this, final long screenId,
+        final javax.xml.ws.Holder<java.lang.Long> width,
+        final javax.xml.ws.Holder<java.lang.Long> height) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineQuerySavedGuestSize");
         System.out.println(_this);
@@ -18777,7 +18857,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetBandwidthControl(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMachineGetBandwidthControl(java.lang.String _this)
+    public java.lang.String iMachineGetBandwidthControl(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetBandwidthControl");
@@ -18802,7 +18882,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * dnsProxy )*
      */
     @Override
-    public void inatEngineSetDnsProxy(java.lang.String _this, boolean dnsProxy)
+    public void inatEngineSetDnsProxy(final java.lang.String _this, final boolean dnsProxy)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineSetDnsProxy");
@@ -18825,7 +18905,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxErrorInfoGetNext(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iVirtualBoxErrorInfoGetNext(java.lang.String _this)
+    public java.lang.String iVirtualBoxErrorInfoGetNext(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxErrorInfoGetNext");
@@ -18849,8 +18929,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetErrorInfo(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iProgressGetErrorInfo(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iProgressGetErrorInfo(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetErrorInfo");
         System.out.println(_this);
@@ -18873,7 +18953,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualBoxCreateAppliance(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iVirtualBoxCreateAppliance(java.lang.String _this)
+    public java.lang.String iVirtualBoxCreateAppliance(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualBoxCreateAppliance");
@@ -18898,7 +18978,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<org.virtualbox.IPciDeviceAttachment> iConsoleGetAttachedPciDevices(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetAttachedPciDevices");
         System.out.println(_this);
@@ -18922,8 +19002,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * file ,)java.lang.String userName ,)java.lang.String password )*
      */
     @Override
-    public boolean iGuestFileExists(java.lang.String _this, java.lang.String file,
-        java.lang.String userName, java.lang.String password) throws RuntimeFaultMsg,
+    public boolean iGuestFileExists(final java.lang.String _this, final java.lang.String file,
+        final java.lang.String userName, final java.lang.String password) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestFileExists");
@@ -18950,7 +19030,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iNetworkAdapterGetLineSpeed(java.lang.String _this )*
      */
     @Override
-    public long iNetworkAdapterGetLineSpeed(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iNetworkAdapterGetLineSpeed(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterGetLineSpeed");
@@ -18974,7 +19054,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iBandwidthGroupGetMaxMbPerSec(java.lang.String _this )*
      */
     @Override
-    public long iBandwidthGroupGetMaxMbPerSec(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iBandwidthGroupGetMaxMbPerSec(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iBandwidthGroupGetMaxMbPerSec");
@@ -18998,8 +19078,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iVirtualSystemDescriptionGetCount(java.lang.String _this )*
      */
     @Override
-    public long iVirtualSystemDescriptionGetCount(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iVirtualSystemDescriptionGetCount(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualSystemDescriptionGetCount");
         System.out.println(_this);
@@ -19023,9 +19103,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String name ,)int controllerPort ,)int device ,)boolean temporaryEject )*
      */
     @Override
-    public void iMachineTemporaryEjectDevice(java.lang.String _this, java.lang.String name,
-        int controllerPort, int device, boolean temporaryEject) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMachineTemporaryEjectDevice(final java.lang.String _this,
+        final java.lang.String name, final int controllerPort, final int device,
+        final boolean temporaryEject) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineTemporaryEjectDevice");
         System.out.println(_this);
@@ -19056,13 +19136,14 @@ public class VboxPortTypeImpl implements VboxPortType
      * aExtraConfigValues )*
      */
     @Override
-    public void iVirtualSystemDescriptionGetDescriptionByType(java.lang.String _this,
-        org.virtualbox.VirtualSystemDescriptionType aType,
-        javax.xml.ws.Holder<java.util.List<org.virtualbox.VirtualSystemDescriptionType>> aTypes,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> aRefs,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> aOvfValues,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> aVBoxValues,
-        javax.xml.ws.Holder<java.util.List<java.lang.String>> aExtraConfigValues)
+    public void iVirtualSystemDescriptionGetDescriptionByType(
+        final java.lang.String _this,
+        final org.virtualbox.VirtualSystemDescriptionType aType,
+        final javax.xml.ws.Holder<java.util.List<org.virtualbox.VirtualSystemDescriptionType>> aTypes,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> aRefs,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> aOvfValues,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> aVBoxValues,
+        final javax.xml.ws.Holder<java.util.List<java.lang.String>> aExtraConfigValues)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iVirtualSystemDescriptionGetDescriptionByType");
@@ -19096,8 +19177,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * name ,)int controllerPort ,)int device )*
      */
     @Override
-    public java.lang.String iMachineGetMedium(java.lang.String _this, java.lang.String name,
-        int controllerPort, int device) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iMachineGetMedium(final java.lang.String _this,
+        final java.lang.String name, final int controllerPort, final int device)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetMedium");
         System.out.println(_this);
@@ -19124,7 +19206,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<org.virtualbox.IMediumAttachment> iMachineGetMediumAttachments(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetMediumAttachments");
         System.out.println(_this);
@@ -19148,7 +19230,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * hostAddress )*
      */
     @Override
-    public void iMachineDetachHostPciDevice(java.lang.String _this, int hostAddress)
+    public void iMachineDetachHostPciDevice(final java.lang.String _this, final int hostAddress)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineDetachHostPciDevice");
@@ -19171,7 +19253,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ivrdeServerGetAllowMultiConnection(java.lang.String _this )*
      */
     @Override
-    public boolean ivrdeServerGetAllowMultiConnection(java.lang.String _this)
+    public boolean ivrdeServerGetAllowMultiConnection(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerGetAllowMultiConnection");
@@ -19196,8 +19278,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String tftpBootFile )*
      */
     @Override
-    public void inatEngineSetTftpBootFile(java.lang.String _this, java.lang.String tftpBootFile)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void inatEngineSetTftpBootFile(final java.lang.String _this,
+        final java.lang.String tftpBootFile) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation inatEngineSetTftpBootFile");
         System.out.println(_this);
@@ -19220,7 +19302,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public java.lang.String iMachineQueryLogFilename(java.lang.String _this, long idx)
+    public java.lang.String iMachineQueryLogFilename(final java.lang.String _this, final long idx)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineQueryLogFilename");
@@ -19246,7 +19328,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * _this )*
      */
     @Override
-    public java.lang.String iSystemPropertiesGetDefaultMachineFolder(java.lang.String _this)
+    public java.lang.String iSystemPropertiesGetDefaultMachineFolder(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetDefaultMachineFolder");
@@ -19271,8 +19353,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.CleanupMode cleanupMode )*
      */
     @Override
-    public java.util.List<java.lang.String> iMachineUnregister(java.lang.String _this,
-        org.virtualbox.CleanupMode cleanupMode) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.util.List<java.lang.String> iMachineUnregister(final java.lang.String _this,
+        final org.virtualbox.CleanupMode cleanupMode) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineUnregister");
         System.out.println(_this);
@@ -19296,7 +19378,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetParent(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumGetParent(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iMediumGetParent(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetParent");
@@ -19320,8 +19402,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleGetPowerButtonHandled(java.lang.String _this )*
      */
     @Override
-    public boolean iConsoleGetPowerButtonHandled(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iConsoleGetPowerButtonHandled(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetPowerButtonHandled");
         System.out.println(_this);
@@ -19344,8 +19426,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iPerformanceMetricGetMaximumValue(java.lang.String _this )*
      */
     @Override
-    public int iPerformanceMetricGetMaximumValue(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public int iPerformanceMetricGetMaximumValue(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iPerformanceMetricGetMaximumValue");
         System.out.println(_this);
@@ -19368,8 +19450,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetType(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.MediumType iMediumGetType(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public org.virtualbox.MediumType iMediumGetType(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetType");
         System.out.println(_this);
@@ -19392,7 +19474,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#icpuChangedEventGetCpu(java.lang.String _this )*
      */
     @Override
-    public long icpuChangedEventGetCpu(java.lang.String _this) throws RuntimeFaultMsg,
+    public long icpuChangedEventGetCpu(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation icpuChangedEventGetCpu");
@@ -19417,8 +19499,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String id )*
      */
     @Override
-    public java.lang.String iHostFindHostNetworkInterfaceById(java.lang.String _this,
-        java.lang.String id) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iHostFindHostNetworkInterfaceById(final java.lang.String _this,
+        final java.lang.String id) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostFindHostNetworkInterfaceById");
         System.out.println(_this);
@@ -19442,8 +19524,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestKeyboardEventGetScancodes(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.Integer> iGuestKeyboardEventGetScancodes(java.lang.String _this)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.util.List<java.lang.Integer> iGuestKeyboardEventGetScancodes(
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestKeyboardEventGetScancodes");
         System.out.println(_this);
@@ -19466,8 +19548,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ivfsExplorerUpdate(java.lang.String _this )*
      */
     @Override
-    public java.lang.String ivfsExplorerUpdate(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String ivfsExplorerUpdate(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivfsExplorerUpdate");
         System.out.println(_this);
@@ -19491,7 +19573,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * logoFadeOut )*
      */
     @Override
-    public void ibiosSettingsSetLogoFadeOut(java.lang.String _this, boolean logoFadeOut)
+    public void ibiosSettingsSetLogoFadeOut(final java.lang.String _this, final boolean logoFadeOut)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsSetLogoFadeOut");
@@ -19515,8 +19597,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String key ,)java.lang.String value )*
      */
     @Override
-    public void iMachineSetExtraData(java.lang.String _this, java.lang.String key,
-        java.lang.String value) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetExtraData(final java.lang.String _this, final java.lang.String key,
+        final java.lang.String value) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetExtraData");
         System.out.println(_this);
@@ -19540,7 +19622,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String port )*
      */
     @Override
-    public void iusbDeviceFilterSetPort(java.lang.String _this, java.lang.String port)
+    public void iusbDeviceFilterSetPort(final java.lang.String _this, final java.lang.String port)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterSetPort");
@@ -19564,8 +19646,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * memoryBalloonSize )*
      */
     @Override
-    public void iGuestSetMemoryBalloonSize(java.lang.String _this, long memoryBalloonSize)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iGuestSetMemoryBalloonSize(final java.lang.String _this,
+        final long memoryBalloonSize) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestSetMemoryBalloonSize");
         System.out.println(_this);
@@ -19587,7 +19669,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iEventSourceCreateListener(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iEventSourceCreateListener(java.lang.String _this)
+    public java.lang.String iEventSourceCreateListener(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventSourceCreateListener");
@@ -19612,9 +19694,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * hostname ,)long tcpport ,)java.lang.String password ,)long maxDowntime )*
      */
     @Override
-    public java.lang.String iConsoleTeleport(java.lang.String _this, java.lang.String hostname,
-        long tcpport, java.lang.String password, long maxDowntime) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iConsoleTeleport(final java.lang.String _this,
+        final java.lang.String hostname, final long tcpport, final java.lang.String password,
+        final long maxDowntime) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleTeleport");
         System.out.println(_this);
@@ -19641,8 +19723,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iStorageControllerGetBootable(java.lang.String _this )*
      */
     @Override
-    public boolean iStorageControllerGetBootable(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iStorageControllerGetBootable(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iStorageControllerGetBootable");
         System.out.println(_this);
@@ -19666,8 +19748,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * networkName ,)java.lang.String trunkName ,)java.lang.String trunkType )*
      */
     @Override
-    public void idhcpServerStart(java.lang.String _this, java.lang.String networkName,
-        java.lang.String trunkName, java.lang.String trunkType) throws RuntimeFaultMsg,
+    public void idhcpServerStart(final java.lang.String _this, final java.lang.String networkName,
+        final java.lang.String trunkName, final java.lang.String trunkType) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation idhcpServerStart");
@@ -19692,7 +19774,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSessionGetType(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.SessionType iSessionGetType(java.lang.String _this)
+    public org.virtualbox.SessionType iSessionGetType(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSessionGetType");
@@ -19716,7 +19798,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iPerformanceMetricGetObject(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iPerformanceMetricGetObject(java.lang.String _this)
+    public java.lang.String iPerformanceMetricGetObject(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iPerformanceMetricGetObject");
@@ -19740,8 +19822,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iEventWaitProcessed(java.lang.String _this ,)int timeout )*
      */
     @Override
-    public boolean iEventWaitProcessed(java.lang.String _this, int timeout) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public boolean iEventWaitProcessed(final java.lang.String _this, final int timeout)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iEventWaitProcessed");
         System.out.println(_this);
@@ -19766,8 +19848,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.BIOSBootMenuMode bootMenuMode )*
      */
     @Override
-    public void ibiosSettingsSetBootMenuMode(java.lang.String _this,
-        org.virtualbox.BIOSBootMenuMode bootMenuMode) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void ibiosSettingsSetBootMenuMode(final java.lang.String _this,
+        final org.virtualbox.BIOSBootMenuMode bootMenuMode) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsSetBootMenuMode");
         System.out.println(_this);
@@ -19789,7 +19872,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMachineGetSessionState(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.SessionState iMachineGetSessionState(java.lang.String _this)
+    public org.virtualbox.SessionState iMachineGetSessionState(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetSessionState");
@@ -19813,7 +19896,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iHostPciDevicePlugEventGetMessage(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iHostPciDevicePlugEventGetMessage(java.lang.String _this)
+    public java.lang.String iHostPciDevicePlugEventGetMessage(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iHostPciDevicePlugEventGetMessage");
@@ -19837,7 +19920,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ibiosSettingsGetTimeOffset(java.lang.String _this )*
      */
     @Override
-    public long ibiosSettingsGetTimeOffset(java.lang.String _this) throws RuntimeFaultMsg,
+    public long ibiosSettingsGetTimeOffset(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ibiosSettingsGetTimeOffset");
@@ -19861,7 +19944,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#ivrdeServerGetVRDEExtPack(java.lang.String _this )*
      */
     @Override
-    public java.lang.String ivrdeServerGetVRDEExtPack(java.lang.String _this)
+    public java.lang.String ivrdeServerGetVRDEExtPack(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivrdeServerGetVRDEExtPack");
@@ -19885,7 +19968,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceGetVersion(java.lang.String _this )*
      */
     @Override
-    public int iusbDeviceGetVersion(java.lang.String _this) throws RuntimeFaultMsg,
+    public int iusbDeviceGetVersion(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceGetVersion");
@@ -19910,7 +19993,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * hpetEnabled )*
      */
     @Override
-    public void iMachineSetHpetEnabled(java.lang.String _this, boolean hpetEnabled)
+    public void iMachineSetHpetEnabled(final java.lang.String _this, final boolean hpetEnabled)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetHpetEnabled");
@@ -19934,8 +20017,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String natNetwork )*
      */
     @Override
-    public void iNetworkAdapterSetNATNetwork(java.lang.String _this, java.lang.String natNetwork)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iNetworkAdapterSetNATNetwork(final java.lang.String _this,
+        final java.lang.String natNetwork) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iNetworkAdapterSetNATNetwork");
         System.out.println(_this);
@@ -19958,8 +20041,9 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.util.List<java.lang.String> aNames )*
      */
     @Override
-    public java.util.List<java.lang.String> ivfsExplorerExists(java.lang.String _this,
-        java.util.List<java.lang.String> aNames) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.util.List<java.lang.String> ivfsExplorerExists(final java.lang.String _this,
+        final java.util.List<java.lang.String> aNames) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         LOG.info("Executing operation ivfsExplorerExists");
         System.out.println(_this);
@@ -19984,7 +20068,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<org.virtualbox.IAdditionsFacility> iGuestGetFacilities(
-        java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+        final java.lang.String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestGetFacilities");
         System.out.println(_this);
@@ -20007,7 +20091,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumLockRead(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.MediumState iMediumLockRead(java.lang.String _this)
+    public org.virtualbox.MediumState iMediumLockRead(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumLockRead");
@@ -20032,8 +20116,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * )*
      */
     @Override
-    public void iKeyboardPutScancode(java.lang.String _this, int scancode) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iKeyboardPutScancode(final java.lang.String _this, final int scancode)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iKeyboardPutScancode");
         System.out.println(_this);
@@ -20055,7 +20139,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iProgressGetResultCode(java.lang.String _this )*
      */
     @Override
-    public int iProgressGetResultCode(java.lang.String _this) throws RuntimeFaultMsg,
+    public int iProgressGetResultCode(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iProgressGetResultCode");
@@ -20079,8 +20163,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iSystemPropertiesGetMaxGuestVRAM(java.lang.String _this )*
      */
     @Override
-    public long iSystemPropertiesGetMaxGuestVRAM(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public long iSystemPropertiesGetMaxGuestVRAM(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iSystemPropertiesGetMaxGuestVRAM");
         System.out.println(_this);
@@ -20103,8 +20187,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iRuntimeErrorEventGetId(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iRuntimeErrorEventGetId(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iRuntimeErrorEventGetId(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iRuntimeErrorEventGetId");
         System.out.println(_this);
@@ -20128,8 +20212,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String teleporterPassword )*
      */
     @Override
-    public void iMachineSetTeleporterPassword(java.lang.String _this,
-        java.lang.String teleporterPassword) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetTeleporterPassword(final java.lang.String _this,
+        final java.lang.String teleporterPassword) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetTeleporterPassword");
         System.out.println(_this);
@@ -20153,7 +20237,7 @@ public class VboxPortTypeImpl implements VboxPortType
      */
     @Override
     public java.util.List<org.virtualbox.IMediumAttachment> iMachineGetMediumAttachmentsOfController(
-        java.lang.String _this, java.lang.String name) throws RuntimeFaultMsg,
+        final java.lang.String _this, final java.lang.String name) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineGetMediumAttachmentsOfController");
@@ -20179,8 +20263,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)java.lang.String product )*
      */
     @Override
-    public void iusbDeviceFilterSetProduct(java.lang.String _this, java.lang.String product)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iusbDeviceFilterSetProduct(final java.lang.String _this,
+        final java.lang.String product) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterSetProduct");
         System.out.println(_this);
@@ -20202,7 +20286,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iConsoleGetState(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.MachineState iConsoleGetState(java.lang.String _this)
+    public org.virtualbox.MachineState iConsoleGetState(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iConsoleGetState");
@@ -20226,7 +20310,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceFilterGetActive(java.lang.String _this )*
      */
     @Override
-    public boolean iusbDeviceFilterGetActive(java.lang.String _this) throws RuntimeFaultMsg,
+    public boolean iusbDeviceFilterGetActive(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceFilterGetActive");
@@ -20250,7 +20334,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iusbDeviceGetPortVersion(java.lang.String _this )*
      */
     @Override
-    public int iusbDeviceGetPortVersion(java.lang.String _this) throws RuntimeFaultMsg,
+    public int iusbDeviceGetPortVersion(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iusbDeviceGetPortVersion");
@@ -20276,10 +20360,10 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)org.virtualbox.AdditionsFacilityStatus returnval )*
      */
     @Override
-    public void iGuestGetFacilityStatus(java.lang.String _this,
-        org.virtualbox.AdditionsFacilityType facility,
-        javax.xml.ws.Holder<java.lang.Long> timestamp,
-        javax.xml.ws.Holder<AdditionsFacilityStatus> returnval) throws RuntimeFaultMsg,
+    public void iGuestGetFacilityStatus(final java.lang.String _this,
+        final org.virtualbox.AdditionsFacilityType facility,
+        final javax.xml.ws.Holder<java.lang.Long> timestamp,
+        final javax.xml.ws.Holder<AdditionsFacilityStatus> returnval) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestGetFacilityStatus");
@@ -20306,8 +20390,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iMediumGetMediumFormat(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iMediumGetMediumFormat(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iMediumGetMediumFormat(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMediumGetMediumFormat");
         System.out.println(_this);
@@ -20330,7 +20414,7 @@ public class VboxPortTypeImpl implements VboxPortType
      * @see org.virtualbox.VboxPortType#iGuestGetAdditionsVersion(java.lang.String _this )*
      */
     @Override
-    public java.lang.String iGuestGetAdditionsVersion(java.lang.String _this)
+    public java.lang.String iGuestGetAdditionsVersion(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iGuestGetAdditionsVersion");
@@ -20355,8 +20439,8 @@ public class VboxPortTypeImpl implements VboxPortType
      * ,)boolean teleporterEnabled )*
      */
     @Override
-    public void iMachineSetTeleporterEnabled(java.lang.String _this, boolean teleporterEnabled)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetTeleporterEnabled(final java.lang.String _this,
+        final boolean teleporterEnabled) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         LOG.info("Executing operation iMachineSetTeleporterEnabled");
         System.out.println(_this);
@@ -20371,19 +20455,34 @@ public class VboxPortTypeImpl implements VboxPortType
         }
         // throw new RuntimeFaultMsg("RuntimeFaultMsg...");
         // throw new InvalidObjectFaultMsg("InvalidObjectFaultMsg...");
-    }@Override// Cannot find dispatch method for
-    
-    
+    }
+
+    @Override
+    // Cannot find dispatch method for
     // {http://www.virtualbox.org/}INetworkAdapter_attachToBridgedInterface
-    public void iNetworkAdapterAttachToBridgedInterface(java.lang.String _this)
+    public void iNetworkAdapterAttachToBridgedInterface(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
     }
 
     @Override
-    public void iNetworkAdapterSetHostInterface(String _this, String hostInterface)
+    public void iNetworkAdapterSetHostInterface(final String _this, final String hostInterface)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
-    {        
+    {
     };
 
+    @Override
+    public long iSystemPropertiesGetNetworkAdapterCount(
+        @WebParam(name = "_this", targetNamespace = "") final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+        return Long.valueOf(0);
+    }
+
+    @Override
+    public String iNetworkAdapterGetHostInterface(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
+    {
+        return null;
+    }
 }

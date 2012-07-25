@@ -1,25 +1,21 @@
 package com.abiquo.mock.model;
 
-import java.util.UUID;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.virtualbox.StorageBus;
 
-public class Storage
+public class Storage extends Medium
 {
-    private String id;
-
     private StorageBus bus;
 
     private String name;
 
+    private List<String> ports;
+
     public Storage()
     {
-        id = UUID.randomUUID().toString();
-    }
-
-    public String getId()
-    {
-        return id;
+        super();
     }
 
     public StorageBus getBus()
@@ -27,7 +23,7 @@ public class Storage
         return bus;
     }
 
-    public void setBus(StorageBus bus)
+    public void setBus(final StorageBus bus)
     {
         this.bus = bus;
     }
@@ -37,9 +33,23 @@ public class Storage
         return name;
     }
 
-    public void setName(String name)
+    public void setName(final String name)
     {
         this.name = name;
+    }
+
+    public List<String> getPorts()
+    {
+        if (ports == null)
+        {
+            ports = new ArrayList<String>();
+        }
+        return ports;
+    }
+
+    public int getPortCount()
+    {
+        return getPorts().size();
     }
 
 }

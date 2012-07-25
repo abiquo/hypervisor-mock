@@ -9261,6 +9261,34 @@
           <xsd:sequence/>
         </xsd:complexType>
       </xsd:element>
+     <xsd:element name="ISystemProperties_getNetworkAdapterCount">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="_this" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+       <xsd:element name="ISystemProperties_getNetworkAdapterCountResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="returnval" type="xsd:long"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+     <xsd:element name="INetworkAdapter_getHostInterface">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="_this" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+       <xsd:element name="INetworkAdapter_getHostInterfaceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="returnval" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <!-- read/write attribute INetworkAdapter::MACAddress-->
       <xsd:element name="INetworkAdapter_getMACAddress">
         <xsd:complexType>
@@ -17441,8 +17469,21 @@
   <message name="INetworkAdapter_setHostInterfaceRequestMsg">
     <part name="parameters" element="vbox:INetworkAdapter_setHostInterface"/>
   </message>
-  <message name="INetworkAdapter_attachToBridgedInterfaceResultMsg">
+  <message name="INetworkAdapter_setHostInterfaceResultMsg">
     <part name="parameters" element="vbox:INetworkAdapter_setHostInterfaceResponse"/>
+  </message>
+  <message name="INetworkAdapter_getHostInterfaceRequestMsg">
+    <part name="parameters" element="vbox:INetworkAdapter_getHostInterface"/>
+  </message>
+  <message name="INetworkAdapter_getHostInterfaceResultMsg">
+    <part name="parameters" element="vbox:INetworkAdapter_getHostInterfaceResponse"/>
+  </message>
+   <!-- DELETE -->
+  <message name="ISystemProperties_getNetworkAdapterCountRequestMsg">
+    <part name="parameters" element="vbox:ISystemProperties_getNetworkAdapterCount"/>
+  </message>
+  <message name="ISystemProperties_getNetworkAdapterCountResultMsg">
+    <part name="parameters" element="vbox:ISystemProperties_getNetworkAdapterCountResponse"/>
   </message>
   <!-- read/write attribute INetworkAdapter::attachmentType-->
   <message name="INetworkAdapter_getAttachmentTypeRequestMsg">
@@ -23103,6 +23144,19 @@
     <operation name="INetworkAdapter_setHostInterface"> 
       <input message="vbox:INetworkAdapter_setHostInterfaceRequestMsg"/>
       <output message="vbox:INetworkAdapter_setHostInterfaceResultMsg"/>
+      <fault name="InvalidObjectFault" message="vbox:InvalidObjectFaultMsg"/>
+      <fault name="RuntimeFault" message="vbox:RuntimeFaultMsg"/>
+    </operation>
+     <operation name="INetworkAdapter_getHostInterface"> 
+      <input message="vbox:INetworkAdapter_getHostInterfaceRequestMsg"/>
+      <output message="vbox:INetworkAdapter_getHostInterfaceResultMsg"/>
+      <fault name="InvalidObjectFault" message="vbox:InvalidObjectFaultMsg"/>
+      <fault name="RuntimeFault" message="vbox:RuntimeFaultMsg"/>
+    </operation>
+ <!-- DELETE -->
+    <operation name="ISystemProperties_getNetworkAdapterCount"> 
+      <input message="vbox:ISystemProperties_getNetworkAdapterCountRequestMsg"/>
+      <output message="vbox:ISystemProperties_getNetworkAdapterCountResultMsg"/>
       <fault name="InvalidObjectFault" message="vbox:InvalidObjectFaultMsg"/>
       <fault name="RuntimeFault" message="vbox:RuntimeFaultMsg"/>
     </operation>
@@ -33209,7 +33263,24 @@
       </fault>
   </operation>
 
-    <!--DELETE -->
+     <!--DELETE -->
+    <operation name="ISystemProperties_getNetworkAdapterCount">
+      <soap:operation soapAction="" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="InvalidObjectFault">
+        <soap:fault name="InvalidObjectFault" use="literal"/>
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault name="RuntimeFault" use="literal"/>
+      </fault>
+  </operation>
+
+<!--DELETE -->
     <operation name="INetworkAdapter_setHostInterface">
       <soap:operation soapAction="" style="document"/>
       <input>
@@ -33225,7 +33296,21 @@
         <soap:fault name="RuntimeFault" use="literal"/>
       </fault>
     </operation>
- 
+    <operation name="INetworkAdapter_getHostInterface">
+      <soap:operation soapAction="" style="document"/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="InvalidObjectFault">
+        <soap:fault name="InvalidObjectFault" use="literal"/>
+      </fault>
+      <fault name="RuntimeFault">
+        <soap:fault name="RuntimeFault" use="literal"/>
+      </fault>
+    </operation>
     <operation name="INetworkAdapter_getAttachmentType">
       <soap:operation soapAction="" style="document"/>
       <input>

@@ -11,8 +11,6 @@ import java.util.Random;
 import java.util.Set;
 import java.util.UUID;
 
-import javax.jws.WebParam;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.virtualbox.AccessMode;
@@ -22,7 +20,6 @@ import org.virtualbox.InvalidObjectFaultMsg;
 import org.virtualbox.LockType;
 import org.virtualbox.MachineState;
 import org.virtualbox.MediumState;
-import org.virtualbox.NetworkAdapterType;
 import org.virtualbox.RuntimeFaultMsg;
 import org.virtualbox.SessionState;
 import org.virtualbox.StorageBus;
@@ -52,7 +49,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
      * @see org.virtualbox.VboxPortType#iMachineGetState(java.lang.String _this )*
      */
     @Override
-    public org.virtualbox.MachineState iMachineGetState(java.lang.String _this)
+    public org.virtualbox.MachineState iMachineGetState(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         // LOG.info("Executing operation iMachineGetState");
@@ -71,7 +68,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
      * @see org.virtualbox.VboxPortType#iVirtualBoxGetMachines(java.lang.String _this )*
      */
     @Override
-    public java.util.List<java.lang.String> iVirtualBoxGetMachines(java.lang.String _this)
+    public java.util.List<java.lang.String> iVirtualBoxGetMachines(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         // LOG.info("Executing operation iVirtualBoxGetMachines");
@@ -104,15 +101,15 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
      * ,)java.lang.String password )*
      */
     @Override
-    public java.lang.String iWebsessionManagerLogon(java.lang.String username,
-        java.lang.String password) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iWebsessionManagerLogon(final java.lang.String username,
+        final java.lang.String password) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         // LOG.info("Executing operation iWebsessionManagerLogon");
         // System.out.println(username);
         // System.out.println(password);
         try
         {
-            Session session = new Session(username, password);
+            Session session = new Session();
             java.lang.String _return = session.getId();
             if (!DomainService.getInstance().getSession().containsKey(session.getId()))
             {
@@ -135,8 +132,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
      * ,)java.lang.String nameOrId )*
      */
     @Override
-    public java.lang.String iVirtualBoxFindMachine(java.lang.String _this, java.lang.String nameOrId)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iVirtualBoxFindMachine(final java.lang.String _this,
+        final java.lang.String nameOrId) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         // LOG.info("Executing operation iVirtualBoxFindMachine");
         // System.out.println("This: " + _this);
@@ -168,8 +165,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
       */
 
     @Override
-    public void iVirtualBoxRegisterMachine(java.lang.String _this, java.lang.String machine)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iVirtualBoxRegisterMachine(final java.lang.String _this,
+        final java.lang.String machine) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         // LOG.info("Executing operation iVirtualBoxRegisterMachine");
         // System.out.println(_this);
@@ -189,7 +186,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
       */
 
     @Override
-    public java.lang.String iHostNetworkInterfaceGetHardwareAddress(java.lang.String _this)
+    public java.lang.String iHostNetworkInterfaceGetHardwareAddress(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         // LOG.info("Executing operation iHostNetworkInterfaceGetHardwareAddress");
@@ -218,8 +215,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public String iWebsessionManagerGetSessionObject(String refIVirtualBox) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public String iWebsessionManagerGetSessionObject(final String refIVirtualBox)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         Session session = DomainService.getInstance().getSession().get(refIVirtualBox);
         if (session == null)
@@ -235,7 +232,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
      * @see org.virtualbox.VboxPortType#iHostGetProcessorOnlineCount(java.lang.String _this )*
      */
     @Override
-    public long iHostGetProcessorOnlineCount(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iHostGetProcessorOnlineCount(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         // LOG.info("Executing operation iHostGetProcessorOnlineCount");
@@ -259,8 +256,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
       */
 
     @Override
-    public java.lang.String iVirtualBoxGetHost(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iVirtualBoxGetHost(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         // LOG.info("Executing operation iVirtualBoxGetHost");
         // System.out.println(_this);
@@ -282,12 +279,12 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
       */
 
     @Override
-    public void iWebsessionManagerLogoff(java.lang.String refIVirtualBox) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iWebsessionManagerLogoff(final java.lang.String refIVirtualBox)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         try
         {
-            // DomainService.getInstance().getSession().remove(refIVirtualBox);
+            DomainService.getInstance().getSession().remove(refIVirtualBox);
         }
         catch (java.lang.Exception ex)
         {
@@ -300,7 +297,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
       */
 
     @Override
-    public long iHostGetMemorySize(java.lang.String _this) throws RuntimeFaultMsg,
+    public long iHostGetMemorySize(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         // LOG.info("Executing operation iHostGetMemorySize");
@@ -324,7 +321,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
        */
 
     @Override
-    public java.lang.String iMachineGetName(java.lang.String _this) throws RuntimeFaultMsg,
+    public java.lang.String iMachineGetName(final java.lang.String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         // LOG.info("Executing operation iMachineGetName");
@@ -342,7 +339,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
       */
 
     @Override
-    public java.util.List<java.lang.String> iHostGetNetworkInterfaces(java.lang.String _this)
+    public java.util.List<java.lang.String> iHostGetNetworkInterfaces(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         // LOG.info("Executing operation iHostGetNetworkInterfaces");
@@ -370,7 +367,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
       */
 
     @Override
-    public java.lang.String iHostNetworkInterfaceGetName(java.lang.String _this)
+    public java.lang.String iHostNetworkInterfaceGetName(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         // LOG.info("Executing operation iHostNetworkInterfaceGetName");
@@ -402,8 +399,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
       */
 
     @Override
-    public java.lang.String iVirtualBoxGetVersion(java.lang.String _this) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public java.lang.String iVirtualBoxGetVersion(final java.lang.String _this)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         // LOG.info("Executing operation iVirtualBoxGetVersion");
         // System.out.println(_this);
@@ -420,9 +417,10 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
      * ,)java.lang.String id ,)boolean forceOverwrite )*
      */
     @Override
-    public java.lang.String iVirtualBoxCreateMachine(java.lang.String _this,
-        java.lang.String settingsFile, java.lang.String name, java.lang.String osTypeId,
-        java.lang.String id, boolean forceOverwrite) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public java.lang.String iVirtualBoxCreateMachine(final java.lang.String _this,
+        final java.lang.String settingsFile, final java.lang.String name,
+        final java.lang.String osTypeId, final java.lang.String id, final boolean forceOverwrite)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         VirtualMachineInfo vm = new VirtualMachineInfo();
         vm.setSettingsFile(settingsFile);
@@ -461,8 +459,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     // }
 
     @Override
-    public String iMachineGetNetworkAdapter(String _this, long slot) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public String iMachineGetNetworkAdapter(final String _this, final long slot)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         VirtualMachineInfo virtualMachine =
             DomainService.getInstance().getVirtualMachines().get(_this);
@@ -493,8 +491,9 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public void iMachineAttachDevice(String _this, String name, int controllerPort, int device,
-        DeviceType type, String medium) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineAttachDevice(final String _this, final String name,
+        final int controllerPort, final int device, final DeviceType type, final String medium)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         VirtualMachineInfo virtualMachine =
             DomainService.getInstance().getVirtualMachines().get(_this);
@@ -512,7 +511,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public String iMachineGetVRDEServer(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public String iMachineGetVRDEServer(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         VirtualMachineInfo virtualMachine =
             DomainService.getInstance().getVirtualMachines().get(_this);
@@ -528,7 +528,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public String iMediumGetId(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public String iMediumGetId(final String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         Medium medium = DomainService.getInstance().getMediums().get(_this);
         if (medium == null)
@@ -540,8 +540,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public void iMachineSetCPUProperty(String _this, CPUPropertyType property, boolean value)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSetCPUProperty(final String _this, final CPUPropertyType property,
+        final boolean value) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         VirtualMachineInfo virtualMachine =
             DomainService.getInstance().getVirtualMachines().get(_this);
@@ -553,8 +553,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public String iMachineAddStorageController(String _this, String name, StorageBus connectionType)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public String iMachineAddStorageController(final String _this, final String name,
+        final StorageBus connectionType) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         VirtualMachineInfo virtualMachine =
             DomainService.getInstance().getVirtualMachines().get(_this);
@@ -567,12 +567,13 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         storage.setName(name);
         storage.setBus(connectionType);
         virtualMachine.getStorages().put(storage.getId(), storage);
+        DomainService.getInstance().getMediums().put(storage.getId(), storage);
         return storage.getId();
     }
 
     @Override
-    public void iMachineSetCPUCount(String _this, long cpuCount) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMachineSetCPUCount(final String _this, final long cpuCount)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         VirtualMachineInfo virtualMachine =
             DomainService.getInstance().getVirtualMachines().get(_this);
@@ -584,8 +585,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public void iMachineSetMemorySize(String _this, long memorySize) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iMachineSetMemorySize(final String _this, final long memorySize)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         VirtualMachineInfo virtualMachine =
             DomainService.getInstance().getVirtualMachines().get(_this);
@@ -597,7 +598,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public void iMediumClose(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMediumClose(final String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         Medium medium = DomainService.getInstance().getMediums().get(_this);
         if (medium == null)
@@ -615,8 +616,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
 
     /** Return the progress to the task */
     @Override
-    public String iMediumCloneTo(String _this, String target, long variant, String parent)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public String iMediumCloneTo(final String _this, final String target, final long variant,
+        final String parent) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         Medium medium = DomainService.getInstance().getMediums().get(_this);
         Medium mtarget = DomainService.getInstance().getMediums().get(target);
@@ -633,14 +634,14 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public void iProgressWaitForCompletion(String _this, int timeout) throws RuntimeFaultMsg,
-        InvalidObjectFaultMsg
+    public void iProgressWaitForCompletion(final String _this, final int timeout)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
     }
 
     @Override
-    public String iVirtualBoxCreateHardDisk(String _this, String format, String location)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public String iVirtualBoxCreateHardDisk(final String _this, final String format,
+        final String location) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         Session session = DomainService.getInstance().getSession().get(_this);
         if (session == null)
@@ -667,7 +668,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public int iProgressGetResultCode(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public int iProgressGetResultCode(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         Progress progress = DomainService.getInstance().getTasks().get(_this);
         if (progress == null)
@@ -679,7 +681,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public boolean iProgressGetCompleted(String _this) throws RuntimeFaultMsg,
+    public boolean iProgressGetCompleted(final String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         Progress session = DomainService.getInstance().getTasks().get(_this);
@@ -692,14 +694,14 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     };
 
     @Override
-    public String iProgressGetDescription(String _this) throws RuntimeFaultMsg,
+    public String iProgressGetDescription(final String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         return iProgressGetOperationDescription(_this);
     }
 
     @Override
-    public String iProgressGetOperationDescription(String _this) throws RuntimeFaultMsg,
+    public String iProgressGetOperationDescription(final String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
 
@@ -714,7 +716,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public long iProgressGetOperationPercent(String _this) throws RuntimeFaultMsg,
+    public long iProgressGetOperationPercent(final String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         Progress progress = DomainService.getInstance().getTasks().get(_this);
@@ -728,8 +730,9 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public String iVirtualBoxOpenMedium(String _this, String location, DeviceType deviceType,
-        AccessMode accessMode, boolean forceNewUuid) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public String iVirtualBoxOpenMedium(final String _this, final String location,
+        final DeviceType deviceType, final AccessMode accessMode, final boolean forceNewUuid)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         Session session = DomainService.getInstance().getSession().get(_this);
         if (session == null)
@@ -749,7 +752,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public String iMediumGetFormat(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public String iMediumGetFormat(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         Medium medium = DomainService.getInstance().getMediums().get(_this);
         if (medium == null)
@@ -761,7 +765,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public long iMediumGetVariant(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public long iMediumGetVariant(final String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         Medium medium = DomainService.getInstance().getMediums().get(_this);
 
@@ -774,7 +778,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public SessionState iSessionGetState(String _this) throws RuntimeFaultMsg,
+    public SessionState iSessionGetState(final String _this) throws RuntimeFaultMsg,
         InvalidObjectFaultMsg
     {
         Session session = DomainService.getInstance().getSession().get(_this);
@@ -788,7 +792,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public String iSessionGetMachine(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public String iSessionGetMachine(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
 
         Session session = DomainService.getInstance().getSession().get(_this);
@@ -806,7 +811,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public MediumState iMediumGetState(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public MediumState iMediumGetState(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         Medium medium = DomainService.getInstance().getMediums().get(_this);
         if (medium == null)
@@ -821,7 +827,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     @Override
     // Cannot find dispatch method for
     // {http://www.virtualbox.org/}INetworkAdapter_attachToBridgedInterface
-    public void iNetworkAdapterAttachToBridgedInterface(java.lang.String _this)
+    public void iNetworkAdapterAttachToBridgedInterface(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
     };
@@ -829,13 +835,14 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     // Cannot find dispatch method for {http://www.virtualbox.org/}INetworkAdapter_setHostInterface
 
     @Override
-    public void iNetworkAdapterSetHostInterface(java.lang.String _this,
-        java.lang.String hostInterface) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iNetworkAdapterSetHostInterface(final java.lang.String _this,
+        final java.lang.String hostInterface) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
     }
 
     @Override
-    public void iMachineSaveSettings(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iMachineSaveSettings(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         VirtualMachineInfo virtualMachine =
             DomainService.getInstance().getVirtualMachines().get(_this);
@@ -847,8 +854,8 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public String iMachineLaunchVMProcess(String _this, String session, String type,
-        String environment) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public String iMachineLaunchVMProcess(final String _this, final String session,
+        final String type, final String environment) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
 
         VirtualMachineInfo virtualMachine =
@@ -865,14 +872,16 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public void iConsolePowerButton(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iConsolePowerButton(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         // TODO Auto-generated method stub
         super.iConsolePowerButton(_this);
     }
 
     @Override
-    public String iConsolePowerDown(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public String iConsolePowerDown(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         VirtualMachineInfo virtualMachine =
             DomainService.getInstance().getVirtualMachines().get(_this);
@@ -888,7 +897,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public String iConsolePowerUp(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public String iConsolePowerUp(final String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         VirtualMachineInfo virtualMachine =
             DomainService.getInstance().getVirtualMachines().get(_this);
@@ -904,15 +913,62 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     }
 
     @Override
-    public String iConsolePowerUpPaused(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iConsoleResume(final String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
-        // TODO Auto-generated method stub
-        return super.iConsolePowerUpPaused(_this);
+        VirtualMachineInfo virtualMachine =
+            DomainService.getInstance().getVirtualMachines().get(_this);
+        if (virtualMachine == null)
+        {
+            throw new InvalidObjectFaultMsg("iConsoleResume no such machine id" + _this);
+        }
+        virtualMachine.setMachineState(MachineState.RUNNING);
+        Progress progress = new Progress();
+        progress.setDescription("Resume");
+        DomainService.getInstance().getTasks().put(progress.getId(), progress);
     }
 
     @Override
-    public void iMachineLockMachine(String _this, String session, LockType lockType)
-        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iConsolePause(final String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+        VirtualMachineInfo virtualMachine =
+            DomainService.getInstance().getVirtualMachines().get(_this);
+        if (virtualMachine == null)
+        {
+            throw new InvalidObjectFaultMsg("iConsolePause no such machine id" + _this);
+        }
+        virtualMachine.setMachineState(MachineState.PAUSED);
+        Progress progress = new Progress();
+        progress.setDescription("Pause");
+        DomainService.getInstance().getTasks().put(progress.getId(), progress);
+    }
+
+    @Override
+    public void iConsoleReset(final String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+        // TODO Auto-generated method stub
+        super.iConsoleReset(_this);
+    }
+
+    @Override
+    public String iConsolePowerUpPaused(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
+    {
+        VirtualMachineInfo virtualMachine =
+            DomainService.getInstance().getVirtualMachines().get(_this);
+        if (virtualMachine == null)
+        {
+            throw new InvalidObjectFaultMsg("iConsolePowerUpPaused no such machine id" + _this);
+        }
+        virtualMachine.setMachineState(MachineState.RUNNING);
+        Progress progress = new Progress();
+        progress.setDescription("Resume");
+        DomainService.getInstance().getTasks().put(progress.getId(), progress);
+        return progress.getId();
+    }
+
+    @Override
+    public void iMachineLockMachine(final String _this, final String session,
+        final LockType lockType) throws RuntimeFaultMsg, InvalidObjectFaultMsg
     {
         Session msession = DomainService.getInstance().getSession().get(session);
         if (msession == null)
@@ -925,11 +981,24 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         {
             throw new InvalidObjectFaultMsg("iMachineMemory no such machine id" + _this);
         }
-        msession.getData().add(virtualMachine);
+        msession.setVirtualMachine(virtualMachine);
     }
 
     @Override
-    public String iSessionGetConsole(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    public void iSessionUnlockMachine(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
+    {
+        Session session = DomainService.getInstance().getSession().get(_this);
+        if (session == null)
+        { // No session, log again
+            throw new InvalidObjectFaultMsg("iSessionGetMachine: No session. InvalidObjectFaultMsg...");
+        }
+        session.setVirtualMachine(null);
+    }
+
+    @Override
+    public String iSessionGetConsole(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
     {
         Session session = DomainService.getInstance().getSession().get(_this);
         if (session == null)
@@ -937,5 +1006,85 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
             throw new InvalidObjectFaultMsg("iSessionGetMachine: No session. InvalidObjectFaultMsg...");
         }
         return session.getConsole();
+    }
+
+    @Override
+    public long iSystemPropertiesGetNetworkAdapterCount(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
+    {
+        return Long.valueOf(DomainService.getInstance().getNetworkInterfaces().size());
+    }
+
+    @Override
+    public String iVirtualBoxGetSystemProperties(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
+    {
+        return DomainService.getInstance().getName();
+    }
+
+    @Override
+    public String iNetworkAdapterGetHostInterface(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
+    {
+        LOG.debug("iNetworkAdapterGetHostInterface " + _this);
+
+        for (NetworkInterface networkInterface : DomainService.getInstance().getNetworkInterfaces())
+        {
+            if (networkInterface.getId().equalsIgnoreCase(_this))
+            {
+                return networkInterface.getName();
+            }
+        }
+
+        return "";
+    }
+
+    @Override
+    public String iMachineDelete(final String _this, final List<String> aMedia)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+        DomainService.getInstance().getVirtualMachines().remove(_this);
+
+        Progress progress = new Progress();
+        progress.setDescription("Delete");
+        DomainService.getInstance().getTasks().put(progress.getId(), progress);
+        return progress.getId();
+    }
+
+    @Override
+    public String iMachineGetStorageControllerByName(final String _this, final String name)
+        throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+        VirtualMachineInfo virtualMachine =
+            DomainService.getInstance().getVirtualMachines().get(_this);
+        if (virtualMachine == null)
+        {
+            throw new InvalidObjectFaultMsg("iMachineGetStorageControllerByName no such machine id"
+                + _this);
+        }
+
+        for (Entry<String, Storage> e : virtualMachine.getStorages().entrySet())
+        {
+            if (e.getValue().getName().equals(name))
+            {
+                return e.getValue().getId();
+            }
+        }
+        return "";
+
+    }
+
+    @Override
+    public long iStorageControllerGetPortCount(final String _this) throws RuntimeFaultMsg,
+        InvalidObjectFaultMsg
+    {
+        Medium medium = DomainService.getInstance().getMediums().get(_this);
+        if (medium == null || !(medium instanceof Storage))
+        {
+            throw new InvalidObjectFaultMsg("iStorageControllerGetPortCount no such medium id"
+                + _this);
+        }
+
+        return ((Storage) medium).getPortCount();
     }
 }
