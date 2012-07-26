@@ -21,6 +21,7 @@
 
 package com.abiquo.aimstub.mock;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.logging.Logger;
 
@@ -72,6 +73,7 @@ public class AimServerMock implements Iface
 //        LOG.info("getDatastores");
 
         return DomainService.getInstance().getDatastores();
+        //return Collections.EMPTY_LIST;
     }
 
     @Deprecated
@@ -80,7 +82,7 @@ public class AimServerMock implements Iface
     {
         LOG.severe("getNetInterfaces shouldn't be called");
 
-        return null;
+        return Collections.EMPTY_LIST;
     }
 
     @Override

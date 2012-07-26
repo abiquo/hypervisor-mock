@@ -1,11 +1,11 @@
 package com.abiquo.vbox;
 
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+
 import javax.xml.ws.Endpoint;
 
 import com.abiquo.aimstub.mock.BootAimServerMock;
-import com.abiquo.mock.configuration.ConfigurationService;
-import com.abiquo.mock.domain.DomainService;
-import com.abiquo.mock.model.HostInfo;
 import com.abiquo.vbox.mock.VboxPortTypeMock;
 
 /**
@@ -23,25 +23,25 @@ public class VboxPortType_VboxServicePort_Server
         Object implementor = new VboxPortTypeMock();
         String address = "http://0.0.0.0" + ":" + port + "/";
         Endpoint.publish(address, implementor);
-        startMock();
+
+        startMock().get(); // block
     }
 
-    private BootAimServerMock startMock()
+    private Future startMock()
     {
-        BootAimServerMock srv = new BootAimServerMock();
-        srv.startServerBlocking();
-        return srv;
+        return Executors.newSingleThreadExecutor().submit(new Runnable()
+        {
+            @Override
+            public void run()
+            {
+                BootAimServerMock srv = new BootAimServerMock();
+                srv.startServerBlocking();
+            }
+        });
     }
 
-    public static void main(String args[]) throws java.lang.Exception
+    public static void main(final String args[]) throws java.lang.Exception
     {
-        ConfigurationService configurationService = ConfigurationService.getInstance();
-        HostInfo hostInfo = DomainService.getInstance();
         new VboxPortType_VboxServicePort_Server();
-        System.out.println("Server ready...");
-
-        Thread.sleep(5 * 60 * 1000);
-        System.out.println("Server exiting");
-        System.exit(0);
     }
 }

@@ -2,7 +2,7 @@ package com.abiquo.aimstub.mock;
 
 import org.apache.thrift.server.TNonblockingServer;
 import org.apache.thrift.server.TServer;
-import org.apache.thrift.server.TThreadPoolServer;
+import org.apache.thrift.server.TSimpleServer;
 import org.apache.thrift.transport.TNonblockingServerSocket;
 import org.apache.thrift.transport.TNonblockingServerTransport;
 import org.apache.thrift.transport.TServerSocket;
@@ -34,7 +34,9 @@ public class BootAimServerMock
         try
         {
             final TServerSocket serverTransport = new TServerSocket(SERVER_PORT);
-            server = new TThreadPoolServer(processor, serverTransport);
+            // vbox no need concurrency at aim
+            //server = new TThreadPoolServer(processor, serverTransport);
+            server = new TSimpleServer(processor, serverTransport);
             server.serve();
 
             LOG.info("Aim Server Mock started at {}", SERVER_PORT);

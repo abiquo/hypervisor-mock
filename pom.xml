@@ -31,10 +31,6 @@
                     <groupId>org.slf4j</groupId>
                     <artifactId>slf4j-api</artifactId>
                 </exclusion>
-                <exclusion>
-                    <groupId>org.apache</groupId>
-                    <artifactId>thrift</artifactId>
-                </exclusion>
             </exclusions>
         </dependency>
         <!-- Configuration -->
@@ -42,12 +38,6 @@
             <groupId>org.yaml</groupId>
             <artifactId>snakeyaml</artifactId>
             <version>1.10</version>
-        </dependency>
-        <!-- Thrift -->
-        <dependency>
-            <groupId>org.apache</groupId>
-            <artifactId>thrift</artifactId>
-            <version>0.2.0</version>
         </dependency>
         <!-- Logging -->
         <dependency>
