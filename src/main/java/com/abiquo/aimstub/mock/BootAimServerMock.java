@@ -25,6 +25,9 @@ public class BootAimServerMock
     /** Thrift server. */
     private TServer server;
 
+    /** Simple server does not publish its "stopped" var. */
+    private boolean running;
+
     /** Mock implementation */
     protected Aim.Processor processor = new Aim.Processor(new AimServerMock());
 
@@ -35,14 +38,15 @@ public class BootAimServerMock
         {
             final TServerSocket serverTransport = new TServerSocket(SERVER_PORT);
             // vbox no need concurrency at aim
-            //server = new TThreadPoolServer(processor, serverTransport);
+            // server = new TThreadPoolServer(processor, serverTransport);
             server = new TSimpleServer(processor, serverTransport);
             server.serve();
-
+            running = Boolean.TRUE;
             LOG.info("Aim Server Mock started at {}", SERVER_PORT);
         }
         catch (TTransportException e)
         {
+            running = Boolean.FALSE;
             LOG.error("can't start server {}", e);
         }
     }
@@ -56,12 +60,12 @@ public class BootAimServerMock
                 new TNonblockingServerSocket(SERVER_PORT);
             server = new TNonblockingServer(processor, serverTransport);
             server.serve();
-
+            running = Boolean.TRUE;
             LOG.info("Aim Server Mock started at {}", SERVER_PORT);
         }
         catch (TTransportException e)
         {
-            e.printStackTrace();
+            running = Boolean.FALSE;
             LOG.error("can't start server {}", e);
         }
     }
@@ -72,7 +76,13 @@ public class BootAimServerMock
      */
     public void stopServer()
     {
+        running = Boolean.FALSE;
         server.stop();
+    }
+
+    public boolean isRunning()
+    {
+        return running;
     }
 
     /** starts a blocking server */

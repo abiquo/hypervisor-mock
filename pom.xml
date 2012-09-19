@@ -90,7 +90,7 @@
                             </descriptorRefs>
                             <archive>
                                 <manifest>
-                                    <mainClass>com.abiquo.vbox.VboxPortType_VboxServicePort_Server</mainClass>
+                                    <mainClass>com.abiquo.mock.service.MayhemService</mainClass>
                                 </manifest>
                             </archive>
                         </configuration>

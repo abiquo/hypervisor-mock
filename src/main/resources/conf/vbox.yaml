@@ -1,18 +1,18 @@
 Host :
   name : "mock" 
   cores : 64
-  memory : 2097152
+  memory : 2147483647
   version : "0.1"
   datastores:
     datastore1:
-      device: "10.60.1.104:/volume1/nfs-devel"
-      path: "/"
+      device: "10.60.1.72:/opt/vm_repository"
+      path: "/opt/vm_repository/"
       type: "/dev/sd1"
       size: 2147483647
       available: 2147483647
     datastore2:
       device: "10.60.1.104:/volume1/nfs-devel"
-      path: "/opt/"
+      path: "/opt/nfs-devel/"
       type: "/dev/sd2"
       size: 2147483647
       available: 2147483647
@@ -23,4 +23,159 @@ Host :
     networkinterface2:
       name: "eth1"
       mac: 00:00:00:00:00:01
+Behavior:
+  ticks: 7000
+  # Operations behind abiquo
+  destroy_vm_rate : 0
+  destroy_vm_ticks : 40000
+  create_vm_rate : 0
+  create_vm_ticks : 40000
+
+  # Global configuration
+  hypervisor_disconnect_ratio: 0
+  hypervisor_disconnect_duration: 40000
+  hypervisor_disconnect_ticks: 40000
+  delay: 0
+
+  # vbox method configuration
+  iMachineGetState:
+    # delay: 1000
+
+  iVirtualBoxGetMachines:
+    # delay: 1000
+
+  iWebsessionManagerLogon:
+    # delay: 1000
+
+  iWebsessionManagerLogoff:
+    # delay: 1000
+
+  iVirtualBoxFindMachine:
+    # delay: 1000
+
+  iVirtualBoxRegisterMachine:
+    # delay: 1000
+    failure_ratio: 0
+
+  iVirtualBoxCreateMachine:
+    # delay: 1000
+    failure_ratio: 0
+
+  iMachineAttachDevice:
+    delay: 20000
+    failures:
+      - validate_iqn_ratio: 0
+      - attach_device_ratio: 0
+  
+  iMediumCloneTo:
+    # delay: 1000
+    failures:
+      - unreacheable_datastore: 0
+
+  iMediumClose:
+    # delay: 1000
+    failure_ratio: 0
+  
+  iVirtualBoxOpenMedium:
+    # delay: 1000
+    failures:
+      - not_found_ratio: 0
+
+  iVirtualBoxCreateHardDisk:
+    # delay: 1000
+    failure_ratio: 0
+
+  iNetworkAdapterAttachToBridgedInterface:
+    # delay: 1000
+    failure_ratio: 0
+
+  iMachineSaveSettings:
+    # delay: 1000
+    failure_ratio: 0
+
+  iMachineLaunchVMProcess:
+    # delay: 1000
+  
+  iConsolePowerButton:
+    delay: 20000
+
+  iConsolePowerDown:
+    delay: 20000
+
+  iConsolePowerUp:
+    # delay: 1000
+    
+  iConsoleResume:
+    # delay: 1000
+    
+  iConsolePause:
+    # delay: 1000
+    
+  iConsoleReset:
+    # delay: 1000
+    
+  iConsolePowerUpPaused:
+    # delay: 1000
+
+  iMachineLockMachine:
+    failure_ratio: 0
+
+  iMachineDelete:
+    # delay: 1000
+
+  # AIM method configuration
+  checkRimpConfiguration:
+    failure_ratio: 0
+  
+  getDatastores:
+    # delay: 1000
+    failure_ratio: 0
+
+  createVLAN:
+    # delay: 1000
+    failure_ratio: 0 
+    # in %
+
+  deleteVLAN:
+    # delay: 1000
+    # in ms
+    failure_ratio: 0
+
+  # unspecified vbox methods
+
+  iStorageControllerGetPortCount:
+  iMachineGetStorageControllerByName:  
+  iSessionGetConsole:
+  iSystemPropertiesGetNetworkAdapterCount:
+  iVirtualBoxGetSystemProperties:
+  iNetworkAdapterGetHostInterface:
+  iSessionUnlockMachine:
+  iNetworkAdapterSetHostInterface:
+  iMediumGetState:
+  iSessionGetMachine:
+  iSessionGetState:
+  iMediumGetVariant:
+  iMediumGetFormat:
+  iProgressGetOperationPercent:
+  iProgressGetOperationDescription:
+  iProgressGetDescription:
+  iProgressGetCompleted:
+  iProgressGetResultCode:
+  iProgressWaitForCompletion:
+  iMachineSetMemorySize:
+  iMachineSetCPUProperty:
+  iMachineSetCPUCount:
+  iMachineAddStorageController:
+  iMediumGetId:
+  iMachineGetVRDEServer:
+  iMachineGetNetworkAdapter:
+  iVirtualBoxGetVersion:
+  iHostNetworkInterfaceGetName:
+  iHostGetNetworkInterfaces:
+  iMachineGetName:
+  iHostGetMemorySize:
+  iVirtualBoxGetHost:
+  iHostGetProcessorOnlineCount:
+  iHostNetworkInterfaceGetHardwareAddress:
+  iWebsessionManagerGetSessionObject:
 
