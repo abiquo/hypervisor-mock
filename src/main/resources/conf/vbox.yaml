@@ -1,3 +1,6 @@
+Configuration:
+  vbox_port: 18083
+  aim_port: 8889
 Host :
   name : "mock" 
   cores : 64

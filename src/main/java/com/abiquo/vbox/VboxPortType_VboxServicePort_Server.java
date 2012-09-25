@@ -5,6 +5,8 @@ import java.io.IOException;
 import javax.xml.ws.Endpoint;
 
 import com.abiquo.aimstub.mock.BootAimServerMock;
+import com.abiquo.mock.configuration.ConfigurationService;
+import com.abiquo.mock.configuration.Constants;
 import com.abiquo.vbox.mock.VboxPortTypeMock;
 
 /**
@@ -17,10 +19,7 @@ import com.abiquo.vbox.mock.VboxPortTypeMock;
 public class VboxPortType_VboxServicePort_Server
 {
 
-    /** TODO externalize */
-    private static final int port = 18083;
-
-    private static final String ADDRESS = "http://0.0.0.0:" + port + "/";
+    private static final String ADDRESS = "http://0.0.0.0";
 
     private volatile static VboxPortType_VboxServicePort_Server SERVER;
 
@@ -51,7 +50,9 @@ public class VboxPortType_VboxServicePort_Server
      */
     protected VboxPortType_VboxServicePort_Server() throws java.lang.Exception
     {
-
+        final Integer vboxPort =
+            ConfigurationService.getInstance().pathvalue(Integer.class, Constants.CONFIGURATION,
+                Constants.VBOX_PORT);
         if (!isVboxRunning())
         {
             new Thread(new Runnable()
@@ -60,11 +61,14 @@ public class VboxPortType_VboxServicePort_Server
                 public void run()
                 {
                     System.out.println("Starting Server");
-                    vbox.publish(ADDRESS);
+                    vbox.publish(ADDRESS + ":" + vboxPort + "/");
                 }
             }).start();
         }
 
+        final Integer aimPort =
+            ConfigurationService.getInstance().pathvalue(Integer.class, Constants.CONFIGURATION,
+                Constants.AIM_PORT);
         if (!aim.isRunning())
         {
             new Thread(new Runnable()
@@ -72,7 +76,7 @@ public class VboxPortType_VboxServicePort_Server
                 @Override
                 public void run()
                 {
-                    aim.startServerBlocking();
+                    aim.startServerBlocking(aimPort);
                 }
             }).start();
         }

@@ -34,15 +34,27 @@ public class BootAimServerMock
     /** Starts a Thrift server based on {@link TServerSocket} implementation. */
     public void startServerBlocking()
     {
+        this.startServerBlocking(SERVER_PORT);
+    }
+
+    /** Starts a Thrift server based on {@link TNonblockingServer} implementation. */
+    public void startServerNonBlocking()
+    {
+        this.startServerNonBlocking(SERVER_PORT);
+    }
+
+    /** Starts a Thrift server based on {@link TServerSocket} implementation on the specified port. */
+    public void startServerBlocking(int port)
+    {
         try
         {
-            final TServerSocket serverTransport = new TServerSocket(SERVER_PORT);
+            final TServerSocket serverTransport = new TServerSocket(port);
             // vbox no need concurrency at aim
             // server = new TThreadPoolServer(processor, serverTransport);
             server = new TSimpleServer(processor, serverTransport);
             server.serve();
             running = Boolean.TRUE;
-            LOG.info("Aim Server Mock started at {}", SERVER_PORT);
+            LOG.info("Aim Server Mock started at {}", port);
         }
         catch (TTransportException e)
         {
@@ -51,17 +63,19 @@ public class BootAimServerMock
         }
     }
 
-    /** Starts a Thrift server based on {@link TNonblockingServer} implementation. */
-    public void startServerNonBlocking()
+    /**
+     * Starts a Thrift server based on {@link TNonblockingServer} implementation on the specified
+     * port.
+     */
+    public void startServerNonBlocking(int port)
     {
         try
         {
-            final TNonblockingServerTransport serverTransport =
-                new TNonblockingServerSocket(SERVER_PORT);
+            final TNonblockingServerTransport serverTransport = new TNonblockingServerSocket(port);
             server = new TNonblockingServer(processor, serverTransport);
             server.serve();
             running = Boolean.TRUE;
-            LOG.info("Aim Server Mock started at {}", SERVER_PORT);
+            LOG.info("Aim Server Mock started at {}", port);
         }
         catch (TTransportException e)
         {
