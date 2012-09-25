@@ -44,14 +44,11 @@ public class AimServerMock implements Iface
     @Override
     public void checkRimpConfiguration() throws RimpException, TException
     {
-        // TODO Auto-generated method stub
-//        LOG.info("checkRimpConfiguration");
     }
 
     @Override
     public long getDatastoreSize() throws RimpException, TException
     {
-        // TODO Auto-generated method stub
         LOG.info("getDatastoreSize");
 
         return 0;
@@ -61,7 +58,6 @@ public class AimServerMock implements Iface
     public long getDiskFileSize(final String virtualImageDatastorePath) throws RimpException,
         TException
     {
-        // TODO Auto-generated method stub
         LOG.info("getDiskFileSize");
 
         return 0;
@@ -70,10 +66,8 @@ public class AimServerMock implements Iface
     @Override
     public List<Datastore> getDatastores() throws RimpException, TException
     {
-//        LOG.info("getDatastores");
-
         return DomainService.getInstance().getDatastores();
-        //return Collections.EMPTY_LIST;
+        // return Collections.EMPTY_LIST;
     }
 
     @Deprecated
@@ -90,7 +84,6 @@ public class AimServerMock implements Iface
         final String datastorePath, final String virtualMachineUUID) throws RimpException,
         TException
     {
-        // TODO Auto-generated method stub
         LOG.info("copyFromRepositoryToDatastore");
 
     }
@@ -99,7 +92,6 @@ public class AimServerMock implements Iface
     public void deleteVirtualImageFromDatastore(final String datastorePath,
         final String virtualMachineUUID) throws RimpException, TException
     {
-        // TODO Auto-generated method stub
         LOG.info("deleteVirtualImageFromDatastore");
 
     }
@@ -109,7 +101,6 @@ public class AimServerMock implements Iface
         final String snapshot, final String destinationRepositoryPath,
         final String sourceDatastorePath) throws RimpException, TException
     {
-        // TODO Auto-generated method stub
         LOG.info("copyFromDatastoreToRepository");
 
     }
@@ -118,7 +109,6 @@ public class AimServerMock implements Iface
     public void createVLAN(final int vlanTag, final String vlanInterface,
         final String bridgeInterface) throws VLanException, TException
     {
-        // TODO Auto-generated method stub
         LOG.info("createVLAN");
 
     }
@@ -127,7 +117,6 @@ public class AimServerMock implements Iface
     public void deleteVLAN(final int vlanTag, final String vlanInterface,
         final String bridgeInterface) throws VLanException, TException
     {
-        // TODO Auto-generated method stub
         LOG.info("deleteVLAN");
 
     }
@@ -135,7 +124,6 @@ public class AimServerMock implements Iface
     @Override
     public void checkVLANConfiguration() throws VLanException, TException
     {
-        // TODO Auto-generated method stub
         LOG.info("checkVLANConfiguration");
 
     }
@@ -143,7 +131,6 @@ public class AimServerMock implements Iface
     @Override
     public String getInitiatorIQN() throws TException
     {
-        // TODO Auto-generated method stub
         LOG.info("getInitiatorIQN");
         return "";
     }
