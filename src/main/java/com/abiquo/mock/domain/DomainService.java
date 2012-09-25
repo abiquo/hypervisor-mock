@@ -6,6 +6,7 @@ import java.util.Map.Entry;
 
 import com.abiquo.aimstub.Datastore;
 import com.abiquo.mock.configuration.ConfigurationService;
+import com.abiquo.mock.configuration.Constants;
 import com.abiquo.mock.model.HostInfo;
 import com.abiquo.mock.model.NetworkInterface;
 
@@ -36,10 +37,13 @@ public class DomainService
     private HostInfo initalizeHostInfo()
     {
         HostInfo host = new HostInfo();
-        host.setName(configurationService.pathvalue(String.class, "Host", "name"));
-        host.setCores(configurationService.pathvalue(Integer.class, "Host", "cores"));
-        host.setMemory(configurationService.pathvalue(Integer.class, "Host", "memory"));
-        host.setVersion(configurationService.pathvalue(String.class, "Host", "version"));
+        host.setName(configurationService.pathvalue(String.class, Constants.HOST, Constants.NAME));
+        host.setCores(configurationService
+            .pathvalue(Integer.class, Constants.HOST, Constants.CORES));
+        host.setMemory(configurationService.pathvalue(Integer.class, Constants.HOST,
+            Constants.MEMORY));
+        host.setVersion(configurationService.pathvalue(String.class, Constants.HOST,
+            Constants.VERSION));
         host = initializeDatastores(host);
         host = initializeNetworkinterfaces(host);
         return host;
@@ -49,13 +53,13 @@ public class DomainService
     {
 
         Map<String, Object> datastores =
-            configurationService.pathvalue(Map.class, "Host", "networkinterfaces");
+            configurationService.pathvalue(Map.class, Constants.HOST, Constants.NETWORKINTERFACES);
         for (Entry<String, Object> e : datastores.entrySet())
         {
             Map<String, Object> ee = (Map<String, Object>) e.getValue();
             NetworkInterface networkInterface = new NetworkInterface();
-            String name = (String) ee.get("name");
-            String mac = (String) ee.get("mac");
+            String name = (String) ee.get(Constants.NAME);
+            String mac = (String) ee.get(Constants.MAC);
             networkInterface.setName(name);
             networkInterface.setMac(mac);
             host.getNetworkInterfaces().add(networkInterface);
@@ -68,15 +72,15 @@ public class DomainService
     {
 
         Map<String, Object> datastores =
-            configurationService.pathvalue(Map.class, "Host", "datastores");
+            configurationService.pathvalue(Map.class, Constants.HOST, Constants.DATASTORES);
         for (Entry<String, Object> e : datastores.entrySet())
         {
             Map<String, Object> ee = (Map<String, Object>) e.getValue();
-            String device = (String) ee.get("device");
-            String type = (String) ee.get("type");
-            Long available = getLong(ee.get("available"));
-            String path = (String) ee.get("path");
-            Long size = getLong(ee.get("size"));
+            String device = (String) ee.get(Constants.DEVICE);
+            String type = (String) ee.get(Constants.TYPE);
+            Long available = getLong(ee.get(Constants.AVAILABLE));
+            String path = (String) ee.get(Constants.PATH);
+            Long size = getLong(ee.get(Constants.SIZE));
             host.getDatastores().add(new Datastore(device, path, type, size, available));
         }
 

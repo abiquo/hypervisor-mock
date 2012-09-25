@@ -4,6 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.abiquo.mock.configuration.ConfigurationService;
+import com.abiquo.mock.configuration.Constants;
 import com.abiquo.mock.domain.DomainService;
 import com.abiquo.mock.model.HostInfo;
 import com.abiquo.vbox.VboxPortType_VboxServicePort_Server;
@@ -29,7 +30,7 @@ public class MayhemService
     {
         MayhemService mayhem = new MayhemService();
 
-        int loop = mayhem.config.pathvalue(Integer.class, "Behavior", "ticks");
+        int loop = mayhem.config.pathvalue(Integer.class, Constants.BEHAVIOR, Constants.TICKS);
         while (true)
         {
             int i = 0;
