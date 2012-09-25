@@ -184,7 +184,7 @@ public class ConfigurationService
         }
         if (value instanceof Map)
         {
-            return pathvalue((Map) value, Arrays.copyOfRange(keys, 1, keys.length));
+            return pathvalue(((Map<String, Object>) value), Arrays.copyOfRange(keys, 1, keys.length));
         }
 
         return null;
@@ -194,7 +194,7 @@ public class ConfigurationService
     {
         if (e instanceof Map)
         {
-            return find(key, (Map) e);
+            return find(key, (Map<String, Object>) e);
         }
         return null;
     }

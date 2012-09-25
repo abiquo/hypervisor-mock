@@ -13,7 +13,11 @@ import javax.xml.ws.WebFault;
 @WebFault(name = "RuntimeFault", targetNamespace = "http://www.virtualbox.org/")
 public class RuntimeFaultMsg extends Exception {
     
-    private org.virtualbox.RuntimeFault runtimeFault;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 2916550944355761287L;
+	private org.virtualbox.RuntimeFault runtimeFault;
 
     public RuntimeFaultMsg() {
         super();

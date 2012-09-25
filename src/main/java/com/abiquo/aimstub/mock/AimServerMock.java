@@ -76,7 +76,7 @@ public class AimServerMock implements Iface
     {
         LOG.severe("getNetInterfaces shouldn't be called");
 
-        return Collections.EMPTY_LIST;
+        return Collections.emptyList();
     }
 
     @Override

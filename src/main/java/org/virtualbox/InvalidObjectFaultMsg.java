@@ -13,7 +13,11 @@ import javax.xml.ws.WebFault;
 @WebFault(name = "InvalidObjectFault", targetNamespace = "http://www.virtualbox.org/")
 public class InvalidObjectFaultMsg extends Exception {
     
-    private org.virtualbox.InvalidObjectFault invalidObjectFault;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private org.virtualbox.InvalidObjectFault invalidObjectFault;
 
     public InvalidObjectFaultMsg() {
         super();

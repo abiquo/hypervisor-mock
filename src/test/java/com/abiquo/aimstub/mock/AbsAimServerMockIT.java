@@ -3,7 +3,6 @@ package com.abiquo.aimstub.mock;
 import java.util.concurrent.Future;
 
 import org.apache.thrift.TException;
-import org.apache.thrift.transport.TTransportException;
 
 import com.abiquo.aimstub.Aim;
 import com.abiquo.aimstub.Aim.Iface;
