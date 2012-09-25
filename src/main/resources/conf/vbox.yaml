@@ -62,7 +62,7 @@ Behavior:
     failure_ratio: 0
 
   iMachineAttachDevice:
-    delay: 20000
+    #delay: 0
     failures:
       - validate_iqn_ratio: 0
       - attach_device_ratio: 0
@@ -97,10 +97,10 @@ Behavior:
     # delay: 1000
   
   iConsolePowerButton:
-    delay: 20000
+    #delay: 0
 
   iConsolePowerDown:
-    delay: 20000
+    #delay: 0
 
   iConsolePowerUp:
     # delay: 1000
