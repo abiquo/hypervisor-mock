@@ -20,6 +20,8 @@ public class MayhemService
 
     private final static Logger LOG = LoggerFactory.getLogger(MayhemService.class);
 
+    private final static String DEFAULT_CONFIG_FILE = "/conf/vbox.yaml";
+
     private final HostInfo domain;
 
     private final ConfigurationService config;
@@ -28,7 +30,13 @@ public class MayhemService
 
     public static void main(final String args[]) throws java.lang.Exception
     {
-        MayhemService mayhem = new MayhemService();
+
+        String file = DEFAULT_CONFIG_FILE;
+        if (args.length == 1)
+        {
+            file = args[0];
+        }
+        MayhemService mayhem = new MayhemService(file);
 
         int loop = mayhem.config.pathvalue(Integer.class, Constants.BEHAVIOR, Constants.TICKS);
         while (true)
@@ -37,10 +45,10 @@ public class MayhemService
         }
     }
 
-    private MayhemService() throws Exception
+    private MayhemService(String path) throws Exception
     {
         MOCK = VboxPortType_VboxServicePort_Server.getInstance();
         domain = DomainService.getInstance();
-        config = ConfigurationService.getInstance();
+        config = ConfigurationService.getInstance(path);
     }
 }

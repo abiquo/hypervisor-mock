@@ -40,7 +40,7 @@ public class ConfigurationService
         LOG.debug("File Loaded: {}", yaml.dump(map));
     }
 
-    private ConfigurationService(String path) throws FileNotFoundException
+    private ConfigurationService(final String path) throws FileNotFoundException
     {
         try
         {
@@ -70,7 +70,7 @@ public class ConfigurationService
      * @param path
      * @return
      */
-    public static ConfigurationService getInstance(String path)
+    public static ConfigurationService getInstance(final String path)
     {
         if (configurationService != null)
         {
@@ -86,7 +86,7 @@ public class ConfigurationService
      * @param key
      * @return An instance of the type clazz. Null if no value for key.
      */
-    public <T> T get(String key, Class<T> clazz)
+    public <T> T get(final String key, final Class<T> clazz)
     {
         return clazz.cast(map.get(key));
     }
@@ -97,7 +97,7 @@ public class ConfigurationService
      * @param key
      * @return the value or null.
      */
-    public Object get(String key)
+    public Object get(final String key)
     {
         return map.get(key);
     }
@@ -108,7 +108,7 @@ public class ConfigurationService
      * @param key
      * @return the value of null.
      */
-    public Object value(String key)
+    public Object value(final String key)
     {
 
         return find(key, map);
@@ -121,7 +121,7 @@ public class ConfigurationService
      * @param key
      * @return An instance of type clazz that is eventually a value for key
      */
-    public <T> T value(String key, Class<T> clazz)
+    public <T> T value(final String key, final Class<T> clazz)
     {
         return clazz.cast(find(key, map));
     }
@@ -132,7 +132,7 @@ public class ConfigurationService
      * @param key
      * @return
      */
-    private Object find(String key, Map<String, Object> m)
+    private Object find(final String key, final Map<String, Object> m)
     {
         Object o = m.get(key);
         for (Entry<String, Object> e : m.entrySet())
@@ -154,7 +154,7 @@ public class ConfigurationService
      * @param keys the path to the value
      * @return
      */
-    public Object pathvalue(String... keys)
+    public Object pathvalue(final String... keys)
     {
         return pathvalue(map, keys);
     }
@@ -166,12 +166,26 @@ public class ConfigurationService
      * @param keys the path to the value
      * @return
      */
-    public <T> T pathvalue(Class<T> clazz, String... keys)
+    public <T> T pathvalue(final Class<T> clazz, final String... keys)
     {
         return clazz.cast(pathvalue(map, keys));
     }
 
-    private Object pathvalue(Map<String, Object> m, String... keys)
+    /**
+     * Returns the value for key chain. The return type is of type clazz. If value is null then
+     * returns default<br>
+     * <code>pathvalue("Mock", "vm1", "datastore") returns map.get("Mock").get("vm1").get("datastore") </code>
+     * 
+     * @param keys the path to the value
+     * @return
+     */
+    public <T> T pathvalue(final Class<T> clazz, final T defaultValue, final String... keys)
+    {
+        Object value = pathvalue(map, keys);
+        return value != null ? clazz.cast(value) : defaultValue;
+    }
+
+    private Object pathvalue(final Map<String, Object> m, final String... keys)
     {
         if (keys == null || keys.length == 0)
         {
@@ -184,13 +198,13 @@ public class ConfigurationService
         }
         if (value instanceof Map)
         {
-            return pathvalue(((Map<String, Object>) value), Arrays.copyOfRange(keys, 1, keys.length));
+            return pathvalue((Map<String, Object>) value, Arrays.copyOfRange(keys, 1, keys.length));
         }
 
         return null;
     }
 
-    private Object find(String key, Object e)
+    private Object find(final String key, final Object e)
     {
         if (e instanceof Map)
         {

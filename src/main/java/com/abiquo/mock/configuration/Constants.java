@@ -51,6 +51,8 @@ public final class Constants
 
     public static final String AIM_PORT = "aim_port";
 
+    public static final String DELAY = "delay";
+
     private Constants()
     {
     }

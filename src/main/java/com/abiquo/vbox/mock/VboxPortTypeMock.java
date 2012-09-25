@@ -11,6 +11,8 @@ import java.util.Random;
 import java.util.Set;
 import java.util.UUID;
 
+import javax.jws.HandlerChain;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.virtualbox.AccessMode;
@@ -38,6 +40,7 @@ import com.abiquo.vbox.VboxPortTypeImpl;
  * @author <a href="mailto:serafin.sedano@abiquo.com">Serafin Sedano</a>
  * @author <a href="mailto:enric.ruiz@abiquo.com">Enric Ruiz</a>
  */
+@HandlerChain(file = "conf/handlers-chain.xml")
 @javax.jws.WebService(serviceName = "vboxService", portName = "vboxServicePort", targetNamespace = "http://www.virtualbox.org/Service", wsdlLocation = "wsdl/vboxwebService.wsdl", endpointInterface = "org.virtualbox.VboxPortType")
 public class VboxPortTypeMock extends VboxPortTypeImpl
 {
