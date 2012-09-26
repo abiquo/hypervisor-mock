@@ -179,7 +179,7 @@ public class ConfigurationService
      * @param keys the path to the value
      * @return
      */
-    public <T> T pathvalue(final Class<T> clazz, final T defaultValue, final String... keys)
+    public <T> T pathvalue(final T defaultValue, final Class<T> clazz,  final String... keys)
     {
         Object value = pathvalue(map, keys);
         return value != null ? clazz.cast(value) : defaultValue;

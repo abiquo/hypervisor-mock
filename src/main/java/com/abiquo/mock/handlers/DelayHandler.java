@@ -24,20 +24,12 @@ public class DelayHandler implements LogicalHandler<LogicalMessageContext>
     @Override
     public boolean handleFault(final LogicalMessageContext context)
     {
-        logToSystemOut(context);
         return true;
     }
 
     @Override
     public boolean handleMessage(final LogicalMessageContext context)
     {
-        logToSystemOut(context);
-        return true;
-    }
-
-    private void logToSystemOut(final LogicalMessageContext context)
-    {
-
         LogicalMessage lm = context.getMessage();
         JAXBContext jaxbContext;
         try
@@ -49,9 +41,9 @@ public class DelayHandler implements LogicalHandler<LogicalMessageContext>
         }
         catch (JAXBException e)
         {
-            e.printStackTrace();
+            LOG.error("Error in delay {} {}", new Object[] { e.getClass(), e.getMessage()});
         }
-
+        return true;
     }
 
     private void applyDelay(final String method)
@@ -59,15 +51,8 @@ public class DelayHandler implements LogicalHandler<LogicalMessageContext>
         try
         {
             Number methodDelay = getDelay(method);
-            if (methodDelay == null)
-            {
-                Thread.sleep(delay.longValue());
-            }
-            else
-            {
-                Thread.sleep(methodDelay.longValue());
-            }
-            LOG.debug("Adding delay for {} {}ms ", new Object[] {method, 0});
+            Thread.sleep(methodDelay.longValue());
+            LOG.debug("Adding delay for {} {}ms ", new Object[] {method, methodDelay});
         }
         catch (Exception e)
         {
@@ -88,7 +73,7 @@ public class DelayHandler implements LogicalHandler<LogicalMessageContext>
         if (delay.equals(-1))
         {
             delay =
-                ConfigurationService.getInstance().pathvalue(Number.class, 0, Constants.BEHAVIOR,
+                ConfigurationService.getInstance().pathvalue(Integer.valueOf(0), Number.class, Constants.BEHAVIOR,
                     Constants.DELAY);
         }
         return delay;
