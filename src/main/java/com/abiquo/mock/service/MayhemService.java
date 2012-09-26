@@ -28,7 +28,7 @@ public class MayhemService
 
     private final VboxPortType_VboxServicePort_Server MOCK;
 
-    public static void main(final String args[]) throws java.lang.Exception
+    public static void main(final String args[]) throws Exception
     {
 
         String file = DEFAULT_CONFIG_FILE;
@@ -38,7 +38,11 @@ public class MayhemService
         }
         MayhemService mayhem = new MayhemService(file);
 
-        int loop = mayhem.config.pathvalue(Integer.class, Constants.BEHAVIOR, Constants.TICKS);
+        Long loop = mayhem.config.pathvalue(Integer.valueOf(0), Number.class,  Constants.BEHAVIOR, Constants.TICKS).longValue();
+        if(loop < 1)
+        {
+            throw new IllegalArgumentException("The ticks parameter shouldn't be empty or < 0");
+        }
         while (true)
         {
             int i = 0;
@@ -47,8 +51,8 @@ public class MayhemService
 
     private MayhemService(String path) throws Exception
     {
-        MOCK = VboxPortType_VboxServicePort_Server.getInstance();
-        domain = DomainService.getInstance();
         config = ConfigurationService.getInstance(path);
+        domain = DomainService.getInstance();
+        MOCK = VboxPortType_VboxServicePort_Server.getInstance();
     }
 }

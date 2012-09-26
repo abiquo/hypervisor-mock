@@ -225,7 +225,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         if (session == null)
         {
             // No session, log again
-            throw new InvalidObjectFaultMsg("iVirtualBoxCreateMachine: No session. InvalidObjectFaultMsg...");
+            throw new InvalidObjectFaultMsg("iWebsessionManagerGetSessionObject: No session. InvalidObjectFaultMsg...");
         }
         return session.getId();
     }

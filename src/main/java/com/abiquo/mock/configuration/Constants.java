@@ -53,6 +53,8 @@ public final class Constants
 
     public static final String DELAY = "delay";
 
+    public static final String FAILURES = "failures";
+
     private Constants()
     {
     }

@@ -2,7 +2,10 @@ package com.abiquo.mock.handlers;
 
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Random;
 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
@@ -19,21 +22,21 @@ import com.abiquo.mock.configuration.ConfigurationService;
 import com.abiquo.mock.configuration.Constants;
 
 /**
- * Handler that applies the delay.
+ * This handler applies fail.
  * 
  * @author <a href="mailto:serafin.sedano@abiquo.com">Serafin Sedano</a>
  */
-public class DelayHandler implements LogicalHandler<LogicalMessageContext>
+public class FailureHandler implements LogicalHandler<LogicalMessageContext>
 {
 
-    private static final Logger LOG = LoggerFactory.getLogger(DelayHandler.class);
+    private static final Logger LOG = LoggerFactory.getLogger(FailureHandler.class);
 
     private static final Map<String, Long> cache = Collections
         .synchronizedMap(new HashMap<String, Long>());
 
-    private Number delay = -1;
-
     private static volatile JAXBContext jaxbContext;
+
+    private final Random r = new Random();
 
     @Override
     public boolean handleFault(final LogicalMessageContext context)
@@ -49,24 +52,26 @@ public class DelayHandler implements LogicalHandler<LogicalMessageContext>
         if (!outbound)
         {
             long currentTimeMillis = System.currentTimeMillis();
-            System.out.println("HandlerDelay: Inbound message:");
+            System.out.println("Inbound message:");
             LogicalMessage lm = context.getMessage();
 
             try
             {
                 Object payload = lm.getPayload(getJaxbContext());
-                LOG.debug("Adding delay for {} ", payload.getClass().getSimpleName());
-                applyDelay(payload.getClass().getSimpleName());
+                LOG.debug("Checking failure for {} ", payload.getClass().getSimpleName());
+
+                checkFailure(payload.getClass().getSimpleName());
             }
             catch (JAXBException e)
             {
-                System.out.println(e + " " + e.getMessage());
                 LOG.error("Error in delay {} {}", new Object[] {e.getClass(), e.getMessage()});
+
+                System.out.println(e + " " + e.getMessage());
             }
-            System.out.println("Time elapsed  delay "
+
+            System.out.println("Time Elapsed fail "
                 + (System.currentTimeMillis() - currentTimeMillis) + "ms");
         }
-
         return true;
     }
 
@@ -78,53 +83,29 @@ public class DelayHandler implements LogicalHandler<LogicalMessageContext>
         }
         return jaxbContext;
     }
-    
-    private void applyDelay(final String method)
+
+    /** This method checks if there is a fail condition and add exception to the payload. */
+    private void checkFailure(String method)
     {
-        try
+        List<Map<String, Object>> fails =
+            ConfigurationService.getInstance().pathvalue(List.class, Constants.BEHAVIOR,
+                method.substring(0, 1).toLowerCase().concat(method.substring(1)),
+                Constants.FAILURES);
+
+        System.out.println("failure: " + method);
+        if (fails == null)
         {
-            long methodDelay = getDelay(method);
-            if (methodDelay > 0)
-            {
-                Thread.sleep(methodDelay);
-            }
-            LOG.debug("Adding delay for {} {}ms ", new Object[] {method, methodDelay});
+            return;
         }
-        catch (Exception e)
+        for (Map<String, Object> o : fails)
         {
-            LOG.error("Error applying delay {} {}",
-                new Object[] {e.getClass().getSimpleName(), e.getMessage()});
-            System.out.println(e + " " + e.getMessage());
-        }
-    }
-
-    private long getDelay(final String method)
-    {
-        Long d = cache.get(method);
-
-        if (d == null)
-        {
-
-            Number methodDelay =
-                ConfigurationService.getInstance().pathvalue(Number.class, Constants.BEHAVIOR,
-                    method.substring(0, 1).toLowerCase().concat(method.substring(1)),
-                    Constants.DELAY);
-            if (methodDelay != null)
+            for (Entry<String, Object> e : o.entrySet())
             {
-                d = methodDelay.longValue();
+                LOG.debug("Failure {}, ratio {}", new Object[] {e.getKey(), e.getValue()});
+                System.out.println("Failure" + e.getKey() + ", ratio {}" + e.getValue());
+                
             }
-            else if (delay.equals(-1))
-            {
-                delay =
-                    ConfigurationService.getInstance().pathvalue(Integer.valueOf(0), Number.class,
-                        Constants.BEHAVIOR, Constants.DELAY);
-            }
-            d = delay.longValue();
-
-            cache.put(method, d);
         }
-
-        return d;
     }
 
     @Override
