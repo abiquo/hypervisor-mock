@@ -19,8 +19,6 @@ public final class Constants
 
     public static final String DATASTORES = "datastores";
 
-    public static final String DATASTORE1 = "datastore1";
-
     public static final String DEVICE = "device";
 
     public static final String PATH = "path";
@@ -31,13 +29,7 @@ public final class Constants
 
     public static final String AVAILABLE = "available";
 
-    public static final String DATASTORE2 = "datastore2";
-
     public static final String NETWORKINTERFACES = "networkinterfaces";
-
-    public static final String NETWORKINTERFACE1 = "networkinterface1";
-
-    public static final String NETWORKINTERFACE2 = "networkinterface2";
 
     public static final String MAC = "mac";
 
@@ -54,6 +46,10 @@ public final class Constants
     public static final String DELAY = "delay";
 
     public static final String FAILURES = "failures";
+
+    public static final String EXCEPTION = "exception";
+
+    public static final String MESSAGE = "message";
 
     private Constants()
     {

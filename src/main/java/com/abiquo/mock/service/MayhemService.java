@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.abiquo.mock.configuration.ConfigurationService;
-import com.abiquo.mock.configuration.Constants;
 import com.abiquo.mock.domain.DomainService;
 import com.abiquo.mock.model.HostInfo;
 import com.abiquo.vbox.VboxPortType_VboxServicePort_Server;
@@ -38,8 +37,9 @@ public class MayhemService
         }
         MayhemService mayhem = new MayhemService(file);
 
-        Long loop = mayhem.config.pathvalue(Integer.valueOf(0), Number.class,  Constants.BEHAVIOR, Constants.TICKS).longValue();
-        if(loop < 1)
+        Long loop = 1000l; // mayhem.config.pathvalue(Integer.valueOf(0), Number.class,
+                           // Constants.BEHAVIOR, Constants.TICKS).longValue();
+        if (loop < 1)
         {
             throw new IllegalArgumentException("The ticks parameter shouldn't be empty or < 0");
         }
@@ -49,7 +49,7 @@ public class MayhemService
         }
     }
 
-    private MayhemService(String path) throws Exception
+    private MayhemService(final String path) throws Exception
     {
         config = ConfigurationService.getInstance(path);
         domain = DomainService.getInstance();

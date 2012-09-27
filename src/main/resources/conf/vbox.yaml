@@ -27,7 +27,6 @@ Host :
       name: "eth1"
       mac: 00:00:00:00:00:01
 Behavior:
-  ticks: 7000
   # Operations behind abiquo
   destroy_vm_rate : 0
   destroy_vm_ticks : 40000
@@ -42,152 +41,119 @@ Behavior:
 
   # vbox method configuration
   iMachineGetState:
-    # delay: 1000
+    delay: 0
 
   iVirtualBoxGetMachines:
-    # delay: 1000
+    delay: 0
     failures:
-      - failure_ratio: 0
-        exception: RuntimeException
-        message: "message"
+      - {failure_ratio: 100, exception: RuntimeException, message: "message"}
         
   iWebsessionManagerLogon:
-    # delay: 1000
+    delay: 0
 
   iWebsessionManagerLogoff:
-    # delay: 1000
+    delay: 0
 
   iVirtualBoxFindMachine:
-    # delay: 1000
+    delay: 0
 
   iVirtualBoxRegisterMachine:
-    # delay: 1000
+    delay: 0
     failures:
-      - failure_ratio: 0
-        exception: RuntimeException
-        message: "message"
+      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
 
   iVirtualBoxCreateMachine:
-    # delay: 1000
+    delay: 0
     failures:
-      - failure_ratio: 0
-        exception: RuntimeException
-        message: "message"
+      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
 
   iMachineAttachDevice:
-    #delay: 0
+    delay: 0
     failures:
-      - validate_iqn_ratio: 0
-        exception: RuntimeException
-        message: "message"
-      - attach_device_ratio: 0
-        exception: RuntimeException
-        message: "message"
+      - {validate_iqn_ratio: 0, exception: RuntimeException, message: "message"}
+      - {attach_device_ratio: 0, exception: RuntimeException, message: "message"}
   
   iMediumCloneTo:
-    # delay: 1000
+    delay: 0
     failures:
-      - unreacheable_datastore: 0
-        exception: RuntimeException
-        message: "message"
+      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
 
   iMediumClose:
-    # delay: 1000
+    delay: 0
     failures:
-      - failure_ratio: 0
-        exception: RuntimeException
-        message: "message"
+      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
   
   iVirtualBoxOpenMedium:
-    # delay: 1000
+    delay: 0
     failures:
-      - not_found_ratio: 0
-        exception: RuntimeException
-        message: "message"
+      - {not_found_ratio: 0, exception: RuntimeException, message: "message"}
 
   iVirtualBoxCreateHardDisk:
-    # delay: 1000
+    delay: 0
     failures:
-      - failure_ratio: 0
-        exception: RuntimeException
-        message: "message"
+      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
 
   iNetworkAdapterAttachToBridgedInterface:
-    # delay: 1000
+    delay: 0
     failures:
-      - failure_ratio: 0
-        exception: RuntimeException
-        message: "message"
+      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
 
   iMachineSaveSettings:
-    # delay: 1000
+    delay: 0
     failures:
-      - failure_ratio: 0
-        exception: RuntimeException
-        message: "message"
+      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
 
   iMachineLaunchVMProcess:
-    # delay: 1000
+    delay: 0
   
   iConsolePowerButton:
-    #delay: 0
+    delay: 0
 
   iConsolePowerDown:
-    #delay: 0
+    delay: 0
 
   iConsolePowerUp:
-    # delay: 1000
+    delay: 0
     
   iConsoleResume:
-    # delay: 1000
+    delay: 0
     
   iConsolePause:
-    # delay: 1000
+    delay: 0
     
   iConsoleReset:
-    # delay: 1000
+    delay: 0
     
   iConsolePowerUpPaused:
-    # delay: 1000
+    delay: 0
 
   iMachineLockMachine:
+    delay: 0
     failures:
-      - failure_ratio: 0
-        exception: RuntimeException
-        message: "message"
+      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
 
   iMachineDelete:
-    # delay: 1000
-
+    delay: 0
+      
   # AIM method configuration
   checkRimpConfiguration:
     failures:
-      - failure_ratio: 0
-        exception: RuntimeException
-        message: "message"
+      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
   
   getDatastores:
-    # delay: 1000
+    delay: 0
     failures:
-      - failure_ratio: 0
-        exception: RuntimeException
-        message: "message"
+      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
 
   createVLAN:
-    # delay: 1000
+    delay: 0
     failures:
-      - failure_ratio: 0
-        exception: RuntimeException
-        message: "message"
-    # in %
+      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
 
   deleteVLAN:
-    # delay: 1000
-    # in ms
+    delay: 0
     failures:
-      - failure_ratio: 0
-        exception: RuntimeException
-        message: "message"
+      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
 
   # unspecified vbox methods
 
@@ -223,7 +189,6 @@ Behavior:
   iMachineGetName:
   iHostGetMemorySize:
   iVirtualBoxGetHost:
-  iHostGetProcessorOnlineCount:
   iHostNetworkInterfaceGetHardwareAddress:
   iWebsessionManagerGetSessionObject:
 

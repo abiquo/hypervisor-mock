@@ -44,12 +44,11 @@ public class DelayHandler implements LogicalHandler<LogicalMessageContext>
     @Override
     public boolean handleMessage(final LogicalMessageContext context)
     {
-
         Boolean outbound = (Boolean) context.get(MessageContext.MESSAGE_OUTBOUND_PROPERTY);
         if (!outbound)
         {
             long currentTimeMillis = System.currentTimeMillis();
-            System.out.println("HandlerDelay: Inbound message:");
+            LOG.trace("HandlerDelay: Inbound message:");
             LogicalMessage lm = context.getMessage();
 
             try
@@ -60,11 +59,9 @@ public class DelayHandler implements LogicalHandler<LogicalMessageContext>
             }
             catch (JAXBException e)
             {
-                System.out.println(e + " " + e.getMessage());
                 LOG.error("Error in delay {} {}", new Object[] {e.getClass(), e.getMessage()});
             }
-            System.out.println("Time elapsed  delay "
-                + (System.currentTimeMillis() - currentTimeMillis) + "ms");
+            LOG.trace("Time elapsed  delay {}ms", System.currentTimeMillis() - currentTimeMillis);
         }
 
         return true;
@@ -78,7 +75,7 @@ public class DelayHandler implements LogicalHandler<LogicalMessageContext>
         }
         return jaxbContext;
     }
-    
+
     private void applyDelay(final String method)
     {
         try
@@ -94,7 +91,6 @@ public class DelayHandler implements LogicalHandler<LogicalMessageContext>
         {
             LOG.error("Error applying delay {} {}",
                 new Object[] {e.getClass().getSimpleName(), e.getMessage()});
-            System.out.println(e + " " + e.getMessage());
         }
     }
 
