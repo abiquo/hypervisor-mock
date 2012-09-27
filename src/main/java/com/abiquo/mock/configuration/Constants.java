@@ -51,6 +51,20 @@ public final class Constants
 
     public static final String MESSAGE = "message";
 
+    public static final String DESTROY_VM_TICKS = "destroy_vm_ticks";
+
+    public static final String HYPERVISOR_DISCONNECT_TICKS = "hypervisor_disconnect_ticks";
+
+    public static final String CREATE_VM_TICKS = "create_vm_ticks";
+
+    public static final String DESTROY_VM_RATIO = "destroy_vm_ratio";
+
+    public static final String CREATE_VM_RATIO = "create_vm_ratio";
+
+    public static final String HYPERVISOR_DISCONNECT_RATIO = "hypervisor_disconnect_ratio";
+
+    public static final String HYPERVISOR_DISCONNECT = "hypervisor_disconnect_duration";
+
     private Constants()
     {
     }
