@@ -146,6 +146,7 @@ Behavior:
       
   # AIM method configuration
   checkRimpConfiguration:
+    delay: 0
     failures:
       - {failure_ratio: 0, exception: RuntimeException, message: "message"}
   
