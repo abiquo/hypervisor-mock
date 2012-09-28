@@ -26,7 +26,7 @@ public class BootAimServerMock
     private TServer server;
 
     /** Mock implementation */
-    protected Aim.Processor processor = new Aim.Processor(new AimServerMock());
+    protected Aim.Processor processor = new AimServerMock.Processor(new AimServerMock());
 
     /** Starts a Thrift server based on {@link TServerSocket} implementation. */
     public void startServerBlocking()
