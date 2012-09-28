@@ -60,7 +60,6 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>hypervisor-mock</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -88,6 +87,7 @@
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
+                            <appendAssemblyId>false</appendAssemblyId>
                             <archive>
                                 <manifest>
                                     <mainClass>com.abiquo.mock.service.MayhemService</mainClass>
