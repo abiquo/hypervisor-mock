@@ -1,8 +1,8 @@
-# This is a default configuration for hypevisor mock
+# This is an example of configuration for hypevisor mock
 # destroy and create ratios are set to 0. This is like no one messing behind Abiquo
 # A 0% ratio of disconnections
-# 0% ratio of failure for every vbox operation
-
+# 0% ratio of failure for every operation
+# 10 seconds to all requests (delay)
 
 Configuration:
   vbox_port: 18083
@@ -47,7 +47,7 @@ Behavior:
   aim_disconnect_ratio: 0
   aim_disconnect_duration: 4000
   aim_disconnect_ticks: 4000
-  delay: 0
+  delay: 10000
 
   # vbox method configuration
   iMachineGetState:
@@ -166,10 +166,10 @@ Behavior:
       - {failure_ratio: 0, exception: RuntimeException, message: "message"}
 
   getDatastoreSize:
-    delay: 0
+    delay: 00
     failures:
       - {failure_ratio: 0, exception: RuntimeException, message: "message"}
-
+      
   getDiskFileSize:
     delay: 0     
     failures:

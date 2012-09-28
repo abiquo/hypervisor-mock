@@ -1,8 +1,7 @@
-# This is a default configuration for hypevisor mock
+# This is an example of configuration for hypevisor mock
 # destroy and create ratios are set to 0. This is like no one messing behind Abiquo
-# A 0% ratio of disconnections
-# 0% ratio of failure for every vbox operation
-
+# A 10% ratio of disconnections (vbox) every 40 seconds for 10 seconds
+# 10% ratio of failure for every vbox operation
 
 Configuration:
   vbox_port: 18083
@@ -41,9 +40,9 @@ Behavior:
   create_vm_ticks : 2700
 
   # Global configuration
-  hypervisor_disconnect_ratio: 0
+  hypervisor_disconnect_ratio: 10
   hypervisor_disconnect_duration: 4000
-  hypervisor_disconnect_ticks: 4000
+  hypervisor_disconnect_ticks: 40000
   aim_disconnect_ratio: 0
   aim_disconnect_duration: 4000
   aim_disconnect_ticks: 4000
@@ -56,7 +55,7 @@ Behavior:
   iVirtualBoxGetMachines:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 10, exception: RuntimeException, message: "message"}
         
   iWebsessionManagerLogon:
     delay: 0
@@ -70,48 +69,48 @@ Behavior:
   iVirtualBoxRegisterMachine:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 10, exception: RuntimeException, message: "message"}
 
   iVirtualBoxCreateMachine:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 10, exception: RuntimeException, message: "message"}
 
   iMachineAttachDevice:
     delay: 0
     failures:
-      - {validate_iqn_ratio: 0, exception: RuntimeException, message: "message"}
-      - {attach_device_ratio: 0, exception: RuntimeException, message: "message"}
+      - {validate_iqn_ratio: 10, exception: RuntimeException, message: "message"}
+      - {attach_device_ratio: 10, exception: RuntimeException, message: "message"}
   
   iMediumCloneTo:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 10, exception: RuntimeException, message: "message"}
 
   iMediumClose:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 10, exception: RuntimeException, message: "message"}
   
   iVirtualBoxOpenMedium:
     delay: 0
     failures:
-      - {not_found_ratio: 0, exception: RuntimeException, message: "message"}
+      - {not_found_ratio: 10, exception: RuntimeException, message: "message"}
 
   iVirtualBoxCreateHardDisk:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 10, exception: RuntimeException, message: "message"}
 
   iNetworkAdapterAttachToBridgedInterface:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 10, exception: RuntimeException, message: "message"}
 
   iMachineSaveSettings:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 10, exception: RuntimeException, message: "message"}
 
   iMachineLaunchVMProcess:
     delay: 0
@@ -140,7 +139,7 @@ Behavior:
   iMachineLockMachine:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 10, exception: RuntimeException, message: "message"}
 
   iMachineDelete:
     delay: 0
@@ -169,7 +168,7 @@ Behavior:
     delay: 0
     failures:
       - {failure_ratio: 0, exception: RuntimeException, message: "message"}
-
+      
   getDiskFileSize:
     delay: 0     
     failures:

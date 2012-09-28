@@ -1,8 +1,8 @@
-# This is a default configuration for hypevisor mock
+# This is an example of configuration for hypevisor mock
 # destroy and create ratios are set to 0. This is like no one messing behind Abiquo
 # A 0% ratio of disconnections
-# 0% ratio of failure for every vbox operation
-
+# 0% ratio of failure for every operation
+# 0 seconds delay
 
 Configuration:
   vbox_port: 18083
@@ -15,16 +15,46 @@ Host :
   datastores:
     datastore1:
       device: "10.60.1.72:/opt/vm_repository"
-      path: "/opt/vm_repository/"
+      path: "/opt/vm_repository/1/"
       type: "/dev/sd1"
       size: 2147483647
       available: 2147483647
     datastore2:
       device: "10.60.1.104:/volume1/nfs-devel"
-      path: "/opt/nfs-devel/"
+      path: "/opt/nfs-devel/1/"
       type: "/dev/sd2"
       size: 2147483647
       available: 2147483647
+    datastore1:
+      device: "10.60.1.72:/opt/vm_repository"
+      path: "/opt/vm_repository/2/"
+      type: "/dev/sd3"
+      size: 2147483647
+      available: 2147483647
+    datastore2:
+      device: "10.60.1.104:/volume1/nfs-devel"
+      path: "/opt/nfs-devel/2/"
+      type: "/dev/sd4"
+      size: 2147483647
+      available: 2147483647
+    datastore1:
+      device: "10.60.1.72:/opt/vm_repository"
+      path: "/opt/vm_repository/3/"
+      type: "/dev/sd5"
+      size: 2147483647
+      available: 2147483647
+    datastore2:
+      device: "10.60.1.104:/volume1/nfs-devel"
+      path: "/opt/nfs-devel/3/"
+      type: "/dev/sd6"
+      size: 2147483647
+      available: 2147483647
+    datastore1:
+      device: "10.60.1.72:/opt/vm_repository"
+      path: "/opt/vm_repository/4/"
+      type: "/dev/sd7"
+      size: 2147483647
+      available: 2147483647  
   networkinterfaces:
     networkinterface1:
       name: "eth0"
@@ -169,7 +199,7 @@ Behavior:
     delay: 0
     failures:
       - {failure_ratio: 0, exception: RuntimeException, message: "message"}
-
+      
   getDiskFileSize:
     delay: 0     
     failures:
