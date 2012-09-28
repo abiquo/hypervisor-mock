@@ -45,7 +45,7 @@ public class VirtualMachineInfo
     private Map<CPUPropertyType, Boolean> cpuProps;
 
     private String remoteDesktop;
-    
+
     private int remoteDesktopPort;
 
     private Map<String, NetworkAdapter> networkAdapters;
@@ -58,129 +58,155 @@ public class VirtualMachineInfo
 
     }
 
-    /**
-     * This field is set to true once the vm has been registered (iVirtualBoxRegisterMachine)
-     */
-    public boolean isRegistered()
+    @Override
+    public boolean equals(final Object obj)
     {
-        return registered;
-    }
-
-    /**
-     * This field is set to true once the vm has been registered (iVirtualBoxRegisterMachine)
-     */
-    public void setRegistered(boolean registered)
-    {
-        this.registered = registered;
-    }
-
-    public String getId()
-    {
-        return id;
-    }
-
-    public void setId(String id)
-    {
-        this.id = id;
-    }
-
-    public String getSettingsFile()
-    {
-        return settingsFile;
-    }
-
-    public void setSettingsFile(String settingsFile)
-    {
-        this.settingsFile = settingsFile;
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public void setName(String name)
-    {
-        this.name = name;
-    }
-
-    public String getOsType()
-    {
-        return osType;
-    }
-
-    public void setOsType(String osType)
-    {
-        this.osType = osType;
-    }
-
-    public boolean isForceOverwrite()
-    {
-        return forceOverwrite;
-    }
-
-    public void setForceOverwrite(boolean forceOverwrite)
-    {
-        this.forceOverwrite = forceOverwrite;
-    }
-
-    public MachineState getMachineState()
-    {
-        return machineState;
-    }
-
-    public void setMachineState(MachineState machineState)
-    {
-        this.machineState = machineState;
-    }
-
-    public boolean isSaved()
-    {
-        return saved;
-    }
-
-    public void setSaved(boolean saved)
-    {
-        this.saved = saved;
-    }
-
-    public String getDiskSourceLocation()
-    {
-        return diskSourceLocation;
-    }
-
-    public void setDiskSourceLocation(String diskSourceLocation)
-    {
-        this.diskSourceLocation = diskSourceLocation;
+        if (this == obj)
+        {
+            return true;
+        }
+        if (obj == null)
+        {
+            return false;
+        }
+        if (getClass() != obj.getClass())
+        {
+            return false;
+        }
+        VirtualMachineInfo other = (VirtualMachineInfo) obj;
+        if (cpu != other.cpu)
+        {
+            return false;
+        }
+        if (cpuProps == null)
+        {
+            if (other.cpuProps != null)
+            {
+                return false;
+            }
+        }
+        else if (!cpuProps.equals(other.cpuProps))
+        {
+            return false;
+        }
+        if (diskSourceLocation == null)
+        {
+            if (other.diskSourceLocation != null)
+            {
+                return false;
+            }
+        }
+        else if (!diskSourceLocation.equals(other.diskSourceLocation))
+        {
+            return false;
+        }
+        if (forceOverwrite != other.forceOverwrite)
+        {
+            return false;
+        }
+        if (id == null)
+        {
+            if (other.id != null)
+            {
+                return false;
+            }
+        }
+        else if (!id.equals(other.id))
+        {
+            return false;
+        }
+        if (machineState != other.machineState)
+        {
+            return false;
+        }
+        if (memory != other.memory)
+        {
+            return false;
+        }
+        if (name == null)
+        {
+            if (other.name != null)
+            {
+                return false;
+            }
+        }
+        else if (!name.equals(other.name))
+        {
+            return false;
+        }
+        if (networkAdapters == null)
+        {
+            if (other.networkAdapters != null)
+            {
+                return false;
+            }
+        }
+        else if (!networkAdapters.equals(other.networkAdapters))
+        {
+            return false;
+        }
+        if (osType == null)
+        {
+            if (other.osType != null)
+            {
+                return false;
+            }
+        }
+        else if (!osType.equals(other.osType))
+        {
+            return false;
+        }
+        if (registered != other.registered)
+        {
+            return false;
+        }
+        if (remoteDesktop == null)
+        {
+            if (other.remoteDesktop != null)
+            {
+                return false;
+            }
+        }
+        else if (!remoteDesktop.equals(other.remoteDesktop))
+        {
+            return false;
+        }
+        if (remoteDesktopPort != other.remoteDesktopPort)
+        {
+            return false;
+        }
+        if (saved != other.saved)
+        {
+            return false;
+        }
+        if (settingsFile == null)
+        {
+            if (other.settingsFile != null)
+            {
+                return false;
+            }
+        }
+        else if (!settingsFile.equals(other.settingsFile))
+        {
+            return false;
+        }
+        if (storages == null)
+        {
+            if (other.storages != null)
+            {
+                return false;
+            }
+        }
+        else if (!storages.equals(other.storages))
+        {
+            return false;
+        }
+        return true;
     }
 
     public long getCpu()
     {
         return cpu;
-    }
-
-    public void setCpu(long cpu)
-    {
-        this.cpu = cpu;
-    }
-
-    public long getMemory()
-    {
-        return memory;
-    }
-
-    public void setMemory(long memory)
-    {
-        this.memory = memory;
-    }
-
-    public Map<String, Storage> getStorages()
-    {
-        if (storages == null)
-        {
-            storages = new HashMap<String, Storage>();
-        }
-        return storages;
     }
 
     public Map<CPUPropertyType, Boolean> getCpuProps()
@@ -194,14 +220,29 @@ public class VirtualMachineInfo
         return cpuProps;
     }
 
-    public String getRemoteDesktop()
+    public String getDiskSourceLocation()
     {
-        return remoteDesktop;
+        return diskSourceLocation;
     }
 
-    public void setRemoteDesktop(String remoteDesktop)
+    public String getId()
     {
-        this.remoteDesktop = remoteDesktop;
+        return id;
+    }
+
+    public MachineState getMachineState()
+    {
+        return machineState;
+    }
+
+    public long getMemory()
+    {
+        return memory;
+    }
+
+    public String getName()
+    {
+        return name;
     }
 
     public Map<String, NetworkAdapter> getNetworkAdapters()
@@ -213,14 +254,143 @@ public class VirtualMachineInfo
         return networkAdapters;
     }
 
+    public String getOsType()
+    {
+        return osType;
+    }
+
+    public String getRemoteDesktop()
+    {
+        return remoteDesktop;
+    }
+
     public int getRemoteDesktopPort()
     {
         return remoteDesktopPort;
     }
 
-    public void setRemoteDesktopPort(int remoteDesktopPort)
+    public String getSettingsFile()
+    {
+        return settingsFile;
+    }
+
+    public Map<String, Storage> getStorages()
+    {
+        if (storages == null)
+        {
+            storages = new HashMap<String, Storage>();
+        }
+        return storages;
+    }
+
+    @Override
+    public int hashCode()
+    {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + (int) (cpu ^ cpu >>> 32);
+        result = prime * result + (cpuProps == null ? 0 : cpuProps.hashCode());
+        result = prime * result + (diskSourceLocation == null ? 0 : diskSourceLocation.hashCode());
+        result = prime * result + (forceOverwrite ? 1231 : 1237);
+        result = prime * result + (id == null ? 0 : id.hashCode());
+        result = prime * result + (machineState == null ? 0 : machineState.hashCode());
+        result = prime * result + (int) (memory ^ memory >>> 32);
+        result = prime * result + (name == null ? 0 : name.hashCode());
+        result = prime * result + (networkAdapters == null ? 0 : networkAdapters.hashCode());
+        result = prime * result + (osType == null ? 0 : osType.hashCode());
+        result = prime * result + (registered ? 1231 : 1237);
+        result = prime * result + (remoteDesktop == null ? 0 : remoteDesktop.hashCode());
+        result = prime * result + remoteDesktopPort;
+        result = prime * result + (saved ? 1231 : 1237);
+        result = prime * result + (settingsFile == null ? 0 : settingsFile.hashCode());
+        result = prime * result + (storages == null ? 0 : storages.hashCode());
+        return result;
+    }
+
+    public boolean isForceOverwrite()
+    {
+        return forceOverwrite;
+    }
+
+    /**
+     * This field is set to true once the vm has been registered (iVirtualBoxRegisterMachine)
+     */
+    public boolean isRegistered()
+    {
+        return registered;
+    }
+
+    public boolean isSaved()
+    {
+        return saved;
+    }
+
+    public void setCpu(final long cpu)
+    {
+        this.cpu = cpu;
+    }
+
+    public void setDiskSourceLocation(final String diskSourceLocation)
+    {
+        this.diskSourceLocation = diskSourceLocation;
+    }
+
+    public void setForceOverwrite(final boolean forceOverwrite)
+    {
+        this.forceOverwrite = forceOverwrite;
+    }
+
+    public void setId(final String id)
+    {
+        this.id = id;
+    }
+
+    public void setMachineState(final MachineState machineState)
+    {
+        this.machineState = machineState;
+    }
+
+    public void setMemory(final long memory)
+    {
+        this.memory = memory;
+    }
+
+    public void setName(final String name)
+    {
+        this.name = name;
+    }
+
+    public void setOsType(final String osType)
+    {
+        this.osType = osType;
+    }
+
+    /**
+     * This field is set to true once the vm has been registered (iVirtualBoxRegisterMachine)
+     */
+    public void setRegistered(final boolean registered)
+    {
+        this.registered = registered;
+    }
+
+    public void setRemoteDesktop(final String remoteDesktop)
+    {
+        this.remoteDesktop = remoteDesktop;
+    }
+
+    public void setRemoteDesktopPort(final int remoteDesktopPort)
     {
         this.remoteDesktopPort = remoteDesktopPort;
+    }
+
+    public void setSaved(final boolean saved)
+    {
+        this.saved = saved;
+    }
+
+    public void setSettingsFile(final String settingsFile)
+    {
+        this.settingsFile = settingsFile;
     }
 
 }
