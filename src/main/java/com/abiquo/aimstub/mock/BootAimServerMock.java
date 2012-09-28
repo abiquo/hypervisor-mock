@@ -25,9 +25,6 @@ public class BootAimServerMock
     /** Thrift server. */
     private TServer server;
 
-    /** Simple server does not publish its "stopped" var. */
-    private boolean running;
-
     /** Mock implementation */
     protected Aim.Processor processor = new Aim.Processor(new AimServerMock());
 
@@ -44,7 +41,7 @@ public class BootAimServerMock
     }
 
     /** Starts a Thrift server based on {@link TServerSocket} implementation on the specified port. */
-    public void startServerBlocking(int port)
+    public void startServerBlocking(final int port)
     {
         try
         {
@@ -53,12 +50,10 @@ public class BootAimServerMock
             // server = new TThreadPoolServer(processor, serverTransport);
             server = new TSimpleServer(processor, serverTransport);
             server.serve();
-            running = Boolean.TRUE;
             LOG.info("Aim Server Mock started at {}", port);
         }
         catch (TTransportException e)
         {
-            running = Boolean.FALSE;
             LOG.error("can't start server {}", e);
         }
     }
@@ -67,19 +62,17 @@ public class BootAimServerMock
      * Starts a Thrift server based on {@link TNonblockingServer} implementation on the specified
      * port.
      */
-    public void startServerNonBlocking(int port)
+    public void startServerNonBlocking(final int port)
     {
         try
         {
             final TNonblockingServerTransport serverTransport = new TNonblockingServerSocket(port);
             server = new TNonblockingServer(processor, serverTransport);
             server.serve();
-            running = Boolean.TRUE;
             LOG.info("Aim Server Mock started at {}", port);
         }
         catch (TTransportException e)
         {
-            running = Boolean.FALSE;
             LOG.error("can't start server {}", e);
         }
     }
@@ -90,13 +83,7 @@ public class BootAimServerMock
      */
     public void stopServer()
     {
-        running = Boolean.FALSE;
         server.stop();
-    }
-
-    public boolean isRunning()
-    {
-        return running;
     }
 
     /** starts a blocking server */

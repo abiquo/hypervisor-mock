@@ -69,26 +69,14 @@ public class VboxPortType_VboxServicePort_Server
         final Integer aimPort =
             ConfigurationService.getInstance().pathvalue(Integer.class, Constants.CONFIGURATION,
                 Constants.AIM_PORT);
-        if (!aim.isRunning())
+        new Thread(new Runnable()
         {
-            new Thread(new Runnable()
+            @Override
+            public void run()
             {
-                @Override
-                public void run()
-                {
-                    aim.startServerBlocking(aimPort);
-                }
-            }).start();
-        }
-    }
-
-    /**
-     * This method does not check if the Future was cancelled as the cancel is a valid state to
-     * emulate a mock down
-     */
-    public boolean isAimRunning()
-    {
-        return aim.isRunning();
+                aim.startServerBlocking(aimPort);
+            }
+        }).start();
     }
 
     /** This method can return false but the mock migth be down emulating a power off */
@@ -115,10 +103,18 @@ public class VboxPortType_VboxServicePort_Server
      */
     synchronized private void startAimServer() throws Exception
     {
-        if (!aim.isRunning())
+        final Integer aimPort =
+            ConfigurationService.getInstance().pathvalue(Integer.class, Constants.CONFIGURATION,
+                Constants.AIM_PORT);
+
+        new Thread(new Runnable()
         {
-            aim.startServerBlocking();
-        }
+            @Override
+            public void run()
+            {
+                aim.startServerBlocking(aimPort);
+            }
+        }).start();
     }
 
     /**
@@ -150,16 +146,14 @@ public class VboxPortType_VboxServicePort_Server
      * Tries to cancel the Future in which is running the Aim mock. This method enables the
      * cancellation of a running thread
      */
-    public boolean stopAim()
+    public void stopAim()
     {
         aim.stopServer();
-        return Boolean.TRUE;
     }
 
     /** Stops the endpoint */
-    public boolean stopVbox()
+    public void stopVbox()
     {
         vbox.stop();
-        return Boolean.TRUE;
     }
 }

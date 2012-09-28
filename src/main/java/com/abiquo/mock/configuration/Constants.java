@@ -65,6 +65,12 @@ public final class Constants
 
     public static final String HYPERVISOR_DISCONNECT = "hypervisor_disconnect_duration";
 
+    public static final String AIM_DISCONNECT_RATIO = "aim_disconnect_ratio";
+
+    public static final String AIM_DISCONNECT_TICKS = "aim_disconnect_ticks";
+
+    public static final String AIM_DISCONNECT = "aim_disconnect_duration";
+
     private Constants()
     {
     }

@@ -59,6 +59,10 @@ public class MayhemService
             mayhem.config.pathvalue(Long.MAX_VALUE, Number.class, Constants.BEHAVIOR,
                 Constants.HYPERVISOR_DISCONNECT_TICKS).longValue();
 
+        long aimTicks =
+            mayhem.config.pathvalue(Long.MAX_VALUE, Number.class, Constants.BEHAVIOR,
+                Constants.AIM_DISCONNECT_TICKS).longValue();
+
         long createTicks =
             mayhem.config.pathvalue(Long.MAX_VALUE, Number.class, Constants.BEHAVIOR,
                 Constants.CREATE_VM_TICKS).longValue();
@@ -70,6 +74,9 @@ public class MayhemService
         long disconnectRatio =
             mayhem.config.pathvalue(Long.MAX_VALUE, Number.class, Constants.BEHAVIOR,
                 Constants.HYPERVISOR_DISCONNECT_RATIO).longValue();
+        long aimRatio =
+            mayhem.config.pathvalue(Long.MAX_VALUE, Number.class, Constants.BEHAVIOR,
+                Constants.AIM_DISCONNECT_RATIO).longValue();
 
         long createRatio =
             mayhem.config.pathvalue(Long.MAX_VALUE, Number.class, Constants.BEHAVIOR,
@@ -78,6 +85,9 @@ public class MayhemService
         long disconnect =
             mayhem.config.pathvalue(Long.MAX_VALUE, Number.class, Constants.BEHAVIOR,
                 Constants.HYPERVISOR_DISCONNECT).longValue();
+        long aimdisconnect =
+            mayhem.config.pathvalue(Long.MAX_VALUE, Number.class, Constants.BEHAVIOR,
+                Constants.AIM_DISCONNECT).longValue();
 
         if (loop < 1)
         {
@@ -87,6 +97,7 @@ public class MayhemService
         long destElapsed = Long.valueOf(0);
         long createElapsed = Long.valueOf(0);
         long discElapsed = Long.valueOf(0);
+        long aimElapsed = Long.valueOf(0);
 
         LOG.info("Starting mock with delay {}ms", loop);
         while (Boolean.TRUE)
@@ -94,9 +105,11 @@ public class MayhemService
             LOG.debug("Loop sleep");
             Thread.sleep(loop);
             LOG.debug("Loop ok");
+
             destElapsed += loop;
             createElapsed += loop;
             discElapsed += loop;
+            aimElapsed += loop;
 
             if (destroyRatio > 0 && destElapsed >= destroyTicks)
             {
@@ -111,9 +124,13 @@ public class MayhemService
             if (disconnectRatio > 0 && discElapsed >= disconnectTicks)
             {
                 discElapsed = 0;
-                mayhem.processDisconnect(disconnectRatio, disconnect);
+                mayhem.processVboxDisconnect(disconnectRatio, disconnect);
             }
-
+            if (aimRatio > 0 && aimElapsed >= aimTicks)
+            {
+                aimElapsed = 0;
+                mayhem.processAimDisconnect(aimRatio, aimdisconnect);
+            }
         }
     }
 
@@ -125,7 +142,7 @@ public class MayhemService
      * @throws InterruptedException
      * @throws IOException
      */
-    private void processDisconnect(final long disconnectRatio, final long disconnect)
+    private void processVboxDisconnect(final long disconnectRatio, final long disconnect)
         throws InterruptedException, IOException
     {
         if (disconnectRatio >= random.nextInt(100) + 1)
@@ -139,6 +156,31 @@ public class MayhemService
             LOG.debug("Starting VirtualBox");
             MOCK.startVbox();
             LOG.info("Started vbox");
+        }
+    }
+
+    /**
+     * Shall I disconnect the aim?
+     * 
+     * @param disconnectRatio ratio
+     * @param disconnect ms
+     * @throws Exception
+     * @throws IOException
+     */
+    private void processAimDisconnect(final long disconnectRatio, final long disconnect)
+        throws Exception
+    {
+        if (disconnectRatio >= random.nextInt(100) + 1)
+        {
+            LOG.info("Stopping aim for {}", disconnect);
+            MOCK.stopAim();
+
+            LOG.debug("aim stopped");
+            Thread.sleep(disconnect);
+
+            LOG.debug("Starting aim");
+            MOCK.startAim();
+            LOG.info("Started aim");
         }
     }
 

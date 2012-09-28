@@ -27,17 +27,20 @@ Host :
       name: "eth1"
       mac: 00:00:00:00:00:01
 Behavior:
-  ticks: 7000
+  ticks: 1000
   # Operations behind abiquo
   destroy_vm_ratio : 100
-  destroy_vm_ticks : 17000
+  destroy_vm_ticks : 1700
   create_vm_ratio : 100
-  create_vm_ticks : 27000
+  create_vm_ticks : 2700
 
   # Global configuration
-  hypervisor_disconnect_ratio: 100
-  hypervisor_disconnect_duration: 40000
-  hypervisor_disconnect_ticks: 40000
+  hypervisor_disconnect_ratio: 0
+  hypervisor_disconnect_duration: 4000
+  hypervisor_disconnect_ticks: 4000
+  aim_disconnect_ratio: 100
+  aim_disconnect_duration: 4000
+  aim_disconnect_ticks: 4000
   delay: 0
 
   # vbox method configuration

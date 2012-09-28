@@ -24,27 +24,23 @@ public class ServerMockIT
     public void start() throws Exception
     {
 
-        Assert.assertTrue("Aim is running: " + instance.isAimRunning() + " Vbox is running: "
-            + instance.isVboxRunning(), instance.isAimRunning() && instance.isVboxRunning());
+        Assert.assertTrue(instance.isVboxRunning());
     }
 
     @Test
     public void stopAim() throws Exception
     {
         instance.stopAim();
-        Assert.assertTrue("Aim is running: " + instance.isAimRunning() + " Vbox is running: "
-            + instance.isVboxRunning(), !instance.isAimRunning() && instance.isVboxRunning());
+        Assert.assertTrue(instance.isVboxRunning());
     }
 
     @Test
     public void startAim() throws Exception
     {
         instance.stopAim();
-        Assert.assertTrue("Aim is running: " + instance.isAimRunning() + " Vbox is running: "
-            + instance.isVboxRunning(), !instance.isAimRunning() && instance.isVboxRunning());
+        Assert.assertTrue(instance.isVboxRunning());
         instance.startAim();
-        Assert.assertTrue("Aim is running: " + instance.isAimRunning() + " Vbox is running: "
-            + instance.isVboxRunning(), instance.isAimRunning() && instance.isVboxRunning());
+        Assert.assertTrue(instance.isVboxRunning());
     }
 
     @Test
@@ -52,19 +48,16 @@ public class ServerMockIT
     {
 
         instance.stopVbox();
-        Assert.assertTrue("Aim is running: " + instance.isAimRunning() + " Vbox is running: "
-            + instance.isVboxRunning(), instance.isAimRunning() && !instance.isVboxRunning());
+        Assert.assertTrue(!instance.isVboxRunning());
     }
 
     @Test
     public void startVbox() throws Exception
     {
         instance.stopVbox();
-        Assert.assertTrue("Aim is running: " + instance.isAimRunning() + " Vbox is running: "
-            + instance.isVboxRunning(), instance.isAimRunning() && !instance.isVboxRunning());
+        Assert.assertTrue(!instance.isVboxRunning());
         instance.stopVbox();
-        Assert.assertTrue("Aim is running: " + instance.isAimRunning() + " Vbox is running: "
-            + instance.isVboxRunning(), instance.isAimRunning() && instance.isVboxRunning());
+        Assert.assertTrue(instance.isVboxRunning());
     }
 
     @Test
@@ -72,8 +65,7 @@ public class ServerMockIT
     {
         instance.stopVbox();
         instance.stopAim();
-        Assert.assertTrue("Aim is running: " + instance.isAimRunning() + " Vbox is running: "
-            + instance.isVboxRunning(), !instance.isAimRunning() && !instance.isVboxRunning());
+        Assert.assertTrue(!instance.isVboxRunning());
     }
 
     @Test
@@ -82,12 +74,10 @@ public class ServerMockIT
 
         instance.stopVbox();
         instance.stopAim();
-        Assert.assertTrue("Aim is running: " + instance.isAimRunning() + " Vbox is running: "
-            + instance.isVboxRunning(), !instance.isAimRunning() && !instance.isVboxRunning());
+        Assert.assertTrue(!instance.isVboxRunning());
 
         instance.startAim();
         instance.stopVbox();
-        Assert.assertTrue("Aim is running: " + instance.isAimRunning() + " Vbox is running: "
-            + instance.isVboxRunning(), instance.isAimRunning() && instance.isVboxRunning());
+        Assert.assertTrue(instance.isVboxRunning());
     }
 }
