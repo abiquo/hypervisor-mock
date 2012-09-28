@@ -155,7 +155,7 @@ public class MayhemService
                 domain.getVirtualMachines().values().toArray(new VirtualMachineInfo[0]);
             VirtualMachineInfo vm = array[random.nextInt(array.length)];
             LOG.debug("Destroying virtual machine {}", vm.getId());
-            domain.getVirtualMachines().remove(vm);
+            domain.getVirtualMachines().remove(vm.getId());
             LOG.info("Destroying virtual machine {}", vm.getId());
         }
     }
