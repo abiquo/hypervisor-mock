@@ -106,8 +106,7 @@ public class AimServerMock implements Iface
                 {
                     Thread.sleep(methodDelay);
                 }
-                AimServerMock.LOG
-                    .warning("Adding delay for " + method + ", " + methodDelay + "ms ");
+                AimServerMock.LOG.finer("Adding delay for " + method + ", " + methodDelay + "ms ");
             }
             catch (Exception e)
             {
