@@ -13101,4 +13101,67 @@ public class ObjectFactory {
         return new ISystemPropertiesGetMaxDevicesPerPortForStorageBus();
     }
 
+    /**
+     * Create an instance of {@link INetworkAdapterAttachToBridgedInterface }
+     *
+     */
+    public INetworkAdapterAttachToBridgedInterface createINetworkAdapterAttachToBridgedInterface() {
+        return new INetworkAdapterAttachToBridgedInterface();
+    }
+
+    /**
+     * Create an instance of {@link INetworkAdapterAttachToBridgedInterfaceResponse }
+     *
+     */
+    public INetworkAdapterAttachToBridgedInterfaceResponse createINetworkAdapterAttachToBridgedInterfaceResponse() {
+        return new INetworkAdapterAttachToBridgedInterfaceResponse();
+    }
+
+    /**
+     * Create an instance of {@link INetworkAdapterSetHostInterface }
+     *
+     */
+    public INetworkAdapterSetHostInterface createINetworkAdapterSetHostInterface() {
+        return new INetworkAdapterSetHostInterface();
+    }
+
+    /**
+     * Create an instance of {@link INetworkAdapterSetHostInterfaceResponse }
+     *
+     */
+    public INetworkAdapterSetHostInterfaceResponse createINetworkAdapterSetHostInterfaceResponse() {
+        return new INetworkAdapterSetHostInterfaceResponse();
+    }
+
+    /**
+     * Create an instance of {@link ISystemPropertiesGetNetworkAdapterCount }
+     *
+     */
+    public ISystemPropertiesGetNetworkAdapterCount createISystemPropertiesGetNetworkAdapterCount() {
+        return new ISystemPropertiesGetNetworkAdapterCount();
+    }
+
+    /**
+     * Create an instance of {@link ISystemPropertiesGetNetworkAdapterCountResponse }
+     *
+     */
+    public ISystemPropertiesGetNetworkAdapterCountResponse createISystemPropertiesGetNetworkAdapterCountResponse() {
+        return new ISystemPropertiesGetNetworkAdapterCountResponse();
+    }
+
+    /**
+     * Create an instance of {@link INetworkAdapterGetHostInterface }
+     *
+     */
+    public INetworkAdapterGetHostInterface createINetworkAdapterGetHostInterface() {
+        return new INetworkAdapterGetHostInterface();
+    }
+
+    /**
+     * Create an instance of {@link INetworkAdapterGetHostInterfaceResponse }
+     *
+     */
+    public INetworkAdapterGetHostInterfaceResponse createINetworkAdapterGetHostInterfaceResponse() {
+        return new INetworkAdapterGetHostInterfaceResponse();
+    }
 }
