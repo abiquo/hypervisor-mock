@@ -47,4 +47,5 @@ The thrift based java server mock to use Abiquo AIM http://github.com/abiquo/aim
 ## Common issues
 
 * Permgen or memory size: Try adding more memory to the startup command `java -Xmx128m -jar vbox-mock.jar`
-* NullPointerException when shutting down web service: This is due to a known issue in JAX-WS 2.1.x and JDK 6. Try executing it with another JDK or add JAX-WS 2.2 to your endorsed libs or disabling the Web Service shutdown by setting the property hypervisor_disconnect_ratio to 0 in your configuration file.
+* NullPointerException when shutting down web service: This is due to a known issue in JAX-WS 2.1.x and some JDK 6. Try executing it with another JDK or add JAX-WS 2.2 to your endorsed libs or disabling the Web Service shutdown by setting the property hypervisor_disconnect_ratio to 0 in your configuration file.
+
