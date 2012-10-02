@@ -85,6 +85,7 @@ Behavior:
   
   iMediumCloneTo:
     delay: 0
+    time_to_complete: 10000
     failures:
       - {failure_ratio: 0, exception: RuntimeException, message: "message"}
 
@@ -115,27 +116,34 @@ Behavior:
 
   iMachineLaunchVMProcess:
     delay: 0
-  
+    time_to_complete: 0
+
   iConsolePowerButton:
     delay: 0
 
   iConsolePowerDown:
     delay: 0
+    time_to_complete: 0
 
   iConsolePowerUp:
     delay: 0
-    
+    time_to_complete: 0
+
   iConsoleResume:
     delay: 0
-    
+    time_to_complete: 0
+
   iConsolePause:
     delay: 0
-    
+    time_to_complete: 0
+
   iConsoleReset:
     delay: 0
-    
+    time_to_complete: 0
+
   iConsolePowerUpPaused:
     delay: 0
+    time_to_complete: 0
 
   iMachineLockMachine:
     delay: 0
@@ -144,6 +152,7 @@ Behavior:
 
   iMachineDelete:
     delay: 0
+    time_to_complete: 0
       
   # AIM method configuration
   checkRimpConfiguration:
@@ -175,7 +184,7 @@ Behavior:
     delay: 0     
     failures:
       - {failure_ratio: 0, exception: RuntimeException, message: "message"}
-    
+
   # unspecified vbox methods
 
   iStorageControllerGetPortCount:

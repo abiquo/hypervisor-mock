@@ -4,6 +4,8 @@
 package com.abiquo.vbox.mock;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -26,6 +28,8 @@ import org.virtualbox.RuntimeFaultMsg;
 import org.virtualbox.SessionState;
 import org.virtualbox.StorageBus;
 
+import com.abiquo.mock.configuration.ConfigurationService;
+import com.abiquo.mock.configuration.Constants;
 import com.abiquo.mock.domain.DomainService;
 import com.abiquo.mock.model.Medium;
 import com.abiquo.mock.model.NetworkAdapter;
@@ -46,6 +50,9 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
 {
 
     private final static Logger LOG = LoggerFactory.getLogger(VboxPortTypeMock.class);
+
+    private static final Map<String, Long> cache = Collections
+        .synchronizedMap(new HashMap<String, Long>());
 
     /*
      * (non-Javadoc)
@@ -631,7 +638,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         }
         mtarget.setVariant(variant);
 
-        Progress progress = new Progress();
+        Progress progress = new Progress(getTimeToComplete("iMediumCloneTo"));
         DomainService.getInstance().getTasks().put(progress.getId(), progress);
         return progress.getId();
     }
@@ -868,7 +875,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
             throw new InvalidObjectFaultMsg("iMachineLaunchVMProcess no such machine id" + _this);
         }
         virtualMachine.setMachineState(MachineState.RUNNING);
-        Progress progress = new Progress();
+        Progress progress = new Progress(getTimeToComplete("iMachineLaunchVMProcess"));
         progress.setDescription(type + " " + environment);
         DomainService.getInstance().getTasks().put(progress.getId(), progress);
         return progress.getId();
@@ -893,7 +900,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
             throw new InvalidObjectFaultMsg("iConsolePowerDown no such machine id" + _this);
         }
         virtualMachine.setMachineState(MachineState.POWERED_OFF);
-        Progress progress = new Progress();
+        Progress progress = new Progress(getTimeToComplete("iConsolePowerDown"));
         progress.setDescription("PowerOff ");
         DomainService.getInstance().getTasks().put(progress.getId(), progress);
         return progress.getId();
@@ -909,7 +916,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
             throw new InvalidObjectFaultMsg("iConsolePowerUp no such machine id" + _this);
         }
         virtualMachine.setMachineState(MachineState.RUNNING);
-        Progress progress = new Progress();
+        Progress progress = new Progress(getTimeToComplete("iConsolePowerUp"));
         progress.setDescription("Power");
         DomainService.getInstance().getTasks().put(progress.getId(), progress);
         return progress.getId();
@@ -925,7 +932,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
             throw new InvalidObjectFaultMsg("iConsoleResume no such machine id" + _this);
         }
         virtualMachine.setMachineState(MachineState.RUNNING);
-        Progress progress = new Progress();
+        Progress progress = new Progress(getTimeToComplete("iConsoleResume"));
         progress.setDescription("Resume");
         DomainService.getInstance().getTasks().put(progress.getId(), progress);
     }
@@ -940,7 +947,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
             throw new InvalidObjectFaultMsg("iConsolePause no such machine id" + _this);
         }
         virtualMachine.setMachineState(MachineState.PAUSED);
-        Progress progress = new Progress();
+        Progress progress = new Progress(getTimeToComplete("iConsolePause"));
         progress.setDescription("Pause");
         DomainService.getInstance().getTasks().put(progress.getId(), progress);
     }
@@ -963,7 +970,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
             throw new InvalidObjectFaultMsg("iConsolePowerUpPaused no such machine id" + _this);
         }
         virtualMachine.setMachineState(MachineState.RUNNING);
-        Progress progress = new Progress();
+        Progress progress = new Progress(getTimeToComplete("iConsolePowerUpPaused"));
         progress.setDescription("Resume");
         DomainService.getInstance().getTasks().put(progress.getId(), progress);
         return progress.getId();
@@ -1048,7 +1055,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
     {
         DomainService.getInstance().getVirtualMachines().remove(_this);
 
-        Progress progress = new Progress();
+        Progress progress = new Progress(getTimeToComplete("iMachineDelete"));
         progress.setDescription("Delete");
         DomainService.getInstance().getTasks().put(progress.getId(), progress);
         return progress.getId();
@@ -1090,4 +1097,26 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
 
         return ((Storage) medium).getPortCount();
     }
+
+    private long getTimeToComplete(final String method)
+    {
+
+        Long d = cache.get(method);
+        if (d == null)
+        {
+            d = Long.valueOf(0);
+            Number methodDelay =
+                ConfigurationService.getInstance().pathvalue(Number.class, Constants.BEHAVIOR,
+                    method, Constants.TIME_TO_COMPLETE);
+            if (methodDelay != null)
+            {
+                d = methodDelay.longValue();
+            }
+
+            cache.put(method, d);
+        }
+
+        return d;
+    }
+
 }

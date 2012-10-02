@@ -71,6 +71,8 @@ public final class Constants
 
     public static final String AIM_DISCONNECT = "aim_disconnect_duration";
 
+    public static final String TIME_TO_COMPLETE = "time_to_complete";
+
     private Constants()
     {
     }
