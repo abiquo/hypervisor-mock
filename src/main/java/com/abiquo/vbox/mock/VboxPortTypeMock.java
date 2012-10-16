@@ -99,7 +99,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         catch (java.lang.Exception ex)
         {
             ex.printStackTrace();
-            throw new RuntimeException(ex);
+            throw new RuntimeFaultMsg(ex.getMessage(), ex);
         }
         // throw new RuntimeFaultMsg("RuntimeFaultMsg...");
         // throw new InvalidObjectFaultMsg("InvalidObjectFaultMsg...");
@@ -130,7 +130,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         catch (java.lang.Exception ex)
         {
             ex.printStackTrace();
-            throw new RuntimeException(ex);
+            throw new RuntimeFaultMsg(ex.getMessage(), ex);
         }
         // throw new RuntimeFaultMsg("RuntimeFaultMsg...");
         // throw new InvalidObjectFaultMsg("InvalidObjectFaultMsg...");
@@ -165,7 +165,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         catch (java.lang.Exception ex)
         {
             ex.printStackTrace();
-            throw new RuntimeException(ex);
+            throw new RuntimeFaultMsg(ex.getMessage(), ex);
         }
         // throw new RuntimeFaultMsg("RuntimeFaultMsg...");
     }/*
@@ -218,7 +218,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         catch (java.lang.Exception ex)
         {
             ex.printStackTrace();
-            throw new RuntimeException(ex);
+            throw new RuntimeFaultMsg(ex.getMessage(), ex);
         }
         // throw new RuntimeFaultMsg("RuntimeFaultMsg...");
         // throw new InvalidObjectFaultMsg("InvalidObjectFaultMsg...");
@@ -256,7 +256,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         catch (java.lang.Exception ex)
         {
             ex.printStackTrace();
-            throw new RuntimeException(ex);
+            throw new RuntimeFaultMsg(ex.getMessage(), ex);
         }
         // throw new RuntimeFaultMsg("RuntimeFaultMsg...");
         // throw new InvalidObjectFaultMsg("InvalidObjectFaultMsg...");
@@ -279,7 +279,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         catch (java.lang.Exception ex)
         {
             ex.printStackTrace();
-            throw new RuntimeException(ex);
+            throw new RuntimeFaultMsg(ex.getMessage(), ex);
         }
         // throw new RuntimeFaultMsg("RuntimeFaultMsg...");
         // throw new InvalidObjectFaultMsg("InvalidObjectFaultMsg...");
@@ -299,7 +299,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         catch (java.lang.Exception ex)
         {
             ex.printStackTrace();
-            throw new RuntimeException(ex);
+            throw new RuntimeFaultMsg(ex.getMessage(), ex);
         }
     }/*
       * (non-Javadoc)
@@ -321,7 +321,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         catch (java.lang.Exception ex)
         {
             ex.printStackTrace();
-            throw new RuntimeException(ex);
+            throw new RuntimeFaultMsg(ex.getMessage(), ex);
         }
         // throw new RuntimeFaultMsg("RuntimeFaultMsg...");
         // throw new InvalidObjectFaultMsg("InvalidObjectFaultMsg...");
@@ -367,7 +367,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         catch (java.lang.Exception ex)
         {
             ex.printStackTrace();
-            throw new RuntimeException(ex);
+            throw new RuntimeFaultMsg(ex.getMessage(), ex);
         }
         // throw new RuntimeFaultMsg("RuntimeFaultMsg...");
         // throw new InvalidObjectFaultMsg("InvalidObjectFaultMsg...");
@@ -399,7 +399,7 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         catch (java.lang.Exception ex)
         {
             ex.printStackTrace();
-            throw new RuntimeException(ex);
+            throw new RuntimeFaultMsg(ex.getMessage(), ex);
         }
         // throw new RuntimeFaultMsg("RuntimeFaultMsg...");
         // throw new InvalidObjectFaultMsg("InvalidObjectFaultMsg...");
