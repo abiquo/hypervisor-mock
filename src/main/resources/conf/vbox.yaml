@@ -56,7 +56,7 @@ Behavior:
   iVirtualBoxGetMachines:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: InvalidObjectFaultMsg, message: "message"}
         
   iWebsessionManagerLogon:
     delay: 0
@@ -70,49 +70,49 @@ Behavior:
   iVirtualBoxRegisterMachine:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: InvalidObjectFaultMsg, message: "message"}
 
   iVirtualBoxCreateMachine:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: InvalidObjectFaultMsg, message: "message"}
 
   iMachineAttachDevice:
     delay: 0
     failures:
-      - {validate_iqn_ratio: 0, exception: RuntimeException, message: "message"}
-      - {attach_device_ratio: 0, exception: RuntimeException, message: "message"}
+      - {validate_iqn_ratio: 0, exception: InvalidObjectFaultMsg, message: "message"}
+      - {attach_device_ratio: 0, exception: InvalidObjectFaultMsg, message: "message"}
   
   iMediumCloneTo:
     delay: 0
     time_to_complete: 10000
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: InvalidObjectFaultMsg, message: "message"}
 
   iMediumClose:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: InvalidObjectFaultMsg, message: "message"}
   
   iVirtualBoxOpenMedium:
     delay: 0
     failures:
-      - {not_found_ratio: 0, exception: RuntimeException, message: "message"}
+      - {not_found_ratio: 0, exception: InvalidObjectFaultMsg, message: "message"}
 
   iVirtualBoxCreateHardDisk:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: InvalidObjectFaultMsg, message: "message"}
 
   iNetworkAdapterAttachToBridgedInterface:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: InvalidObjectFaultMsg, message: "message"}
 
   iMachineSaveSettings:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: InvalidObjectFaultMsg, message: "message"}
 
   iMachineLaunchVMProcess:
     delay: 0
@@ -148,7 +148,7 @@ Behavior:
   iMachineLockMachine:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: InvalidObjectFaultMsg, message: "message"}
 
   iMachineDelete:
     delay: 0
@@ -158,32 +158,63 @@ Behavior:
   checkRimpConfiguration:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: RimpException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
   
-  getDatastores:
+  rescanISCSI:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: StorageException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
 
   createVLAN:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: VLanException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
 
   deleteVLAN:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: VLanException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
 
-  getDatastoreSize:
+  getDatastores:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: RimpException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
 
   getDiskFileSize:
     delay: 0     
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: RimpException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
+
+  copyFromDatastoreToRepository:
+    delay: 0     
+    failures:
+      - {failure_ratio: 0, exception: RimpException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
+
+  copyFromRepositoryToDatastore:
+    delay: 0     
+    failures:
+      - {failure_ratio: 0, exception: RimpException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
+
+  deleteVirtualImageFromDatastore:
+    delay: 0
+    failures:
+      - {failure_ratio: 0, exception: RimpException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
+
+  getInitiatorIQN:
+    delay: 0
+    failures:
+      - {failure_ratio: 0, exception: TException, message: "message"}
+      - {failure_ratio: 0, exception: StorageException, message: "message"}
+
 
   # unspecified vbox methods
 
@@ -222,3 +253,6 @@ Behavior:
   iHostNetworkInterfaceGetHardwareAddress:
   iWebsessionManagerGetSessionObject:
 
+  # unspecified aim methods
+  checkVLANConfiguration:
+  getNetInterfaces:

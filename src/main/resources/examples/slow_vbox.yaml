@@ -160,30 +160,60 @@ Behavior:
     failures:
       - {failure_ratio: 0, exception: RuntimeException, message: "message"}
   
-  getDatastores:
+  rescanISCSI:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: StorageException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
 
   createVLAN:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: VLanException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
 
   deleteVLAN:
     delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: VLanException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
 
-  getDatastoreSize:
-    delay: 00
+  getDatastores:
+    delay: 0
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
-      
+      - {failure_ratio: 0, exception: RimpException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
+
   getDiskFileSize:
     delay: 0     
     failures:
-      - {failure_ratio: 0, exception: RuntimeException, message: "message"}
+      - {failure_ratio: 0, exception: RimpException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
+
+  copyFromDatastoreToRepository:
+    delay: 0     
+    failures:
+      - {failure_ratio: 0, exception: RimpException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
+
+  copyFromRepositoryToDatastore:
+    delay: 0     
+    failures:
+      - {failure_ratio: 0, exception: RimpException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
+
+  deleteVirtualImageFromDatastore:
+    delay: 0
+    failures:
+      - {failure_ratio: 0, exception: RimpException, message: "message"}
+      - {failure_ratio: 0, exception: TException, message: "message"}
+
+  getInitiatorIQN:
+    delay: 0
+    failures:
+      - {failure_ratio: 0, exception: TException, message: "message"}
+      - {failure_ratio: 0, exception: StorageException, message: "message"}
+
     
   # unspecified vbox methods
 
@@ -222,3 +252,6 @@ Behavior:
   iHostNetworkInterfaceGetHardwareAddress:
   iWebsessionManagerGetSessionObject:
 
+  # unspecified aim methods
+  checkVLANConfiguration:
+  getNetInterfaces:
