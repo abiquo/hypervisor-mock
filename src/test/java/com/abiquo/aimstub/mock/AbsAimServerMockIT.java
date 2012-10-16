@@ -1,5 +1,6 @@
 package com.abiquo.aimstub.mock;
 
+import java.util.Arrays;
 import java.util.concurrent.Future;
 
 import org.apache.thrift.TException;
@@ -7,6 +8,7 @@ import org.apache.thrift.TException;
 import com.abiquo.aimstub.Aim;
 import com.abiquo.aimstub.Aim.Iface;
 import com.abiquo.aimstub.RimpException;
+import com.abiquo.aimstub.StorageException;
 import com.abiquo.aimstub.VLanException;
 
 /**
@@ -24,13 +26,12 @@ public abstract class AbsAimServerMockIT
 
     public abstract void stopAimServerMock();
 
-    public void test_aimOperationsAllowed() throws RimpException, TException, VLanException
+    public void test_aimOperationsAllowed() throws RimpException, TException, VLanException,
+        StorageException
     {
         int vlanTag = 0;
 
         aimclient.checkRimpConfiguration();
-
-        aimclient.getDatastoreSize();
 
         aimclient.getDiskFileSize("virtualImageDatastorePath");
 
@@ -52,6 +53,8 @@ public abstract class AbsAimServerMockIT
         aimclient.deleteVLAN(vlanTag, "vlanInterface", "bridgeInterface");
 
         aimclient.checkVLANConfiguration();
+
+        aimclient.rescanISCSI(Arrays.asList("ISCSI0", "ISCSI1"));
 
         aimclient.getInitiatorIQN();
     }
