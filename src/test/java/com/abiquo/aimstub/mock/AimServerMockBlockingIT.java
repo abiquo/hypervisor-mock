@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.abiquo.aimstub.RimpException;
+import com.abiquo.aimstub.StorageException;
 import com.abiquo.aimstub.TTransportProxy;
 import com.abiquo.aimstub.VLanException;
 
@@ -78,7 +79,7 @@ public class AimServerMockBlockingIT extends AbsAimServerMockIT
     }
 
     @Test(groups = {"it-all"})
-    public void test_aimOperationsAllowed() throws RimpException, TException, VLanException
+    public void test_aimOperationsAllowed() throws RimpException, TException, VLanException, StorageException
     {
         super.test_aimOperationsAllowed();
     }

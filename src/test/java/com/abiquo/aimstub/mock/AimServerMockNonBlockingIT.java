@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 
 import com.abiquo.aimstub.Aim;
 import com.abiquo.aimstub.RimpException;
+import com.abiquo.aimstub.StorageException;
 import com.abiquo.aimstub.VLanException;
 
 /**
@@ -85,7 +86,7 @@ public class AimServerMockNonBlockingIT extends AbsAimServerMockIT
     }
 
     @Test(groups = {"it-all"})
-    public void test_aimOperationsAllowed() throws RimpException, TException, VLanException
+    public void test_aimOperationsAllowed() throws RimpException, TException, VLanException, StorageException
     {
         super.test_aimOperationsAllowed();
     }

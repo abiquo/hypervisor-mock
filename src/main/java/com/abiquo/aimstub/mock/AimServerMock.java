@@ -44,6 +44,7 @@ import com.abiquo.aimstub.Aim.Iface;
 import com.abiquo.aimstub.Datastore;
 import com.abiquo.aimstub.NetInterface;
 import com.abiquo.aimstub.RimpException;
+import com.abiquo.aimstub.StorageException;
 import com.abiquo.aimstub.VLanException;
 import com.abiquo.mock.configuration.ConfigurationService;
 import com.abiquo.mock.configuration.Constants;
@@ -149,22 +150,6 @@ public class AimServerMock implements Iface
         {
             throw (TException) e;
         }
-    }
-
-    @Override
-    public long getDatastoreSize() throws RimpException, TException
-    {
-        LOG.info("getDatastoreSize");
-        Exception e = checkFailure("getDatastoreSize");
-        if (e instanceof RimpException)
-        {
-            throw (RimpException) e;
-        }
-        if (e instanceof TException)
-        {
-            throw (TException) e;
-        }
-        return 0;
     }
 
     @Override
@@ -319,10 +304,14 @@ public class AimServerMock implements Iface
     }
 
     @Override
-    public String getInitiatorIQN() throws TException
+    public String getInitiatorIQN() throws StorageException, TException
     {
         LOG.info("getInitiatorIQN");
         Exception e = checkFailure("getInitiatorIQN");
+        if (e instanceof StorageException)
+        {
+            throw (StorageException) e;
+        }
         if (e instanceof TException)
         {
             throw (TException) e;
@@ -405,5 +394,21 @@ public class AimServerMock implements Iface
             }
         }
         return list;
+    }
+
+    @Override
+    public void rescanISCSI(List<String> arg0) throws StorageException, TException
+    {
+        LOG.info("rescanISCSI");
+
+        Exception e = checkFailure("rescanISCSI");
+        if (e instanceof StorageException)
+        {
+            throw (StorageException) e;
+        }
+        if (e instanceof TException)
+        {
+            throw (TException) e;
+        }
     }
 }
