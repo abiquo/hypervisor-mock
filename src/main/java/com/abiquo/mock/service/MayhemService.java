@@ -216,6 +216,8 @@ public class MayhemService
             vm.setName("name");
             vm.setOsType("osTypeId");
             vm.setId(UUID.randomUUID().toString());
+            vm.setSaved(Boolean.TRUE);
+            vm.setRegistered(Boolean.TRUE);
             LOG.debug("Creating a virtual machine");
             DomainService.getInstance().getVirtualMachines().put(vm.getId(), vm);
             LOG.info("Created virtual machine {}", vm.getId());
