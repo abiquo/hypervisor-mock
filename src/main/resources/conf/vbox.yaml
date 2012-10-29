@@ -85,7 +85,7 @@ Behavior:
   
   iMediumCloneTo:
     delay: 0
-    time_to_complete: 10000
+    time_to_complete: 0
     failures:
       - {failure_ratio: 0, exception: InvalidObjectFaultMsg, message: "message"}
 
