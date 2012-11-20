@@ -343,11 +343,22 @@ public class VboxPortTypeMock extends VboxPortTypeImpl
         }
         java.lang.String _return = vm.getName();
         return _return;
-    }/*
-      * (non-Javadoc)
-      * @see org.virtualbox.VboxPortType#iHostGetNetworkInterfaces(java.lang.String _this )*
-      */
+    }
 
+    /*
+     * (non-Javadoc)
+     * @see org.virtualbox.VboxPortType#iMachineGetId(java.lang.String _this )
+     */
+    @Override
+    public String iMachineGetId(String _this) throws RuntimeFaultMsg, InvalidObjectFaultMsg
+    {
+        return _this;
+    }
+
+    /*
+     * (non-Javadoc)
+     * @see org.virtualbox.VboxPortType#iHostGetNetworkInterfaces(java.lang.String _this )*
+     */
     @Override
     public java.util.List<java.lang.String> iHostGetNetworkInterfaces(final java.lang.String _this)
         throws RuntimeFaultMsg, InvalidObjectFaultMsg
