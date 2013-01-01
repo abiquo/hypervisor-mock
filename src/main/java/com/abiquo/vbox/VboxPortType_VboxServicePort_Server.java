@@ -51,8 +51,10 @@ public class VboxPortType_VboxServicePort_Server
     protected VboxPortType_VboxServicePort_Server() throws java.lang.Exception
     {
         final Integer vboxPort =
-            ConfigurationService.getInstance().pathvalue(Integer.class, Constants.CONFIGURATION,
-                Constants.VBOX_PORT);
+            Integer.parseInt(System.getProperty(
+                "vbox.port",
+                String.valueOf(ConfigurationService.getInstance().pathvalue(0, Integer.class,
+                    Constants.CONFIGURATION, Constants.VBOX_PORT))));
         if (!isVboxRunning())
         {
             new Thread(new Runnable()
@@ -67,8 +69,10 @@ public class VboxPortType_VboxServicePort_Server
         }
 
         final Integer aimPort =
-            ConfigurationService.getInstance().pathvalue(Integer.class, Constants.CONFIGURATION,
-                Constants.AIM_PORT);
+            Integer.parseInt(System.getProperty(
+                "aim.port",
+                String.valueOf(ConfigurationService.getInstance().pathvalue(0, Integer.class,
+                    Constants.CONFIGURATION, Constants.AIM_PORT))));
         new Thread(new Runnable()
         {
             @Override

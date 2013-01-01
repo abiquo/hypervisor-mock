@@ -11,13 +11,15 @@ Clone the repo, pack it and play with it!
 ~~~
 $ mvn clean package
 
-$ java -jar target/vbox-mock.jar [path_to_configuration_file]
+$ java -jar target/vbox-mock.jar [path_to_configuration_file] [-Dvbox.port=n] [-Daim.port=l]
 
 ~~~
 
 The hypervisor mock accepts an optional parameter which is the path to the configuration file to load. If no file is provided the default file is loaded.
 
 You can set your own configuration file or modify one of the few [example configuration files](http://github.com/abiquo/hypervisor-mock/src/main/resources/examples) that the mock provides.
+
+The command line accepts the setting of two environmental properties. The property *vbox.port* overrides the web service port that is setted in the config file. The property *aim.port* does the equivalent.
 
 ## Configuration files
 
